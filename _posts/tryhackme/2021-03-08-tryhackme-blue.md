@@ -122,7 +122,7 @@ There are 3 flags hidden on this machine that need to be found, luckily we were 
 
 ![]({{site.baseurl}}/assets/blue29.png)
 
-Now, that we know that the flags are in the form of .txt files. we can search for them by name, appending the file name with an * to leave the number blank.
+Now, that we know that the flags are in the form of .txt files. we can search for them by name, appending the file name with an * where the one is to leave the space open.
 
 ![]({{site.baseurl}}/assets/blue30.png)
 
