@@ -13,7 +13,7 @@ Once that was finished, then we need find out all the ports open under 1000. The
 
 ![]({{site.baseurl}}/assets/blue2.png)
 
-The next task is a bit trickier. We need to figure out what the machine is vulnerable to. Using __-sV__ will scan for vulnerabilities, but that alone will leave us without an answer. __-sV__ has an option to use scripts, which is the solution to our problem. By using the script __--vuln__, we can now see what this machine is vulnerable to.
+The next task is a bit trickier. We need to figure out what the machine is vulnerable to. Using __-sV__ will scan for vulnerabilities, but that alone will leave us without an answer. __-sV__ has an option to use scripts, which is the solution to our problem. By using the script __ vuln__, we can now see what this machine is vulnerable to.
 
 ![]({{site.baseurl}}/assets/blue4.png)
 
@@ -27,7 +27,7 @@ All of this leads us to a utility called __metasploit__. The metasploit framewor
 Open __metasploit__ with the __msfconsole__ command.
 ![]({{site.baseurl}}/assets/blue6.png)
 
-You will be greeted with a very cool looking start up banner. After youre done gawking at the pretty ASCII art, its time to get to business.
+You will be greeted with a very cool looking start up banner. After you're done gawking at the pretty ASCII art, its time to get to business.
 
 ![]({{site.baseurl}}/assets/blue7.png)
 
@@ -96,7 +96,7 @@ in order to interact with a session use __-i__ with __sessions__ and the specifi
 
 ![]({{site.baseurl}}/assets/blue23.png)
 
-Tryhackme states to pick a process towards the bottom of the list running at NT AUTHORITY\SYSTEM and then migrate to that process, using the __migrate 'PROCESS_ID'__ command. I chose __CMD.exe__
+Tryhackme states to pick a process towards the bottom of the list running at NT AUTHORITY\SYSTEM and then migrate to that process, using the __migrate 'PROCESS_ID'__ command. I chose the __CMD.exe__
 
 ![]({{site.baseurl}}/assets/blue24.png)
 
