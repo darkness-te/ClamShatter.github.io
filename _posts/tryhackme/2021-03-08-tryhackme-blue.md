@@ -17,7 +17,7 @@ The next task is a bit trickier. We need to figure out what the machine is vulne
 
 ![]({{site.baseurl}}/assets/blue4.png)
 
-The Vulnerabliity is for Windows OS, and is called __ms17-010 eternal blue__
+The vulnerability is for Windows OS, and is called __ms17-010 eternal blue__
 
 ![]({{site.baseurl}}/assets/blue5.png)
 
@@ -35,7 +35,7 @@ You will be greeted with a very cool looking start up banner. After youre done g
 
 ![]({{site.baseurl}}/assets/blue8.png)
 
-Here, we want to use __exploit 2__. there is also a matter of setting some options for the exploit to actually work. if you use __show options__ you can see that __RHOSTS__ is empty, but we need it to be set in order to use this exploit. Setting __RHOSTS__ to tryhackme's machine'sset ip address will do the trick
+Here, we want to use __exploit 2__. there is also a matter of setting some options for the exploit to actually work. if you use __show options__ you can see that __RHOSTS__ is empty, but we need it to be set in order to use this exploit. Setting __RHOSTS__ to tryhackme's machine's ip address will do the trick
 
 ![]({{site.baseurl}}/assets/blue11.png)
 
@@ -96,7 +96,7 @@ in order to interact with a session use __-i__ with __sessions__ and the specifi
 
 ![]({{site.baseurl}}/assets/blue23.png)
 
-Tryhackme states to pick a process towards the bottom of the list running at NT AUTHORITY\SYSTEM and then migrate to that process, using the __migrate 'PROCESS_ID'__ command. I chose __CMD.EXE__
+Tryhackme states to pick a process towards the bottom of the list running at NT AUTHORITY\SYSTEM and then migrate to that process, using the __migrate 'PROCESS_ID'__ command. I chose __CMD.exe__
 
 ![]({{site.baseurl}}/assets/blue24.png)
 
