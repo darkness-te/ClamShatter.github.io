@@ -49,7 +49,7 @@ Ok, now we run the exploit and cross our fingers and If all goes well, then we g
 
 ![]({{site.baseurl}}/assets/blue12.png)
 
-You can tell if you got in, by the win hash banner,_(see pic below)_
+You can tell if you got in, by the win banner,_(see pic below)_
 
 ![]({{site.baseurl}}/assets/blue14.png)
 
