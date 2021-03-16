@@ -5,7 +5,7 @@ date: 2021-03-13T00:00:00-08:00
 categories: hackme
 ---
 
-A nice Introduction into the world of Tryhackme. THis room provides you with information regarding the way Tryhackme works. The only task in this room, is to verify that you can work Tryhackme's machines correctly. First, you start the machine and the attack box.
+A nice Introduction into the world of Tryhackme. This room provides you with information regarding the way Tryhackme works. The only task in this room, is to verify that you can work Tryhackme's machines correctly. First, you start the machine and the attack box.
 
 ![]({{site.baseurl}}/assets/tutorialroom000.png)
 
