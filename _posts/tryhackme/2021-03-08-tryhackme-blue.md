@@ -84,7 +84,7 @@ the __-u__ options in conjuctions with __sessions__, upgrades the shell to meter
 
 ![]({{site.baseurl}}/assets/blue21.png)
 
-With this session shell set to meterpreter, we need to set a session for use. Looking at the options, we can see meterpreter as session 2. This is the session we want to use.
+With this session's shell set to meterpreter, we need to set a session for use. Looking at the options, we can see meterpreter as session 2. This is the session we want to use.
 
 ![]({{site.baseurl}}/assets/blue22.png)
 
@@ -92,7 +92,7 @@ in order to interact with a session use __-i__ with __sessions__ and the specifi
 
 ![]({{site.baseurl}}/assets/blue15.png)
 
- We are asked to type the __ps__ command, which lists a myriad of processes.  
+We are asked to type the __ps__ command, which lists a myriad of processes.  
 
 ![]({{site.baseurl}}/assets/blue23.png)
 
