@@ -47,7 +47,7 @@ Ok, now we run the exploit and cross our fingers and If all goes well, then we g
 
 <img src="https://clamshatter.github.io/assets/winrar.gif">
 
-<img src="https://clamshatter.github.io/assets/blue122.png">
+<img src="https://clamshatter.github.io/assets/blue22.png">
 
 You can tell if you got in, by the win banner,_(see pic below)_
 
