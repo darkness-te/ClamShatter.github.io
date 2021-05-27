@@ -1,11 +1,11 @@
-current directory: C:/GitStuff/ClamShatter.github.io/vendor/bundle/ruby/2.7.0/gems/commonmarker-0.21.2/ext/commonmarker
-C:/Ruby27-x64/bin/ruby.exe -I C:/Ruby27-x64/lib/ruby/site_ruby/2.7.0 -r ./siteconf20210526-15764-1w13v92.rb extconf.rb
+current directory: C:/gitstuff/clamshatter.github.io/vendor/bundle/ruby/2.7.0/gems/commonmarker-0.21.2/ext/commonmarker
+C:/Ruby27-x64/bin/ruby.exe -I C:/Ruby27-x64/lib/ruby/site_ruby/2.7.0 -r ./siteconf20210527-24548-9hgfr7.rb extconf.rb
 creating Makefile
 
-current directory: C:/GitStuff/ClamShatter.github.io/vendor/bundle/ruby/2.7.0/gems/commonmarker-0.21.2/ext/commonmarker
+current directory: C:/gitstuff/clamshatter.github.io/vendor/bundle/ruby/2.7.0/gems/commonmarker-0.21.2/ext/commonmarker
 make DESTDIR\= clean
 
-current directory: C:/GitStuff/ClamShatter.github.io/vendor/bundle/ruby/2.7.0/gems/commonmarker-0.21.2/ext/commonmarker
+current directory: C:/gitstuff/clamshatter.github.io/vendor/bundle/ruby/2.7.0/gems/commonmarker-0.21.2/ext/commonmarker
 make DESTDIR\=
 generating commonmarker-x64-mingw32.def
 compiling arena.c
@@ -57,6 +57,6 @@ compiling utf8.c
 compiling xml.c
 linking shared-object commonmarker/commonmarker.so
 
-current directory: C:/GitStuff/ClamShatter.github.io/vendor/bundle/ruby/2.7.0/gems/commonmarker-0.21.2/ext/commonmarker
+current directory: C:/gitstuff/clamshatter.github.io/vendor/bundle/ruby/2.7.0/gems/commonmarker-0.21.2/ext/commonmarker
 make DESTDIR\= install
-/usr/bin/install -c -m 0755 commonmarker.so ./.gem.20210526-15764-11vzkfs/commonmarker
+/usr/bin/install -c -m 0755 commonmarker.so ./.gem.20210527-24548-u8v9dq/commonmarker
