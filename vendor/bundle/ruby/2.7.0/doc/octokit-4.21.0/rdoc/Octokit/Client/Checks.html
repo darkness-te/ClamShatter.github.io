@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="UTF-8">
+
+<title>module Octokit::Client::Checks - octokit-4.21.0 Documentation</title>
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../../";
+  var index_rel_prefix = "../../";
+</script>
+
+<script src="../../js/navigation.js" defer></script>
+<script src="../../js/search.js" defer></script>
+<script src="../../js/search_index.js" defer></script>
+<script src="../../js/searcher.js" defer></script>
+<script src="../../js/darkfish.js" defer></script>
+
+<link href="../../css/fonts.css" rel="stylesheet">
+<link href="../../css/rdoc.css" rel="stylesheet">
+
+
+
+
+<body id="top" role="document" class="module">
+<nav role="navigation">
+  <div id="project-navigation">
+    <div id="home-section" role="region" title="Quick navigation" class="nav-section">
+  <h2>
+    <a href="../../index.html" rel="home">Home</a>
+  </h2>
+
+  <div id="table-of-contents-navigation">
+    <a href="../../table_of_contents.html#pages">Pages</a>
+    <a href="../../table_of_contents.html#classes">Classes</a>
+    <a href="../../table_of_contents.html#methods">Methods</a>
+  </div>
+</div>
+
+    <div id="search-section" role="search" class="project-section initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <div id="search-field-wrapper">
+      <input id="search-field" role="combobox" aria-label="Search"
+             aria-autocomplete="list" aria-controls="search-results"
+             type="text" name="search" placeholder="Search" spellcheck="false"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </div>
+
+    <ul id="search-results" aria-label="Search Results"
+        aria-busy="false" aria-expanded="false"
+        aria-atomic="false" class="initially-hidden"></ul>
+  </form>
+</div>
+
+  </div>
+
+  
+
+  <div id="class-metadata">
+    
+    
+    
+    
+    <!-- Method Quickref -->
+<div id="method-list-section" class="nav-section">
+  <h3>Methods</h3>
+
+  <ul class="link-list" role="directory">
+    
+    <li ><a href="#method-i-check_run">#check_run</a>
+    
+    <li ><a href="#method-i-check_run_annotations">#check_run_annotations</a>
+    
+    <li ><a href="#method-i-check_runs_for_check_suite">#check_runs_for_check_suite</a>
+    
+    <li ><a href="#method-i-check_runs_for_ref">#check_runs_for_ref</a>
+    
+    <li ><a href="#method-i-check_suite">#check_suite</a>
+    
+    <li ><a href="#method-i-check_suites_for_ref">#check_suites_for_ref</a>
+    
+    <li ><a href="#method-i-create_check_run">#create_check_run</a>
+    
+    <li ><a href="#method-i-create_check_suite">#create_check_suite</a>
+    
+    <li ><a href="#method-i-list_check_runs_for_check_suite">#list_check_runs_for_check_suite</a>
+    
+    <li ><a href="#method-i-list_check_runs_for_ref">#list_check_runs_for_ref</a>
+    
+    <li ><a href="#method-i-list_check_suites_for_ref">#list_check_suites_for_ref</a>
+    
+    <li ><a href="#method-i-rerequest_check_suite">#rerequest_check_suite</a>
+    
+    <li ><a href="#method-i-set_check_suite_preferences">#set_check_suite_preferences</a>
+    
+    <li ><a href="#method-i-update_check_run">#update_check_run</a>
+    
+  </ul>
+</div>
+
+  </div>
+</nav>
+
+<main role="main" aria-labelledby="module-Octokit::Client::Checks">
+  <h1 id="module-Octokit::Client::Checks" class="module">
+    module Octokit::Client::Checks
+  </h1>
+
+  <section class="description">
+    
+<p>Methods for the <a href="Checks.html"><code>Checks</code></a> API</p>
+
+<p>@see <a href="https://developer.github.com/v3/checks">developer.github.com/v3/checks</a>/</p>
+
+  </section>
+
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+
+    
+
+    
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section">
+       <header>
+         <h3>Public Instance Methods</h3>
+       </header>
+
+    
+      <div id="method-i-check_run" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">check_run</span><span
+            class="method-args">(repo, id, options = {})</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Get a single check run</p>
+
+<p>@param repo [Integer, String, Hash, Repository] A GitHub repository @param id [Integer] The ID of the check run @return [Sawyer::Resource] A hash representing the check run @see <a href="https://developer.github.com/v3/checks/runs/#get-a-single-check-run">developer.github.com/v3/checks/runs/#get-a-single-check-run</a></p>
+          
+          
+
+          
+          <div class="method-source-code" id="check_run-source">
+            <pre><span class="ruby-comment"># File lib/octokit/client/checks.rb, line 94</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">check_run</span>(<span class="ruby-identifier">repo</span>, <span class="ruby-identifier">id</span>, <span class="ruby-identifier">options</span> = {})
+  <span class="ruby-identifier">get</span> <span class="ruby-node">&quot;#{Repository.path repo}/check-runs/#{id}&quot;</span>, <span class="ruby-identifier">options</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-check_run_annotations" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">check_run_annotations</span><span
+            class="method-args">(repo, id, options = {})</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>List annotations for a check run</p>
+
+<p>@param repo [Integer, String, Hash, Repository] A GitHub repository @param id [Integer] The ID of the check run @return [Array&lt;Sawyer::Resource&gt;] An array of hashes representing check run annotations @see <a href="https://developer.github.com/v3/checks/runs/#list-annotations-for-a-check-run">developer.github.com/v3/checks/runs/#list-annotations-for-a-check-run</a> @example List annotations for a check run</p>
+
+<pre class="ruby"><span class="ruby-identifier">annotations</span> = <span class="ruby-ivar">@client</span>.<span class="ruby-identifier">check_run_annotations</span>(<span class="ruby-string">&quot;octocat/Hello-World&quot;</span>, <span class="ruby-value">51295429</span>)
+<span class="ruby-identifier">annotations</span>.<span class="ruby-identifier">count</span> <span class="ruby-comment"># =&gt; 1</span>
+<span class="ruby-identifier">annotations</span>[<span class="ruby-value">0</span>].<span class="ruby-identifier">path</span> <span class="ruby-comment"># =&gt; &quot;README.md&quot;</span>
+<span class="ruby-identifier">annotations</span>[<span class="ruby-value">0</span>].<span class="ruby-identifier">message</span> <span class="ruby-comment"># =&gt; &quot;Looks good!&quot;</span>
+</pre>
+          
+          
+
+          
+          <div class="method-source-code" id="check_run_annotations-source">
+            <pre><span class="ruby-comment"># File lib/octokit/client/checks.rb, line 109</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">check_run_annotations</span>(<span class="ruby-identifier">repo</span>, <span class="ruby-identifier">id</span>, <span class="ruby-identifier">options</span> = {})
+  <span class="ruby-identifier">get</span> <span class="ruby-node">&quot;#{Repository.path repo}/check-runs/#{id}/annotations&quot;</span>, <span class="ruby-identifier">options</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-check_runs_for_check_suite" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">check_runs_for_check_suite</span><span
+            class="method-args">(repo, id, options = {})</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>List check runs in a check suite</p>
+
+<p>@param repo [Integer, String, Hash, Repository] A GitHub repository @param id [Integer] The ID of the check suite @param options [Hash] A set of optional filters @option options [String] :check_name Returns check runs with the specified <code>name</code> @option options [String] :status Returns check runs with the specified <code>status</code> @option options [String] :filter Filters check runs by their <code>completed_at</code> timestamp @return [Sawyer::Resource] A hash representing a collection of check runs @see <a href="https://developer.github.com/v3/checks/runs/#list-check-runs-in-a-check-suite">developer.github.com/v3/checks/runs/#list-check-runs-in-a-check-suite</a> @example List check runs in a check suite</p>
+
+<pre class="ruby"><span class="ruby-identifier">result</span> = <span class="ruby-ivar">@client</span>.<span class="ruby-identifier">check_runs_for_check_suite</span>(<span class="ruby-string">&quot;octocat/Hello-World&quot;</span>, <span class="ruby-value">50440400</span>, <span class="ruby-value">status:</span> <span class="ruby-string">&quot;in_progress&quot;</span>)
+<span class="ruby-identifier">result</span>.<span class="ruby-identifier">total_count</span> <span class="ruby-comment"># =&gt; 1</span>
+<span class="ruby-identifier">result</span>.<span class="ruby-identifier">check_runs</span>.<span class="ruby-identifier">count</span> <span class="ruby-comment"># =&gt; 1</span>
+<span class="ruby-identifier">result</span>.<span class="ruby-identifier">check_runs</span>[<span class="ruby-value">0</span>].<span class="ruby-identifier">check_suite</span>.<span class="ruby-identifier">id</span> <span class="ruby-comment"># =&gt; 50440400</span>
+<span class="ruby-identifier">result</span>.<span class="ruby-identifier">check_runs</span>[<span class="ruby-value">0</span>].<span class="ruby-identifier">status</span> <span class="ruby-comment"># =&gt; &quot;in_progress&quot;</span>
+</pre>
+          
+          
+
+          
+          <div class="method-source-code" id="check_runs_for_check_suite-source">
+            <pre><span class="ruby-comment"># File lib/octokit/client/checks.rb, line 83</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">check_runs_for_check_suite</span>(<span class="ruby-identifier">repo</span>, <span class="ruby-identifier">id</span>, <span class="ruby-identifier">options</span> = {})
+  <span class="ruby-identifier">get</span> <span class="ruby-node">&quot;#{Repository.path repo}/check-suites/#{id}/check-runs&quot;</span>, <span class="ruby-identifier">options</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+        <div class="aliases">
+          Also aliased as: <a href="Checks.html#method-i-list_check_runs_for_check_suite">list_check_runs_for_check_suite</a>
+        </div>
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-check_runs_for_ref" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">check_runs_for_ref</span><span
+            class="method-args">(repo, ref, options = {})</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>List check runs for a specific ref</p>
+
+<p>@param repo [Integer, String, Hash, Repository] A GitHub repository @param ref [String] A SHA, branch name, or tag name @param options [Hash] A set of optional filters @option options [String] :check_name Returns check runs with the specified <code>name</code> @option options [String] :status Returns check runs with the specified <code>status</code> @option options [String] :filter Filters check runs by their <code>completed_at</code> timestamp @return [Sawyer::Resource] A hash representing a collection of check runs @see <a href="https://developer.github.com/v3/checks/runs/#list-check-runs-for-a-specific-ref">developer.github.com/v3/checks/runs/#list-check-runs-for-a-specific-ref</a> @example List check runs for a specific ref</p>
+
+<pre class="ruby"><span class="ruby-identifier">result</span> = <span class="ruby-ivar">@client</span>.<span class="ruby-identifier">check_runs_for_ref</span>(<span class="ruby-string">&quot;octocat/Hello-World&quot;</span>, <span class="ruby-string">&quot;7638417db6d59f3c431d3e1f261cc637155684cd&quot;</span>, <span class="ruby-value">status:</span> <span class="ruby-string">&quot;in_progress&quot;</span>)
+<span class="ruby-identifier">result</span>.<span class="ruby-identifier">total_count</span> <span class="ruby-comment"># =&gt; 1</span>
+<span class="ruby-identifier">result</span>.<span class="ruby-identifier">check_runs</span>.<span class="ruby-identifier">count</span> <span class="ruby-comment"># =&gt; 1</span>
+<span class="ruby-identifier">result</span>.<span class="ruby-identifier">check_runs</span>[<span class="ruby-value">0</span>].<span class="ruby-identifier">id</span> <span class="ruby-comment"># =&gt; 51295429</span>
+<span class="ruby-identifier">result</span>.<span class="ruby-identifier">check_runs</span>[<span class="ruby-value">0</span>].<span class="ruby-identifier">status</span> <span class="ruby-comment"># =&gt; &quot;in_progress&quot;</span>
+</pre>
+          
+          
+
+          
+          <div class="method-source-code" id="check_runs_for_ref-source">
+            <pre><span class="ruby-comment"># File lib/octokit/client/checks.rb, line 62</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">check_runs_for_ref</span>(<span class="ruby-identifier">repo</span>, <span class="ruby-identifier">ref</span>, <span class="ruby-identifier">options</span> = {})
+  <span class="ruby-identifier">get</span> <span class="ruby-node">&quot;#{Repository.path repo}/commits/#{ref}/check-runs&quot;</span>, <span class="ruby-identifier">options</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+        <div class="aliases">
+          Also aliased as: <a href="Checks.html#method-i-list_check_runs_for_ref">list_check_runs_for_ref</a>
+        </div>
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-check_suite" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">check_suite</span><span
+            class="method-args">(repo, id, options = {})</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Get a single check suite</p>
+
+<p>@param repo [Integer, String, Hash, Repository] A GitHub repository @param id [Integer] The ID of the check suite @return [Sawyer::Resource] A hash representing the check suite @see <a href="https://developer.github.com/v3/checks/suites/#get-a-single-check-suite">developer.github.com/v3/checks/suites/#get-a-single-check-suite</a></p>
+          
+          
+
+          
+          <div class="method-source-code" id="check_suite-source">
+            <pre><span class="ruby-comment"># File lib/octokit/client/checks.rb, line 123</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">check_suite</span>(<span class="ruby-identifier">repo</span>, <span class="ruby-identifier">id</span>, <span class="ruby-identifier">options</span> = {})
+  <span class="ruby-identifier">get</span> <span class="ruby-node">&quot;#{Repository.path repo}/check-suites/#{id}&quot;</span>, <span class="ruby-identifier">options</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-check_suites_for_ref" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">check_suites_for_ref</span><span
+            class="method-args">(repo, ref, options = {})</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>List check suites for a specific ref</p>
+
+<p>@param repo [Integer, String, Hash, Repository] A GitHub repository @param ref [String] A SHA, branch name, or tag name @param options [Hash] A set of optional filters @option options [Integer] :app_id Filters check suites by GitHub App <code>id</code> @option options [String] :check_name Filters checks suites by the <code>name</code> of the check run @return [Sawyer::Resource] A hash representing a collection of check suites @see <a href="https://developer.github.com/v3/checks/suites/#list-check-suites-for-a-specific-ref">developer.github.com/v3/checks/suites/#list-check-suites-for-a-specific-ref</a> @example List check suites for a specific ref</p>
+
+<pre class="ruby"><span class="ruby-identifier">result</span> = <span class="ruby-ivar">@client</span>.<span class="ruby-identifier">check_suites_for_ref</span>(<span class="ruby-string">&quot;octocat/Hello-World&quot;</span>, <span class="ruby-string">&quot;7638417db6d59f3c431d3e1f261cc637155684cd&quot;</span>, <span class="ruby-value">app_id:</span> <span class="ruby-value">76765</span>)
+<span class="ruby-identifier">result</span>.<span class="ruby-identifier">total_count</span> <span class="ruby-comment"># =&gt; 1</span>
+<span class="ruby-identifier">result</span>.<span class="ruby-identifier">check_suites</span>.<span class="ruby-identifier">count</span> <span class="ruby-comment"># =&gt; 1</span>
+<span class="ruby-identifier">result</span>.<span class="ruby-identifier">check_suites</span>[<span class="ruby-value">0</span>].<span class="ruby-identifier">id</span> <span class="ruby-comment"># =&gt; 50440400</span>
+<span class="ruby-identifier">result</span>.<span class="ruby-identifier">check_suites</span>[<span class="ruby-value">0</span>].<span class="ruby-identifier">app</span>.<span class="ruby-identifier">id</span> <span class="ruby-comment"># =&gt; 76765</span>
+</pre>
+          
+          
+
+          
+          <div class="method-source-code" id="check_suites_for_ref-source">
+            <pre><span class="ruby-comment"># File lib/octokit/client/checks.rb, line 142</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">check_suites_for_ref</span>(<span class="ruby-identifier">repo</span>, <span class="ruby-identifier">ref</span>, <span class="ruby-identifier">options</span> = {})
+  <span class="ruby-identifier">get</span> <span class="ruby-node">&quot;#{Repository.path repo}/commits/#{ref}/check-suites&quot;</span>, <span class="ruby-identifier">options</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+        <div class="aliases">
+          Also aliased as: <a href="Checks.html#method-i-list_check_suites_for_ref">list_check_suites_for_ref</a>
+        </div>
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-create_check_run" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">create_check_run</span><span
+            class="method-args">(repo, name, head_sha, options = {})</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Create a check run</p>
+
+<p>@param repo [Integer, String, Hash, Repository] A GitHub repository @param name [String] The name of the check @param head_sha [String] The SHA of the commit to check @return [Sawyer::Resource] A hash representing the new check run @see <a href="https://developer.github.com/v3/checks/runs/#create-a-check-run">developer.github.com/v3/checks/runs/#create-a-check-run</a> @example Create a check run</p>
+
+<pre class="ruby"><span class="ruby-identifier">check_run</span> = <span class="ruby-ivar">@client</span>.<span class="ruby-identifier">create_check_run</span>(<span class="ruby-string">&quot;octocat/Hello-World&quot;</span>, <span class="ruby-string">&quot;my-check&quot;</span>, <span class="ruby-string">&quot;7638417db6d59f3c431d3e1f261cc637155684cd&quot;</span>)
+<span class="ruby-identifier">check_run</span>.<span class="ruby-identifier">name</span> <span class="ruby-comment"># =&gt; &quot;my-check&quot;</span>
+<span class="ruby-identifier">check_run</span>.<span class="ruby-identifier">head_sha</span> <span class="ruby-comment"># =&gt; &quot;7638417db6d59f3c431d3e1f261cc637155684cd&quot;</span>
+<span class="ruby-identifier">check_run</span>.<span class="ruby-identifier">status</span> <span class="ruby-comment"># =&gt; &quot;queued&quot;</span>
+</pre>
+          
+          
+
+          
+          <div class="method-source-code" id="create_check_run-source">
+            <pre><span class="ruby-comment"># File lib/octokit/client/checks.rb, line 25</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">create_check_run</span>(<span class="ruby-identifier">repo</span>, <span class="ruby-identifier">name</span>, <span class="ruby-identifier">head_sha</span>, <span class="ruby-identifier">options</span> = {})
+  <span class="ruby-identifier">options</span>[<span class="ruby-value">:name</span>] = <span class="ruby-identifier">name</span>
+  <span class="ruby-identifier">options</span>[<span class="ruby-value">:head_sha</span>] = <span class="ruby-identifier">head_sha</span>
+
+  <span class="ruby-identifier">post</span> <span class="ruby-node">&quot;#{Repository.path repo}/check-runs&quot;</span>, <span class="ruby-identifier">options</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-create_check_suite" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">create_check_suite</span><span
+            class="method-args">(repo, head_sha, options = {})</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Create a check suite</p>
+
+<p>@param repo [Integer, String, Hash, Repository] A GitHub repository @param head_sha [String] The SHA of the commit to check @return [Sawyer::Resource] A hash representing the new check suite @see <a href="https://developer.github.com/v3/checks/suites/#create-a-check-suite">developer.github.com/v3/checks/suites/#create-a-check-suite</a> @example Create a check suite</p>
+
+<pre class="ruby"><span class="ruby-identifier">check_suite</span> = <span class="ruby-ivar">@client</span>.<span class="ruby-identifier">create_check_suite</span>(<span class="ruby-string">&quot;octocat/Hello-World&quot;</span>, <span class="ruby-string">&quot;7638417db6d59f3c431d3e1f261cc637155684cd&quot;</span>)
+<span class="ruby-identifier">check_suite</span>.<span class="ruby-identifier">head_sha</span> <span class="ruby-comment"># =&gt; &quot;7638417db6d59f3c431d3e1f261cc637155684cd&quot;</span>
+<span class="ruby-identifier">check_suite</span>.<span class="ruby-identifier">status</span> <span class="ruby-comment"># =&gt; &quot;queued&quot;</span>
+</pre>
+          
+          
+
+          
+          <div class="method-source-code" id="create_check_suite-source">
+            <pre><span class="ruby-comment"># File lib/octokit/client/checks.rb, line 173</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">create_check_suite</span>(<span class="ruby-identifier">repo</span>, <span class="ruby-identifier">head_sha</span>, <span class="ruby-identifier">options</span> = {})
+  <span class="ruby-identifier">options</span>[<span class="ruby-value">:head_sha</span>] = <span class="ruby-identifier">head_sha</span>
+
+  <span class="ruby-identifier">post</span> <span class="ruby-node">&quot;#{Repository.path repo}/check-suites&quot;</span>, <span class="ruby-identifier">options</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-list_check_runs_for_check_suite" class="method-detail method-alias">
+        
+        <div class="method-heading">
+          <span class="method-name">list_check_runs_for_check_suite</span><span
+            class="method-args">(repo, id, options = {})</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+        </div>
+
+        
+
+        
+        <div class="aliases">
+          Alias for: <a href="Checks.html#method-i-check_runs_for_check_suite">check_runs_for_check_suite</a>
+        </div>
+        
+      </div>
+
+    
+      <div id="method-i-list_check_runs_for_ref" class="method-detail method-alias">
+        
+        <div class="method-heading">
+          <span class="method-name">list_check_runs_for_ref</span><span
+            class="method-args">(repo, ref, options = {})</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+        </div>
+
+        
+
+        
+        <div class="aliases">
+          Alias for: <a href="Checks.html#method-i-check_runs_for_ref">check_runs_for_ref</a>
+        </div>
+        
+      </div>
+
+    
+      <div id="method-i-list_check_suites_for_ref" class="method-detail method-alias">
+        
+        <div class="method-heading">
+          <span class="method-name">list_check_suites_for_ref</span><span
+            class="method-args">(repo, ref, options = {})</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+        </div>
+
+        
+
+        
+        <div class="aliases">
+          Alias for: <a href="Checks.html#method-i-check_suites_for_ref">check_suites_for_ref</a>
+        </div>
+        
+      </div>
+
+    
+      <div id="method-i-rerequest_check_suite" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">rerequest_check_suite</span><span
+            class="method-args">(repo, id, options = {})</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Rerequest check suite</p>
+
+<p>@param repo [Integer, String, Hash, Repository] A GitHub repository @param id [Integer] The ID of the check suite @return [Boolean] True if successful, raises an error otherwise @see <a href="https://developer.github.com/v3/checks/suites/#rerequest-check-suite">developer.github.com/v3/checks/suites/#rerequest-check-suite</a></p>
+          
+          
+
+          
+          <div class="method-source-code" id="rerequest_check_suite-source">
+            <pre><span class="ruby-comment"># File lib/octokit/client/checks.rb, line 185</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">rerequest_check_suite</span>(<span class="ruby-identifier">repo</span>, <span class="ruby-identifier">id</span>, <span class="ruby-identifier">options</span> = {})
+  <span class="ruby-identifier">post</span> <span class="ruby-node">&quot;#{Repository.path repo}/check-suites/#{id}/rerequest&quot;</span>, <span class="ruby-identifier">options</span>
+  <span class="ruby-keyword">true</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-set_check_suite_preferences" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">set_check_suite_preferences</span><span
+            class="method-args">(repo, options = {})</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Set preferences for check suites on a repository</p>
+
+<p>@param repo [Integer, String, Hash, Repository] A GitHub repository @param options [Hash] Preferences to set @return [Sawyer::Resource] A hash representing the repository&#39;s check suite preferences @see <a href="https://developer.github.com/v3/checks/suites/#set-preferences-for-check-suites-on-a-repository">developer.github.com/v3/checks/suites/#set-preferences-for-check-suites-on-a-repository</a> @example Set preferences for check suites on a repository</p>
+
+<pre class="ruby"><span class="ruby-identifier">result</span> = <span class="ruby-ivar">@client</span>.<span class="ruby-identifier">set_check_suite_preferences</span>(<span class="ruby-string">&quot;octocat/Hello-World&quot;</span>, <span class="ruby-value">auto_trigger_checks:</span> [{ <span class="ruby-value">app_id:</span> <span class="ruby-value">76765</span>, <span class="ruby-value">setting:</span> <span class="ruby-keyword">false</span> }])
+<span class="ruby-identifier">result</span>.<span class="ruby-identifier">preferences</span>.<span class="ruby-identifier">auto_trigger_checks</span>.<span class="ruby-identifier">count</span> <span class="ruby-comment"># =&gt; 1</span>
+<span class="ruby-identifier">result</span>.<span class="ruby-identifier">preferences</span>.<span class="ruby-identifier">auto_trigger_checks</span>[<span class="ruby-value">0</span>].<span class="ruby-identifier">app_id</span> <span class="ruby-comment"># =&gt; 76765</span>
+<span class="ruby-identifier">result</span>.<span class="ruby-identifier">preferences</span>.<span class="ruby-identifier">auto_trigger_checks</span>[<span class="ruby-value">0</span>].<span class="ruby-identifier">setting</span> <span class="ruby-comment"># =&gt; false</span>
+<span class="ruby-identifier">result</span>.<span class="ruby-identifier">repository</span>.<span class="ruby-identifier">full_name</span> <span class="ruby-comment"># =&gt; &quot;octocat/Hello-World&quot;</span>
+</pre>
+          
+          
+
+          
+          <div class="method-source-code" id="set_check_suite_preferences-source">
+            <pre><span class="ruby-comment"># File lib/octokit/client/checks.rb, line 159</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">set_check_suite_preferences</span>(<span class="ruby-identifier">repo</span>, <span class="ruby-identifier">options</span> = {})
+  <span class="ruby-identifier">patch</span> <span class="ruby-node">&quot;#{Repository.path repo}/check-suites/preferences&quot;</span>, <span class="ruby-identifier">options</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-update_check_run" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">update_check_run</span><span
+            class="method-args">(repo, id, options = {})</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Update a check run</p>
+
+<p>@param repo [Integer, String, Hash, Repository] A GitHub repository @param id [Integer] The ID of the check run @return [Sawyer::Resource] A hash representing the updated check run @see <a href="https://developer.github.com/v3/checks/runs/#update-a-check-run">developer.github.com/v3/checks/runs/#update-a-check-run</a> @example Update a check run</p>
+
+<pre class="ruby"><span class="ruby-identifier">check_run</span> = <span class="ruby-ivar">@client</span>.<span class="ruby-identifier">update_check_run</span>(<span class="ruby-string">&quot;octocat/Hello-World&quot;</span>, <span class="ruby-value">51295429</span>, <span class="ruby-value">status:</span> <span class="ruby-string">&quot;in_progress&quot;</span>)
+<span class="ruby-identifier">check_run</span>.<span class="ruby-identifier">id</span> <span class="ruby-comment"># =&gt; 51295429</span>
+<span class="ruby-identifier">check_run</span>.<span class="ruby-identifier">status</span> <span class="ruby-comment"># =&gt; &quot;in_progress&quot;</span>
+</pre>
+          
+          
+
+          
+          <div class="method-source-code" id="update_check_run-source">
+            <pre><span class="ruby-comment"># File lib/octokit/client/checks.rb, line 42</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">update_check_run</span>(<span class="ruby-identifier">repo</span>, <span class="ruby-identifier">id</span>, <span class="ruby-identifier">options</span> = {})
+  <span class="ruby-identifier">patch</span> <span class="ruby-node">&quot;#{Repository.path repo}/check-runs/#{id}&quot;</span>, <span class="ruby-identifier">options</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+    </section>
+  
+  </section>
+
+</main>
+
+
+<footer id="validator-badges" role="contentinfo">
+  <p><a href="https://validator.w3.org/check/referer">Validate</a>
+  <p>Generated by <a href="https://ruby.github.io/rdoc/">RDoc</a> 6.2.1.
+  <p>Based on <a href="http://deveiate.org/projects/Darkfish-RDoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
+</footer>
+

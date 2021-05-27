@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="UTF-8">
+
+<title>class Faraday::Adapter::Excon - faraday-excon-1.1.0 Documentation</title>
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../../";
+  var index_rel_prefix = "../../";
+</script>
+
+<script src="../../js/navigation.js" defer></script>
+<script src="../../js/search.js" defer></script>
+<script src="../../js/search_index.js" defer></script>
+<script src="../../js/searcher.js" defer></script>
+<script src="../../js/darkfish.js" defer></script>
+
+<link href="../../css/fonts.css" rel="stylesheet">
+<link href="../../css/rdoc.css" rel="stylesheet">
+
+
+
+
+<body id="top" role="document" class="class">
+<nav role="navigation">
+  <div id="project-navigation">
+    <div id="home-section" role="region" title="Quick navigation" class="nav-section">
+  <h2>
+    <a href="../../index.html" rel="home">Home</a>
+  </h2>
+
+  <div id="table-of-contents-navigation">
+    <a href="../../table_of_contents.html#pages">Pages</a>
+    <a href="../../table_of_contents.html#classes">Classes</a>
+    <a href="../../table_of_contents.html#methods">Methods</a>
+  </div>
+</div>
+
+    <div id="search-section" role="search" class="project-section initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <div id="search-field-wrapper">
+      <input id="search-field" role="combobox" aria-label="Search"
+             aria-autocomplete="list" aria-controls="search-results"
+             type="text" name="search" placeholder="Search" spellcheck="false"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </div>
+
+    <ul id="search-results" aria-label="Search Results"
+        aria-busy="false" aria-expanded="false"
+        aria-atomic="false" class="initially-hidden"></ul>
+  </form>
+</div>
+
+  </div>
+
+  
+
+  <div id="class-metadata">
+    
+    <div id="parent-class-section" class="nav-section">
+  <h3>Parent</h3>
+
+  
+  <p class="link"><a href="../Adapter.html">Faraday::Adapter</a>
+  
+</div>
+
+    
+    
+    <!-- Method Quickref -->
+<div id="method-list-section" class="nav-section">
+  <h3>Methods</h3>
+
+  <ul class="link-list" role="directory">
+    
+    <li ><a href="#method-i-amend_opts_with_proxy_settings-21">#amend_opts_with_proxy_settings!</a>
+    
+    <li ><a href="#method-i-amend_opts_with_ssl-21">#amend_opts_with_ssl!</a>
+    
+    <li ><a href="#method-i-amend_opts_with_timeouts-21">#amend_opts_with_timeouts!</a>
+    
+    <li ><a href="#method-i-build_connection">#build_connection</a>
+    
+    <li class="calls-super" ><a href="#method-i-call">#call</a>
+    
+    <li ><a href="#method-i-needs_ssl_settings-3F">#needs_ssl_settings?</a>
+    
+    <li ><a href="#method-i-opts_from_env">#opts_from_env</a>
+    
+    <li ><a href="#method-i-proxy_settings_for_opts">#proxy_settings_for_opts</a>
+    
+    <li ><a href="#method-i-read_body">#read_body</a>
+    
+  </ul>
+</div>
+
+  </div>
+</nav>
+
+<main role="main" aria-labelledby="class-Faraday::Adapter::Excon">
+  <h1 id="class-Faraday::Adapter::Excon" class="class">
+    class Faraday::Adapter::Excon
+  </h1>
+
+  <section class="description">
+    
+<p><a href="Excon.html"><code>Excon</code></a> adapter.</p>
+
+  </section>
+
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+    <section class="constants-list">
+      <header>
+        <h3>Constants</h3>
+      </header>
+      <dl>
+      
+        <dt id="OPTS_KEYS">OPTS_KEYS
+        
+        <dd>
+        
+      
+      </dl>
+    </section>
+    
+
+    
+
+    
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section">
+       <header>
+         <h3>Public Instance Methods</h3>
+       </header>
+
+    
+      <div id="method-i-build_connection" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">build_connection</span><span
+            class="method-args">(env)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="build_connection-source">
+            <pre><span class="ruby-comment"># File lib/faraday/adapter/excon.rb, line 9</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">build_connection</span>(<span class="ruby-identifier">env</span>)
+  <span class="ruby-identifier">opts</span> = <span class="ruby-identifier">opts_from_env</span>(<span class="ruby-identifier">env</span>)
+  <span class="ruby-operator">::</span><span class="ruby-constant">Excon</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">env</span>[<span class="ruby-value">:url</span>].<span class="ruby-identifier">to_s</span>, <span class="ruby-identifier">opts</span>.<span class="ruby-identifier">merge</span>(<span class="ruby-ivar">@connection_options</span>))
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-call" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">call</span><span
+            class="method-args">(env)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+            <div class="method-calls-super">
+              Calls superclass method
+              
+            </div>
+          
+
+          
+          <div class="method-source-code" id="call-source">
+            <pre><span class="ruby-comment"># File lib/faraday/adapter/excon.rb, line 14</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">call</span>(<span class="ruby-identifier">env</span>)
+  <span class="ruby-keyword">super</span>
+
+  <span class="ruby-identifier">req_opts</span> = {
+    <span class="ruby-value">method:</span> <span class="ruby-identifier">env</span>[<span class="ruby-value">:method</span>].<span class="ruby-identifier">to_s</span>.<span class="ruby-identifier">upcase</span>,
+    <span class="ruby-value">headers:</span> <span class="ruby-identifier">env</span>[<span class="ruby-value">:request_headers</span>],
+    <span class="ruby-value">body:</span> <span class="ruby-identifier">read_body</span>(<span class="ruby-identifier">env</span>)
+  }
+
+  <span class="ruby-identifier">req</span> = <span class="ruby-identifier">env</span>[<span class="ruby-value">:request</span>]
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">req</span>&amp;.<span class="ruby-identifier">stream_response?</span>
+    <span class="ruby-identifier">total</span> = <span class="ruby-value">0</span>
+    <span class="ruby-identifier">req_opts</span>[<span class="ruby-value">:response_block</span>] = <span class="ruby-identifier">lambda</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">chunk</span>, <span class="ruby-identifier">_remain</span>, <span class="ruby-identifier">_total</span><span class="ruby-operator">|</span>
+      <span class="ruby-identifier">req</span>.<span class="ruby-identifier">on_data</span>.<span class="ruby-identifier">call</span>(<span class="ruby-identifier">chunk</span>, <span class="ruby-identifier">total</span> <span class="ruby-operator">+=</span> <span class="ruby-identifier">chunk</span>.<span class="ruby-identifier">size</span>)
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-identifier">resp</span> = <span class="ruby-identifier">connection</span>(<span class="ruby-identifier">env</span>) { <span class="ruby-operator">|</span><span class="ruby-identifier">http</span><span class="ruby-operator">|</span> <span class="ruby-identifier">http</span>.<span class="ruby-identifier">request</span>(<span class="ruby-identifier">req_opts</span>) }
+  <span class="ruby-identifier">save_response</span>(<span class="ruby-identifier">env</span>, <span class="ruby-identifier">resp</span>.<span class="ruby-identifier">status</span>.<span class="ruby-identifier">to_i</span>, <span class="ruby-identifier">resp</span>.<span class="ruby-identifier">body</span>, <span class="ruby-identifier">resp</span>.<span class="ruby-identifier">headers</span>,
+                <span class="ruby-identifier">resp</span>.<span class="ruby-identifier">reason_phrase</span>)
+
+  <span class="ruby-ivar">@app</span>.<span class="ruby-identifier">call</span>(<span class="ruby-identifier">env</span>)
+<span class="ruby-keyword">rescue</span> <span class="ruby-operator">::</span><span class="ruby-constant">Excon</span><span class="ruby-operator">::</span><span class="ruby-constant">Errors</span><span class="ruby-operator">::</span><span class="ruby-constant">SocketError</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-identifier">e</span>
+  <span class="ruby-identifier">raise</span> <span class="ruby-constant">Faraday</span><span class="ruby-operator">::</span><span class="ruby-constant">TimeoutError</span>, <span class="ruby-identifier">e</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">e</span>.<span class="ruby-identifier">message</span>.<span class="ruby-identifier">match?</span>(<span class="ruby-regexp">/\btimeout\b/</span>)
+
+  <span class="ruby-identifier">raise</span> <span class="ruby-constant">Faraday</span><span class="ruby-operator">::</span><span class="ruby-constant">SSLError</span>, <span class="ruby-identifier">e</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">e</span>.<span class="ruby-identifier">message</span>.<span class="ruby-identifier">match?</span>(<span class="ruby-regexp">/\bcertificate\b/</span>)
+
+  <span class="ruby-identifier">raise</span> <span class="ruby-constant">Faraday</span><span class="ruby-operator">::</span><span class="ruby-constant">ConnectionFailed</span>, <span class="ruby-identifier">e</span>
+<span class="ruby-keyword">rescue</span> <span class="ruby-operator">::</span><span class="ruby-constant">Excon</span><span class="ruby-operator">::</span><span class="ruby-constant">Errors</span><span class="ruby-operator">::</span><span class="ruby-constant">Timeout</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-identifier">e</span>
+  <span class="ruby-identifier">raise</span> <span class="ruby-constant">Faraday</span><span class="ruby-operator">::</span><span class="ruby-constant">TimeoutError</span>, <span class="ruby-identifier">e</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-read_body" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">read_body</span><span
+            class="method-args">(env)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>TODO: support streaming requests</p>
+          
+          
+
+          
+          <div class="method-source-code" id="read_body-source">
+            <pre><span class="ruby-comment"># File lib/faraday/adapter/excon.rb, line 47</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">read_body</span>(<span class="ruby-identifier">env</span>)
+  <span class="ruby-identifier">env</span>[<span class="ruby-value">:body</span>].<span class="ruby-identifier">respond_to?</span>(<span class="ruby-value">:read</span>) <span class="ruby-operator">?</span> <span class="ruby-identifier">env</span>[<span class="ruby-value">:body</span>].<span class="ruby-identifier">read</span> <span class="ruby-operator">:</span> <span class="ruby-identifier">env</span>[<span class="ruby-value">:body</span>]
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+    </section>
+  
+     <section id="private-instance-5Buntitled-5D-method-details" class="method-section">
+       <header>
+         <h3>Private Instance Methods</h3>
+       </header>
+
+    
+      <div id="method-i-amend_opts_with_proxy_settings-21" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">amend_opts_with_proxy_settings!</span><span
+            class="method-args">(opts, req)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="amend_opts_with_proxy_settings-21-source">
+            <pre><span class="ruby-comment"># File lib/faraday/adapter/excon.rb, line 108</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">amend_opts_with_proxy_settings!</span>(<span class="ruby-identifier">opts</span>, <span class="ruby-identifier">req</span>)
+  <span class="ruby-identifier">opts</span>[<span class="ruby-value">:proxy</span>] = <span class="ruby-identifier">proxy_settings_for_opts</span>(<span class="ruby-identifier">req</span>[<span class="ruby-value">:proxy</span>]) <span class="ruby-keyword">if</span> <span class="ruby-identifier">req</span>[<span class="ruby-value">:proxy</span>]
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-amend_opts_with_ssl-21" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">amend_opts_with_ssl!</span><span
+            class="method-args">(opts, ssl)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="amend_opts_with_ssl-21-source">
+            <pre><span class="ruby-comment"># File lib/faraday/adapter/excon.rb, line 81</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">amend_opts_with_ssl!</span>(<span class="ruby-identifier">opts</span>, <span class="ruby-identifier">ssl</span>)
+  <span class="ruby-identifier">opts</span>[<span class="ruby-value">:ssl_verify_peer</span>] = <span class="ruby-operator">!</span><span class="ruby-operator">!</span><span class="ruby-identifier">ssl</span>.<span class="ruby-identifier">fetch</span>(<span class="ruby-value">:verify</span>, <span class="ruby-keyword">true</span>)
+  <span class="ruby-comment"># https://github.com/geemus/excon/issues/106</span>
+  <span class="ruby-comment"># https://github.com/jruby/jruby-ossl/issues/19</span>
+  <span class="ruby-identifier">opts</span>[<span class="ruby-value">:nonblock</span>] = <span class="ruby-keyword">false</span>
+
+  <span class="ruby-constant">OPTS_KEYS</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span>(<span class="ruby-identifier">key_in_opts</span>, <span class="ruby-identifier">key_in_ssl</span>)<span class="ruby-operator">|</span>
+    <span class="ruby-keyword">next</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">ssl</span>[<span class="ruby-identifier">key_in_ssl</span>]
+
+    <span class="ruby-identifier">opts</span>[<span class="ruby-identifier">key_in_opts</span>] = <span class="ruby-identifier">ssl</span>[<span class="ruby-identifier">key_in_ssl</span>]
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-amend_opts_with_timeouts-21" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">amend_opts_with_timeouts!</span><span
+            class="method-args">(opts, req)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="amend_opts_with_timeouts-21-source">
+            <pre><span class="ruby-comment"># File lib/faraday/adapter/excon.rb, line 94</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">amend_opts_with_timeouts!</span>(<span class="ruby-identifier">opts</span>, <span class="ruby-identifier">req</span>)
+  <span class="ruby-keyword">if</span> (<span class="ruby-identifier">sec</span> = <span class="ruby-identifier">request_timeout</span>(<span class="ruby-value">:read</span>, <span class="ruby-identifier">req</span>))
+    <span class="ruby-identifier">opts</span>[<span class="ruby-value">:read_timeout</span>] = <span class="ruby-identifier">sec</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">if</span> (<span class="ruby-identifier">sec</span> = <span class="ruby-identifier">request_timeout</span>(<span class="ruby-value">:write</span>, <span class="ruby-identifier">req</span>))
+    <span class="ruby-identifier">opts</span>[<span class="ruby-value">:write_timeout</span>] = <span class="ruby-identifier">sec</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">return</span> <span class="ruby-keyword">unless</span> (<span class="ruby-identifier">sec</span> = <span class="ruby-identifier">request_timeout</span>(<span class="ruby-value">:open</span>, <span class="ruby-identifier">req</span>))
+
+  <span class="ruby-identifier">opts</span>[<span class="ruby-value">:connect_timeout</span>] = <span class="ruby-identifier">sec</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-needs_ssl_settings-3F" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">needs_ssl_settings?</span><span
+            class="method-args">(env)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="needs_ssl_settings-3F-source">
+            <pre><span class="ruby-comment"># File lib/faraday/adapter/excon.rb, line 65</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">needs_ssl_settings?</span>(<span class="ruby-identifier">env</span>)
+  <span class="ruby-identifier">env</span>[<span class="ruby-value">:url</span>].<span class="ruby-identifier">scheme</span> <span class="ruby-operator">==</span> <span class="ruby-string">&#39;https&#39;</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">env</span>[<span class="ruby-value">:ssl</span>]
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-opts_from_env" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">opts_from_env</span><span
+            class="method-args">(env)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="opts_from_env-source">
+            <pre><span class="ruby-comment"># File lib/faraday/adapter/excon.rb, line 53</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">opts_from_env</span>(<span class="ruby-identifier">env</span>)
+  <span class="ruby-identifier">opts</span> = {}
+  <span class="ruby-identifier">amend_opts_with_ssl!</span>(<span class="ruby-identifier">opts</span>, <span class="ruby-identifier">env</span>[<span class="ruby-value">:ssl</span>]) <span class="ruby-keyword">if</span> <span class="ruby-identifier">needs_ssl_settings?</span>(<span class="ruby-identifier">env</span>)
+
+  <span class="ruby-keyword">if</span> (<span class="ruby-identifier">req</span> = <span class="ruby-identifier">env</span>[<span class="ruby-value">:request</span>])
+    <span class="ruby-identifier">amend_opts_with_timeouts!</span>(<span class="ruby-identifier">opts</span>, <span class="ruby-identifier">req</span>)
+    <span class="ruby-identifier">amend_opts_with_proxy_settings!</span>(<span class="ruby-identifier">opts</span>, <span class="ruby-identifier">req</span>)
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-identifier">opts</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-proxy_settings_for_opts" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">proxy_settings_for_opts</span><span
+            class="method-args">(proxy)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="proxy_settings_for_opts-source">
+            <pre><span class="ruby-comment"># File lib/faraday/adapter/excon.rb, line 112</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">proxy_settings_for_opts</span>(<span class="ruby-identifier">proxy</span>)
+  {
+    <span class="ruby-value">host:</span> <span class="ruby-identifier">proxy</span>[<span class="ruby-value">:uri</span>].<span class="ruby-identifier">host</span>,
+    <span class="ruby-value">hostname:</span> <span class="ruby-identifier">proxy</span>[<span class="ruby-value">:uri</span>].<span class="ruby-identifier">hostname</span>,
+    <span class="ruby-value">port:</span> <span class="ruby-identifier">proxy</span>[<span class="ruby-value">:uri</span>].<span class="ruby-identifier">port</span>,
+    <span class="ruby-value">scheme:</span> <span class="ruby-identifier">proxy</span>[<span class="ruby-value">:uri</span>].<span class="ruby-identifier">scheme</span>,
+    <span class="ruby-value">user:</span> <span class="ruby-identifier">proxy</span>[<span class="ruby-value">:user</span>],
+    <span class="ruby-value">password:</span> <span class="ruby-identifier">proxy</span>[<span class="ruby-value">:password</span>]
+  }
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+    </section>
+  
+  </section>
+
+</main>
+
+
+<footer id="validator-badges" role="contentinfo">
+  <p><a href="https://validator.w3.org/check/referer">Validate</a>
+  <p>Generated by <a href="https://ruby.github.io/rdoc/">RDoc</a> 6.2.1.
+  <p>Based on <a href="http://deveiate.org/projects/Darkfish-RDoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
+</footer>
+

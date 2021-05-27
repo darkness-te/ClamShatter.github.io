@@ -1,0 +1,1417 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="UTF-8">
+
+<title>module Octokit::Client::Users - octokit-4.21.0 Documentation</title>
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../../";
+  var index_rel_prefix = "../../";
+</script>
+
+<script src="../../js/navigation.js" defer></script>
+<script src="../../js/search.js" defer></script>
+<script src="../../js/search_index.js" defer></script>
+<script src="../../js/searcher.js" defer></script>
+<script src="../../js/darkfish.js" defer></script>
+
+<link href="../../css/fonts.css" rel="stylesheet">
+<link href="../../css/rdoc.css" rel="stylesheet">
+
+
+
+
+<body id="top" role="document" class="module">
+<nav role="navigation">
+  <div id="project-navigation">
+    <div id="home-section" role="region" title="Quick navigation" class="nav-section">
+  <h2>
+    <a href="../../index.html" rel="home">Home</a>
+  </h2>
+
+  <div id="table-of-contents-navigation">
+    <a href="../../table_of_contents.html#pages">Pages</a>
+    <a href="../../table_of_contents.html#classes">Classes</a>
+    <a href="../../table_of_contents.html#methods">Methods</a>
+  </div>
+</div>
+
+    <div id="search-section" role="search" class="project-section initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <div id="search-field-wrapper">
+      <input id="search-field" role="combobox" aria-label="Search"
+             aria-autocomplete="list" aria-controls="search-results"
+             type="text" name="search" placeholder="Search" spellcheck="false"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </div>
+
+    <ul id="search-results" aria-label="Search Results"
+        aria-busy="false" aria-expanded="false"
+        aria-atomic="false" class="initially-hidden"></ul>
+  </form>
+</div>
+
+  </div>
+
+  
+
+  <div id="class-metadata">
+    
+    
+    
+    
+    <!-- Method Quickref -->
+<div id="method-list-section" class="nav-section">
+  <h3>Methods</h3>
+
+  <ul class="link-list" role="directory">
+    
+    <li ><a href="#method-i-add_email">#add_email</a>
+    
+    <li ><a href="#method-i-add_key">#add_key</a>
+    
+    <li ><a href="#method-i-all_users">#all_users</a>
+    
+    <li ><a href="#method-i-delete_user_migration_archive">#delete_user_migration_archive</a>
+    
+    <li ><a href="#method-i-emails">#emails</a>
+    
+    <li ><a href="#method-i-exchange_code_for_token">#exchange_code_for_token</a>
+    
+    <li ><a href="#method-i-follow">#follow</a>
+    
+    <li ><a href="#method-i-followers">#followers</a>
+    
+    <li ><a href="#method-i-following">#following</a>
+    
+    <li ><a href="#method-i-follows-3F">#follows?</a>
+    
+    <li ><a href="#method-i-key">#key</a>
+    
+    <li ><a href="#method-i-keys">#keys</a>
+    
+    <li ><a href="#method-i-remove_email">#remove_email</a>
+    
+    <li ><a href="#method-i-remove_key">#remove_key</a>
+    
+    <li ><a href="#method-i-starred">#starred</a>
+    
+    <li ><a href="#method-i-starred-3F">#starred?</a>
+    
+    <li ><a href="#method-i-start_user_migration">#start_user_migration</a>
+    
+    <li ><a href="#method-i-subscriptions">#subscriptions</a>
+    
+    <li ><a href="#method-i-unfollow">#unfollow</a>
+    
+    <li ><a href="#method-i-unlock_user_repository">#unlock_user_repository</a>
+    
+    <li ><a href="#method-i-update_key">#update_key</a>
+    
+    <li ><a href="#method-i-update_user">#update_user</a>
+    
+    <li ><a href="#method-i-user">#user</a>
+    
+    <li ><a href="#method-i-user_keys">#user_keys</a>
+    
+    <li ><a href="#method-i-user_migration_archive_url">#user_migration_archive_url</a>
+    
+    <li ><a href="#method-i-user_migration_repositories">#user_migration_repositories</a>
+    
+    <li ><a href="#method-i-user_migration_status">#user_migration_status</a>
+    
+    <li ><a href="#method-i-user_migrations">#user_migrations</a>
+    
+    <li ><a href="#method-i-validate_credentials">#validate_credentials</a>
+    
+    <li ><a href="#method-i-watched">#watched</a>
+    
+  </ul>
+</div>
+
+  </div>
+</nav>
+
+<main role="main" aria-labelledby="module-Octokit::Client::Users">
+  <h1 id="module-Octokit::Client::Users" class="module">
+    module Octokit::Client::Users
+  </h1>
+
+  <section class="description">
+    
+<p>Methods for the <a href="Users.html"><code>Users</code></a> API</p>
+
+<p>@see <a href="https://developer.github.com/v3/users">developer.github.com/v3/users</a>/</p>
+
+  </section>
+
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+
+    
+
+    
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section">
+       <header>
+         <h3>Public Instance Methods</h3>
+       </header>
+
+    
+      <div id="method-i-add_email" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">add_email</span><span
+            class="method-args">(email, options = {})</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Add email address to user.</p>
+
+<p>Requires authenticated client.</p>
+
+<p>@param email [String] Email address to add to the user. @return [Array&lt;String&gt;] Array of all email addresses of the user. @see <a href="https://developer.github.com/v3/users/emails/#add-email-addresses">developer.github.com/v3/users/emails/#add-email-addresses</a> @example</p>
+
+<pre class="ruby"><span class="ruby-ivar">@client</span>.<span class="ruby-identifier">add_email</span>(<span class="ruby-string">&#39;new_email@user.com&#39;</span>)
+</pre>
+          
+          
+
+          
+          <div class="method-source-code" id="add_email-source">
+            <pre><span class="ruby-comment"># File lib/octokit/client/users.rb, line 312</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">add_email</span>(<span class="ruby-identifier">email</span>, <span class="ruby-identifier">options</span> = {})
+  <span class="ruby-identifier">email</span> = <span class="ruby-constant">Array</span>(<span class="ruby-identifier">email</span>)
+  <span class="ruby-identifier">post</span> <span class="ruby-string">&quot;user/emails&quot;</span>, <span class="ruby-identifier">email</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-add_key" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">add_key</span><span
+            class="method-args">(title, key, options = {})</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Add public key to user account.</p>
+
+<p>Requires authenticated client.</p>
+
+<p>@param title [String] Title to give reference to the public key. @param key [String] Public key. @return [Sawyer::Resource] Hash representing the newly added public key. @see <a href="https://developer.github.com/v3/users/keys/#create-a-public-key">developer.github.com/v3/users/keys/#create-a-public-key</a> @example</p>
+
+<pre class="ruby"><span class="ruby-ivar">@client</span>.<span class="ruby-identifier">add_key</span>(<span class="ruby-string">&#39;Personal projects key&#39;</span>, <span class="ruby-string">&#39;ssh-rsa AAA...&#39;</span>)
+</pre>
+          
+          
+
+          
+          <div class="method-source-code" id="add_key-source">
+            <pre><span class="ruby-comment"># File lib/octokit/client/users.rb, line 255</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">add_key</span>(<span class="ruby-identifier">title</span>, <span class="ruby-identifier">key</span>, <span class="ruby-identifier">options</span> = {})
+  <span class="ruby-identifier">post</span> <span class="ruby-string">&quot;user/keys&quot;</span>, <span class="ruby-identifier">options</span>.<span class="ruby-identifier">merge</span>({<span class="ruby-value">:title</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-identifier">title</span>, <span class="ruby-value">:key</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-identifier">key</span>})
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-all_users" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">all_users</span><span
+            class="method-args">(options = {})</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>List all GitHub users</p>
+
+<p>This provides a list of every user, in the order that they signed up for GitHub.</p>
+
+<p>@param options [Hash] Optional options. @option options [Integer] :since The integer ID of the last <a href="../User.html"><code>User</code></a> that</p>
+
+<pre>you’ve seen.</pre>
+
+<p>@see <a href="https://developer.github.com/v3/users/#get-all-users">developer.github.com/v3/users/#get-all-users</a></p>
+
+<p>@return [Array&lt;Sawyer::Resource&gt;] List of GitHub users.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="all_users-source">
+            <pre><span class="ruby-comment"># File lib/octokit/client/users.rb, line 21</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">all_users</span>(<span class="ruby-identifier">options</span> = {})
+  <span class="ruby-identifier">paginate</span> <span class="ruby-string">&quot;users&quot;</span>, <span class="ruby-identifier">options</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-delete_user_migration_archive" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">delete_user_migration_archive</span><span
+            class="method-args">(id, options = {})</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Deletes a previous migration archive.</p>
+
+<p>Requires authenticated user.</p>
+
+<p>@param id [Integer] ID number of the migration. @see <a href="https://docs.github.com/en/rest/reference/migrations#delete-a-user-migration-archive">docs.github.com/en/rest/reference/migrations#delete-a-user-migration-archive</a></p>
+          
+          
+
+          
+          <div class="method-source-code" id="delete_user_migration_archive-source">
+            <pre><span class="ruby-comment"># File lib/octokit/client/users.rb, line 402</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">delete_user_migration_archive</span>(<span class="ruby-identifier">id</span>, <span class="ruby-identifier">options</span> = {})
+  <span class="ruby-identifier">options</span> = <span class="ruby-identifier">ensure_api_media_type</span>(<span class="ruby-value">:migrations</span>, <span class="ruby-identifier">options</span>)
+  <span class="ruby-identifier">delete</span> <span class="ruby-node">&quot;user/migrations/#{id}/archive&quot;</span>, <span class="ruby-identifier">options</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-emails" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">emails</span><span
+            class="method-args">(options = {})</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>List email addresses for a user.</p>
+
+<p>Requires authenticated client.</p>
+
+<p>@return [Array&lt;String&gt;] Array of email addresses. @see <a href="https://developer.github.com/v3/users/emails/#list-email-addresses-for-a-user">developer.github.com/v3/users/emails/#list-email-addresses-for-a-user</a> @example</p>
+
+<pre class="ruby"><span class="ruby-ivar">@client</span>.<span class="ruby-identifier">emails</span>
+</pre>
+          
+          
+
+          
+          <div class="method-source-code" id="emails-source">
+            <pre><span class="ruby-comment"># File lib/octokit/client/users.rb, line 299</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">emails</span>(<span class="ruby-identifier">options</span> = {})
+  <span class="ruby-identifier">paginate</span> <span class="ruby-string">&quot;user/emails&quot;</span>, <span class="ruby-identifier">options</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-exchange_code_for_token" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">exchange_code_for_token</span><span
+            class="method-args">(code, app_id = client_id, app_secret = client_secret, options = {})</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Retrieve the access_token.</p>
+
+<p>@param code [String] Authorization code generated by GitHub. @param app_id [String] <a href="../Client.html"><code>Client</code></a> Id we received when our application was registered with GitHub. Defaults to client_id. @param app_secret [String] <a href="../Client.html"><code>Client</code></a> Secret we received when our application was registered with GitHub. Defaults to client_secret. @return [Sawyer::Resource] Hash holding the access token. @see <a href="https://developer.github.com/v3/oauth/#web-application-flow">developer.github.com/v3/oauth/#web-application-flow</a> @example</p>
+
+<pre class="ruby"><span class="ruby-constant">Octokit</span>.<span class="ruby-identifier">exchange_code_for_token</span>(<span class="ruby-string">&#39;aaaa&#39;</span>, <span class="ruby-string">&#39;xxxx&#39;</span>, <span class="ruby-string">&#39;yyyy&#39;</span>, {<span class="ruby-value">:accept</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-string">&#39;application/json&#39;</span>})
+</pre>
+          
+          
+
+          
+          <div class="method-source-code" id="exchange_code_for_token-source">
+            <pre><span class="ruby-comment"># File lib/octokit/client/users.rb, line 46</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">exchange_code_for_token</span>(<span class="ruby-identifier">code</span>, <span class="ruby-identifier">app_id</span> = <span class="ruby-identifier">client_id</span>, <span class="ruby-identifier">app_secret</span> = <span class="ruby-identifier">client_secret</span>, <span class="ruby-identifier">options</span> = {})
+  <span class="ruby-identifier">options</span> = <span class="ruby-identifier">options</span>.<span class="ruby-identifier">merge</span>({
+    <span class="ruby-value">:code</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-identifier">code</span>,
+    <span class="ruby-value">:client_id</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-identifier">app_id</span>,
+    <span class="ruby-value">:client_secret</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-identifier">app_secret</span>,
+    <span class="ruby-value">:headers</span> <span class="ruby-operator">=&gt;</span> {
+      <span class="ruby-value">:content_type</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-string">&#39;application/json&#39;</span>,
+      <span class="ruby-value">:accept</span>       <span class="ruby-operator">=&gt;</span> <span class="ruby-string">&#39;application/json&#39;</span>
+    }
+  })
+
+  <span class="ruby-identifier">post</span> <span class="ruby-node">&quot;#{web_endpoint}login/oauth/access_token&quot;</span>, <span class="ruby-identifier">options</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-follow" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">follow</span><span
+            class="method-args">(user, options = {})</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Follow a user.</p>
+
+<p>Requires authenticatied client.</p>
+
+<p>@param user [String] Username of the user to follow. @return [Boolean] True if follow was successful, false otherwise. @see <a href="https://developer.github.com/v3/users/followers/#follow-a-user">developer.github.com/v3/users/followers/#follow-a-user</a> @example</p>
+
+<pre class="ruby"><span class="ruby-ivar">@client</span>.<span class="ruby-identifier">follow</span>(<span class="ruby-string">&#39;holman&#39;</span>)
+</pre>
+          
+          
+
+          
+          <div class="method-source-code" id="follow-source">
+            <pre><span class="ruby-comment"># File lib/octokit/client/users.rb, line 149</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">follow</span>(<span class="ruby-identifier">user</span>, <span class="ruby-identifier">options</span> = {})
+  <span class="ruby-identifier">boolean_from_response</span> <span class="ruby-value">:put</span>, <span class="ruby-node">&quot;user/following/#{user}&quot;</span>, <span class="ruby-identifier">options</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-followers" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">followers</span><span
+            class="method-args">(user=login, options = {})</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Get a user&#39;s followers.</p>
+
+<p>@param user [Integer, String] GitHub user login or id of the user whose</p>
+
+<pre>list of followers you are getting.</pre>
+
+<p>@return [Array&lt;Sawyer::Resource&gt;] Array of hashes representing users</p>
+
+<pre>followers.</pre>
+
+<p>@see <a href="https://developer.github.com/v3/users/followers/#list-followers-of-a-user">developer.github.com/v3/users/followers/#list-followers-of-a-user</a> @example</p>
+
+<pre class="ruby"><span class="ruby-constant">Octokit</span>.<span class="ruby-identifier">followers</span>(<span class="ruby-string">&#39;pengwynn&#39;</span>)
+</pre>
+          
+          
+
+          
+          <div class="method-source-code" id="followers-source">
+            <pre><span class="ruby-comment"># File lib/octokit/client/users.rb, line 99</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">followers</span>(<span class="ruby-identifier">user</span>=<span class="ruby-identifier">login</span>, <span class="ruby-identifier">options</span> = {})
+  <span class="ruby-identifier">paginate</span> <span class="ruby-node">&quot;#{User.path user}/followers&quot;</span>, <span class="ruby-identifier">options</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-following" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">following</span><span
+            class="method-args">(user=login, options = {})</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Get list of users a user is following.</p>
+
+<p>@param user [Intger, String] GitHub user login or id of the user who you</p>
+
+<pre>are getting the list of the people they follow.</pre>
+
+<p>@return [Array&lt;Sawyer::Resource&gt;] Array of hashes representing users a</p>
+
+<pre>user is following.</pre>
+
+<p>@see <a href="https://developer.github.com/v3/users/followers/#list-users-followed-by-another-user">developer.github.com/v3/users/followers/#list-users-followed-by-another-user</a> @example</p>
+
+<pre class="ruby"><span class="ruby-constant">Octokit</span>.<span class="ruby-identifier">following</span>(<span class="ruby-string">&#39;pengwynn&#39;</span>)
+</pre>
+          
+          
+
+          
+          <div class="method-source-code" id="following-source">
+            <pre><span class="ruby-comment"># File lib/octokit/client/users.rb, line 112</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">following</span>(<span class="ruby-identifier">user</span>=<span class="ruby-identifier">login</span>, <span class="ruby-identifier">options</span> = {})
+  <span class="ruby-identifier">paginate</span> <span class="ruby-node">&quot;#{User.path user}/following&quot;</span>, <span class="ruby-identifier">options</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-follows-3F" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">follows?</span><span
+            class="method-args">(*args)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Check if you are following a user. Alternatively, check if a given user is following a target user.</p>
+
+<p>Requries an authenticated client.</p>
+
+<p>@overload follows?(target)</p>
+
+<pre>@param target [String] GitHub login of the user that you want to
+check if you are following.</pre>
+
+<p>@overload follows?(user, target)</p>
+
+<pre>@param user [Integer, String] GitHub user login or id of first user
+@param target [String] GitHub login of the target user</pre>
+
+<p>@return [Boolean] True following target user, false otherwise. @see <a href="https://developer.github.com/v3/users/followers/#check-if-you-are-following-a-user">developer.github.com/v3/users/followers/#check-if-you-are-following-a-user</a> @see <a href="https://developer.github.com/v3/users/followers/#check-if-one-user-follows-another">developer.github.com/v3/users/followers/#check-if-one-user-follows-another</a> @example</p>
+
+<pre class="ruby"><span class="ruby-ivar">@client</span>.<span class="ruby-identifier">follows?</span>(<span class="ruby-string">&#39;pengwynn&#39;</span>)
+</pre>
+
+<p>@example</p>
+
+<pre class="ruby"><span class="ruby-ivar">@client</span>.<span class="ruby-identifier">follows?</span>(<span class="ruby-string">&#39;catsby&#39;</span>, <span class="ruby-string">&#39;pengwynn&#39;</span>)
+</pre>
+          
+          
+
+          
+          <div class="method-source-code" id="follows-3F-source">
+            <pre><span class="ruby-comment"># File lib/octokit/client/users.rb, line 134</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">follows?</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">args</span>)
+  <span class="ruby-identifier">target</span> = <span class="ruby-identifier">args</span>.<span class="ruby-identifier">pop</span>
+  <span class="ruby-identifier">user</span> = <span class="ruby-identifier">args</span>.<span class="ruby-identifier">first</span>
+  <span class="ruby-identifier">boolean_from_response</span> <span class="ruby-value">:get</span>, <span class="ruby-node">&quot;#{User.path user}/following/#{target}&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-key" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">key</span><span
+            class="method-args">(key_id, options = {})</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Get a public key.</p>
+
+<p>Note, when using dot notation to retrieve the values, ruby will return the hash key for the public keys value instead of the actual value, use symbol or key string to retrieve the value. See example.</p>
+
+<p>Requires authenticated client.</p>
+
+<p>@param key_id [Integer] Key to retreive. @return [Sawyer::Resource] Hash representing the key. @see <a href="https://developer.github.com/v3/users/keys/#get-a-single-public-key">developer.github.com/v3/users/keys/#get-a-single-public-key</a> @example</p>
+
+<pre class="ruby"><span class="ruby-ivar">@client</span>.<span class="ruby-identifier">key</span>(<span class="ruby-value">1</span>)
+</pre>
+
+<p>@example Retrieve public key contents</p>
+
+<pre class="ruby"><span class="ruby-identifier">public_key</span> = <span class="ruby-ivar">@client</span>.<span class="ruby-identifier">key</span>(<span class="ruby-value">1</span>)
+<span class="ruby-identifier">public_key</span>.<span class="ruby-identifier">key</span>
+<span class="ruby-comment"># =&gt; Error</span>
+
+<span class="ruby-identifier">public_key</span>[<span class="ruby-value">:key</span>]
+<span class="ruby-comment"># =&gt; &quot;ssh-rsa AAA...&quot;</span>
+
+<span class="ruby-identifier">public_key</span>[<span class="ruby-string">&#39;key&#39;</span>]
+<span class="ruby-comment"># =&gt; &quot;ssh-rsa AAA...&quot;</span>
+</pre>
+          
+          
+
+          
+          <div class="method-source-code" id="key-source">
+            <pre><span class="ruby-comment"># File lib/octokit/client/users.rb, line 217</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">key</span>(<span class="ruby-identifier">key_id</span>, <span class="ruby-identifier">options</span> = {})
+  <span class="ruby-identifier">get</span> <span class="ruby-node">&quot;user/keys/#{key_id}&quot;</span>, <span class="ruby-identifier">options</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-keys" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">keys</span><span
+            class="method-args">(options = {})</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Get list of public keys for user.</p>
+
+<p>Requires authenticated client.</p>
+
+<p>@return [Array&lt;Sawyer::Resource&gt;] Array of hashes representing public keys. @see <a href="https://developer.github.com/v3/users/keys/#list-your-public-keys">developer.github.com/v3/users/keys/#list-your-public-keys</a> @example</p>
+
+<pre class="ruby"><span class="ruby-ivar">@client</span>.<span class="ruby-identifier">keys</span>
+</pre>
+          
+          
+
+          
+          <div class="method-source-code" id="keys-source">
+            <pre><span class="ruby-comment"># File lib/octokit/client/users.rb, line 229</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">keys</span>(<span class="ruby-identifier">options</span> = {})
+  <span class="ruby-identifier">paginate</span> <span class="ruby-string">&quot;user/keys&quot;</span>, <span class="ruby-identifier">options</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-remove_email" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">remove_email</span><span
+            class="method-args">(email)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Remove email from user.</p>
+
+<p>Requires authenticated client.</p>
+
+<p>@param email [String] Email address to remove. @return [Array&lt;String&gt;] Array of all email addresses of the user. @see <a href="https://developer.github.com/v3/users/emails/#delete-email-addresses">developer.github.com/v3/users/emails/#delete-email-addresses</a> @example</p>
+
+<pre class="ruby"><span class="ruby-ivar">@client</span>.<span class="ruby-identifier">remove_email</span>(<span class="ruby-string">&#39;old_email@user.com&#39;</span>)
+</pre>
+          
+          
+
+          
+          <div class="method-source-code" id="remove_email-source">
+            <pre><span class="ruby-comment"># File lib/octokit/client/users.rb, line 326</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">remove_email</span>(<span class="ruby-identifier">email</span>)
+  <span class="ruby-identifier">email</span> = <span class="ruby-constant">Array</span>(<span class="ruby-identifier">email</span>)
+  <span class="ruby-identifier">boolean_from_response</span> <span class="ruby-value">:delete</span>, <span class="ruby-string">&quot;user/emails&quot;</span>, <span class="ruby-identifier">email</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-remove_key" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">remove_key</span><span
+            class="method-args">(id, options = {})</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Remove a public key from user account.</p>
+
+<p>Requires authenticated client.</p>
+
+<p>@param id [String] Id of the public key to remove. @return [Boolean] True if removal was successful, false otherwise. @see <a href="https://developer.github.com/v3/users/keys/#delete-a-public-key">developer.github.com/v3/users/keys/#delete-a-public-key</a> @example</p>
+
+<pre class="ruby"><span class="ruby-ivar">@client</span>.<span class="ruby-identifier">remove_key</span>(<span class="ruby-value">1</span>)
+</pre>
+          
+          
+
+          
+          <div class="method-source-code" id="remove_key-source">
+            <pre><span class="ruby-comment"># File lib/octokit/client/users.rb, line 287</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">remove_key</span>(<span class="ruby-identifier">id</span>, <span class="ruby-identifier">options</span> = {})
+  <span class="ruby-identifier">boolean_from_response</span> <span class="ruby-value">:delete</span>, <span class="ruby-node">&quot;user/keys/#{id}&quot;</span>, <span class="ruby-identifier">options</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-starred" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">starred</span><span
+            class="method-args">(user=login, options = {})</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Get list of repos starred by a user.</p>
+
+<p>@param user [Integer, String] GitHub user login of the user to get the</p>
+
+<pre>list of their starred repositories.</pre>
+
+<p>@param options [Hash] Optional options @option options [String] :sort (created) Sort: <code>created</code> or <code>updated</code>. @option options [String] :direction (desc) Direction: <code>asc</code> or <code>desc</code>. @return [Array&lt;Sawyer::Resource&gt;] Array of hashes representing repositories starred by user. @see <a href="https://developer.github.com/v3/activity/starring/#list-repositories-being-starred">developer.github.com/v3/activity/starring/#list-repositories-being-starred</a> @example</p>
+
+<pre class="ruby"><span class="ruby-constant">Octokit</span>.<span class="ruby-identifier">starred</span>(<span class="ruby-string">&#39;pengwynn&#39;</span>)
+</pre>
+          
+          
+
+          
+          <div class="method-source-code" id="starred-source">
+            <pre><span class="ruby-comment"># File lib/octokit/client/users.rb, line 177</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">starred</span>(<span class="ruby-identifier">user</span>=<span class="ruby-identifier">login</span>, <span class="ruby-identifier">options</span> = {})
+  <span class="ruby-identifier">paginate</span> <span class="ruby-identifier">user_path</span>(<span class="ruby-identifier">user</span>, <span class="ruby-string">&#39;starred&#39;</span>), <span class="ruby-identifier">options</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-starred-3F" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">starred?</span><span
+            class="method-args">(repo, options = {})</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Check if you are starring a repo.</p>
+
+<p>Requires authenticated client.</p>
+
+<p>@param repo [String, Hash, Repository] A GitHub repository @return [Boolean] True if you are following the repo, false otherwise. @see <a href="https://developer.github.com/v3/activity/starring/#check-if-you-are-starring-a-repository">developer.github.com/v3/activity/starring/#check-if-you-are-starring-a-repository</a> @example</p>
+
+<pre class="ruby"><span class="ruby-ivar">@client</span>.<span class="ruby-identifier">starred?</span>(<span class="ruby-string">&#39;pengwynn/octokit&#39;</span>)
+</pre>
+          
+          
+
+          
+          <div class="method-source-code" id="starred-3F-source">
+            <pre><span class="ruby-comment"># File lib/octokit/client/users.rb, line 190</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">starred?</span>(<span class="ruby-identifier">repo</span>, <span class="ruby-identifier">options</span> = {})
+  <span class="ruby-identifier">boolean_from_response</span> <span class="ruby-value">:get</span>, <span class="ruby-node">&quot;user/starred/#{Repository.new(repo)}&quot;</span>, <span class="ruby-identifier">options</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-start_user_migration" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">start_user_migration</span><span
+            class="method-args">(repositories, options = {})</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Initiates the generation of a migration archive.</p>
+
+<p>Requires authenticated user.</p>
+
+<p>@param repositories [Array&lt;String&gt;] :repositories <a href="Repositories.html"><code>Repositories</code></a> for the organization. @option options [Boolean, optional] :lock_repositories Indicates whether repositories should be locked during migration @option options [Boolean, optional] :exclude_attachments Exclude attachments fro the migration data @return [Sawyer::Resource] Hash representing the new migration. @example</p>
+
+<pre class="ruby"><span class="ruby-ivar">@client</span>.<span class="ruby-identifier">start_migration</span>([<span class="ruby-string">&#39;octocat/hello-world&#39;</span>])
+</pre>
+
+<p>@see <a href="https://docs.github.com/en/rest/reference/migrations#start-a-user-migration">docs.github.com/en/rest/reference/migrations#start-a-user-migration</a></p>
+          
+          
+
+          
+          <div class="method-source-code" id="start_user_migration-source">
+            <pre><span class="ruby-comment"># File lib/octokit/client/users.rb, line 354</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">start_user_migration</span>(<span class="ruby-identifier">repositories</span>, <span class="ruby-identifier">options</span> = {})
+  <span class="ruby-identifier">options</span> = <span class="ruby-identifier">ensure_api_media_type</span>(<span class="ruby-value">:migrations</span>, <span class="ruby-identifier">options</span>)
+  <span class="ruby-identifier">options</span>[<span class="ruby-value">:repositories</span>] = <span class="ruby-identifier">repositories</span>
+  <span class="ruby-identifier">post</span> <span class="ruby-string">&quot;user/migrations&quot;</span>, <span class="ruby-identifier">options</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-subscriptions" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">subscriptions</span><span
+            class="method-args">(user=login, options = {})</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>List repositories being watched by a user.</p>
+
+<p>@param user [Integer, String] GitHub user login or id. @return [Array&lt;Sawyer::Resource&gt;] Array of repositories. @see <a href="https://developer.github.com/v3/activity/watching/#list-repositories-being-watched">developer.github.com/v3/activity/watching/#list-repositories-being-watched</a> @example</p>
+
+<pre class="ruby"><span class="ruby-ivar">@client</span>.<span class="ruby-identifier">subscriptions</span>(<span class="ruby-string">&quot;pengwynn&quot;</span>)
+</pre>
+          
+          
+
+          
+          <div class="method-source-code" id="subscriptions-source">
+            <pre><span class="ruby-comment"># File lib/octokit/client/users.rb, line 338</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">subscriptions</span>(<span class="ruby-identifier">user</span>=<span class="ruby-identifier">login</span>, <span class="ruby-identifier">options</span> = {})
+  <span class="ruby-identifier">paginate</span> <span class="ruby-identifier">user_path</span>(<span class="ruby-identifier">user</span>, <span class="ruby-string">&#39;subscriptions&#39;</span>), <span class="ruby-identifier">options</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+        <div class="aliases">
+          Also aliased as: <a href="Users.html#method-i-watched">watched</a>
+        </div>
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-unfollow" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">unfollow</span><span
+            class="method-args">(user, options = {})</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Unfollow a user.</p>
+
+<p>Requires authenticated client.</p>
+
+<p>@param user [String] Username of the user to unfollow. @return [Boolean] True if unfollow was successful, false otherwise. @see <a href="https://developer.github.com/v3/users/followers/#unfollow-a-user">developer.github.com/v3/users/followers/#unfollow-a-user</a> @example</p>
+
+<pre class="ruby"><span class="ruby-ivar">@client</span>.<span class="ruby-identifier">unfollow</span>(<span class="ruby-string">&#39;holman&#39;</span>)
+</pre>
+          
+          
+
+          
+          <div class="method-source-code" id="unfollow-source">
+            <pre><span class="ruby-comment"># File lib/octokit/client/users.rb, line 162</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">unfollow</span>(<span class="ruby-identifier">user</span>, <span class="ruby-identifier">options</span> = {})
+  <span class="ruby-identifier">boolean_from_response</span> <span class="ruby-value">:delete</span>, <span class="ruby-node">&quot;user/following/#{user}&quot;</span>, <span class="ruby-identifier">options</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-unlock_user_repository" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">unlock_user_repository</span><span
+            class="method-args">(id, repo, options = {})</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Unlock a user repository which has been locked by a migration.</p>
+
+<p>Requires authenticated user.</p>
+
+<p>@param id [Integer] ID number of the migration. @param repo [String] Name of the repository. @see <a href="https://docs.github.com/en/rest/reference/migrations#unlock-a-user-repository">docs.github.com/en/rest/reference/migrations#unlock-a-user-repository</a></p>
+          
+          
+
+          
+          <div class="method-source-code" id="unlock_user_repository-source">
+            <pre><span class="ruby-comment"># File lib/octokit/client/users.rb, line 425</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">unlock_user_repository</span>(<span class="ruby-identifier">id</span>, <span class="ruby-identifier">repo</span>, <span class="ruby-identifier">options</span> = {})
+  <span class="ruby-identifier">options</span> = <span class="ruby-identifier">ensure_api_media_type</span>(<span class="ruby-value">:migrations</span>, <span class="ruby-identifier">options</span>)
+  <span class="ruby-identifier">delete</span> <span class="ruby-node">&quot;user/migrations/#{id}/repos/#{repo}/lock&quot;</span>, <span class="ruby-identifier">options</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-update_key" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">update_key</span><span
+            class="method-args">(key_id, options = {})</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Update a public key</p>
+
+<p>Requires authenticated client</p>
+
+<p>@param key_id [Integer] Id of key to update. @param options [Hash] Hash containing attributes to update. @option options [String] :title @option options [String] :key @return [Sawyer::Resource] Hash representing the updated public key.</p>
+
+<p>@deprecated This method is no longer supported in the API @see <a href="https://developer.github.com/v3/users/keys/#update-a-public-key">developer.github.com/v3/users/keys/#update-a-public-key</a> @see <a href="https://developer.github.com/changes/2014-02-24-finer-grained-scopes-for-ssh-keys">developer.github.com/changes/2014-02-24-finer-grained-scopes-for-ssh-keys</a>/ @example</p>
+
+<pre class="ruby"><span class="ruby-ivar">@client</span>.<span class="ruby-identifier">update_key</span>(<span class="ruby-value">1</span>, <span class="ruby-value">:title</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-string">&#39;new title&#39;</span>, <span class="ruby-value">:key</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-string">&quot;ssh-rsa BBB&quot;</span>)
+</pre>
+          
+          
+
+          
+          <div class="method-source-code" id="update_key-source">
+            <pre><span class="ruby-comment"># File lib/octokit/client/users.rb, line 274</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">update_key</span>(<span class="ruby-identifier">key_id</span>, <span class="ruby-identifier">options</span> = {})
+  <span class="ruby-identifier">patch</span> <span class="ruby-node">&quot;user/keys/#{key_id}&quot;</span>, <span class="ruby-identifier">options</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-update_user" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">update_user</span><span
+            class="method-args">(options)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Update the authenticated user</p>
+
+<p>@param options [Hash] A customizable set of options. @option options [String] :name @option options [String] :email Publically visible email address. @option options [String] :blog @option options [String] :company @option options [String] :location @option options [Boolean] :hireable @option options [String] :bio @return [Sawyer::Resource] @see <a href="https://developer.github.com/v3/users/#update-the-authenticated-user">developer.github.com/v3/users/#update-the-authenticated-user</a> @example</p>
+
+<pre class="ruby"><span class="ruby-constant">Octokit</span>.<span class="ruby-identifier">update_user</span>(<span class="ruby-value">:name</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-string">&quot;Erik Michaels-Ober&quot;</span>, <span class="ruby-value">:email</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-string">&quot;sferik@gmail.com&quot;</span>, <span class="ruby-value">:company</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-string">&quot;Code for America&quot;</span>, <span class="ruby-value">:location</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-string">&quot;San Francisco&quot;</span>, <span class="ruby-value">:hireable</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-keyword">false</span>)
+</pre>
+          
+          
+
+          
+          <div class="method-source-code" id="update_user-source">
+            <pre><span class="ruby-comment"># File lib/octokit/client/users.rb, line 86</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">update_user</span>(<span class="ruby-identifier">options</span>)
+  <span class="ruby-identifier">patch</span> <span class="ruby-string">&quot;user&quot;</span>, <span class="ruby-identifier">options</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-user" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">user</span><span
+            class="method-args">(user=nil, options = {})</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Get a single user</p>
+
+<p>@param user [Integer, String] GitHub user login or id. @return [Sawyer::Resource] @see <a href="https://developer.github.com/v3/users/#get-a-single-user">developer.github.com/v3/users/#get-a-single-user</a> @see <a href="https://developer.github.com/v3/users/#get-the-authenticated-user">developer.github.com/v3/users/#get-the-authenticated-user</a> @example</p>
+
+<pre class="ruby"><span class="ruby-constant">Octokit</span>.<span class="ruby-identifier">user</span>(<span class="ruby-string">&quot;sferik&quot;</span>)
+</pre>
+          
+          
+
+          
+          <div class="method-source-code" id="user-source">
+            <pre><span class="ruby-comment"># File lib/octokit/client/users.rb, line 33</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">user</span>(<span class="ruby-identifier">user</span>=<span class="ruby-keyword">nil</span>, <span class="ruby-identifier">options</span> = {})
+  <span class="ruby-identifier">get</span> <span class="ruby-constant">User</span>.<span class="ruby-identifier">path</span>(<span class="ruby-identifier">user</span>), <span class="ruby-identifier">options</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-user_keys" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">user_keys</span><span
+            class="method-args">(user, options = {})</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Get list of public keys for user.</p>
+
+<p>@param user [Integer, String] GitHub user login or id. @return [Array&lt;Sawyer::Resource&gt;] Array of hashes representing public keys. @see <a href="https://developer.github.com/v3/users/keys/#list-public-keys-for-a-user">developer.github.com/v3/users/keys/#list-public-keys-for-a-user</a> @example</p>
+
+<pre class="ruby"><span class="ruby-ivar">@client</span>.<span class="ruby-identifier">user_keys</span>(<span class="ruby-string">&#39;pengwynn&#39;</span>)
+</pre>
+          
+          
+
+          
+          <div class="method-source-code" id="user_keys-source">
+            <pre><span class="ruby-comment"># File lib/octokit/client/users.rb, line 240</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">user_keys</span>(<span class="ruby-identifier">user</span>, <span class="ruby-identifier">options</span> = {})
+  <span class="ruby-comment"># TODO: Roll this into .keys</span>
+  <span class="ruby-identifier">paginate</span> <span class="ruby-node">&quot;#{User.path user}/keys&quot;</span>, <span class="ruby-identifier">options</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-user_migration_archive_url" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">user_migration_archive_url</span><span
+            class="method-args">(id, options = {})</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Fetches the URL to a migration archive.</p>
+
+<p>Requires authenticated user.</p>
+
+<p>@param id [Integer] ID number of the migration. @see <a href="https://docs.github.com/en/rest/reference/migrations#download-a-user-migration-archive">docs.github.com/en/rest/reference/migrations#download-a-user-migration-archive</a></p>
+          
+          
+
+          
+          <div class="method-source-code" id="user_migration_archive_url-source">
+            <pre><span class="ruby-comment"># File lib/octokit/client/users.rb, line 388</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">user_migration_archive_url</span>(<span class="ruby-identifier">id</span>, <span class="ruby-identifier">options</span> = {})
+  <span class="ruby-identifier">options</span> = <span class="ruby-identifier">ensure_api_media_type</span>(<span class="ruby-value">:migrations</span>, <span class="ruby-identifier">options</span>)
+  <span class="ruby-identifier">url</span> = <span class="ruby-node">&quot;user/migrations/#{id}/archive&quot;</span>
+
+  <span class="ruby-identifier">response</span> = <span class="ruby-identifier">client_without_redirects</span>(<span class="ruby-identifier">options</span>).<span class="ruby-identifier">get</span>(<span class="ruby-identifier">url</span>)
+  <span class="ruby-identifier">response</span>.<span class="ruby-identifier">headers</span>[<span class="ruby-string">&#39;location&#39;</span>]
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-user_migration_repositories" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">user_migration_repositories</span><span
+            class="method-args">(id, options = {})</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>List repositories for a user migration.</p>
+
+<p>Requires authenticated user.</p>
+
+<p>@param id [Integer] ID number of the migration. @see <a href="https://docs.github.com/en/rest/reference/migrations#list-repositories-for-a-user-migration">docs.github.com/en/rest/reference/migrations#list-repositories-for-a-user-migration</a></p>
+          
+          
+
+          
+          <div class="method-source-code" id="user_migration_repositories-source">
+            <pre><span class="ruby-comment"># File lib/octokit/client/users.rb, line 413</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">user_migration_repositories</span>(<span class="ruby-identifier">id</span>, <span class="ruby-identifier">options</span> = {})
+  <span class="ruby-identifier">options</span> = <span class="ruby-identifier">ensure_api_media_type</span>(<span class="ruby-value">:migrations</span>, <span class="ruby-identifier">options</span>)
+  <span class="ruby-identifier">get</span> <span class="ruby-node">&quot;user/migrations/#{id}/repositories&quot;</span>, <span class="ruby-identifier">options</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-user_migration_status" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">user_migration_status</span><span
+            class="method-args">(id, options = {})</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Fetches the status of a migration.</p>
+
+<p>Requires authenticated user.</p>
+
+<p>@param id [Integer] ID number of the migration. @see <a href="https://docs.github.com/en/rest/reference/migrations#get-a-user-migration-status">docs.github.com/en/rest/reference/migrations#get-a-user-migration-status</a></p>
+          
+          
+
+          
+          <div class="method-source-code" id="user_migration_status-source">
+            <pre><span class="ruby-comment"># File lib/octokit/client/users.rb, line 377</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">user_migration_status</span>(<span class="ruby-identifier">id</span>, <span class="ruby-identifier">options</span> = {})
+  <span class="ruby-identifier">options</span> = <span class="ruby-identifier">ensure_api_media_type</span>(<span class="ruby-value">:migrations</span>, <span class="ruby-identifier">options</span>)
+  <span class="ruby-identifier">get</span> <span class="ruby-node">&quot;user/migrations/#{id}&quot;</span>, <span class="ruby-identifier">options</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-user_migrations" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">user_migrations</span><span
+            class="method-args">(options = {})</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Lists the most recent migrations.</p>
+
+<p>Requires authenticated user.</p>
+
+<p>@return [Array&lt;Sawyer::Resource&gt;] Array of migration resources. @see <a href="https://docs.github.com/en/rest/reference/migrations#list-user-migrations">docs.github.com/en/rest/reference/migrations#list-user-migrations</a></p>
+          
+          
+
+          
+          <div class="method-source-code" id="user_migrations-source">
+            <pre><span class="ruby-comment"># File lib/octokit/client/users.rb, line 366</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">user_migrations</span>(<span class="ruby-identifier">options</span> = {})
+  <span class="ruby-identifier">options</span> = <span class="ruby-identifier">ensure_api_media_type</span>(<span class="ruby-value">:migrations</span>, <span class="ruby-identifier">options</span>)
+  <span class="ruby-identifier">paginate</span> <span class="ruby-string">&quot;user/migrations&quot;</span>, <span class="ruby-identifier">options</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-validate_credentials" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">validate_credentials</span><span
+            class="method-args">(options = {})</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Validate user username and password</p>
+
+<p>@param options [Hash] <a href="../User.html"><code>User</code></a> credentials @option options [String] :login GitHub login @option options [String] :password GitHub password @return [Boolean] True if credentials are valid</p>
+          
+          
+
+          
+          <div class="method-source-code" id="validate_credentials-source">
+            <pre><span class="ruby-comment"># File lib/octokit/client/users.rb, line 66</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">validate_credentials</span>(<span class="ruby-identifier">options</span> = {})
+  <span class="ruby-operator">!</span><span class="ruby-keyword">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">options</span>).<span class="ruby-identifier">user</span>.<span class="ruby-identifier">nil?</span>
+<span class="ruby-keyword">rescue</span> <span class="ruby-constant">Octokit</span><span class="ruby-operator">::</span><span class="ruby-constant">Unauthorized</span>
+  <span class="ruby-keyword">false</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-watched" class="method-detail method-alias">
+        
+        <div class="method-heading">
+          <span class="method-name">watched</span><span
+            class="method-args">(user=login, options = {})</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+        </div>
+
+        
+
+        
+        <div class="aliases">
+          Alias for: <a href="Users.html#method-i-subscriptions">subscriptions</a>
+        </div>
+        
+      </div>
+
+    
+    </section>
+  
+  </section>
+
+</main>
+
+
+<footer id="validator-badges" role="contentinfo">
+  <p><a href="https://validator.w3.org/check/referer">Validate</a>
+  <p>Generated by <a href="https://ruby.github.io/rdoc/">RDoc</a> 6.2.1.
+  <p>Based on <a href="http://deveiate.org/projects/Darkfish-RDoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
+</footer>
+

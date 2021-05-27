@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="UTF-8">
+
+<title>class GitHubPages::HealthCheck::CAA - github-pages-health-check-1.17.2 Documentation</title>
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../../";
+  var index_rel_prefix = "../../";
+</script>
+
+<script src="../../js/navigation.js" defer></script>
+<script src="../../js/search.js" defer></script>
+<script src="../../js/search_index.js" defer></script>
+<script src="../../js/searcher.js" defer></script>
+<script src="../../js/darkfish.js" defer></script>
+
+<link href="../../css/fonts.css" rel="stylesheet">
+<link href="../../css/rdoc.css" rel="stylesheet">
+
+
+
+
+<body id="top" role="document" class="class">
+<nav role="navigation">
+  <div id="project-navigation">
+    <div id="home-section" role="region" title="Quick navigation" class="nav-section">
+  <h2>
+    <a href="../../index.html" rel="home">Home</a>
+  </h2>
+
+  <div id="table-of-contents-navigation">
+    <a href="../../table_of_contents.html#pages">Pages</a>
+    <a href="../../table_of_contents.html#classes">Classes</a>
+    <a href="../../table_of_contents.html#methods">Methods</a>
+  </div>
+</div>
+
+    <div id="search-section" role="search" class="project-section initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <div id="search-field-wrapper">
+      <input id="search-field" role="combobox" aria-label="Search"
+             aria-autocomplete="list" aria-controls="search-results"
+             type="text" name="search" placeholder="Search" spellcheck="false"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </div>
+
+    <ul id="search-results" aria-label="Search Results"
+        aria-busy="false" aria-expanded="false"
+        aria-atomic="false" class="initially-hidden"></ul>
+  </form>
+</div>
+
+  </div>
+
+  
+
+  <div id="class-metadata">
+    
+    <div id="parent-class-section" class="nav-section">
+  <h3>Parent</h3>
+
+  
+  <p class="link">Object
+  
+</div>
+
+    
+    
+    <!-- Method Quickref -->
+<div id="method-list-section" class="nav-section">
+  <h3>Methods</h3>
+
+  <ul class="link-list" role="directory">
+    
+    <li ><a href="#method-c-new">::new</a>
+    
+    <li ><a href="#method-i-errored-3F">#errored?</a>
+    
+    <li ><a href="#method-i-get_caa_records">#get_caa_records</a>
+    
+    <li ><a href="#method-i-issue_caa_record-3F">#issue_caa_record?</a>
+    
+    <li ><a href="#method-i-lets_encrypt_allowed-3F">#lets_encrypt_allowed?</a>
+    
+    <li ><a href="#method-i-parent_host">#parent_host</a>
+    
+    <li ><a href="#method-i-query">#query</a>
+    
+    <li ><a href="#method-i-records">#records</a>
+    
+    <li ><a href="#method-i-records_present-3F">#records_present?</a>
+    
+    <li ><a href="#method-i-resolver">#resolver</a>
+    
+  </ul>
+</div>
+
+  </div>
+</nav>
+
+<main role="main" aria-labelledby="class-GitHubPages::HealthCheck::CAA">
+  <h1 id="class-GitHubPages::HealthCheck::CAA" class="class">
+    class GitHubPages::HealthCheck::CAA
+  </h1>
+
+  <section class="description">
+    
+  </section>
+
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+
+    
+    <section class="attribute-method-details" class="method-section">
+      <header>
+        <h3>Attributes</h3>
+      </header>
+
+      
+      <div id="attribute-i-error" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">error</span><span
+            class="attribute-access-type">[R]</span>
+        </div>
+
+        <div class="method-description">
+        
+        
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-host" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">host</span><span
+            class="attribute-access-type">[R]</span>
+        </div>
+
+        <div class="method-description">
+        
+        
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-nameservers" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">nameservers</span><span
+            class="attribute-access-type">[R]</span>
+        </div>
+
+        <div class="method-description">
+        
+        
+        
+        </div>
+      </div>
+      
+    </section>
+    
+
+    
+     <section id="public-class-5Buntitled-5D-method-details" class="method-section">
+       <header>
+         <h3>Public Class Methods</h3>
+       </header>
+
+    
+      <div id="method-c-new" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">new</span><span
+            class="method-args">(host:, nameservers: :default)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="new-source">
+            <pre><span class="ruby-comment"># File lib/github-pages-health-check/caa.rb, line 12</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">initialize</span>(<span class="ruby-value">host:</span>, <span class="ruby-value">nameservers:</span> <span class="ruby-value">:default</span>)
+  <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-string">&quot;host cannot be nil&quot;</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">host</span>.<span class="ruby-identifier">nil?</span>
+
+  <span class="ruby-ivar">@host</span> = <span class="ruby-identifier">host</span>
+  <span class="ruby-ivar">@nameservers</span> = <span class="ruby-identifier">nameservers</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+    </section>
+  
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section">
+       <header>
+         <h3>Public Instance Methods</h3>
+       </header>
+
+    
+      <div id="method-i-errored-3F" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">errored?</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="errored-3F-source">
+            <pre><span class="ruby-comment"># File lib/github-pages-health-check/caa.rb, line 19</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">errored?</span>
+  <span class="ruby-identifier">records</span> <span class="ruby-comment"># load the records first</span>
+  <span class="ruby-operator">!</span><span class="ruby-identifier">error</span>.<span class="ruby-identifier">nil?</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-lets_encrypt_allowed-3F" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">lets_encrypt_allowed?</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="lets_encrypt_allowed-3F-source">
+            <pre><span class="ruby-comment"># File lib/github-pages-health-check/caa.rb, line 24</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">lets_encrypt_allowed?</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-keyword">false</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">errored?</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-keyword">true</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">records_present?</span>
+
+  <span class="ruby-identifier">records</span>.<span class="ruby-identifier">any?</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">r</span><span class="ruby-operator">|</span> <span class="ruby-identifier">r</span>.<span class="ruby-identifier">property_value</span> <span class="ruby-operator">==</span> <span class="ruby-string">&quot;letsencrypt.org&quot;</span> }
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-records" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">records</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="records-source">
+            <pre><span class="ruby-comment"># File lib/github-pages-health-check/caa.rb, line 37</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">records</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-ivar">@records</span> <span class="ruby-keyword">if</span> <span class="ruby-keyword">defined?</span>(<span class="ruby-ivar">@records</span>)
+
+  <span class="ruby-ivar">@records</span> = <span class="ruby-identifier">get_caa_records</span>(<span class="ruby-identifier">host</span>)
+  <span class="ruby-ivar">@records</span> = <span class="ruby-identifier">get_caa_records</span>(<span class="ruby-identifier">parent_host</span>) <span class="ruby-keyword">if</span> <span class="ruby-ivar">@records</span>.<span class="ruby-identifier">nil?</span> <span class="ruby-operator">||</span> <span class="ruby-ivar">@records</span>.<span class="ruby-identifier">empty?</span>
+
+  <span class="ruby-ivar">@records</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-records_present-3F" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">records_present?</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="records_present-3F-source">
+            <pre><span class="ruby-comment"># File lib/github-pages-health-check/caa.rb, line 31</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">records_present?</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-keyword">false</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">errored?</span>
+
+  <span class="ruby-identifier">records</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-operator">!</span><span class="ruby-identifier">records</span>.<span class="ruby-identifier">empty?</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+    </section>
+  
+     <section id="private-instance-5Buntitled-5D-method-details" class="method-section">
+       <header>
+         <h3>Private Instance Methods</h3>
+       </header>
+
+    
+      <div id="method-i-get_caa_records" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">get_caa_records</span><span
+            class="method-args">(domain)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="get_caa_records-source">
+            <pre><span class="ruby-comment"># File lib/github-pages-health-check/caa.rb, line 48</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">get_caa_records</span>(<span class="ruby-identifier">domain</span>)
+  <span class="ruby-keyword">return</span> [] <span class="ruby-keyword">if</span> <span class="ruby-identifier">domain</span>.<span class="ruby-identifier">nil?</span>
+
+  <span class="ruby-identifier">query</span>(<span class="ruby-identifier">domain</span>).<span class="ruby-identifier">select</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">r</span><span class="ruby-operator">|</span> <span class="ruby-identifier">issue_caa_record?</span>(<span class="ruby-identifier">r</span>) }
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-issue_caa_record-3F" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">issue_caa_record?</span><span
+            class="method-args">(record)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="issue_caa_record-3F-source">
+            <pre><span class="ruby-comment"># File lib/github-pages-health-check/caa.rb, line 54</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">issue_caa_record?</span>(<span class="ruby-identifier">record</span>)
+  <span class="ruby-identifier">record</span>.<span class="ruby-identifier">type</span> <span class="ruby-operator">==</span> <span class="ruby-constant">Dnsruby</span><span class="ruby-operator">::</span><span class="ruby-constant">Types</span><span class="ruby-operator">::</span><span class="ruby-constant">CAA</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">record</span>.<span class="ruby-identifier">property_tag</span> <span class="ruby-operator">==</span> <span class="ruby-string">&quot;issue&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-parent_host" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">parent_host</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="parent_host-source">
+            <pre><span class="ruby-comment"># File lib/github-pages-health-check/caa.rb, line 69</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">parent_host</span>
+  <span class="ruby-identifier">host</span>.<span class="ruby-identifier">split</span>(<span class="ruby-string">&quot;.&quot;</span>).<span class="ruby-identifier">drop</span>(<span class="ruby-value">1</span>).<span class="ruby-identifier">join</span>(<span class="ruby-string">&quot;.&quot;</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-query" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">query</span><span
+            class="method-args">(domain)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="query-source">
+            <pre><span class="ruby-comment"># File lib/github-pages-health-check/caa.rb, line 58</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">query</span>(<span class="ruby-identifier">domain</span>)
+  <span class="ruby-identifier">resolver</span>(<span class="ruby-identifier">domain</span>).<span class="ruby-identifier">query</span>(<span class="ruby-constant">Dnsruby</span><span class="ruby-operator">::</span><span class="ruby-constant">Types</span><span class="ruby-operator">::</span><span class="ruby-constant">CAA</span>)
+<span class="ruby-keyword">rescue</span> <span class="ruby-constant">Dnsruby</span><span class="ruby-operator">::</span><span class="ruby-constant">ResolvError</span>, <span class="ruby-constant">Dnsruby</span><span class="ruby-operator">::</span><span class="ruby-constant">ResolvTimeout</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-identifier">e</span>
+  <span class="ruby-ivar">@error</span> = <span class="ruby-identifier">e</span>
+  []
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-resolver" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">resolver</span><span
+            class="method-args">(domain)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="resolver-source">
+            <pre><span class="ruby-comment"># File lib/github-pages-health-check/caa.rb, line 65</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">resolver</span>(<span class="ruby-identifier">domain</span>)
+  <span class="ruby-constant">GitHubPages</span><span class="ruby-operator">::</span><span class="ruby-constant">HealthCheck</span><span class="ruby-operator">::</span><span class="ruby-constant">Resolver</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">domain</span>, <span class="ruby-value">:nameservers</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-identifier">nameservers</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+    </section>
+  
+  </section>
+
+</main>
+
+
+<footer id="validator-badges" role="contentinfo">
+  <p><a href="https://validator.w3.org/check/referer">Validate</a>
+  <p>Generated by <a href="https://ruby.github.io/rdoc/">RDoc</a> 6.2.1.
+  <p>Based on <a href="http://deveiate.org/projects/Darkfish-RDoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
+</footer>
+

@@ -1,0 +1,3144 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="UTF-8">
+
+<title>module Octokit::Client::Repositories - octokit-4.21.0 Documentation</title>
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../../";
+  var index_rel_prefix = "../../";
+</script>
+
+<script src="../../js/navigation.js" defer></script>
+<script src="../../js/search.js" defer></script>
+<script src="../../js/search_index.js" defer></script>
+<script src="../../js/searcher.js" defer></script>
+<script src="../../js/darkfish.js" defer></script>
+
+<link href="../../css/fonts.css" rel="stylesheet">
+<link href="../../css/rdoc.css" rel="stylesheet">
+
+
+
+
+<body id="top" role="document" class="module">
+<nav role="navigation">
+  <div id="project-navigation">
+    <div id="home-section" role="region" title="Quick navigation" class="nav-section">
+  <h2>
+    <a href="../../index.html" rel="home">Home</a>
+  </h2>
+
+  <div id="table-of-contents-navigation">
+    <a href="../../table_of_contents.html#pages">Pages</a>
+    <a href="../../table_of_contents.html#classes">Classes</a>
+    <a href="../../table_of_contents.html#methods">Methods</a>
+  </div>
+</div>
+
+    <div id="search-section" role="search" class="project-section initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <div id="search-field-wrapper">
+      <input id="search-field" role="combobox" aria-label="Search"
+             aria-autocomplete="list" aria-controls="search-results"
+             type="text" name="search" placeholder="Search" spellcheck="false"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </div>
+
+    <ul id="search-results" aria-label="Search Results"
+        aria-busy="false" aria-expanded="false"
+        aria-atomic="false" class="initially-hidden"></ul>
+  </form>
+</div>
+
+  </div>
+
+  
+
+  <div id="class-metadata">
+    
+    
+    
+    
+    <!-- Method Quickref -->
+<div id="method-list-section" class="nav-section">
+  <h3>Methods</h3>
+
+  <ul class="link-list" role="directory">
+    
+    <li ><a href="#method-i-add_collab">#add_collab</a>
+    
+    <li ><a href="#method-i-add_collaborator">#add_collaborator</a>
+    
+    <li ><a href="#method-i-add_deploy_key">#add_deploy_key</a>
+    
+    <li ><a href="#method-i-all_repositories">#all_repositories</a>
+    
+    <li ><a href="#method-i-branch">#branch</a>
+    
+    <li ><a href="#method-i-branch_protection">#branch_protection</a>
+    
+    <li ><a href="#method-i-branches">#branches</a>
+    
+    <li ><a href="#method-i-check_assignee">#check_assignee</a>
+    
+    <li ><a href="#method-i-collaborator-3F">#collaborator?</a>
+    
+    <li ><a href="#method-i-collaborators">#collaborators</a>
+    
+    <li ><a href="#method-i-collabs">#collabs</a>
+    
+    <li ><a href="#method-i-contribs">#contribs</a>
+    
+    <li ><a href="#method-i-contributors">#contributors</a>
+    
+    <li ><a href="#method-i-create">#create</a>
+    
+    <li ><a href="#method-i-create_repo">#create_repo</a>
+    
+    <li ><a href="#method-i-create_repo_from_template">#create_repo_from_template</a>
+    
+    <li ><a href="#method-i-create_repository">#create_repository</a>
+    
+    <li ><a href="#method-i-create_repository_from_template">#create_repository_from_template</a>
+    
+    <li ><a href="#method-i-delete_repo">#delete_repo</a>
+    
+    <li ><a href="#method-i-delete_repository">#delete_repository</a>
+    
+    <li ><a href="#method-i-delete_subscription">#delete_subscription</a>
+    
+    <li ><a href="#method-i-deploy_key">#deploy_key</a>
+    
+    <li ><a href="#method-i-deploy_keys">#deploy_keys</a>
+    
+    <li ><a href="#method-i-disable_vulnerability_alerts">#disable_vulnerability_alerts</a>
+    
+    <li ><a href="#method-i-dispatch_event">#dispatch_event</a>
+    
+    <li ><a href="#method-i-edit">#edit</a>
+    
+    <li ><a href="#method-i-edit_deploy_key">#edit_deploy_key</a>
+    
+    <li ><a href="#method-i-edit_repository">#edit_repository</a>
+    
+    <li ><a href="#method-i-enable_vulnerability_alerts">#enable_vulnerability_alerts</a>
+    
+    <li ><a href="#method-i-fork">#fork</a>
+    
+    <li ><a href="#method-i-forks">#forks</a>
+    
+    <li ><a href="#method-i-get_branch">#get_branch</a>
+    
+    <li ><a href="#method-i-languages">#languages</a>
+    
+    <li ><a href="#method-i-list_deploy_keys">#list_deploy_keys</a>
+    
+    <li ><a href="#method-i-list_repos">#list_repos</a>
+    
+    <li ><a href="#method-i-list_repositories">#list_repositories</a>
+    
+    <li ><a href="#method-i-network">#network</a>
+    
+    <li ><a href="#method-i-permission_level">#permission_level</a>
+    
+    <li ><a href="#method-i-protect_branch">#protect_branch</a>
+    
+    <li ><a href="#method-i-remove_collab">#remove_collab</a>
+    
+    <li ><a href="#method-i-remove_collaborator">#remove_collaborator</a>
+    
+    <li ><a href="#method-i-remove_deploy_key">#remove_deploy_key</a>
+    
+    <li ><a href="#method-i-rename_branch">#rename_branch</a>
+    
+    <li ><a href="#method-i-replace_all_topics">#replace_all_topics</a>
+    
+    <li ><a href="#method-i-repo">#repo</a>
+    
+    <li ><a href="#method-i-repo_assignees">#repo_assignees</a>
+    
+    <li ><a href="#method-i-repo_teams">#repo_teams</a>
+    
+    <li ><a href="#method-i-repos">#repos</a>
+    
+    <li ><a href="#method-i-repositories">#repositories</a>
+    
+    <li ><a href="#method-i-repository">#repository</a>
+    
+    <li ><a href="#method-i-repository-3F">#repository?</a>
+    
+    <li ><a href="#method-i-repository_assignees">#repository_assignees</a>
+    
+    <li ><a href="#method-i-repository_teams">#repository_teams</a>
+    
+    <li ><a href="#method-i-set_private">#set_private</a>
+    
+    <li ><a href="#method-i-set_public">#set_public</a>
+    
+    <li ><a href="#method-i-star">#star</a>
+    
+    <li ><a href="#method-i-stargazers">#stargazers</a>
+    
+    <li ><a href="#method-i-subscribers">#subscribers</a>
+    
+    <li ><a href="#method-i-subscription">#subscription</a>
+    
+    <li ><a href="#method-i-tags">#tags</a>
+    
+    <li ><a href="#method-i-teams">#teams</a>
+    
+    <li ><a href="#method-i-topics">#topics</a>
+    
+    <li ><a href="#method-i-transfer_repo">#transfer_repo</a>
+    
+    <li ><a href="#method-i-transfer_repository">#transfer_repository</a>
+    
+    <li ><a href="#method-i-unprotect_branch">#unprotect_branch</a>
+    
+    <li ><a href="#method-i-unstar">#unstar</a>
+    
+    <li ><a href="#method-i-unwatch">#unwatch</a>
+    
+    <li ><a href="#method-i-update">#update</a>
+    
+    <li ><a href="#method-i-update_deploy_key">#update_deploy_key</a>
+    
+    <li ><a href="#method-i-update_repository">#update_repository</a>
+    
+    <li ><a href="#method-i-update_subscription">#update_subscription</a>
+    
+    <li ><a href="#method-i-vulnerability_alerts_enabled-3F">#vulnerability_alerts_enabled?</a>
+    
+    <li ><a href="#method-i-watch">#watch</a>
+    
+    <li ><a href="#method-i-watchers">#watchers</a>
+    
+  </ul>
+</div>
+
+  </div>
+</nav>
+
+<main role="main" aria-labelledby="module-Octokit::Client::Repositories">
+  <h1 id="module-Octokit::Client::Repositories" class="module">
+    module Octokit::Client::Repositories
+  </h1>
+
+  <section class="description">
+    
+<p>Methods for the <a href="Repositories.html"><code>Repositories</code></a> API</p>
+
+<p>@see <a href="https://developer.github.com/v3/repos">developer.github.com/v3/repos</a>/</p>
+
+  </section>
+
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+
+    
+
+    
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section">
+       <header>
+         <h3>Public Instance Methods</h3>
+       </header>
+
+    
+      <div id="method-i-add_collab" class="method-detail method-alias">
+        
+        <div class="method-heading">
+          <span class="method-name">add_collab</span><span
+            class="method-args">(repo, collaborator, options = {})</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+        </div>
+
+        
+
+        
+        <div class="aliases">
+          Alias for: <a href="Repositories.html#method-i-add_collaborator">add_collaborator</a>
+        </div>
+        
+      </div>
+
+    
+      <div id="method-i-add_collaborator" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">add_collaborator</span><span
+            class="method-args">(repo, collaborator, options = {})</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Add collaborator to repo</p>
+
+<p>This can also be used to update the permission of an existing collaborator</p>
+
+<p>Requires authenticated client.</p>
+
+<p>@param repo [Integer, String, Hash, Repository] A GitHub repository. @param collaborator [String] Collaborator GitHub username to add. @option options [String] :permission The permission to grant the collaborator.</p>
+
+<pre>Only valid on organization-owned repositories.
+Can be one of: &lt;tt&gt;pull&lt;/tt&gt;, &lt;tt&gt;push&lt;/tt&gt;, or &lt;tt&gt;admin&lt;/tt&gt;.
+If not specified, defaults to &lt;tt&gt;push&lt;/tt&gt;</pre>
+
+<p>@return [Boolean] True if collaborator added, false otherwise. @see <a href="https://developer.github.com/v3/repos/collaborators/#add-user-as-a-collaborator">developer.github.com/v3/repos/collaborators/#add-user-as-a-collaborator</a> @example</p>
+
+<pre class="ruby"><span class="ruby-ivar">@client</span>.<span class="ruby-identifier">add_collaborator</span>(<span class="ruby-string">&#39;octokit/octokit.rb&#39;</span>, <span class="ruby-string">&#39;holman&#39;</span>)
+</pre>
+
+<p>@example</p>
+
+<pre class="ruby"><span class="ruby-ivar">@client</span>.<span class="ruby-identifier">add_collab</span>(<span class="ruby-string">&#39;octokit/octokit.rb&#39;</span>, <span class="ruby-string">&#39;holman&#39;</span>)
+</pre>
+
+<p>@example Add a collaborator with admin permissions</p>
+
+<pre class="ruby"><span class="ruby-ivar">@client</span>.<span class="ruby-identifier">add_collaborator</span>(<span class="ruby-string">&#39;octokit/octokit.rb&#39;</span>, <span class="ruby-string">&#39;holman&#39;</span>, <span class="ruby-value">permission:</span> <span class="ruby-string">&#39;admin&#39;</span>)
+</pre>
+          
+          
+
+          
+          <div class="method-source-code" id="add_collaborator-source">
+            <pre><span class="ruby-comment"># File lib/octokit/client/repositories.rb, line 355</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">add_collaborator</span>(<span class="ruby-identifier">repo</span>, <span class="ruby-identifier">collaborator</span>, <span class="ruby-identifier">options</span> = {})
+  <span class="ruby-identifier">boolean_from_response</span> <span class="ruby-value">:put</span>, <span class="ruby-node">&quot;#{Repository.path repo}/collaborators/#{collaborator}&quot;</span>, <span class="ruby-identifier">options</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+        <div class="aliases">
+          Also aliased as: <a href="Repositories.html#method-i-add_collab">add_collab</a>
+        </div>
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-add_deploy_key" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">add_deploy_key</span><span
+            class="method-args">(repo, title, key, options = {})</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Add deploy key to a repo</p>
+
+<p>Requires authenticated client.</p>
+
+<p>@param repo [Integer, String, Hash, Repository] A GitHub repository. @param title [String] Title reference for the deploy key. @param key [String] Public key. @return [Sawyer::Resource] Hash representing newly added key. @see <a href="https://developer.github.com/v3/repos/keys/#add-a-new-deploy-key">developer.github.com/v3/repos/keys/#add-a-new-deploy-key</a> @example</p>
+
+<pre class="ruby"><span class="ruby-ivar">@client</span>.<span class="ruby-identifier">add_deploy_key</span>(<span class="ruby-string">&#39;octokit/octokit.rb&#39;</span>, <span class="ruby-string">&#39;Staging server&#39;</span>, <span class="ruby-string">&#39;ssh-rsa AAA...&#39;</span>)
+</pre>
+          
+          
+
+          
+          <div class="method-source-code" id="add_deploy_key-source">
+            <pre><span class="ruby-comment"># File lib/octokit/client/repositories.rb, line 276</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">add_deploy_key</span>(<span class="ruby-identifier">repo</span>, <span class="ruby-identifier">title</span>, <span class="ruby-identifier">key</span>, <span class="ruby-identifier">options</span> = {})
+  <span class="ruby-identifier">post</span> <span class="ruby-node">&quot;#{Repository.path repo}/keys&quot;</span>, <span class="ruby-identifier">options</span>.<span class="ruby-identifier">merge</span>(<span class="ruby-value">:title</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-identifier">title</span>, <span class="ruby-value">:key</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-identifier">key</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-all_repositories" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">all_repositories</span><span
+            class="method-args">(options = {})</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>List all repositories</p>
+
+<p>This provides a dump of every repository, in the order that they were created.</p>
+
+<p>@see <a href="https://developer.github.com/v3/repos/#list-all-public-repositories">developer.github.com/v3/repos/#list-all-public-repositories</a></p>
+
+<p>@param options [Hash] Optional options @option options [Integer] :since The integer ID of the last <a href="../Repository.html"><code>Repository</code></a></p>
+
+<pre>that you’ve seen.</pre>
+
+<p>@return [Array&lt;Sawyer::Resource&gt;] List of repositories.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="all_repositories-source">
+            <pre><span class="ruby-comment"># File lib/octokit/client/repositories.rb, line 92</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">all_repositories</span>(<span class="ruby-identifier">options</span> = {})
+  <span class="ruby-identifier">paginate</span> <span class="ruby-string">&#39;repositories&#39;</span>, <span class="ruby-identifier">options</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-branch" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">branch</span><span
+            class="method-args">(repo, branch, options = {})</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Get a single branch from a repository</p>
+
+<p>@param repo [Integer, String, Hash, Repository] A GitHub repository. @param branch [String] Branch name @return [Sawyer::Resource] The branch requested, if it exists @see <a href="https://developer.github.com/v3/repos/#get-branch">developer.github.com/v3/repos/#get-branch</a> @example Get branch &#39;master` from octokit/octokit.rb</p>
+
+<pre class="ruby"><span class="ruby-constant">Octokit</span>.<span class="ruby-identifier">branch</span>(<span class="ruby-string">&quot;octokit/octokit.rb&quot;</span>, <span class="ruby-string">&quot;master&quot;</span>)
+</pre>
+          
+          
+
+          
+          <div class="method-source-code" id="branch-source">
+            <pre><span class="ruby-comment"># File lib/octokit/client/repositories.rb, line 578</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">branch</span>(<span class="ruby-identifier">repo</span>, <span class="ruby-identifier">branch</span>, <span class="ruby-identifier">options</span> = {})
+  <span class="ruby-identifier">get</span> <span class="ruby-node">&quot;#{Repository.path repo}/branches/#{branch}&quot;</span>, <span class="ruby-identifier">options</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+        <div class="aliases">
+          Also aliased as: <a href="Repositories.html#method-i-get_branch">get_branch</a>
+        </div>
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-branch_protection" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">branch_protection</span><span
+            class="method-args">(repo, branch, options = {})</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Get branch protection summary</p>
+
+<p>@param repo [Integer, String, Hash, Repository] A GitHub repository. @param branch [String] Branch name @return [Sawyer::Resource, nil] Branch protection summary or nil if the branch</p>
+
+<pre>is not protected</pre>
+
+<p>@see <a href="https://developer.github.com/v3/repos/branches/#get-branch-protection">developer.github.com/v3/repos/branches/#get-branch-protection</a> @example</p>
+
+<pre class="ruby"><span class="ruby-ivar">@client</span>.<span class="ruby-identifier">branch_protection</span>(<span class="ruby-string">&#39;octokit/octokit.rb&#39;</span>, <span class="ruby-string">&#39;master&#39;</span>)
+</pre>
+          
+          
+
+          
+          <div class="method-source-code" id="branch_protection-source">
+            <pre><span class="ruby-comment"># File lib/octokit/client/repositories.rb, line 619</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">branch_protection</span>(<span class="ruby-identifier">repo</span>, <span class="ruby-identifier">branch</span>, <span class="ruby-identifier">options</span> = {})
+  <span class="ruby-identifier">opts</span> = <span class="ruby-identifier">ensure_api_media_type</span>(<span class="ruby-value">:branch_protection</span>, <span class="ruby-identifier">options</span>)
+  <span class="ruby-keyword">begin</span>
+    <span class="ruby-identifier">get</span> <span class="ruby-node">&quot;#{Repository.path repo}/branches/#{branch}/protection&quot;</span>, <span class="ruby-identifier">opts</span>
+  <span class="ruby-keyword">rescue</span> <span class="ruby-constant">Octokit</span><span class="ruby-operator">::</span><span class="ruby-constant">BranchNotProtected</span>
+    <span class="ruby-keyword">nil</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-branches" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">branches</span><span
+            class="method-args">(repo, options = {})</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>List branches</p>
+
+<p>Requires authenticated client for private repos.</p>
+
+<p>@param repo [Integer, String, Hash, Repository] A GitHub repository. @return [Array&lt;Sawyer::Resource&gt;] Array of hashes representing branches. @see <a href="https://developer.github.com/v3/repos/#list-branches">developer.github.com/v3/repos/#list-branches</a> @example</p>
+
+<pre class="ruby"><span class="ruby-constant">Octokit</span>.<span class="ruby-identifier">branches</span>(<span class="ruby-string">&#39;octokit/octokit.rb&#39;</span>)
+</pre>
+
+<p>@example</p>
+
+<pre class="ruby"><span class="ruby-ivar">@client</span>.<span class="ruby-identifier">branches</span>(<span class="ruby-string">&#39;octokit/octokit.rb&#39;</span>)
+</pre>
+          
+          
+
+          
+          <div class="method-source-code" id="branches-source">
+            <pre><span class="ruby-comment"># File lib/octokit/client/repositories.rb, line 566</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">branches</span>(<span class="ruby-identifier">repo</span>, <span class="ruby-identifier">options</span> = {})
+  <span class="ruby-identifier">paginate</span> <span class="ruby-node">&quot;#{Repository.path repo}/branches&quot;</span>, <span class="ruby-identifier">options</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-check_assignee" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">check_assignee</span><span
+            class="method-args">(repo, assignee, options = {})</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Check to see if a particular user is an assignee for a repository.</p>
+
+<p>@param repo [Integer, String, Hash, Repository] A GitHub repository. @param assignee [String] <a href="../User.html"><code>User</code></a> login to check @return [Boolean] True if assignable on project, false otherwise. @see <a href="https://developer.github.com/v3/issues/assignees/#check-assignee">developer.github.com/v3/issues/assignees/#check-assignee</a> @example</p>
+
+<pre class="ruby"><span class="ruby-constant">Octokit</span>.<span class="ruby-identifier">check_assignee</span>(<span class="ruby-string">&#39;octokit/octokit.rb&#39;</span>, <span class="ruby-string">&#39;andrew&#39;</span>)
+</pre>
+          
+          
+
+          
+          <div class="method-source-code" id="check_assignee-source">
+            <pre><span class="ruby-comment"># File lib/octokit/client/repositories.rb, line 687</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">check_assignee</span>(<span class="ruby-identifier">repo</span>, <span class="ruby-identifier">assignee</span>, <span class="ruby-identifier">options</span> = {})
+  <span class="ruby-identifier">boolean_from_response</span> <span class="ruby-value">:get</span>, <span class="ruby-node">&quot;#{Repository.path repo}/assignees/#{assignee}&quot;</span>, <span class="ruby-identifier">options</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-collaborator-3F" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">collaborator?</span><span
+            class="method-args">(repo, collaborator, options={})</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p><a href="Checks.html"><code>Checks</code></a> if a user is a collaborator for a repo.</p>
+
+<p>Requires authenticated client.</p>
+
+<p>@param repo [Integer, String, Hash, Repository] A GitHub repository. @param collaborator [String] Collaborator GitHub username to check. @return [Boolean] True if user is a collaborator, false otherwise. @see <a href="https://developer.github.com/v3/repos/collaborators/#check-if-a-user-is-a-collaborator">developer.github.com/v3/repos/collaborators/#check-if-a-user-is-a-collaborator</a> @example</p>
+
+<pre class="ruby"><span class="ruby-ivar">@client</span>.<span class="ruby-identifier">collaborator?</span>(<span class="ruby-string">&#39;octokit/octokit.rb&#39;</span>, <span class="ruby-string">&#39;holman&#39;</span>)
+</pre>
+          
+          
+
+          
+          <div class="method-source-code" id="collaborator-3F-source">
+            <pre><span class="ruby-comment"># File lib/octokit/client/repositories.rb, line 387</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">collaborator?</span>(<span class="ruby-identifier">repo</span>, <span class="ruby-identifier">collaborator</span>, <span class="ruby-identifier">options</span>={})
+  <span class="ruby-identifier">boolean_from_response</span> <span class="ruby-value">:get</span>, <span class="ruby-node">&quot;#{Repository.path repo}/collaborators/#{collaborator}&quot;</span>, <span class="ruby-identifier">options</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-collaborators" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">collaborators</span><span
+            class="method-args">(repo, options = {})</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>List collaborators</p>
+
+<p>Requires authenticated client for private repos.</p>
+
+<p>@param repo [Integer, String, Hash, Repository] A GitHub repository. @option options [String] :affiliation Filters the return array by affiliation.</p>
+
+<pre>Can be one of: &lt;tt&gt;outside&lt;/tt&gt;, &lt;tt&gt;direct&lt;/tt&gt;, or &lt;tt&gt;all&lt;/tt&gt;.
+If not specified, defaults to &lt;tt&gt;all&lt;/tt&gt;</pre>
+
+<p>@return [Array&lt;Sawyer::Resource&gt;] Array of hashes representing collaborating users. @see <a href="https://developer.github.com/v3/repos/collaborators/#list-collaborators">developer.github.com/v3/repos/collaborators/#list-collaborators</a> @example</p>
+
+<pre class="ruby"><span class="ruby-constant">Octokit</span>.<span class="ruby-identifier">collaborators</span>(<span class="ruby-string">&#39;octokit/octokit.rb&#39;</span>)
+</pre>
+
+<p>@example</p>
+
+<pre class="ruby"><span class="ruby-constant">Octokit</span>.<span class="ruby-identifier">collabs</span>(<span class="ruby-string">&#39;octokit/octokit.rb&#39;</span>)
+</pre>
+
+<p>@example</p>
+
+<pre class="ruby"><span class="ruby-ivar">@client</span>.<span class="ruby-identifier">collabs</span>(<span class="ruby-string">&#39;octokit/octokit.rb&#39;</span>)
+</pre>
+          
+          
+
+          
+          <div class="method-source-code" id="collaborators-source">
+            <pre><span class="ruby-comment"># File lib/octokit/client/repositories.rb, line 330</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">collaborators</span>(<span class="ruby-identifier">repo</span>, <span class="ruby-identifier">options</span> = {})
+  <span class="ruby-identifier">paginate</span> <span class="ruby-node">&quot;#{Repository.path repo}/collaborators&quot;</span>, <span class="ruby-identifier">options</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+        <div class="aliases">
+          Also aliased as: <a href="Repositories.html#method-i-collabs">collabs</a>
+        </div>
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-collabs" class="method-detail method-alias">
+        
+        <div class="method-heading">
+          <span class="method-name">collabs</span><span
+            class="method-args">(repo, options = {})</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+        </div>
+
+        
+
+        
+        <div class="aliases">
+          Alias for: <a href="Repositories.html#method-i-collaborators">collaborators</a>
+        </div>
+        
+      </div>
+
+    
+      <div id="method-i-contribs" class="method-detail method-alias">
+        
+        <div class="method-heading">
+          <span class="method-name">contribs</span><span
+            class="method-args">(repo, anon = nil, options = {})</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+        </div>
+
+        
+
+        
+        <div class="aliases">
+          Alias for: <a href="Repositories.html#method-i-contributors">contributors</a>
+        </div>
+        
+      </div>
+
+    
+      <div id="method-i-contributors" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">contributors</span><span
+            class="method-args">(repo, anon = nil, options = {})</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>List contributors to a repo</p>
+
+<p>Requires authenticated client for private repos.</p>
+
+<p>@param repo [Integer, String, Hash, Repository] A GitHub repository. @param anon [Boolean] Set true to include anonymous contributors. @return [Array&lt;Sawyer::Resource&gt;] Array of hashes representing users. @see <a href="https://developer.github.com/v3/repos/#list-contributors">developer.github.com/v3/repos/#list-contributors</a> @example</p>
+
+<pre class="ruby"><span class="ruby-constant">Octokit</span>.<span class="ruby-identifier">contributors</span>(<span class="ruby-string">&#39;octokit/octokit.rb&#39;</span>, <span class="ruby-keyword">true</span>)
+</pre>
+
+<p>@example</p>
+
+<pre class="ruby"><span class="ruby-constant">Octokit</span>.<span class="ruby-identifier">contribs</span>(<span class="ruby-string">&#39;octokit/octokit.rb&#39;</span>)
+</pre>
+
+<p>@example</p>
+
+<pre class="ruby"><span class="ruby-ivar">@client</span>.<span class="ruby-identifier">contribs</span>(<span class="ruby-string">&#39;octokit/octokit.rb&#39;</span>)
+</pre>
+          
+          
+
+          
+          <div class="method-source-code" id="contributors-source">
+            <pre><span class="ruby-comment"># File lib/octokit/client/repositories.rb, line 469</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">contributors</span>(<span class="ruby-identifier">repo</span>, <span class="ruby-identifier">anon</span> = <span class="ruby-keyword">nil</span>, <span class="ruby-identifier">options</span> = {})
+  <span class="ruby-identifier">options</span>[<span class="ruby-value">:anon</span>] = <span class="ruby-value">1</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">anon</span>.<span class="ruby-identifier">to_s</span>[<span class="ruby-regexp">/1|true/</span>]
+  <span class="ruby-identifier">paginate</span> <span class="ruby-node">&quot;#{Repository.path repo}/contributors&quot;</span>, <span class="ruby-identifier">options</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+        <div class="aliases">
+          Also aliased as: <a href="Repositories.html#method-i-contribs">contribs</a>
+        </div>
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-create" class="method-detail method-alias">
+        
+        <div class="method-heading">
+          <span class="method-name">create</span><span
+            class="method-args">(name, options = {})</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+        </div>
+
+        
+
+        
+        <div class="aliases">
+          Alias for: <a href="Repositories.html#method-i-create_repository">create_repository</a>
+        </div>
+        
+      </div>
+
+    
+      <div id="method-i-create_repo" class="method-detail method-alias">
+        
+        <div class="method-heading">
+          <span class="method-name">create_repo</span><span
+            class="method-args">(name, options = {})</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+        </div>
+
+        
+
+        
+        <div class="aliases">
+          Alias for: <a href="Repositories.html#method-i-create_repository">create_repository</a>
+        </div>
+        
+      </div>
+
+    
+      <div id="method-i-create_repo_from_template" class="method-detail method-alias">
+        
+        <div class="method-heading">
+          <span class="method-name">create_repo_from_template</span><span
+            class="method-args">(repo, name, options = {})</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+        </div>
+
+        
+
+        
+        <div class="aliases">
+          Alias for: <a href="Repositories.html#method-i-create_repository_from_template">create_repository_from_template</a>
+        </div>
+        
+      </div>
+
+    
+      <div id="method-i-create_repository" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">create_repository</span><span
+            class="method-args">(name, options = {})</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Create a repository for a user or organization</p>
+
+<p>@param name [String] Name of the new repo @option options [String] :description Description of the repo @option options [String] :homepage Home page of the repo @option options [String] :private `true` makes the repository private, and `false` makes it public. @option options [String] :has_issues `true` enables issues for this repo, `false` disables issues. @option options [String] :has_wiki `true` enables wiki for this repo, `false` disables wiki. @option options [Boolean] :is_template `true` makes this repo available as a template repository, `false` to prevent it. @option options [String] :has_downloads `true` enables downloads for this repo, `false` disables downloads. @option options [String] :organization Short name for the org under which to create the repo. @option options [Integer] :team_id The id of the team that will be granted access to this repository. This is only valid when creating a repo in an organization. @option options [Boolean] :auto_init `true` to create an initial commit with empty README. <a href="../Default.html"><code>Default</code></a> is `false`. @option options [String] :gitignore_template Desired language or platform .gitignore template to apply. Ignored if auto_init parameter is not provided. @return [Sawyer::Resource] <a href="../Repository.html"><code>Repository</code></a> info for the new repository @see <a href="https://developer.github.com/v3/repos/#create">developer.github.com/v3/repos/#create</a></p>
+          
+          
+
+          
+          <div class="method-source-code" id="create_repository-source">
+            <pre><span class="ruby-comment"># File lib/octokit/client/repositories.rb, line 159</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">create_repository</span>(<span class="ruby-identifier">name</span>, <span class="ruby-identifier">options</span> = {})
+  <span class="ruby-identifier">opts</span> = <span class="ruby-identifier">options</span>.<span class="ruby-identifier">dup</span>
+  <span class="ruby-identifier">organization</span> = <span class="ruby-identifier">opts</span>.<span class="ruby-identifier">delete</span> <span class="ruby-value">:organization</span>
+  <span class="ruby-identifier">opts</span>.<span class="ruby-identifier">merge!</span> <span class="ruby-value">:name</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-identifier">name</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">opts</span>.<span class="ruby-identifier">include?</span> <span class="ruby-value">:is_template</span>
+    <span class="ruby-identifier">opts</span> = <span class="ruby-identifier">ensure_api_media_type</span>(<span class="ruby-value">:template_repositories</span>, <span class="ruby-identifier">opts</span>)
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">organization</span>.<span class="ruby-identifier">nil?</span>
+    <span class="ruby-identifier">post</span> <span class="ruby-string">&#39;user/repos&#39;</span>, <span class="ruby-identifier">opts</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">post</span> <span class="ruby-node">&quot;#{Organization.path organization}/repos&quot;</span>, <span class="ruby-identifier">opts</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+        <div class="aliases">
+          Also aliased as: <a href="Repositories.html#method-i-create_repo">create_repo</a>, <a href="Repositories.html#method-i-create">create</a>
+        </div>
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-create_repository_from_template" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">create_repository_from_template</span><span
+            class="method-args">(repo, name, options = {})</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Create a repository for a user or organization generated from a template repository</p>
+
+<p>@param repo [Integer, String, Hash, Repository] A GitHub template repository @param name [String] Name of the new repo @option options [String] :owner <a href="../Organization.html"><code>Organization</code></a> or user who the new repository will belong to. @option options [String] :description Description of the repo @option options [String] :private `true` makes the repository private, and `false` makes it public. @option options [Boolean] :include_all_branches `true` copies all branches from the template repository, `false` (default) makes it only copy the master branch. @return [Sawyer::Resource] <a href="../Repository.html"><code>Repository</code></a> info for the new repository</p>
+          
+          
+
+          
+          <div class="method-source-code" id="create_repository_from_template-source">
+            <pre><span class="ruby-comment"># File lib/octokit/client/repositories.rb, line 212</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">create_repository_from_template</span>(<span class="ruby-identifier">repo</span>, <span class="ruby-identifier">name</span>, <span class="ruby-identifier">options</span> = {})
+  <span class="ruby-identifier">options</span>.<span class="ruby-identifier">merge!</span> <span class="ruby-value">:name</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-identifier">name</span>
+  <span class="ruby-identifier">options</span> = <span class="ruby-identifier">ensure_api_media_type</span>(<span class="ruby-value">:template_repositories</span>, <span class="ruby-identifier">options</span>)
+  <span class="ruby-identifier">post</span> <span class="ruby-node">&quot;#{Repository.path repo}/generate&quot;</span>, <span class="ruby-identifier">options</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+        <div class="aliases">
+          Also aliased as: <a href="Repositories.html#method-i-create_repo_from_template">create_repo_from_template</a>
+        </div>
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-delete_repo" class="method-detail method-alias">
+        
+        <div class="method-heading">
+          <span class="method-name">delete_repo</span><span
+            class="method-args">(repo, options = {})</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+        </div>
+
+        
+
+        
+        <div class="aliases">
+          Alias for: <a href="Repositories.html#method-i-delete_repository">delete_repository</a>
+        </div>
+        
+      </div>
+
+    
+      <div id="method-i-delete_repository" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">delete_repository</span><span
+            class="method-args">(repo, options = {})</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Delete repository</p>
+
+<p>Note: If OAuth is used, &#39;delete_repo&#39; scope is required</p>
+
+<p>@see <a href="https://developer.github.com/v3/repos/#delete-a-repository">developer.github.com/v3/repos/#delete-a-repository</a> @param repo [Integer, String, Hash, Repository] A GitHub repository @return [Boolean] `true` if repository was deleted</p>
+          
+          
+
+          
+          <div class="method-source-code" id="delete_repository-source">
+            <pre><span class="ruby-comment"># File lib/octokit/client/repositories.rb, line 183</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">delete_repository</span>(<span class="ruby-identifier">repo</span>, <span class="ruby-identifier">options</span> = {})
+  <span class="ruby-identifier">boolean_from_response</span> <span class="ruby-value">:delete</span>, <span class="ruby-constant">Repository</span>.<span class="ruby-identifier">path</span>(<span class="ruby-identifier">repo</span>), <span class="ruby-identifier">options</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+        <div class="aliases">
+          Also aliased as: <a href="Repositories.html#method-i-delete_repo">delete_repo</a>
+        </div>
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-delete_subscription" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">delete_subscription</span><span
+            class="method-args">(repo, options = {})</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Delete a repository subscription</p>
+
+<p>@param repo [Integer, String, Hash, Repository] A GitHub repository. @return [Boolean] True if subscription deleted, false otherwise. @see <a href="https://developer.github.com/v3/activity/watching/#delete-a-repository-subscription">developer.github.com/v3/activity/watching/#delete-a-repository-subscription</a></p>
+
+<p>@example</p>
+
+<pre class="ruby"><span class="ruby-ivar">@client</span>.<span class="ruby-identifier">delete_subscription</span>(<span class="ruby-string">&quot;octokit/octokit.rb&quot;</span>)
+</pre>
+          
+          
+
+          
+          <div class="method-source-code" id="delete_subscription-source">
+            <pre><span class="ruby-comment"># File lib/octokit/client/repositories.rb, line 738</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">delete_subscription</span>(<span class="ruby-identifier">repo</span>, <span class="ruby-identifier">options</span> = {})
+  <span class="ruby-identifier">boolean_from_response</span> <span class="ruby-value">:delete</span>, <span class="ruby-node">&quot;#{Repository.path repo}/subscription&quot;</span>, <span class="ruby-identifier">options</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-deploy_key" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">deploy_key</span><span
+            class="method-args">(repo, id, options={})</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Get a single deploy key for a repo</p>
+
+<p>@param repo [Integer, String, Hash, Repository] A GitHub repository. @param id [Integer] Deploy key ID. @return [Sawyer::Resource] Deploy key. @see <a href="https://developer.github.com/v3/repos/keys/#get-a-deploy-key">developer.github.com/v3/repos/keys/#get-a-deploy-key</a> @example</p>
+
+<pre class="ruby"><span class="ruby-ivar">@client</span>.<span class="ruby-identifier">deploy_key</span>(<span class="ruby-string">&#39;octokit/octokit.rb&#39;</span>, <span class="ruby-value">8675309</span>)
+</pre>
+          
+          
+
+          
+          <div class="method-source-code" id="deploy_key-source">
+            <pre><span class="ruby-comment"># File lib/octokit/client/repositories.rb, line 261</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">deploy_key</span>(<span class="ruby-identifier">repo</span>, <span class="ruby-identifier">id</span>, <span class="ruby-identifier">options</span>={})
+  <span class="ruby-identifier">get</span> <span class="ruby-node">&quot;#{Repository.path repo}/keys/#{id}&quot;</span>, <span class="ruby-identifier">options</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-deploy_keys" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">deploy_keys</span><span
+            class="method-args">(repo, options = {})</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Get deploy keys on a repo</p>
+
+<p>Requires authenticated client.</p>
+
+<p>@param repo [Integer, String, Hash, Repository] A GitHub repository @return [Array&lt;Sawyer::Resource&gt;] Array of hashes representing deploy keys. @see <a href="https://developer.github.com/v3/repos/keys/#list-deploy-keys">developer.github.com/v3/repos/keys/#list-deploy-keys</a> @example</p>
+
+<pre class="ruby"><span class="ruby-ivar">@client</span>.<span class="ruby-identifier">deploy_keys</span>(<span class="ruby-string">&#39;octokit/octokit.rb&#39;</span>)
+</pre>
+
+<p>@example</p>
+
+<pre class="ruby"><span class="ruby-ivar">@client</span>.<span class="ruby-identifier">list_deploy_keys</span>(<span class="ruby-string">&#39;octokit/octokit.rb&#39;</span>)
+</pre>
+          
+          
+
+          
+          <div class="method-source-code" id="deploy_keys-source">
+            <pre><span class="ruby-comment"># File lib/octokit/client/repositories.rb, line 248</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">deploy_keys</span>(<span class="ruby-identifier">repo</span>, <span class="ruby-identifier">options</span> = {})
+  <span class="ruby-identifier">paginate</span> <span class="ruby-node">&quot;#{Repository.path repo}/keys&quot;</span>, <span class="ruby-identifier">options</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+        <div class="aliases">
+          Also aliased as: <a href="Repositories.html#method-i-list_deploy_keys">list_deploy_keys</a>
+        </div>
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-disable_vulnerability_alerts" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">disable_vulnerability_alerts</span><span
+            class="method-args">(repo, options = {})</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Disable vulnerability alerts for a repository</p>
+
+<p>@param repo [Integer, String, Hash, Repository] A GitHub repository. @param options [Hash]</p>
+
+<p>@return [Boolean] True if vulnerability alerts disabled, false otherwise. @see <a href="https://docs.github.com/en/rest/reference/repos#disable-vulnerability-alerts">docs.github.com/en/rest/reference/repos#disable-vulnerability-alerts</a> @example Disable vulnerability alerts for a repository</p>
+
+<pre class="ruby"><span class="ruby-ivar">@client</span>.<span class="ruby-identifier">disable_vulnerability_alerts</span>(<span class="ruby-string">&quot;octokit/octokit.rb&quot;</span>)
+</pre>
+          
+          
+
+          
+          <div class="method-source-code" id="disable_vulnerability_alerts-source">
+            <pre><span class="ruby-comment"># File lib/octokit/client/repositories.rb, line 793</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">disable_vulnerability_alerts</span>(<span class="ruby-identifier">repo</span>, <span class="ruby-identifier">options</span> = {})
+  <span class="ruby-identifier">opts</span> = <span class="ruby-identifier">ensure_api_media_type</span>(<span class="ruby-value">:vulnerability_alerts</span>, <span class="ruby-identifier">options</span>)
+  <span class="ruby-identifier">boolean_from_response</span>(<span class="ruby-value">:delete</span>, <span class="ruby-node">&quot;#{Repository.path repo}/vulnerability-alerts&quot;</span>, <span class="ruby-identifier">opts</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-dispatch_event" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">dispatch_event</span><span
+            class="method-args">(repo, event_type, options = {})</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Create a repository dispatch event</p>
+
+<p>@param repo [Integer, String, Hash, Repository] A GitHub repository. @param event_type [String] A custom webhook event name. @option options [Hash] :client_payload payload with extra information</p>
+
+<pre>about the webhook event that your action or worklow may use.</pre>
+
+<p>@return [Boolean] True if event was dispatched, false otherwise. @see <a href="https://developer.github.com/v3/repos/#create-a-repository-dispatch-event">developer.github.com/v3/repos/#create-a-repository-dispatch-event</a></p>
+          
+          
+
+          
+          <div class="method-source-code" id="dispatch_event-source">
+            <pre><span class="ruby-comment"># File lib/octokit/client/repositories.rb, line 751</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">dispatch_event</span>(<span class="ruby-identifier">repo</span>, <span class="ruby-identifier">event_type</span>, <span class="ruby-identifier">options</span> = {})
+  <span class="ruby-identifier">boolean_from_response</span> <span class="ruby-value">:post</span>, <span class="ruby-node">&quot;#{Repository.path repo}/dispatches&quot;</span>, <span class="ruby-identifier">options</span>.<span class="ruby-identifier">merge</span>({ <span class="ruby-value">event_type:</span> <span class="ruby-identifier">event_type</span> })
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-edit" class="method-detail method-alias">
+        
+        <div class="method-heading">
+          <span class="method-name">edit</span><span
+            class="method-args">(repo, options = {})</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+        </div>
+
+        
+
+        
+        <div class="aliases">
+          Alias for: <a href="Repositories.html#method-i-edit_repository">edit_repository</a>
+        </div>
+        
+      </div>
+
+    
+      <div id="method-i-edit_deploy_key" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">edit_deploy_key</span><span
+            class="method-args">(repo, id, options)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Edit a deploy key</p>
+
+<p>@param repo [Integer, String, Hash, Repository] A GitHub repository. @param id [Integer] Deploy key ID. @param options [Hash] Attributes to edit. @option title [String] Key title. @option key [String] Public key. @return [Sawyer::Resource] Updated deploy key. @deprecated This method is no longer supported in the API @see <a href="https://developer.github.com/changes/2014-02-24-finer-grained-scopes-for-ssh-keys">developer.github.com/changes/2014-02-24-finer-grained-scopes-for-ssh-keys</a>/ @see <a href="https://developer.github.com/v3/repos/keys/#edit-a-deploy-key">developer.github.com/v3/repos/keys/#edit-a-deploy-key</a> @example Update the key for a deploy key.</p>
+
+<pre class="ruby"><span class="ruby-ivar">@client</span>.<span class="ruby-identifier">edit_deploy_key</span>(<span class="ruby-string">&#39;octokit/octokit.rb&#39;</span>, <span class="ruby-value">8675309</span>, <span class="ruby-value">:key</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-string">&#39;ssh-rsa BBB...&#39;</span>)
+</pre>
+
+<p>@example</p>
+
+<pre>@client.update_deploy_key(&#39;octokit/octokit.rb&#39;, 8675309, :title =&gt; &#39;Uber&#39;, :key =&gt; &#39;ssh-rsa BBB...&#39;))</pre>
+          
+          
+
+          
+          <div class="method-source-code" id="edit_deploy_key-source">
+            <pre><span class="ruby-comment"># File lib/octokit/client/repositories.rb, line 295</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">edit_deploy_key</span>(<span class="ruby-identifier">repo</span>, <span class="ruby-identifier">id</span>, <span class="ruby-identifier">options</span>)
+  <span class="ruby-identifier">patch</span> <span class="ruby-node">&quot;#{Repository.path repo}/keys/#{id}&quot;</span>, <span class="ruby-identifier">options</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+        <div class="aliases">
+          Also aliased as: <a href="Repositories.html#method-i-update_deploy_key">update_deploy_key</a>
+        </div>
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-edit_repository" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">edit_repository</span><span
+            class="method-args">(repo, options = {})</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Edit a repository</p>
+
+<p>@see <a href="https://developer.github.com/v3/repos/#update-a-repository">developer.github.com/v3/repos/#update-a-repository</a> @param repo [String, Hash, Repository] A GitHub repository @param options [Hash] <a href="../Repository.html"><code>Repository</code></a> information to update @option options [String] :name Name of the repo @option options [String] :description Description of the repo @option options [String] :homepage Home page of the repo @option options [String] :private `true` makes the repository private, and `false` makes it public. @option options [String] :has_issues `true` enables issues for this repo, `false` disables issues. @option options [String] :has_wiki `true` enables wiki for this repo, `false` disables wiki. @option options [Boolean] :is_template `true` makes the repository a template, `false` makes it not a template. @option options [String] :has_downloads `true` enables downloads for this repo, `false` disables downloads. @option options [String] :default_branch Update the default branch for this repository. @return [Sawyer::Resource] <a href="../Repository.html"><code>Repository</code></a> information</p>
+          
+          
+
+          
+          <div class="method-source-code" id="edit_repository-source">
+            <pre><span class="ruby-comment"># File lib/octokit/client/repositories.rb, line 48</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">edit_repository</span>(<span class="ruby-identifier">repo</span>, <span class="ruby-identifier">options</span> = {})
+  <span class="ruby-identifier">repo</span> = <span class="ruby-constant">Repository</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">repo</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">options</span>.<span class="ruby-identifier">include?</span> <span class="ruby-value">:is_template</span>
+    <span class="ruby-identifier">options</span> = <span class="ruby-identifier">ensure_api_media_type</span>(<span class="ruby-value">:template_repositories</span>, <span class="ruby-identifier">options</span>)
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">options</span>[<span class="ruby-value">:name</span>] <span class="ruby-operator">||=</span> <span class="ruby-identifier">repo</span>.<span class="ruby-identifier">name</span>
+  <span class="ruby-identifier">patch</span> <span class="ruby-node">&quot;repos/#{repo}&quot;</span>, <span class="ruby-identifier">options</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+        <div class="aliases">
+          Also aliased as: <a href="Repositories.html#method-i-edit">edit</a>, <a href="Repositories.html#method-i-update_repository">update_repository</a>, <a href="Repositories.html#method-i-update">update</a>
+        </div>
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-enable_vulnerability_alerts" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">enable_vulnerability_alerts</span><span
+            class="method-args">(repo, options = {})</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Enable vulnerability alerts for a repository</p>
+
+<p>@param repo [Integer, String, Hash, Repository] A GitHub repository. @param options [Hash]</p>
+
+<p>@return [Boolean] True if vulnerability alerts enabled, false otherwise. @see <a href="https://docs.github.com/en/rest/reference/repos#enable-vulnerability-alerts">docs.github.com/en/rest/reference/repos#enable-vulnerability-alerts</a> @example Enable vulnerability alerts for a repository</p>
+
+<pre class="ruby"><span class="ruby-ivar">@client</span>.<span class="ruby-identifier">enable_vulnerability_alerts</span>(<span class="ruby-string">&quot;octokit/octokit.rb&quot;</span>)
+</pre>
+          
+          
+
+          
+          <div class="method-source-code" id="enable_vulnerability_alerts-source">
+            <pre><span class="ruby-comment"># File lib/octokit/client/repositories.rb, line 779</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">enable_vulnerability_alerts</span>(<span class="ruby-identifier">repo</span>, <span class="ruby-identifier">options</span> = {})
+  <span class="ruby-identifier">opts</span> = <span class="ruby-identifier">ensure_api_media_type</span>(<span class="ruby-value">:vulnerability_alerts</span>, <span class="ruby-identifier">options</span>)
+  <span class="ruby-identifier">boolean_from_response</span>(<span class="ruby-value">:put</span>, <span class="ruby-node">&quot;#{Repository.path repo}/vulnerability-alerts&quot;</span>, <span class="ruby-identifier">opts</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-fork" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">fork</span><span
+            class="method-args">(repo, options = {})</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Fork a repository</p>
+
+<p>@param repo [Integer, String, Hash, Repository] A GitHub repository @return [Sawyer::Resource] <a href="../Repository.html"><code>Repository</code></a> info for the new fork @see <a href="https://developer.github.com/v3/repos/forks/#create-a-fork">developer.github.com/v3/repos/forks/#create-a-fork</a></p>
+          
+          
+
+          
+          <div class="method-source-code" id="fork-source">
+            <pre><span class="ruby-comment"># File lib/octokit/client/repositories.rb, line 139</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">fork</span>(<span class="ruby-identifier">repo</span>, <span class="ruby-identifier">options</span> = {})
+  <span class="ruby-identifier">post</span> <span class="ruby-node">&quot;#{Repository.path repo}/forks&quot;</span>, <span class="ruby-identifier">options</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-forks" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">forks</span><span
+            class="method-args">(repo, options = {})</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>List forks</p>
+
+<p>Requires authenticated client for private repos.</p>
+
+<p>@param repo [Integer, String, Hash, Repository] A GitHub repository. @return [Array&lt;Sawyer::Resource&gt;] Array of hashes representing repos. @see <a href="https://developer.github.com/v3/repos/forks/#list-forks">developer.github.com/v3/repos/forks/#list-forks</a> @example</p>
+
+<pre class="ruby"><span class="ruby-constant">Octokit</span>.<span class="ruby-identifier">forks</span>(<span class="ruby-string">&#39;octokit/octokit.rb&#39;</span>)
+</pre>
+
+<p>@example</p>
+
+<pre class="ruby"><span class="ruby-constant">Octokit</span>.<span class="ruby-identifier">network</span>(<span class="ruby-string">&#39;octokit/octokit.rb&#39;</span>)
+</pre>
+
+<p>@example</p>
+
+<pre class="ruby"><span class="ruby-ivar">@client</span>.<span class="ruby-identifier">forks</span>(<span class="ruby-string">&#39;octokit/octokit.rb&#39;</span>)
+</pre>
+          
+          
+
+          
+          <div class="method-source-code" id="forks-source">
+            <pre><span class="ruby-comment"># File lib/octokit/client/repositories.rb, line 520</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">forks</span>(<span class="ruby-identifier">repo</span>, <span class="ruby-identifier">options</span> = {})
+  <span class="ruby-identifier">paginate</span> <span class="ruby-node">&quot;#{Repository.path repo}/forks&quot;</span>, <span class="ruby-identifier">options</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+        <div class="aliases">
+          Also aliased as: <a href="Repositories.html#method-i-network">network</a>
+        </div>
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-get_branch" class="method-detail method-alias">
+        
+        <div class="method-heading">
+          <span class="method-name">get_branch</span><span
+            class="method-args">(repo, branch, options = {})</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+        </div>
+
+        
+
+        
+        <div class="aliases">
+          Alias for: <a href="Repositories.html#method-i-branch">branch</a>
+        </div>
+        
+      </div>
+
+    
+      <div id="method-i-languages" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">languages</span><span
+            class="method-args">(repo, options = {})</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>List languages of code in the repo.</p>
+
+<p>Requires authenticated client for private repos.</p>
+
+<p>@param repo [Integer, String, Hash, Repository] A GitHub repository. @return [Array&lt;Sawyer::Resource&gt;] Array of Hashes representing languages. @see <a href="https://developer.github.com/v3/repos/#list-languages">developer.github.com/v3/repos/#list-languages</a> @example</p>
+
+<pre class="ruby"><span class="ruby-constant">Octokit</span>.<span class="ruby-identifier">languages</span>(<span class="ruby-string">&#39;octokit/octokit.rb&#39;</span>)
+</pre>
+
+<p>@example</p>
+
+<pre class="ruby"><span class="ruby-ivar">@client</span>.<span class="ruby-identifier">languages</span>(<span class="ruby-string">&#39;octokit/octokit.rb&#39;</span>)
+</pre>
+          
+          
+
+          
+          <div class="method-source-code" id="languages-source">
+            <pre><span class="ruby-comment"># File lib/octokit/client/repositories.rb, line 536</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">languages</span>(<span class="ruby-identifier">repo</span>, <span class="ruby-identifier">options</span> = {})
+  <span class="ruby-identifier">paginate</span> <span class="ruby-node">&quot;#{Repository.path repo}/languages&quot;</span>, <span class="ruby-identifier">options</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-list_deploy_keys" class="method-detail method-alias">
+        
+        <div class="method-heading">
+          <span class="method-name">list_deploy_keys</span><span
+            class="method-args">(repo, options = {})</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+        </div>
+
+        
+
+        
+        <div class="aliases">
+          Alias for: <a href="Repositories.html#method-i-deploy_keys">deploy_keys</a>
+        </div>
+        
+      </div>
+
+    
+      <div id="method-i-list_repos" class="method-detail method-alias">
+        
+        <div class="method-heading">
+          <span class="method-name">list_repos</span><span
+            class="method-args">(user=nil, options = {})</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+        </div>
+
+        
+
+        
+        <div class="aliases">
+          Alias for: <a href="Repositories.html#method-i-repositories">repositories</a>
+        </div>
+        
+      </div>
+
+    
+      <div id="method-i-list_repositories" class="method-detail method-alias">
+        
+        <div class="method-heading">
+          <span class="method-name">list_repositories</span><span
+            class="method-args">(user=nil, options = {})</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+        </div>
+
+        
+
+        
+        <div class="aliases">
+          Alias for: <a href="Repositories.html#method-i-repositories">repositories</a>
+        </div>
+        
+      </div>
+
+    
+      <div id="method-i-network" class="method-detail method-alias">
+        
+        <div class="method-heading">
+          <span class="method-name">network</span><span
+            class="method-args">(repo, options = {})</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+        </div>
+
+        
+
+        
+        <div class="aliases">
+          Alias for: <a href="Repositories.html#method-i-forks">forks</a>
+        </div>
+        
+      </div>
+
+    
+      <div id="method-i-permission_level" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">permission_level</span><span
+            class="method-args">(repo, collaborator, options={})</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Get a user&#39;s permission level for a repo.</p>
+
+<p>Requires authenticated client</p>
+
+<p>@return [Sawyer::Resource] Hash representing the user&#39;s permission level for the given repository @see <a href="https://developer.github.com/v3/repos/collaborators/#review-a-users-permission-level">developer.github.com/v3/repos/collaborators/#review-a-users-permission-level</a> @example</p>
+
+<pre class="ruby"><span class="ruby-ivar">@client</span>.<span class="ruby-identifier">permission_level</span>(<span class="ruby-string">&#39;octokit/octokit.rb&#39;</span>, <span class="ruby-string">&#39;lizzhale&#39;</span>)
+</pre>
+          
+          
+
+          
+          <div class="method-source-code" id="permission_level-source">
+            <pre><span class="ruby-comment"># File lib/octokit/client/repositories.rb, line 399</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">permission_level</span>(<span class="ruby-identifier">repo</span>, <span class="ruby-identifier">collaborator</span>, <span class="ruby-identifier">options</span>={})
+  <span class="ruby-identifier">get</span> <span class="ruby-node">&quot;#{Repository.path repo}/collaborators/#{collaborator}/permission&quot;</span>, <span class="ruby-identifier">options</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-protect_branch" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">protect_branch</span><span
+            class="method-args">(repo, branch, options = {})</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Lock a single branch from a repository</p>
+
+<p>Requires authenticated client</p>
+
+<p>@param repo [Integer, String, Hash, Repository] A GitHub repository. @param branch [String] Branch name @option options [Hash] :required_status_checks If not null, the following keys are required:</p>
+
+<pre>&lt;tt&gt;:enforce_admins [boolean] Enforce required status checks for repository administrators.&lt;/tt&gt;
+&lt;tt&gt;:strict [boolean] Require branches to be up to date before merging.&lt;/tt&gt;
+&lt;tt&gt;:contexts [Array] The list of status checks to require in order to merge into this branch&lt;/tt&gt;</pre>
+
+<p>@option options [Hash] :restrictions If not null, the following keys are required:</p>
+
+<pre>&lt;tt&gt;:users [Array] The list of user logins with push access&lt;/tt&gt;
+&lt;tt&gt;:teams [Array] The list of team slugs with push access&lt;/tt&gt;.
+
+Teams and users restrictions are only available for organization-owned repositories.</pre>
+
+<p>@return [Sawyer::Resource] The protected branch @see <a href="https://developer.github.com/v3/repos/#enabling-and-disabling-branch-protection">developer.github.com/v3/repos/#enabling-and-disabling-branch-protection</a> @example</p>
+
+<pre class="ruby"><span class="ruby-ivar">@client</span>.<span class="ruby-identifier">protect_branch</span>(<span class="ruby-string">&#39;octokit/octokit.rb&#39;</span>, <span class="ruby-string">&#39;master&#39;</span>, <span class="ruby-identifier">foo</span>)
+</pre>
+          
+          
+
+          
+          <div class="method-source-code" id="protect_branch-source">
+            <pre><span class="ruby-comment"># File lib/octokit/client/repositories.rb, line 603</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">protect_branch</span>(<span class="ruby-identifier">repo</span>, <span class="ruby-identifier">branch</span>, <span class="ruby-identifier">options</span> = {})
+  <span class="ruby-identifier">opts</span> = <span class="ruby-identifier">ensure_api_media_type</span>(<span class="ruby-value">:branch_protection</span>, <span class="ruby-identifier">options</span>)
+  <span class="ruby-identifier">opts</span>[<span class="ruby-value">:restrictions</span>] <span class="ruby-operator">||=</span> <span class="ruby-keyword">nil</span>
+  <span class="ruby-identifier">opts</span>[<span class="ruby-value">:required_status_checks</span>] <span class="ruby-operator">||=</span> <span class="ruby-keyword">nil</span>
+  <span class="ruby-identifier">put</span> <span class="ruby-node">&quot;#{Repository.path repo}/branches/#{branch}/protection&quot;</span>, <span class="ruby-identifier">opts</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-remove_collab" class="method-detail method-alias">
+        
+        <div class="method-heading">
+          <span class="method-name">remove_collab</span><span
+            class="method-args">(repo, collaborator, options = {})</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+        </div>
+
+        
+
+        
+        <div class="aliases">
+          Alias for: <a href="Repositories.html#method-i-remove_collaborator">remove_collaborator</a>
+        </div>
+        
+      </div>
+
+    
+      <div id="method-i-remove_collaborator" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">remove_collaborator</span><span
+            class="method-args">(repo, collaborator, options = {})</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Remove collaborator from repo.</p>
+
+<p>Requires authenticated client.</p>
+
+<p>@param repo [Integer, String, Hash, Repository] A GitHub repository. @param collaborator [String] Collaborator GitHub username to remove. @return [Boolean] True if collaborator removed, false otherwise. @see <a href="https://developer.github.com/v3/repos/collaborators/#remove-user-as-a-collaborator">developer.github.com/v3/repos/collaborators/#remove-user-as-a-collaborator</a> @example</p>
+
+<pre class="ruby"><span class="ruby-ivar">@client</span>.<span class="ruby-identifier">remove_collaborator</span>(<span class="ruby-string">&#39;octokit/octokit.rb&#39;</span>, <span class="ruby-string">&#39;holman&#39;</span>)
+</pre>
+
+<p>@example</p>
+
+<pre class="ruby"><span class="ruby-ivar">@client</span>.<span class="ruby-identifier">remove_collab</span>(<span class="ruby-string">&#39;octokit/octokit.rb&#39;</span>, <span class="ruby-string">&#39;holman&#39;</span>)
+</pre>
+          
+          
+
+          
+          <div class="method-source-code" id="remove_collaborator-source">
+            <pre><span class="ruby-comment"># File lib/octokit/client/repositories.rb, line 372</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">remove_collaborator</span>(<span class="ruby-identifier">repo</span>, <span class="ruby-identifier">collaborator</span>, <span class="ruby-identifier">options</span> = {})
+  <span class="ruby-identifier">boolean_from_response</span> <span class="ruby-value">:delete</span>, <span class="ruby-node">&quot;#{Repository.path repo}/collaborators/#{collaborator}&quot;</span>, <span class="ruby-identifier">options</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+        <div class="aliases">
+          Also aliased as: <a href="Repositories.html#method-i-remove_collab">remove_collab</a>
+        </div>
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-remove_deploy_key" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">remove_deploy_key</span><span
+            class="method-args">(repo, id, options = {})</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Remove deploy key from a repo</p>
+
+<p>Requires authenticated client.</p>
+
+<p>@param repo [Integer, String, Hash, Repository] A GitHub repository. @param id [Integer] Id of the deploy key to remove. @return [Boolean] True if key removed, false otherwise. @see <a href="https://developer.github.com/v3/repos/keys/#remove-a-deploy-key">developer.github.com/v3/repos/keys/#remove-a-deploy-key</a> @example</p>
+
+<pre class="ruby"><span class="ruby-ivar">@client</span>.<span class="ruby-identifier">remove_deploy_key</span>(<span class="ruby-string">&#39;octokit/octokit.rb&#39;</span>, <span class="ruby-value">100000</span>)
+</pre>
+          
+          
+
+          
+          <div class="method-source-code" id="remove_deploy_key-source">
+            <pre><span class="ruby-comment"># File lib/octokit/client/repositories.rb, line 310</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">remove_deploy_key</span>(<span class="ruby-identifier">repo</span>, <span class="ruby-identifier">id</span>, <span class="ruby-identifier">options</span> = {})
+  <span class="ruby-identifier">boolean_from_response</span> <span class="ruby-value">:delete</span>, <span class="ruby-node">&quot;#{Repository.path repo}/keys/#{id}&quot;</span>, <span class="ruby-identifier">options</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-rename_branch" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">rename_branch</span><span
+            class="method-args">(repo, branch, new_name, options = {})</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Rename a single branch from a repository</p>
+
+<p>Requires authenticated client</p>
+
+<p>@param repo [Integer, String, Hash, Repository] A GitHub repository. @param branch [String] Current branch name @param new_name [String] New branch name @return [Sawyer::Resource] The renamed branch @see <a href="https://developer.github.com/v3/repos/#rename-a-branch">developer.github.com/v3/repos/#rename-a-branch</a> @example</p>
+
+<pre class="ruby"><span class="ruby-ivar">@client</span>.<span class="ruby-identifier">rename_branch</span>(<span class="ruby-string">&#39;octokit/octokit.rb&#39;</span>, <span class="ruby-string">&#39;master&#39;</span>, <span class="ruby-string">&#39;main&#39;</span>)
+</pre>
+          
+          
+
+          
+          <div class="method-source-code" id="rename_branch-source">
+            <pre><span class="ruby-comment"># File lib/octokit/client/repositories.rb, line 654</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">rename_branch</span>(<span class="ruby-identifier">repo</span>, <span class="ruby-identifier">branch</span>, <span class="ruby-identifier">new_name</span>, <span class="ruby-identifier">options</span> = {})
+  <span class="ruby-identifier">params</span> = {
+    <span class="ruby-value">new_name:</span> <span class="ruby-identifier">new_name</span>,
+  }
+  <span class="ruby-identifier">post</span> <span class="ruby-node">&quot;#{Repository.path repo}/branches/#{branch}/rename&quot;</span>, <span class="ruby-identifier">params</span>.<span class="ruby-identifier">merge</span>(<span class="ruby-identifier">options</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-replace_all_topics" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">replace_all_topics</span><span
+            class="method-args">(repo, names, options = {})</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Replace all topics for a repository</p>
+
+<p>Requires authenticated client.</p>
+
+<p>@param repo [Integer, String, <a href="../Repository.html"><code>Repository</code></a>, Hash] A Github repository @param names [Array] An array of topics to add to the repository. @return [Sawyer::Resource] representing the replaced topics for given repo @see <a href="https://developer.github.com/v3/repos/#replace-all-topics-for-a-repository">developer.github.com/v3/repos/#replace-all-topics-for-a-repository</a> @example Replace topics for octokit/octokit.rb</p>
+
+<pre class="ruby"><span class="ruby-identifier">client</span>.<span class="ruby-identifier">replace_all_topics</span>(<span class="ruby-string">&#39;octokit/octokit.rb&#39;</span>, [<span class="ruby-string">&#39;octocat&#39;</span>, <span class="ruby-string">&#39;atom&#39;</span>, <span class="ruby-string">&#39;electron&#39;</span>, <span class="ruby-string">&#39;API&#39;</span>])
+</pre>
+
+<p>@example Clear all topics for octokit/octokit.rb</p>
+
+<pre class="ruby"><span class="ruby-identifier">client</span>.<span class="ruby-identifier">replace_all_topics</span>(<span class="ruby-string">&#39;octokit/octokit.rb&#39;</span>, [])
+</pre>
+          
+          
+
+          
+          <div class="method-source-code" id="replace_all_topics-source">
+            <pre><span class="ruby-comment"># File lib/octokit/client/repositories.rb, line 450</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">replace_all_topics</span>(<span class="ruby-identifier">repo</span>, <span class="ruby-identifier">names</span>, <span class="ruby-identifier">options</span> = {})
+  <span class="ruby-identifier">opts</span> = <span class="ruby-identifier">ensure_api_media_type</span>(<span class="ruby-value">:topics</span>, <span class="ruby-identifier">options</span>)
+  <span class="ruby-identifier">put</span> <span class="ruby-node">&quot;#{Repository.path repo}/topics&quot;</span>, <span class="ruby-identifier">opts</span>.<span class="ruby-identifier">merge</span>(<span class="ruby-value">:names</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-identifier">names</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-repo" class="method-detail method-alias">
+        
+        <div class="method-heading">
+          <span class="method-name">repo</span><span
+            class="method-args">(repo, options = {})</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+        </div>
+
+        
+
+        
+        <div class="aliases">
+          Alias for: <a href="Repositories.html#method-i-repository">repository</a>
+        </div>
+        
+      </div>
+
+    
+      <div id="method-i-repo_assignees" class="method-detail method-alias">
+        
+        <div class="method-heading">
+          <span class="method-name">repo_assignees</span><span
+            class="method-args">(repo, options = {})</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+        </div>
+
+        
+
+        
+        <div class="aliases">
+          Alias for: <a href="Repositories.html#method-i-repository_assignees">repository_assignees</a>
+        </div>
+        
+      </div>
+
+    
+      <div id="method-i-repo_teams" class="method-detail method-alias">
+        
+        <div class="method-heading">
+          <span class="method-name">repo_teams</span><span
+            class="method-args">(repo, options = {})</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+        </div>
+
+        
+
+        
+        <div class="aliases">
+          Alias for: <a href="Repositories.html#method-i-repository_teams">repository_teams</a>
+        </div>
+        
+      </div>
+
+    
+      <div id="method-i-repos" class="method-detail method-alias">
+        
+        <div class="method-heading">
+          <span class="method-name">repos</span><span
+            class="method-args">(user=nil, options = {})</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+        </div>
+
+        
+
+        
+        <div class="aliases">
+          Alias for: <a href="Repositories.html#method-i-repositories">repositories</a>
+        </div>
+        
+      </div>
+
+    
+      <div id="method-i-repositories" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">repositories</span><span
+            class="method-args">(user=nil, options = {})</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>List user repositories</p>
+
+<p>If user is not supplied, repositories for the current</p>
+
+<pre>authenticated user are returned.</pre>
+
+<p>@note If the user provided is a GitHub organization, only the</p>
+
+<pre>organization&#39;s public repositories will be listed. For retrieving
+organization repositories the {Organizations#organization_repositories}
+method should be used instead.</pre>
+
+<p>@see <a href="https://developer.github.com/v3/repos/#list-your-repositories">developer.github.com/v3/repos/#list-your-repositories</a> @see <a href="https://developer.github.com/v3/repos/#list-user-repositories">developer.github.com/v3/repos/#list-user-repositories</a> @param user [Integer, String] Optional GitHub user login or id for which</p>
+
+<pre>to list repos.</pre>
+
+<p>@return [Array&lt;Sawyer::Resource&gt;] List of repositories</p>
+          
+          
+
+          
+          <div class="method-source-code" id="repositories-source">
+            <pre><span class="ruby-comment"># File lib/octokit/client/repositories.rb, line 74</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">repositories</span>(<span class="ruby-identifier">user</span>=<span class="ruby-keyword">nil</span>, <span class="ruby-identifier">options</span> = {})
+  <span class="ruby-identifier">paginate</span> <span class="ruby-node">&quot;#{User.path user}/repos&quot;</span>, <span class="ruby-identifier">options</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+        <div class="aliases">
+          Also aliased as: <a href="Repositories.html#method-i-list_repositories">list_repositories</a>, <a href="Repositories.html#method-i-list_repos">list_repos</a>, <a href="Repositories.html#method-i-repos">repos</a>
+        </div>
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-repository" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">repository</span><span
+            class="method-args">(repo, options = {})</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Get a single repository</p>
+
+<p>@see <a href="https://developer.github.com/v3/repos/#get">developer.github.com/v3/repos/#get</a> @see <a href="https://developer.github.com/v3/licenses/#get-a-repositorys-license">developer.github.com/v3/licenses/#get-a-repositorys-license</a> @param repo [Integer, String, Hash, Repository] A GitHub repository @return [Sawyer::Resource] <a href="../Repository.html"><code>Repository</code></a> information</p>
+          
+          
+
+          
+          <div class="method-source-code" id="repository-source">
+            <pre><span class="ruby-comment"># File lib/octokit/client/repositories.rb, line 28</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">repository</span>(<span class="ruby-identifier">repo</span>, <span class="ruby-identifier">options</span> = {})
+  <span class="ruby-identifier">get</span> <span class="ruby-constant">Repository</span>.<span class="ruby-identifier">path</span>(<span class="ruby-identifier">repo</span>), <span class="ruby-identifier">options</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+        <div class="aliases">
+          Also aliased as: <a href="Repositories.html#method-i-repo">repo</a>
+        </div>
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-repository-3F" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">repository?</span><span
+            class="method-args">(repo, options = {})</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Check if a repository exists</p>
+
+<p>@see <a href="https://developer.github.com/v3/repos/#get">developer.github.com/v3/repos/#get</a> @param repo [Integer, String, Hash, Repository] A GitHub repository @return [Boolean]</p>
+          
+          
+
+          
+          <div class="method-source-code" id="repository-3F-source">
+            <pre><span class="ruby-comment"># File lib/octokit/client/repositories.rb, line 14</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">repository?</span>(<span class="ruby-identifier">repo</span>, <span class="ruby-identifier">options</span> = {})
+  <span class="ruby-operator">!</span><span class="ruby-operator">!</span><span class="ruby-identifier">repository</span>(<span class="ruby-identifier">repo</span>, <span class="ruby-identifier">options</span>)
+<span class="ruby-keyword">rescue</span> <span class="ruby-constant">Octokit</span><span class="ruby-operator">::</span><span class="ruby-constant">InvalidRepository</span>
+  <span class="ruby-keyword">false</span>
+<span class="ruby-keyword">rescue</span> <span class="ruby-constant">Octokit</span><span class="ruby-operator">::</span><span class="ruby-constant">NotFound</span>
+  <span class="ruby-keyword">false</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-repository_assignees" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">repository_assignees</span><span
+            class="method-args">(repo, options = {})</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>List users available for assigning to issues.</p>
+
+<p>Requires authenticated client for private repos.</p>
+
+<p>@param repo [Integer, String, Hash, Repository] A GitHub repository. @return [Array&lt;Sawyer::Resource&gt;] Array of hashes representing users. @see <a href="https://developer.github.com/v3/issues/assignees/#list-assignees">developer.github.com/v3/issues/assignees/#list-assignees</a> @example</p>
+
+<pre class="ruby"><span class="ruby-constant">Octokit</span>.<span class="ruby-identifier">repository_assignees</span>(<span class="ruby-string">&#39;octokit/octokit.rb&#39;</span>)
+</pre>
+
+<p>@example</p>
+
+<pre class="ruby"><span class="ruby-constant">Octokit</span>.<span class="ruby-identifier">repo_assignees</span>(<span class="ruby-string">&#39;octokit/octokit.rb&#39;</span>)
+</pre>
+
+<p>@example</p>
+
+<pre class="ruby"><span class="ruby-ivar">@client</span>.<span class="ruby-identifier">repository_assignees</span>(<span class="ruby-string">&#39;octokit/octokit.rb&#39;</span>)
+</pre>
+          
+          
+
+          
+          <div class="method-source-code" id="repository_assignees-source">
+            <pre><span class="ruby-comment"># File lib/octokit/client/repositories.rb, line 674</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">repository_assignees</span>(<span class="ruby-identifier">repo</span>, <span class="ruby-identifier">options</span> = {})
+  <span class="ruby-identifier">paginate</span> <span class="ruby-node">&quot;#{Repository.path repo}/assignees&quot;</span>, <span class="ruby-identifier">options</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+        <div class="aliases">
+          Also aliased as: <a href="Repositories.html#method-i-repo_assignees">repo_assignees</a>
+        </div>
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-repository_teams" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">repository_teams</span><span
+            class="method-args">(repo, options = {})</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>List teams for a repo</p>
+
+<p>Requires authenticated client that is an owner or collaborator of the repo.</p>
+
+<p>@param repo [Integer, String, Hash, Repository] A GitHub repository. @return [Array&lt;Sawyer::Resource&gt;] Array of hashes representing teams. @see <a href="https://developer.github.com/v3/repos/#list-teams">developer.github.com/v3/repos/#list-teams</a> @example</p>
+
+<pre class="ruby"><span class="ruby-ivar">@client</span>.<span class="ruby-identifier">repository_teams</span>(<span class="ruby-string">&#39;octokit/pengwynn&#39;</span>)
+</pre>
+
+<p>@example</p>
+
+<pre class="ruby"><span class="ruby-ivar">@client</span>.<span class="ruby-identifier">repo_teams</span>(<span class="ruby-string">&#39;octokit/pengwynn&#39;</span>)
+</pre>
+
+<p>@example</p>
+
+<pre class="ruby"><span class="ruby-ivar">@client</span>.<span class="ruby-identifier">teams</span>(<span class="ruby-string">&#39;octokit/pengwynn&#39;</span>)
+</pre>
+          
+          
+
+          
+          <div class="method-source-code" id="repository_teams-source">
+            <pre><span class="ruby-comment"># File lib/octokit/client/repositories.rb, line 416</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">repository_teams</span>(<span class="ruby-identifier">repo</span>, <span class="ruby-identifier">options</span> = {})
+  <span class="ruby-identifier">paginate</span> <span class="ruby-node">&quot;#{Repository.path repo}/teams&quot;</span>, <span class="ruby-identifier">options</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+        <div class="aliases">
+          Also aliased as: <a href="Repositories.html#method-i-repo_teams">repo_teams</a>, <a href="Repositories.html#method-i-teams">teams</a>
+        </div>
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-set_private" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">set_private</span><span
+            class="method-args">(repo, options = {})</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Hide a public repository</p>
+
+<p>@param repo [Integer, String, Hash, Repository] A GitHub repository @return [Sawyer::Resource] Updated repository info</p>
+          
+          
+
+          
+          <div class="method-source-code" id="set_private-source">
+            <pre><span class="ruby-comment"># File lib/octokit/client/repositories.rb, line 223</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">set_private</span>(<span class="ruby-identifier">repo</span>, <span class="ruby-identifier">options</span> = {})
+  <span class="ruby-comment"># GitHub Api for setting private updated to use private attr, rather than public</span>
+  <span class="ruby-identifier">update_repository</span> <span class="ruby-identifier">repo</span>, <span class="ruby-identifier">options</span>.<span class="ruby-identifier">merge</span>({ <span class="ruby-value">:private</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-keyword">true</span> })
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-set_public" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">set_public</span><span
+            class="method-args">(repo, options = {})</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Unhide a private repository</p>
+
+<p>@param repo [Integer, String, Hash, Repository] A GitHub repository @return [Sawyer::Resource] Updated repository info</p>
+          
+          
+
+          
+          <div class="method-source-code" id="set_public-source">
+            <pre><span class="ruby-comment"># File lib/octokit/client/repositories.rb, line 232</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">set_public</span>(<span class="ruby-identifier">repo</span>, <span class="ruby-identifier">options</span> = {})
+  <span class="ruby-comment"># GitHub Api for setting private updated to use private attr, rather than public</span>
+  <span class="ruby-identifier">update_repository</span> <span class="ruby-identifier">repo</span>, <span class="ruby-identifier">options</span>.<span class="ruby-identifier">merge</span>({ <span class="ruby-value">:private</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-keyword">false</span> })
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-star" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">star</span><span
+            class="method-args">(repo, options = {})</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Star a repository</p>
+
+<p>@param repo [String, Hash, Repository] A GitHub repository @return [Boolean] `true` if successfully starred @see <a href="https://developer.github.com/v3/activity/starring/#star-a-repository">developer.github.com/v3/activity/starring/#star-a-repository</a></p>
+          
+          
+
+          
+          <div class="method-source-code" id="star-source">
+            <pre><span class="ruby-comment"># File lib/octokit/client/repositories.rb, line 101</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">star</span>(<span class="ruby-identifier">repo</span>, <span class="ruby-identifier">options</span> = {})
+  <span class="ruby-identifier">boolean_from_response</span> <span class="ruby-value">:put</span>, <span class="ruby-node">&quot;user/starred/#{Repository.new(repo)}&quot;</span>, <span class="ruby-identifier">options</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-stargazers" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">stargazers</span><span
+            class="method-args">(repo, options = {})</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>List stargazers of a repo</p>
+
+<p>Requires authenticated client for private repos.</p>
+
+<p>@param repo [Integer, String, Hash, Repository] A GitHub repository. @return [Array&lt;Sawyer::Resource&gt;] Array of hashes representing users. @see <a href="https://developer.github.com/v3/activity/starring/#list-stargazers">developer.github.com/v3/activity/starring/#list-stargazers</a> @example</p>
+
+<pre class="ruby"><span class="ruby-constant">Octokit</span>.<span class="ruby-identifier">stargazers</span>(<span class="ruby-string">&#39;octokit/octokit.rb&#39;</span>)
+</pre>
+
+<p>@example</p>
+
+<pre class="ruby"><span class="ruby-ivar">@client</span>.<span class="ruby-identifier">stargazers</span>(<span class="ruby-string">&#39;octokit/octokit.rb&#39;</span>)
+</pre>
+          
+          
+
+          
+          <div class="method-source-code" id="stargazers-source">
+            <pre><span class="ruby-comment"># File lib/octokit/client/repositories.rb, line 486</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">stargazers</span>(<span class="ruby-identifier">repo</span>, <span class="ruby-identifier">options</span> = {})
+  <span class="ruby-identifier">paginate</span> <span class="ruby-node">&quot;#{Repository.path repo}/stargazers&quot;</span>, <span class="ruby-identifier">options</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-subscribers" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">subscribers</span><span
+            class="method-args">(repo, options = {})</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>List watchers subscribing to notifications for a repo</p>
+
+<p>@param repo [Integer, String, Hash, Repository] A GitHub repository. @return [Array&lt;Sawyer::Resource&gt;] Array of users watching. @see <a href="https://developer.github.com/v3/activity/watching/#list-watchers">developer.github.com/v3/activity/watching/#list-watchers</a> @example</p>
+
+<pre class="ruby"><span class="ruby-ivar">@client</span>.<span class="ruby-identifier">subscribers</span>(<span class="ruby-string">&quot;octokit/octokit.rb&quot;</span>)
+</pre>
+          
+          
+
+          
+          <div class="method-source-code" id="subscribers-source">
+            <pre><span class="ruby-comment"># File lib/octokit/client/repositories.rb, line 698</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">subscribers</span>(<span class="ruby-identifier">repo</span>, <span class="ruby-identifier">options</span> = {})
+  <span class="ruby-identifier">paginate</span> <span class="ruby-node">&quot;#{Repository.path repo}/subscribers&quot;</span>, <span class="ruby-identifier">options</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-subscription" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">subscription</span><span
+            class="method-args">(repo, options = {})</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Get a repository subscription</p>
+
+<p>@param repo [Integer, String, Hash, Repository] A GitHub repository. @return [Sawyer::Resource] <a href="../Repository.html"><code>Repository</code></a> subscription. @see <a href="https://developer.github.com/v3/activity/watching/#get-a-repository-subscription">developer.github.com/v3/activity/watching/#get-a-repository-subscription</a> @example</p>
+
+<pre class="ruby"><span class="ruby-ivar">@client</span>.<span class="ruby-identifier">subscription</span>(<span class="ruby-string">&quot;octokit/octokit.rb&quot;</span>)
+</pre>
+          
+          
+
+          
+          <div class="method-source-code" id="subscription-source">
+            <pre><span class="ruby-comment"># File lib/octokit/client/repositories.rb, line 709</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">subscription</span>(<span class="ruby-identifier">repo</span>, <span class="ruby-identifier">options</span> = {})
+  <span class="ruby-identifier">get</span> <span class="ruby-node">&quot;#{Repository.path repo}/subscription&quot;</span>, <span class="ruby-identifier">options</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-tags" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">tags</span><span
+            class="method-args">(repo, options = {})</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>List tags</p>
+
+<p>Requires authenticated client for private repos.</p>
+
+<p>@param repo [Integer, String, Hash, Repository] A GitHub repository. @return [Array&lt;Sawyer::Resource&gt;] Array of hashes representing tags. @see <a href="https://developer.github.com/v3/repos/#list-tags">developer.github.com/v3/repos/#list-tags</a> @example</p>
+
+<pre class="ruby"><span class="ruby-constant">Octokit</span>.<span class="ruby-identifier">tags</span>(<span class="ruby-string">&#39;octokit/octokit.rb&#39;</span>)
+</pre>
+
+<p>@example</p>
+
+<pre class="ruby"><span class="ruby-ivar">@client</span>.<span class="ruby-identifier">tags</span>(<span class="ruby-string">&#39;octokit/octokit.rb&#39;</span>)
+</pre>
+          
+          
+
+          
+          <div class="method-source-code" id="tags-source">
+            <pre><span class="ruby-comment"># File lib/octokit/client/repositories.rb, line 551</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">tags</span>(<span class="ruby-identifier">repo</span>, <span class="ruby-identifier">options</span> = {})
+  <span class="ruby-identifier">paginate</span> <span class="ruby-node">&quot;#{Repository.path repo}/tags&quot;</span>, <span class="ruby-identifier">options</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-teams" class="method-detail method-alias">
+        
+        <div class="method-heading">
+          <span class="method-name">teams</span><span
+            class="method-args">(repo, options = {})</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+        </div>
+
+        
+
+        
+        <div class="aliases">
+          Alias for: <a href="Repositories.html#method-i-repository_teams">repository_teams</a>
+        </div>
+        
+      </div>
+
+    
+      <div id="method-i-topics" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">topics</span><span
+            class="method-args">(repo, options = {})</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>List all topics for a repository</p>
+
+<p>Requires authenticated client for private repos.</p>
+
+<p>@param repo [Integer, String, Hash, Repository] A GitHub repository. @return [Sawyer::Resource] representing the topics for given repo @see <a href="https://developer.github.com/v3/repos/#list-all-topics-for-a-repository">developer.github.com/v3/repos/#list-all-topics-for-a-repository</a> @example List topics for octokit/octokit.rb</p>
+
+<pre class="ruby"><span class="ruby-constant">Octokit</span>.<span class="ruby-identifier">topics</span>(<span class="ruby-string">&#39;octokit/octokit.rb&#39;</span>)
+</pre>
+
+<p>@example List topics for octokit/octokit.rb</p>
+
+<pre class="ruby"><span class="ruby-identifier">client</span>.<span class="ruby-identifier">topics</span>(<span class="ruby-string">&#39;octokit/octokit.rb&#39;</span>)
+</pre>
+          
+          
+
+          
+          <div class="method-source-code" id="topics-source">
+            <pre><span class="ruby-comment"># File lib/octokit/client/repositories.rb, line 433</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">topics</span>(<span class="ruby-identifier">repo</span>, <span class="ruby-identifier">options</span> = {})
+  <span class="ruby-identifier">opts</span> = <span class="ruby-identifier">ensure_api_media_type</span>(<span class="ruby-value">:topics</span>, <span class="ruby-identifier">options</span>)
+  <span class="ruby-identifier">paginate</span> <span class="ruby-node">&quot;#{Repository.path repo}/topics&quot;</span>, <span class="ruby-identifier">opts</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-transfer_repo" class="method-detail method-alias">
+        
+        <div class="method-heading">
+          <span class="method-name">transfer_repo</span><span
+            class="method-args">(repo, new_owner, options = {})</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+        </div>
+
+        
+
+        
+        <div class="aliases">
+          Alias for: <a href="Repositories.html#method-i-transfer_repository">transfer_repository</a>
+        </div>
+        
+      </div>
+
+    
+      <div id="method-i-transfer_repository" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">transfer_repository</span><span
+            class="method-args">(repo, new_owner, options = {})</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Transfer repository</p>
+
+<p>Transfer a repository owned by your organization</p>
+
+<p>@see <a href="https://developer.github.com/v3/repos/#transfer-a-repository">developer.github.com/v3/repos/#transfer-a-repository</a> @param repo [Integer, String, Hash, Repository] A GitHub repository @param new_owner [String] The username or organization name the repository will be transferred to. @param options [Array&lt;Integer&gt;] :team_ids ID of the team or teams to add to the repository. Teams can only be added to organization-owned repositories. @return [Sawyer::Resource] <a href="../Repository.html"><code>Repository</code></a> info for the transferred repository</p>
+          
+          
+
+          
+          <div class="method-source-code" id="transfer_repository-source">
+            <pre><span class="ruby-comment"># File lib/octokit/client/repositories.rb, line 197</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">transfer_repository</span>(<span class="ruby-identifier">repo</span>, <span class="ruby-identifier">new_owner</span>, <span class="ruby-identifier">options</span> = {})
+  <span class="ruby-identifier">options</span> = <span class="ruby-identifier">ensure_api_media_type</span>(<span class="ruby-value">:transfer_repository</span>, <span class="ruby-identifier">options</span>)
+  <span class="ruby-identifier">post</span> <span class="ruby-node">&quot;#{Repository.path repo}/transfer&quot;</span>, <span class="ruby-identifier">options</span>.<span class="ruby-identifier">merge</span>({ <span class="ruby-value">new_owner:</span> <span class="ruby-identifier">new_owner</span> })
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+        <div class="aliases">
+          Also aliased as: <a href="Repositories.html#method-i-transfer_repo">transfer_repo</a>
+        </div>
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-unprotect_branch" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">unprotect_branch</span><span
+            class="method-args">(repo, branch, options = {})</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Unlock a single branch from a repository</p>
+
+<p>Requires authenticated client</p>
+
+<p>@param repo [Integer, String, Hash, Repository] A GitHub repository. @param branch [String] Branch name @return [Sawyer::Resource] The unprotected branch @see <a href="https://developer.github.com/v3/repos/#enabling-and-disabling-branch-protection">developer.github.com/v3/repos/#enabling-and-disabling-branch-protection</a> @example</p>
+
+<pre class="ruby"><span class="ruby-ivar">@client</span>.<span class="ruby-identifier">unprotect_branch</span>(<span class="ruby-string">&#39;octokit/octokit.rb&#39;</span>, <span class="ruby-string">&#39;master&#39;</span>)
+</pre>
+          
+          
+
+          
+          <div class="method-source-code" id="unprotect_branch-source">
+            <pre><span class="ruby-comment"># File lib/octokit/client/repositories.rb, line 638</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">unprotect_branch</span>(<span class="ruby-identifier">repo</span>, <span class="ruby-identifier">branch</span>, <span class="ruby-identifier">options</span> = {})
+  <span class="ruby-identifier">opts</span> = <span class="ruby-identifier">ensure_api_media_type</span>(<span class="ruby-value">:branch_protection</span>, <span class="ruby-identifier">options</span>)
+  <span class="ruby-identifier">boolean_from_response</span> <span class="ruby-value">:delete</span>, <span class="ruby-node">&quot;#{Repository.path repo}/branches/#{branch}/protection&quot;</span>, <span class="ruby-identifier">opts</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-unstar" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">unstar</span><span
+            class="method-args">(repo, options = {})</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Unstar a repository</p>
+
+<p>@param repo [String, Hash, Repository] A GitHub repository @return [Boolean] `true` if successfully unstarred @see <a href="https://developer.github.com/v3/activity/starring/#unstar-a-repository">developer.github.com/v3/activity/starring/#unstar-a-repository</a></p>
+          
+          
+
+          
+          <div class="method-source-code" id="unstar-source">
+            <pre><span class="ruby-comment"># File lib/octokit/client/repositories.rb, line 110</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">unstar</span>(<span class="ruby-identifier">repo</span>, <span class="ruby-identifier">options</span> = {})
+  <span class="ruby-identifier">boolean_from_response</span> <span class="ruby-value">:delete</span>, <span class="ruby-node">&quot;user/starred/#{Repository.new(repo)}&quot;</span>, <span class="ruby-identifier">options</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-unwatch" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">unwatch</span><span
+            class="method-args">(repo, options = {})</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Unwatch a repository</p>
+
+<p>@param repo [String, Hash, Repository] A GitHub repository @return [Boolean] `true` if successfully unwatched @deprecated Use <a href="Repositories.html#method-i-unstar"><code>unstar</code></a> instead @see <a href="https://developer.github.com/v3/activity/watching/#stop-watching-a-repository-legacy">developer.github.com/v3/activity/watching/#stop-watching-a-repository-legacy</a></p>
+          
+          
+
+          
+          <div class="method-source-code" id="unwatch-source">
+            <pre><span class="ruby-comment"># File lib/octokit/client/repositories.rb, line 130</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">unwatch</span>(<span class="ruby-identifier">repo</span>, <span class="ruby-identifier">options</span> = {})
+  <span class="ruby-identifier">boolean_from_response</span> <span class="ruby-value">:delete</span>, <span class="ruby-node">&quot;user/watched/#{Repository.new(repo)}&quot;</span>, <span class="ruby-identifier">options</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-update" class="method-detail method-alias">
+        
+        <div class="method-heading">
+          <span class="method-name">update</span><span
+            class="method-args">(repo, options = {})</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+        </div>
+
+        
+
+        
+        <div class="aliases">
+          Alias for: <a href="Repositories.html#method-i-edit_repository">edit_repository</a>
+        </div>
+        
+      </div>
+
+    
+      <div id="method-i-update_deploy_key" class="method-detail method-alias">
+        
+        <div class="method-heading">
+          <span class="method-name">update_deploy_key</span><span
+            class="method-args">(repo, id, options)</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+        </div>
+
+        
+
+        
+        <div class="aliases">
+          Alias for: <a href="Repositories.html#method-i-edit_deploy_key">edit_deploy_key</a>
+        </div>
+        
+      </div>
+
+    
+      <div id="method-i-update_repository" class="method-detail method-alias">
+        
+        <div class="method-heading">
+          <span class="method-name">update_repository</span><span
+            class="method-args">(repo, options = {})</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+        </div>
+
+        
+
+        
+        <div class="aliases">
+          Alias for: <a href="Repositories.html#method-i-edit_repository">edit_repository</a>
+        </div>
+        
+      </div>
+
+    
+      <div id="method-i-update_subscription" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">update_subscription</span><span
+            class="method-args">(repo, options = {})</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Update repository subscription</p>
+
+<p>@param repo [Integer, String, Hash, Repository] A GitHub repository. @param options [Hash]</p>
+
+<p>@option options [Boolean] :subscribed Determines if notifications</p>
+
+<pre>should be received from this repository.</pre>
+
+<p>@option options [Boolean] :ignored Deterimines if all notifications</p>
+
+<pre>should be blocked from this repository.</pre>
+
+<p>@return [Sawyer::Resource] Updated repository subscription. @see <a href="https://developer.github.com/v3/activity/watching/#set-a-repository-subscription">developer.github.com/v3/activity/watching/#set-a-repository-subscription</a> @example Subscribe to notifications for a repository</p>
+
+<pre class="ruby"><span class="ruby-ivar">@client</span>.<span class="ruby-identifier">update_subscription</span>(<span class="ruby-string">&quot;octokit/octokit.rb&quot;</span>, {<span class="ruby-value">subscribed:</span> <span class="ruby-keyword">true</span>})
+</pre>
+          
+          
+
+          
+          <div class="method-source-code" id="update_subscription-source">
+            <pre><span class="ruby-comment"># File lib/octokit/client/repositories.rb, line 726</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">update_subscription</span>(<span class="ruby-identifier">repo</span>, <span class="ruby-identifier">options</span> = {})
+  <span class="ruby-identifier">put</span> <span class="ruby-node">&quot;#{Repository.path repo}/subscription&quot;</span>, <span class="ruby-identifier">options</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-vulnerability_alerts_enabled-3F" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">vulnerability_alerts_enabled?</span><span
+            class="method-args">(repo, options = {})</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Check to see if vulnerability alerts are enabled for a repository</p>
+
+<p>The authenticated user must have admin access to the repository.</p>
+
+<p>@param repo [Integer, String, Hash, Repository] A GitHub repository. @return [Boolean] True if vulnerability alerts are enabled, false otherwise. @see <a href="https://docs.github.com/en/rest/reference/repos#check-if-vulnerability-alerts-are-enabled-for-a-repository">docs.github.com/en/rest/reference/repos#check-if-vulnerability-alerts-are-enabled-for-a-repository</a></p>
+
+<p>@example</p>
+
+<pre class="ruby"><span class="ruby-ivar">@client</span>.<span class="ruby-identifier">vulnerability_alerts_enabled?</span>(<span class="ruby-string">&quot;octokit/octokit.rb&quot;</span>)
+</pre>
+          
+          
+
+          
+          <div class="method-source-code" id="vulnerability_alerts_enabled-3F-source">
+            <pre><span class="ruby-comment"># File lib/octokit/client/repositories.rb, line 765</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">vulnerability_alerts_enabled?</span>(<span class="ruby-identifier">repo</span>, <span class="ruby-identifier">options</span> = {})
+  <span class="ruby-identifier">opts</span> = <span class="ruby-identifier">ensure_api_media_type</span>(<span class="ruby-value">:vulnerability_alerts</span>, <span class="ruby-identifier">options</span>)
+  <span class="ruby-identifier">boolean_from_response</span>(<span class="ruby-value">:get</span>, <span class="ruby-node">&quot;#{Repository.path repo}/vulnerability-alerts&quot;</span>, <span class="ruby-identifier">opts</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-watch" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">watch</span><span
+            class="method-args">(repo, options = {})</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Watch a repository</p>
+
+<p>@param repo [String, Hash, Repository] A GitHub repository @return [Boolean] `true` if successfully watched @deprecated Use <a href="Repositories.html#method-i-star"><code>star</code></a> instead @see <a href="https://developer.github.com/v3/activity/watching/#watch-a-repository-legacy">developer.github.com/v3/activity/watching/#watch-a-repository-legacy</a></p>
+          
+          
+
+          
+          <div class="method-source-code" id="watch-source">
+            <pre><span class="ruby-comment"># File lib/octokit/client/repositories.rb, line 120</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">watch</span>(<span class="ruby-identifier">repo</span>, <span class="ruby-identifier">options</span> = {})
+  <span class="ruby-identifier">boolean_from_response</span> <span class="ruby-value">:put</span>, <span class="ruby-node">&quot;user/watched/#{Repository.new(repo)}&quot;</span>, <span class="ruby-identifier">options</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-watchers" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">watchers</span><span
+            class="method-args">(repo, options = {})</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>@deprecated Use {#stargazers} instead</p>
+
+<p>List watchers of repo.</p>
+
+<p>Requires authenticated client for private repos.</p>
+
+<p>@param repo [Integer, String, Hash, Repository] A GitHub repository. @return [Array&lt;Sawyer::Resource&gt;] Array of hashes representing users. @see <a href="https://developer.github.com/v3/repos/watching/#list-watchers">developer.github.com/v3/repos/watching/#list-watchers</a> @example</p>
+
+<pre class="ruby"><span class="ruby-constant">Octokit</span>.<span class="ruby-identifier">watchers</span>(<span class="ruby-string">&#39;octokit/octokit.rb&#39;</span>)
+</pre>
+
+<p>@example</p>
+
+<pre class="ruby"><span class="ruby-ivar">@client</span>.<span class="ruby-identifier">watchers</span>(<span class="ruby-string">&#39;octokit/octokit.rb&#39;</span>)
+</pre>
+          
+          
+
+          
+          <div class="method-source-code" id="watchers-source">
+            <pre><span class="ruby-comment"># File lib/octokit/client/repositories.rb, line 503</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">watchers</span>(<span class="ruby-identifier">repo</span>, <span class="ruby-identifier">options</span> = {})
+  <span class="ruby-identifier">paginate</span> <span class="ruby-node">&quot;#{Repository.path repo}/watchers&quot;</span>, <span class="ruby-identifier">options</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+    </section>
+  
+  </section>
+
+</main>
+
+
+<footer id="validator-badges" role="contentinfo">
+  <p><a href="https://validator.w3.org/check/referer">Validate</a>
+  <p>Generated by <a href="https://ruby.github.io/rdoc/">RDoc</a> 6.2.1.
+  <p>Based on <a href="http://deveiate.org/projects/Darkfish-RDoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
+</footer>
+

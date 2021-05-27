@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="UTF-8">
+
+<title>module Octokit::Client::Reactions - octokit-4.21.0 Documentation</title>
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../../";
+  var index_rel_prefix = "../../";
+</script>
+
+<script src="../../js/navigation.js" defer></script>
+<script src="../../js/search.js" defer></script>
+<script src="../../js/search_index.js" defer></script>
+<script src="../../js/searcher.js" defer></script>
+<script src="../../js/darkfish.js" defer></script>
+
+<link href="../../css/fonts.css" rel="stylesheet">
+<link href="../../css/rdoc.css" rel="stylesheet">
+
+
+
+
+<body id="top" role="document" class="module">
+<nav role="navigation">
+  <div id="project-navigation">
+    <div id="home-section" role="region" title="Quick navigation" class="nav-section">
+  <h2>
+    <a href="../../index.html" rel="home">Home</a>
+  </h2>
+
+  <div id="table-of-contents-navigation">
+    <a href="../../table_of_contents.html#pages">Pages</a>
+    <a href="../../table_of_contents.html#classes">Classes</a>
+    <a href="../../table_of_contents.html#methods">Methods</a>
+  </div>
+</div>
+
+    <div id="search-section" role="search" class="project-section initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <div id="search-field-wrapper">
+      <input id="search-field" role="combobox" aria-label="Search"
+             aria-autocomplete="list" aria-controls="search-results"
+             type="text" name="search" placeholder="Search" spellcheck="false"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </div>
+
+    <ul id="search-results" aria-label="Search Results"
+        aria-busy="false" aria-expanded="false"
+        aria-atomic="false" class="initially-hidden"></ul>
+  </form>
+</div>
+
+  </div>
+
+  
+
+  <div id="class-metadata">
+    
+    
+    
+    
+    <!-- Method Quickref -->
+<div id="method-list-section" class="nav-section">
+  <h3>Methods</h3>
+
+  <ul class="link-list" role="directory">
+    
+    <li ><a href="#method-i-commit_comment_reactions">#commit_comment_reactions</a>
+    
+    <li ><a href="#method-i-create_commit_comment_reaction">#create_commit_comment_reaction</a>
+    
+    <li ><a href="#method-i-create_issue_comment_reaction">#create_issue_comment_reaction</a>
+    
+    <li ><a href="#method-i-create_issue_reaction">#create_issue_reaction</a>
+    
+    <li ><a href="#method-i-create_pull_request_review_comment_reaction">#create_pull_request_review_comment_reaction</a>
+    
+    <li ><a href="#method-i-delete_reaction">#delete_reaction</a>
+    
+    <li ><a href="#method-i-issue_comment_reactions">#issue_comment_reactions</a>
+    
+    <li ><a href="#method-i-issue_reactions">#issue_reactions</a>
+    
+    <li ><a href="#method-i-pull_request_review_comment_reactions">#pull_request_review_comment_reactions</a>
+    
+  </ul>
+</div>
+
+  </div>
+</nav>
+
+<main role="main" aria-labelledby="module-Octokit::Client::Reactions">
+  <h1 id="module-Octokit::Client::Reactions" class="module">
+    module Octokit::Client::Reactions
+  </h1>
+
+  <section class="description">
+    
+<p>Methods for the Reacions API</p>
+
+<p>@see <a href="https://developer.github.com/v3/reactions">developer.github.com/v3/reactions</a>/</p>
+
+  </section>
+
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+
+    
+
+    
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section">
+       <header>
+         <h3>Public Instance Methods</h3>
+       </header>
+
+    
+      <div id="method-i-commit_comment_reactions" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">commit_comment_reactions</span><span
+            class="method-args">(repo, id, options = {})</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>List reactions for a commit comment</p>
+
+<p>@param repo [Integer, String, Hash, Repository] A GitHub repository @param id [Integer] The id of the commit comment @see <a href="https://developer.github.com/v3/reactions/#list-reactions-for-a-commit-comment">developer.github.com/v3/reactions/#list-reactions-for-a-commit-comment</a></p>
+
+<p>@example</p>
+
+<pre class="ruby"><span class="ruby-ivar">@client</span>.<span class="ruby-identifier">commit_comment_reactions</span>(<span class="ruby-string">&quot;octokit/octokit.rb&quot;</span>, <span class="ruby-value">1</span>)
+</pre>
+
+<p>@return [Array&lt;Sawyer::Resource&gt;] Array of Hashes representing the reactions.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="commit_comment_reactions-source">
+            <pre><span class="ruby-comment"># File lib/octokit/client/reactions.rb, line 19</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">commit_comment_reactions</span>(<span class="ruby-identifier">repo</span>, <span class="ruby-identifier">id</span>, <span class="ruby-identifier">options</span> = {})
+  <span class="ruby-identifier">options</span> = <span class="ruby-identifier">ensure_api_media_type</span>(<span class="ruby-value">:reactions</span>, <span class="ruby-identifier">options</span>)
+  <span class="ruby-identifier">get</span> <span class="ruby-node">&quot;#{Repository.path repo}/comments/#{id}/reactions&quot;</span>, <span class="ruby-identifier">options</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-create_commit_comment_reaction" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">create_commit_comment_reaction</span><span
+            class="method-args">(repo, id, reaction, options = {})</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Create a reaction for a commit comment</p>
+
+<p>@param repo [Integer, String, Hash, Repository] A GitHub repository @param id [Integer] The id of the commit comment @param reaction [String] The Reaction @see <a href="https://developer.github.com/v3/reactions/#create-reaction-for-a-commit-comment">developer.github.com/v3/reactions/#create-reaction-for-a-commit-comment</a> @see <a href="https://developer.github.com/v3/reactions/#reaction-types">developer.github.com/v3/reactions/#reaction-types</a></p>
+
+<p>@example</p>
+
+<pre class="ruby"><span class="ruby-ivar">@client</span>.<span class="ruby-identifier">create_commit_comment_reactions</span>(<span class="ruby-string">&quot;octokit/octokit.rb&quot;</span>, <span class="ruby-value">1</span>)
+</pre>
+
+<p>@return [&lt;Sawyer::Resource&gt;] Hash representing the reaction</p>
+          
+          
+
+          
+          <div class="method-source-code" id="create_commit_comment_reaction-source">
+            <pre><span class="ruby-comment"># File lib/octokit/client/reactions.rb, line 36</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">create_commit_comment_reaction</span>(<span class="ruby-identifier">repo</span>, <span class="ruby-identifier">id</span>, <span class="ruby-identifier">reaction</span>, <span class="ruby-identifier">options</span> = {})
+  <span class="ruby-identifier">options</span> = <span class="ruby-identifier">ensure_api_media_type</span>(<span class="ruby-value">:reactions</span>, <span class="ruby-identifier">options</span>.<span class="ruby-identifier">merge</span>(<span class="ruby-value">:content</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-identifier">reaction</span>))
+  <span class="ruby-identifier">post</span> <span class="ruby-node">&quot;#{Repository.path repo}/comments/#{id}/reactions&quot;</span>, <span class="ruby-identifier">options</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-create_issue_comment_reaction" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">create_issue_comment_reaction</span><span
+            class="method-args">(repo, id, reaction, options = {})</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Create reaction for an issue comment</p>
+
+<p>@param repo [Integer, String, Hash, Repository] A GitHub repository @param id [Integer] The Issue comment id @param reaction [String] The Reaction</p>
+
+<p>@see <a href="https://developer.github.com/v3/reactions/#create-reaction-for-an-issue-comment">developer.github.com/v3/reactions/#create-reaction-for-an-issue-comment</a> @see <a href="https://developer.github.com/v3/reactions/#reaction-types">developer.github.com/v3/reactions/#reaction-types</a></p>
+
+<p>@example</p>
+
+<pre class="ruby"><span class="ruby-ivar">@client</span>.<span class="ruby-identifier">create_issue_comment_reaction</span>(<span class="ruby-string">&quot;octokit/octokit.rb&quot;</span>, <span class="ruby-value">1</span>)
+</pre>
+
+<p>@return [&lt;Sawyer::Resource&gt;] Hashes representing the reaction.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="create_issue_comment_reaction-source">
+            <pre><span class="ruby-comment"># File lib/octokit/client/reactions.rb, line 103</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">create_issue_comment_reaction</span>(<span class="ruby-identifier">repo</span>, <span class="ruby-identifier">id</span>, <span class="ruby-identifier">reaction</span>, <span class="ruby-identifier">options</span> = {})
+  <span class="ruby-identifier">options</span> = <span class="ruby-identifier">ensure_api_media_type</span>(<span class="ruby-value">:reactions</span>, <span class="ruby-identifier">options</span>.<span class="ruby-identifier">merge</span>(<span class="ruby-value">:content</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-identifier">reaction</span>))
+  <span class="ruby-identifier">post</span> <span class="ruby-node">&quot;#{Repository.path repo}/issues/comments/#{id}/reactions&quot;</span>, <span class="ruby-identifier">options</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-create_issue_reaction" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">create_issue_reaction</span><span
+            class="method-args">(repo, number, reaction, options = {})</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Create reaction for an issue</p>
+
+<p>@param repo [Integer, String, Hash, Repository] A GitHub repository @param number [Integer] The Issue number @param reaction [String] The Reaction</p>
+
+<p>@see <a href="https://developer.github.com/v3/reactions/#create-reaction-for-an-issue">developer.github.com/v3/reactions/#create-reaction-for-an-issue</a> @see <a href="https://developer.github.com/v3/reactions/#reaction-types">developer.github.com/v3/reactions/#reaction-types</a></p>
+
+<p>@example</p>
+
+<pre class="ruby"><span class="ruby-ivar">@client</span>.<span class="ruby-identifier">create_issue_reaction</span>(<span class="ruby-string">&quot;octokit/octokit.rb&quot;</span>, <span class="ruby-value">1</span>)
+</pre>
+
+<p>@return [&lt;Sawyer::Resource&gt;] Hash representing the reaction.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="create_issue_reaction-source">
+            <pre><span class="ruby-comment"># File lib/octokit/client/reactions.rb, line 69</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">create_issue_reaction</span>(<span class="ruby-identifier">repo</span>, <span class="ruby-identifier">number</span>, <span class="ruby-identifier">reaction</span>, <span class="ruby-identifier">options</span> = {})
+  <span class="ruby-identifier">options</span> = <span class="ruby-identifier">ensure_api_media_type</span>(<span class="ruby-value">:reactions</span>, <span class="ruby-identifier">options</span>.<span class="ruby-identifier">merge</span>(<span class="ruby-value">:content</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-identifier">reaction</span>))
+  <span class="ruby-identifier">post</span> <span class="ruby-node">&quot;#{Repository.path repo}/issues/#{number}/reactions&quot;</span>, <span class="ruby-identifier">options</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-create_pull_request_review_comment_reaction" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">create_pull_request_review_comment_reaction</span><span
+            class="method-args">(repo, id, reaction, options = {})</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Create reaction for a pull request review comment</p>
+
+<p>@param repo [Integer, String, Hash, Repository] A GitHub repository @param id [Integer] The Issue comment id @param reaction [String] The Reaction</p>
+
+<p>@see <a href="https://developer.github.com/v3/reactions/#create-reaction-for-a-pull-request-review-comment">developer.github.com/v3/reactions/#create-reaction-for-a-pull-request-review-comment</a> @see <a href="https://developer.github.com/v3/reactions/#reaction-types">developer.github.com/v3/reactions/#reaction-types</a></p>
+
+<p>@example</p>
+
+<pre class="ruby"><span class="ruby-ivar">@client</span>.<span class="ruby-identifier">create_pull_request_reiew_comment_reaction</span>(<span class="ruby-string">&quot;octokit/octokit.rb&quot;</span>, <span class="ruby-value">1</span>)
+</pre>
+
+<p>@return [&lt;Sawyer::Resource&gt;] Hash representing the reaction.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="create_pull_request_review_comment_reaction-source">
+            <pre><span class="ruby-comment"># File lib/octokit/client/reactions.rb, line 137</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">create_pull_request_review_comment_reaction</span>(<span class="ruby-identifier">repo</span>, <span class="ruby-identifier">id</span>, <span class="ruby-identifier">reaction</span>, <span class="ruby-identifier">options</span> = {})
+  <span class="ruby-identifier">options</span> = <span class="ruby-identifier">ensure_api_media_type</span>(<span class="ruby-value">:reactions</span>, <span class="ruby-identifier">options</span>.<span class="ruby-identifier">merge</span>(<span class="ruby-value">:content</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-identifier">reaction</span>))
+  <span class="ruby-identifier">post</span> <span class="ruby-node">&quot;#{Repository.path repo}/pulls/comments/#{id}/reactions&quot;</span>, <span class="ruby-identifier">options</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-delete_reaction" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">delete_reaction</span><span
+            class="method-args">(id, options = {})</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Delete a reaction</p>
+
+<p>@param id [Integer] Reaction id</p>
+
+<p>@see <a href="https://developer.github.com/v3/reactions/#delete-a-reaction">developer.github.com/v3/reactions/#delete-a-reaction</a></p>
+
+<p>@example</p>
+
+<pre class="ruby"><span class="ruby-ivar">@client</span>.<span class="ruby-identifier">delete_reaction</span>(<span class="ruby-value">1</span>)
+</pre>
+
+<p>@return [Boolean] Return true if reaction was deleted, false otherwise.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="delete_reaction-source">
+            <pre><span class="ruby-comment"># File lib/octokit/client/reactions.rb, line 152</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">delete_reaction</span>(<span class="ruby-identifier">id</span>, <span class="ruby-identifier">options</span> = {})
+  <span class="ruby-identifier">options</span> = <span class="ruby-identifier">ensure_api_media_type</span>(<span class="ruby-value">:reactions</span>, <span class="ruby-identifier">options</span>)
+  <span class="ruby-identifier">boolean_from_response</span> <span class="ruby-value">:delete</span>, <span class="ruby-node">&quot;reactions/#{id}&quot;</span>, <span class="ruby-identifier">options</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-issue_comment_reactions" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">issue_comment_reactions</span><span
+            class="method-args">(repo, id, options = {})</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>List reactions for an issue comment</p>
+
+<p>@param repo [Integer, String, Hash, Repository] A GitHub repository @param id [Integer] The Issue comment id</p>
+
+<p>@see <a href="https://developer.github.com/v3/reactions/#list-reactions-for-an-issue-comment">developer.github.com/v3/reactions/#list-reactions-for-an-issue-comment</a></p>
+
+<p>@example</p>
+
+<pre class="ruby"><span class="ruby-ivar">@client</span>.<span class="ruby-identifier">issue_comment_reactions</span>(<span class="ruby-string">&quot;octokit/octokit.rb&quot;</span>, <span class="ruby-value">1</span>)
+</pre>
+
+<p>@return [Array&lt;Sawyer::Resource&gt;] Array of Hashes representing the reactions.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="issue_comment_reactions-source">
+            <pre><span class="ruby-comment"># File lib/octokit/client/reactions.rb, line 85</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">issue_comment_reactions</span>(<span class="ruby-identifier">repo</span>, <span class="ruby-identifier">id</span>, <span class="ruby-identifier">options</span> = {})
+  <span class="ruby-identifier">options</span> = <span class="ruby-identifier">ensure_api_media_type</span>(<span class="ruby-value">:reactions</span>, <span class="ruby-identifier">options</span>)
+  <span class="ruby-identifier">get</span> <span class="ruby-node">&quot;#{Repository.path repo}/issues/comments/#{id}/reactions&quot;</span>, <span class="ruby-identifier">options</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-issue_reactions" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">issue_reactions</span><span
+            class="method-args">(repo, number, options = {})</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>List reactions for an issue</p>
+
+<p>@param repo [Integer, String, Hash, Repository] A GitHub repository @param number [Integer] The Issue number @see <a href="https://developer.github.com/v3/reactions/#list-reactions-for-an-issue">developer.github.com/v3/reactions/#list-reactions-for-an-issue</a></p>
+
+<p>@example</p>
+
+<pre class="ruby"><span class="ruby-ivar">@client</span>.<span class="ruby-identifier">issue_reactions</span>(<span class="ruby-string">&quot;octokit/octokit.rb&quot;</span>, <span class="ruby-value">1</span>)
+</pre>
+
+<p>@return [Array&lt;Sawyer::Resource&gt;] Array of Hashes representing the reactions.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="issue_reactions-source">
+            <pre><span class="ruby-comment"># File lib/octokit/client/reactions.rb, line 51</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">issue_reactions</span>(<span class="ruby-identifier">repo</span>, <span class="ruby-identifier">number</span>, <span class="ruby-identifier">options</span> = {})
+  <span class="ruby-identifier">options</span> = <span class="ruby-identifier">ensure_api_media_type</span>(<span class="ruby-value">:reactions</span>, <span class="ruby-identifier">options</span>)
+  <span class="ruby-identifier">get</span> <span class="ruby-node">&quot;#{Repository.path repo}/issues/#{number}/reactions&quot;</span>, <span class="ruby-identifier">options</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-pull_request_review_comment_reactions" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">pull_request_review_comment_reactions</span><span
+            class="method-args">(repo, id, options = {})</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>List reactions for a pull request review comment</p>
+
+<p>@param repo [Integer, String, Hash, Repository] A GitHub repository @param id [Integer] The Issue comment id</p>
+
+<p>@see <a href="https://developer.github.com/v3/reactions/#list-reactions-for-a-pull-request-review-comment">developer.github.com/v3/reactions/#list-reactions-for-a-pull-request-review-comment</a></p>
+
+<p>@example</p>
+
+<pre class="ruby"><span class="ruby-ivar">@client</span>.<span class="ruby-identifier">pull_request_review_comment_reactions</span>(<span class="ruby-string">&quot;octokit/octokit.rb&quot;</span>, <span class="ruby-value">1</span>)
+</pre>
+
+<p>@return [Array&lt;Sawyer::Resource&gt;] Array of Hashes representing the reactions.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="pull_request_review_comment_reactions-source">
+            <pre><span class="ruby-comment"># File lib/octokit/client/reactions.rb, line 119</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">pull_request_review_comment_reactions</span>(<span class="ruby-identifier">repo</span>, <span class="ruby-identifier">id</span>, <span class="ruby-identifier">options</span> = {})
+  <span class="ruby-identifier">options</span> = <span class="ruby-identifier">ensure_api_media_type</span>(<span class="ruby-value">:reactions</span>, <span class="ruby-identifier">options</span>)
+  <span class="ruby-identifier">get</span> <span class="ruby-node">&quot;#{Repository.path repo}/pulls/comments/#{id}/reactions&quot;</span>, <span class="ruby-identifier">options</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+    </section>
+  
+  </section>
+
+</main>
+
+
+<footer id="validator-badges" role="contentinfo">
+  <p><a href="https://validator.w3.org/check/referer">Validate</a>
+  <p>Generated by <a href="https://ruby.github.io/rdoc/">RDoc</a> 6.2.1.
+  <p>Based on <a href="http://deveiate.org/projects/Darkfish-RDoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
+</footer>
+

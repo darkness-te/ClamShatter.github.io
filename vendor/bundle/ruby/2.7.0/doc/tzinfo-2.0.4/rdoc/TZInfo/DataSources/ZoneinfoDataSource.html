@@ -1,0 +1,1278 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="UTF-8">
+
+<title>class TZInfo::DataSources::ZoneinfoDataSource - TZInfo</title>
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../../";
+  var index_rel_prefix = "../../";
+</script>
+
+<script src="../../js/navigation.js" defer></script>
+<script src="../../js/search.js" defer></script>
+<script src="../../js/search_index.js" defer></script>
+<script src="../../js/searcher.js" defer></script>
+<script src="../../js/darkfish.js" defer></script>
+
+<link href="../../css/fonts.css" rel="stylesheet">
+<link href="../../css/rdoc.css" rel="stylesheet">
+
+
+
+
+<body id="top" role="document" class="class">
+<nav role="navigation">
+  <div id="project-navigation">
+    <div id="home-section" role="region" title="Quick navigation" class="nav-section">
+  <h2>
+    <a href="../../index.html" rel="home">Home</a>
+  </h2>
+
+  <div id="table-of-contents-navigation">
+    <a href="../../table_of_contents.html#pages">Pages</a>
+    <a href="../../table_of_contents.html#classes">Classes</a>
+    <a href="../../table_of_contents.html#methods">Methods</a>
+  </div>
+</div>
+
+    <div id="search-section" role="search" class="project-section initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <div id="search-field-wrapper">
+      <input id="search-field" role="combobox" aria-label="Search"
+             aria-autocomplete="list" aria-controls="search-results"
+             type="text" name="search" placeholder="Search" spellcheck="false"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </div>
+
+    <ul id="search-results" aria-label="Search Results"
+        aria-busy="false" aria-expanded="false"
+        aria-atomic="false" class="initially-hidden"></ul>
+  </form>
+</div>
+
+  </div>
+
+  
+
+  <div id="class-metadata">
+    
+    <div id="parent-class-section" class="nav-section">
+  <h3>Parent</h3>
+
+  
+  <p class="link"><a href="../DataSource.html">TZInfo::DataSource</a>
+  
+</div>
+
+    
+    
+    <!-- Method Quickref -->
+<div id="method-list-section" class="nav-section">
+  <h3>Methods</h3>
+
+  <ul class="link-list" role="directory">
+    
+    <li ><a href="#method-c-alternate_iso3166_tab_search_path">::alternate_iso3166_tab_search_path</a>
+    
+    <li ><a href="#method-c-alternate_iso3166_tab_search_path-3D">::alternate_iso3166_tab_search_path=</a>
+    
+    <li class="calls-super" ><a href="#method-c-new">::new</a>
+    
+    <li ><a href="#method-c-process_search_path">::process_search_path</a>
+    
+    <li ><a href="#method-c-search_path">::search_path</a>
+    
+    <li ><a href="#method-c-search_path-3D">::search_path=</a>
+    
+    <li ><a href="#method-i-data_timezone_identifiers">#data_timezone_identifiers</a>
+    
+    <li ><a href="#method-i-dms_to_rational">#dms_to_rational</a>
+    
+    <li ><a href="#method-i-enum_timezones">#enum_timezones</a>
+    
+    <li ><a href="#method-i-find_zoneinfo_dir">#find_zoneinfo_dir</a>
+    
+    <li ><a href="#method-i-inspect">#inspect</a>
+    
+    <li ><a href="#method-i-linked_timezone_identifiers">#linked_timezone_identifiers</a>
+    
+    <li ><a href="#method-i-load_countries">#load_countries</a>
+    
+    <li ><a href="#method-i-load_country_info">#load_country_info</a>
+    
+    <li ><a href="#method-i-load_timezone_identifiers">#load_timezone_identifiers</a>
+    
+    <li ><a href="#method-i-load_timezone_info">#load_timezone_info</a>
+    
+    <li ><a href="#method-i-resolve_tab_path">#resolve_tab_path</a>
+    
+    <li ><a href="#method-i-to_s">#to_s</a>
+    
+    <li ><a href="#method-i-validate_zoneinfo_dir">#validate_zoneinfo_dir</a>
+    
+  </ul>
+</div>
+
+  </div>
+</nav>
+
+<main role="main" aria-labelledby="class-TZInfo::DataSources::ZoneinfoDataSource">
+  <h1 id="class-TZInfo::DataSources::ZoneinfoDataSource" class="class">
+    class TZInfo::DataSources::ZoneinfoDataSource
+  </h1>
+
+  <section class="description">
+    
+<p>A <a href="../DataSource.html"><code>DataSource</code></a> implementation that loads data from a &#39;zoneinfo&#39; directory containing compiled “TZif” version 3 (or earlier) files in addition to iso3166.tab and zone1970.tab or zone.tab index files.</p>
+
+<p>To have <a href="../../TZInfo.html"><code>TZInfo</code></a> load the system zoneinfo files, call {TZInfo::DataSource.set} as follows:</p>
+
+<pre class="ruby"><span class="ruby-constant">TZInfo</span><span class="ruby-operator">::</span><span class="ruby-constant">DataSource</span>.<span class="ruby-identifier">set</span>(<span class="ruby-value">:zoneinfo</span>)
+</pre>
+
+<p>To load zoneinfo files from a particular directory, pass the directory to {TZInfo::DataSource.set}:</p>
+
+<pre class="ruby"><span class="ruby-constant">TZInfo</span><span class="ruby-operator">::</span><span class="ruby-constant">DataSource</span>.<span class="ruby-identifier">set</span>(<span class="ruby-value">:zoneinfo</span>, <span class="ruby-identifier">directory</span>)
+</pre>
+
+<p>To load zoneinfo files from a particular directory, but load the iso3166.tab index file from a separate location, pass the directory and path to the iso3166.tab file to {TZInfo::DataSource.set}:</p>
+
+<pre class="ruby"><span class="ruby-constant">TZInfo</span><span class="ruby-operator">::</span><span class="ruby-constant">DataSource</span>.<span class="ruby-identifier">set</span>(<span class="ruby-value">:zoneinfo</span>, <span class="ruby-identifier">directory</span>, <span class="ruby-identifier">iso3166_path</span>)
+</pre>
+
+<p>Please note that versions of the &#39;zic&#39; tool (used to build zoneinfo files) that were released prior to February 2006 created zoneinfo files that used 32-bit integers for transition timestamps. Later versions of zic produce zoneinfo files that use 64-bit integers. If you have 32-bit zoneinfo files on your system, then any queries falling outside of the range 1901-12-13 20:45:52 to 2038-01-19 03:14:07 may be inaccurate.</p>
+
+<p>Most modern platforms include 64-bit zoneinfo files. However, Mac OS X (up to at least 10.8.4) still uses 32-bit zoneinfo files.</p>
+
+<p>To check whether your zoneinfo files contain 32-bit or 64-bit transition data, you can run the following code (substituting the identifier of the zone you want to test for `zone_identifier`):</p>
+
+<pre class="ruby"><span class="ruby-constant">TZInfo</span><span class="ruby-operator">::</span><span class="ruby-constant">DataSource</span>.<span class="ruby-identifier">set</span>(<span class="ruby-value">:zoneinfo</span>)
+<span class="ruby-identifier">dir</span> = <span class="ruby-constant">TZInfo</span><span class="ruby-operator">::</span><span class="ruby-constant">DataSource</span>.<span class="ruby-identifier">get</span>.<span class="ruby-identifier">zoneinfo_dir</span>
+<span class="ruby-constant">File</span>.<span class="ruby-identifier">open</span>(<span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span>(<span class="ruby-identifier">dir</span>, <span class="ruby-identifier">zone_identifier</span>), <span class="ruby-string">&#39;r&#39;</span>) {<span class="ruby-operator">|</span><span class="ruby-identifier">f</span><span class="ruby-operator">|</span> <span class="ruby-identifier">f</span>.<span class="ruby-identifier">read</span>(<span class="ruby-value">5</span>) }
+</pre>
+
+<p>If the last line returns `“TZif\x00”`, then you have a 32-bit zoneinfo file. If it returns `“TZif2”` or `“TZif3”` then you have a 64-bit zoneinfo file.</p>
+
+<p>It is also worth noting that as of the 2017c release of the IANA Time Zone Database, 64-bit zoneinfo files only include future transitions up to 2038-01-19 03:14:07. Any queries falling after this time may be inaccurate.</p>
+
+  </section>
+
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+    <section class="constants-list">
+      <header>
+        <h3>Constants</h3>
+      </header>
+      <dl>
+      
+        <dt id="DEFAULT_ALTERNATE_ISO3166_TAB_SEARCH_PATH">DEFAULT_ALTERNATE_ISO3166_TAB_SEARCH_PATH
+        
+        <dd><p>The default value of {ZoneinfoDataSource.alternate_iso3166_tab_search_path}.</p>
+        
+      
+        <dt id="DEFAULT_SEARCH_PATH">DEFAULT_SEARCH_PATH
+        
+        <dd><p>The default value of {ZoneinfoDataSource.search_path}.</p>
+        
+      
+      </dl>
+    </section>
+    
+
+    
+    <section class="attribute-method-details" class="method-section">
+      <header>
+        <h3>Attributes</h3>
+      </header>
+
+      
+      <div id="attribute-i-country_codes" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">country_codes</span><span
+            class="attribute-access-type">[R]</span>
+        </div>
+
+        <div class="method-description">
+        
+        <p>(see <a href="../DataSource.html#method-i-country_codes"><code>DataSource#country_codes</code></a>)</p>
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-zoneinfo_dir" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">zoneinfo_dir</span><span
+            class="attribute-access-type">[R]</span>
+        </div>
+
+        <div class="method-description">
+        
+        <p>@return [String] the zoneinfo directory being used.</p>
+        
+        </div>
+      </div>
+      
+    </section>
+    
+
+    
+     <section id="public-class-5Buntitled-5D-method-details" class="method-section">
+       <header>
+         <h3>Public Class Methods</h3>
+       </header>
+
+    
+      <div id="method-c-alternate_iso3166_tab_search_path" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">alternate_iso3166_tab_search_path</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>An `Array` of paths that will be checked to find an alternate iso3166.tab file if one was not included in the zoneinfo directory (for example, on FreeBSD and OpenBSD systems).</p>
+
+<p>Paths are checked in the order they appear in the `Array`.</p>
+
+<p>The default value is `[&#39;/usr/share/misc/iso3166.tab&#39;, &#39;/usr/share/misc/iso3166&#39;]`.</p>
+
+<p>@return [Array&lt;String&gt;] an `Array` of paths to check in order to</p>
+
+<pre>locate an iso3166.tab file.</pre>
+          
+          
+
+          
+          <div class="method-source-code" id="alternate_iso3166_tab_search_path-source">
+            <pre><span class="ruby-comment"># File lib/tzinfo/data_sources/zoneinfo_data_source.rb, line 136</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">alternate_iso3166_tab_search_path</span>
+  <span class="ruby-identifier">@@alternate_iso3166_tab_search_path</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-c-alternate_iso3166_tab_search_path-3D" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">alternate_iso3166_tab_search_path=</span><span
+            class="method-args">(alternate_iso3166_tab_search_path)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Sets the paths to check to locate an alternate iso3166.tab file if one was not included in the zoneinfo directory.</p>
+
+<p>Can be set to an `Array` of paths or a `String` containing paths separated with `File::PATH_SEPARATOR`.</p>
+
+<p>Paths are checked in the order they appear in the array.</p>
+
+<p>Set to `nil` to revert to the default paths.</p>
+
+<p>@param <a href="ZoneinfoDataSource.html#method-c-alternate_iso3166_tab_search_path"><code>alternate_iso3166_tab_search_path</code></a> [Object] either `nil` or a</p>
+
+<pre>list of paths to check as either an `Array` of `String` or a
+`File::PATH_SEPARATOR` separated `String`.</pre>
+          
+          
+
+          
+          <div class="method-source-code" id="alternate_iso3166_tab_search_path-3D-source">
+            <pre><span class="ruby-comment"># File lib/tzinfo/data_sources/zoneinfo_data_source.rb, line 153</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">alternate_iso3166_tab_search_path=</span>(<span class="ruby-identifier">alternate_iso3166_tab_search_path</span>)
+  <span class="ruby-identifier">@@alternate_iso3166_tab_search_path</span> = <span class="ruby-identifier">process_search_path</span>(<span class="ruby-identifier">alternate_iso3166_tab_search_path</span>, <span class="ruby-constant">DEFAULT_ALTERNATE_ISO3166_TAB_SEARCH_PATH</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-c-new" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">new</span><span
+            class="method-args">(zoneinfo_dir = nil, alternate_iso3166_tab_path = nil)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Initializes a new {ZoneinfoDataSource}.</p>
+
+<p>If `zoneinfo_dir` is specified, it will be checked and used as the source of zoneinfo files.</p>
+
+<p>The directory must contain a file named iso3166.tab and a file named either zone1970.tab or zone.tab. These may either be included in the root of the directory or in a &#39;tab&#39; sub-directory and named country.tab and zone_sun.tab respectively (as is the case on Solaris).</p>
+
+<p>Additionally, the path to iso3166.tab can be overridden using the `alternate_iso3166_tab_path` parameter.</p>
+
+<p>If `zoneinfo_dir` is not specified or `nil`, the paths referenced in {search_path} are searched in order to find a valid zoneinfo directory (one that contains zone1970.tab or zone.tab and iso3166.tab files as above).</p>
+
+<p>The paths referenced in {alternate_iso3166_tab_search_path} are also searched to find an iso3166.tab file if one of the searched zoneinfo directories doesn&#39;t contain an iso3166.tab file.</p>
+
+<p>@param <a href="ZoneinfoDataSource.html#attribute-i-zoneinfo_dir"><code>zoneinfo_dir</code></a> [String] an optional path to a directory to use as</p>
+
+<pre>the source of zoneinfo files.</pre>
+
+<p>@param alternate_iso3166_tab_path [String] an optional path to the</p>
+
+<pre>iso3166.tab file.</pre>
+
+<p>@raise [InvalidZoneinfoDirectory] if the iso3166.tab and zone1970.tab or</p>
+
+<pre>zone.tab files cannot be found using the `zoneinfo_dir` and
+`alternate_iso3166_tab_path` parameters.</pre>
+
+<p>@raise [ZoneinfoDirectoryNotFound] if no valid directory can be found</p>
+
+<pre>by searching.</pre>
+          
+          
+            <div class="method-calls-super">
+              Calls superclass method
+              <a href="../DataSource.html#method-c-new"><code>TZInfo::DataSource::new</code></a>
+            </div>
+          
+
+          
+          <div class="method-source-code" id="new-source">
+            <pre><span class="ruby-comment"># File lib/tzinfo/data_sources/zoneinfo_data_source.rb, line 217</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">initialize</span>(<span class="ruby-identifier">zoneinfo_dir</span> = <span class="ruby-keyword">nil</span>, <span class="ruby-identifier">alternate_iso3166_tab_path</span> = <span class="ruby-keyword">nil</span>)
+  <span class="ruby-keyword">super</span>()
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">zoneinfo_dir</span>
+    <span class="ruby-identifier">iso3166_tab_path</span>, <span class="ruby-identifier">zone_tab_path</span> = <span class="ruby-identifier">validate_zoneinfo_dir</span>(<span class="ruby-identifier">zoneinfo_dir</span>, <span class="ruby-identifier">alternate_iso3166_tab_path</span>)
+
+    <span class="ruby-keyword">unless</span> <span class="ruby-identifier">iso3166_tab_path</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">zone_tab_path</span>
+      <span class="ruby-identifier">raise</span> <span class="ruby-constant">InvalidZoneinfoDirectory</span>, <span class="ruby-node">&quot;#{zoneinfo_dir} is not a directory or doesn&#39;t contain a iso3166.tab file and a zone1970.tab or zone.tab file.&quot;</span>
+    <span class="ruby-keyword">end</span>
+
+    <span class="ruby-ivar">@zoneinfo_dir</span> = <span class="ruby-identifier">zoneinfo_dir</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-ivar">@zoneinfo_dir</span>, <span class="ruby-identifier">iso3166_tab_path</span>, <span class="ruby-identifier">zone_tab_path</span> = <span class="ruby-identifier">find_zoneinfo_dir</span>
+
+    <span class="ruby-keyword">unless</span> <span class="ruby-ivar">@zoneinfo_dir</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">iso3166_tab_path</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">zone_tab_path</span>
+      <span class="ruby-identifier">raise</span> <span class="ruby-constant">ZoneinfoDirectoryNotFound</span>, <span class="ruby-node">&quot;None of the paths included in #{self.class.name}.search_path are valid zoneinfo directories.&quot;</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-ivar">@zoneinfo_dir</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">expand_path</span>(<span class="ruby-ivar">@zoneinfo_dir</span>).<span class="ruby-identifier">freeze</span>
+  <span class="ruby-ivar">@timezone_identifiers</span> = <span class="ruby-identifier">load_timezone_identifiers</span>.<span class="ruby-identifier">freeze</span>
+  <span class="ruby-ivar">@countries</span> = <span class="ruby-identifier">load_countries</span>(<span class="ruby-identifier">iso3166_tab_path</span>, <span class="ruby-identifier">zone_tab_path</span>).<span class="ruby-identifier">freeze</span>
+  <span class="ruby-ivar">@country_codes</span> = <span class="ruby-ivar">@countries</span>.<span class="ruby-identifier">keys</span>.<span class="ruby-identifier">sort!</span>.<span class="ruby-identifier">freeze</span>
+
+  <span class="ruby-identifier">string_deduper</span> = <span class="ruby-constant">ConcurrentStringDeduper</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-identifier">posix_tz_parser</span> = <span class="ruby-constant">PosixTimeZoneParser</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">string_deduper</span>)
+  <span class="ruby-ivar">@zoneinfo_reader</span> = <span class="ruby-constant">ZoneinfoReader</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">posix_tz_parser</span>, <span class="ruby-identifier">string_deduper</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-c-search_path" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">search_path</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>An `Array` of directories that will be checked to find the system zoneinfo directory.</p>
+
+<p>Directories are checked in the order they appear in the `Array`.</p>
+
+<p>The default value is `[&#39;/usr/share/zoneinfo&#39;, &#39;/usr/share/lib/zoneinfo&#39;, &#39;/etc/zoneinfo&#39;]`.</p>
+
+<p>@return [Array&lt;String&gt;] an `Array` of directories to check in order to</p>
+
+<pre>find the system zoneinfo directory.</pre>
+          
+          
+
+          
+          <div class="method-source-code" id="search_path-source">
+            <pre><span class="ruby-comment"># File lib/tzinfo/data_sources/zoneinfo_data_source.rb, line 103</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">search_path</span>
+  <span class="ruby-identifier">@@search_path</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-c-search_path-3D" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">search_path=</span><span
+            class="method-args">(search_path)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Sets the directories to be checked when locating the system zoneinfo directory.</p>
+
+<p>Can be set to an `Array` of directories or a `String` containing directories separated with `File::PATH_SEPARATOR`.</p>
+
+<p>Directories are checked in the order they appear in the `Array` or `String`.</p>
+
+<p>Set to `nil` to revert to the default paths.</p>
+
+<p>@param <a href="ZoneinfoDataSource.html#method-c-search_path"><code>search_path</code></a> [Object] either `nil` or a list of directories to</p>
+
+<pre>check as either an `Array` of `String` or a `File::PATH_SEPARATOR`
+separated `String`.</pre>
+          
+          
+
+          
+          <div class="method-source-code" id="search_path-3D-source">
+            <pre><span class="ruby-comment"># File lib/tzinfo/data_sources/zoneinfo_data_source.rb, line 121</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">search_path=</span>(<span class="ruby-identifier">search_path</span>)
+  <span class="ruby-identifier">@@search_path</span> = <span class="ruby-identifier">process_search_path</span>(<span class="ruby-identifier">search_path</span>, <span class="ruby-constant">DEFAULT_SEARCH_PATH</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+    </section>
+  
+     <section id="private-class-5Buntitled-5D-method-details" class="method-section">
+       <header>
+         <h3>Private Class Methods</h3>
+       </header>
+
+    
+      <div id="method-c-process_search_path" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">process_search_path</span><span
+            class="method-args">(path, default)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Processes a path for use as the {search_path} or {alternate_iso3166_tab_search_path}.</p>
+
+<p>@param path [Object] either `nil` or a list of paths to check as</p>
+
+<pre>either an `Array` of `String` or a `File::PATH_SEPARATOR` separated
+`String`.</pre>
+
+<p>@param default [Array&lt;String&gt;] the default value. @return [Array&lt;String&gt;] the processed path.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="process_search_path-source">
+            <pre><span class="ruby-comment"># File lib/tzinfo/data_sources/zoneinfo_data_source.rb, line 167</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">process_search_path</span>(<span class="ruby-identifier">path</span>, <span class="ruby-identifier">default</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">path</span>
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">path</span>.<span class="ruby-identifier">kind_of?</span>(<span class="ruby-constant">String</span>)
+      <span class="ruby-identifier">path</span>.<span class="ruby-identifier">split</span>(<span class="ruby-constant">File</span><span class="ruby-operator">::</span><span class="ruby-constant">PATH_SEPARATOR</span>)
+    <span class="ruby-keyword">else</span>
+      <span class="ruby-identifier">path</span>.<span class="ruby-identifier">collect</span>(<span class="ruby-operator">&amp;</span><span class="ruby-value">:to_s</span>)
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">default</span>.<span class="ruby-identifier">dup</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+    </section>
+  
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section">
+       <header>
+         <h3>Public Instance Methods</h3>
+       </header>
+
+    
+      <div id="method-i-data_timezone_identifiers" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">data_timezone_identifiers</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Returns a frozen `Array` of all the available time zone identifiers. The identifiers are sorted according to `String#&lt;=&gt;`.</p>
+
+<p>@return [Array&lt;String&gt;] a frozen `Array` of all the available time zone</p>
+
+<pre>identifiers.</pre>
+          
+          
+
+          
+          <div class="method-source-code" id="data_timezone_identifiers-source">
+            <pre><span class="ruby-comment"># File lib/tzinfo/data_sources/zoneinfo_data_source.rb, line 251</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">data_timezone_identifiers</span>
+  <span class="ruby-ivar">@timezone_identifiers</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-inspect" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">inspect</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>(see <a href="../DataSource.html#method-i-inspect"><code>DataSource#inspect</code></a>)</p>
+          
+          
+
+          
+          <div class="method-source-code" id="inspect-source">
+            <pre><span class="ruby-comment"># File lib/tzinfo/data_sources/zoneinfo_data_source.rb, line 270</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">inspect</span>
+  <span class="ruby-node">&quot;#&lt;#{self.class}: #{@zoneinfo_dir}&gt;&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-linked_timezone_identifiers" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">linked_timezone_identifiers</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Returns an empty `Array`. There is no information about linked/aliased time zones in the zoneinfo files. When using {ZoneinfoDataSource}, every time zone will be returned as a {DataTimezone}.</p>
+
+<p>@return [Array&lt;String&gt;] an empty `Array`.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="linked_timezone_identifiers-source">
+            <pre><span class="ruby-comment"># File lib/tzinfo/data_sources/zoneinfo_data_source.rb, line 260</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">linked_timezone_identifiers</span>
+  [].<span class="ruby-identifier">freeze</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-to_s" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">to_s</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>(see <a href="../DataSource.html#method-i-to_s"><code>DataSource#to_s</code></a>)</p>
+          
+          
+
+          
+          <div class="method-source-code" id="to_s-source">
+            <pre><span class="ruby-comment"># File lib/tzinfo/data_sources/zoneinfo_data_source.rb, line 265</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">to_s</span>
+  <span class="ruby-node">&quot;Zoneinfo DataSource: #{@zoneinfo_dir}&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+    </section>
+  
+     <section id="protected-instance-5Buntitled-5D-method-details" class="method-section">
+       <header>
+         <h3>Protected Instance Methods</h3>
+       </header>
+
+    
+      <div id="method-i-load_country_info" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">load_country_info</span><span
+            class="method-args">(code)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>(see <a href="../DataSource.html#method-i-load_country_info"><code>DataSource#load_country_info</code></a>)</p>
+          
+          
+
+          
+          <div class="method-source-code" id="load_country_info-source">
+            <pre><span class="ruby-comment"># File lib/tzinfo/data_sources/zoneinfo_data_source.rb, line 306</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">load_country_info</span>(<span class="ruby-identifier">code</span>)
+  <span class="ruby-identifier">lookup_country_info</span>(<span class="ruby-ivar">@countries</span>, <span class="ruby-identifier">code</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-load_timezone_info" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">load_timezone_info</span><span
+            class="method-args">(identifier)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Returns a {TimezoneInfo} instance for the given time zone identifier. The result will either be a {ConstantOffsetDataTimezoneInfo} or a {TransitionsDataTimezoneInfo}.</p>
+
+<p>@param identifier [String] A time zone identifier. @return [TimezoneInfo] a {TimezoneInfo} instance for the given time zone</p>
+
+<pre>identifier.</pre>
+
+<p>@raise [InvalidTimezoneIdentifier] if the time zone is not found, the</p>
+
+<pre>identifier is invalid, the zoneinfo file cannot be opened or the
+zoneinfo file is not valid.</pre>
+          
+          
+
+          
+          <div class="method-source-code" id="load_timezone_info-source">
+            <pre><span class="ruby-comment"># File lib/tzinfo/data_sources/zoneinfo_data_source.rb, line 286</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">load_timezone_info</span>(<span class="ruby-identifier">identifier</span>)
+  <span class="ruby-identifier">valid_identifier</span> = <span class="ruby-identifier">validate_timezone_identifier</span>(<span class="ruby-identifier">identifier</span>)
+  <span class="ruby-identifier">path</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span>(<span class="ruby-ivar">@zoneinfo_dir</span>, <span class="ruby-identifier">valid_identifier</span>)
+
+  <span class="ruby-identifier">zoneinfo</span> = <span class="ruby-keyword">begin</span>
+    <span class="ruby-ivar">@zoneinfo_reader</span>.<span class="ruby-identifier">read</span>(<span class="ruby-identifier">path</span>)
+  <span class="ruby-keyword">rescue</span> <span class="ruby-constant">Errno</span><span class="ruby-operator">::</span><span class="ruby-constant">EACCES</span>, <span class="ruby-constant">InvalidZoneinfoFile</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-identifier">e</span>
+    <span class="ruby-identifier">raise</span> <span class="ruby-constant">InvalidTimezoneIdentifier</span>, <span class="ruby-node">&quot;#{e.message.encode(Encoding::UTF_8)} (loading #{valid_identifier})&quot;</span>
+  <span class="ruby-keyword">rescue</span> <span class="ruby-constant">Errno</span><span class="ruby-operator">::</span><span class="ruby-constant">EISDIR</span>, <span class="ruby-constant">Errno</span><span class="ruby-operator">::</span><span class="ruby-constant">ENAMETOOLONG</span>, <span class="ruby-constant">Errno</span><span class="ruby-operator">::</span><span class="ruby-constant">ENOENT</span>, <span class="ruby-constant">Errno</span><span class="ruby-operator">::</span><span class="ruby-constant">ENOTDIR</span>
+    <span class="ruby-identifier">raise</span> <span class="ruby-constant">InvalidTimezoneIdentifier</span>, <span class="ruby-node">&quot;Invalid identifier: #{valid_identifier}&quot;</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">zoneinfo</span>.<span class="ruby-identifier">kind_of?</span>(<span class="ruby-constant">TimezoneOffset</span>)
+    <span class="ruby-constant">ConstantOffsetDataTimezoneInfo</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">valid_identifier</span>, <span class="ruby-identifier">zoneinfo</span>)
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-constant">TransitionsDataTimezoneInfo</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">valid_identifier</span>, <span class="ruby-identifier">zoneinfo</span>)
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+    </section>
+  
+     <section id="private-instance-5Buntitled-5D-method-details" class="method-section">
+       <header>
+         <h3>Private Instance Methods</h3>
+       </header>
+
+    
+      <div id="method-i-dms_to_rational" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">dms_to_rational</span><span
+            class="method-args">(sign, degrees, minutes, seconds = nil)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Converts degrees, minutes and seconds to a Rational.</p>
+
+<p>@param sign [String] `&#39;-&#39;` or `&#39;+&#39;`. @param degrees [String] the number of degrees. @param minutes [String] the number of minutes. @param seconds [String] the number of seconds (optional). @return [Rational] the result of converting from degrees, minutes and</p>
+
+<pre>seconds to a `Rational`.</pre>
+          
+          
+
+          
+          <div class="method-source-code" id="dms_to_rational-source">
+            <pre><span class="ruby-comment"># File lib/tzinfo/data_sources/zoneinfo_data_source.rb, line 567</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">dms_to_rational</span>(<span class="ruby-identifier">sign</span>, <span class="ruby-identifier">degrees</span>, <span class="ruby-identifier">minutes</span>, <span class="ruby-identifier">seconds</span> = <span class="ruby-keyword">nil</span>)
+  <span class="ruby-identifier">degrees</span> = <span class="ruby-identifier">degrees</span>.<span class="ruby-identifier">to_i</span>
+  <span class="ruby-identifier">minutes</span> = <span class="ruby-identifier">minutes</span>.<span class="ruby-identifier">to_i</span>
+  <span class="ruby-identifier">sign</span> = <span class="ruby-identifier">sign</span> <span class="ruby-operator">==</span> <span class="ruby-string">&#39;-&#39;</span>.<span class="ruby-identifier">freeze</span> <span class="ruby-operator">?</span> <span class="ruby-value">-1</span> <span class="ruby-operator">:</span> <span class="ruby-value">1</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">seconds</span>
+    <span class="ruby-constant">Rational</span>(<span class="ruby-identifier">sign</span> <span class="ruby-operator">*</span> (<span class="ruby-identifier">degrees</span> <span class="ruby-operator">*</span> <span class="ruby-value">3600</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">minutes</span> <span class="ruby-operator">*</span> <span class="ruby-value">60</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">seconds</span>.<span class="ruby-identifier">to_i</span>), <span class="ruby-value">3600</span>)
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-constant">Rational</span>(<span class="ruby-identifier">sign</span> <span class="ruby-operator">*</span> (<span class="ruby-identifier">degrees</span> <span class="ruby-operator">*</span> <span class="ruby-value">60</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">minutes</span>), <span class="ruby-value">60</span>)
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-enum_timezones" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">enum_timezones</span><span
+            class="method-args">(dir, exclude = []) { |path| ... }</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Recursively enumerate a directory of time zones.</p>
+
+<p>@param dir [Array&lt;String&gt;] the directory to enumerate as an `Array` of</p>
+
+<pre>path components.</pre>
+
+<p>@param exclude [Array&lt;String&gt;] file names to exclude when scanning</p>
+
+<pre>`dir`.</pre>
+
+<p>@yield [path] the path of each time zone file found is passed to</p>
+
+<pre>the block.</pre>
+
+<p>@yieldparam path [Array&lt;String&gt;] the path of a time zone file as an</p>
+
+<pre>`Array` of path components.</pre>
+          
+          
+
+          
+          <div class="method-source-code" id="enum_timezones-source">
+            <pre><span class="ruby-comment"># File lib/tzinfo/data_sources/zoneinfo_data_source.rb, line 422</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">enum_timezones</span>(<span class="ruby-identifier">dir</span>, <span class="ruby-identifier">exclude</span> = [], <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)
+  <span class="ruby-constant">Dir</span>.<span class="ruby-identifier">foreach</span>(<span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span>(<span class="ruby-ivar">@zoneinfo_dir</span>, <span class="ruby-operator">*</span><span class="ruby-identifier">dir</span>)) <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">entry</span><span class="ruby-operator">|</span>
+    <span class="ruby-keyword">begin</span>
+      <span class="ruby-identifier">entry</span>.<span class="ruby-identifier">encode!</span>(<span class="ruby-constant">Encoding</span><span class="ruby-operator">::</span><span class="ruby-constant">UTF_8</span>)
+    <span class="ruby-keyword">rescue</span> <span class="ruby-constant">EncodingError</span>
+      <span class="ruby-keyword">next</span>
+    <span class="ruby-keyword">end</span>
+
+    <span class="ruby-keyword">unless</span> <span class="ruby-identifier">entry</span> <span class="ruby-operator">=~</span> <span class="ruby-regexp">/\./</span> <span class="ruby-operator">||</span> <span class="ruby-identifier">exclude</span>.<span class="ruby-identifier">include?</span>(<span class="ruby-identifier">entry</span>)
+      <span class="ruby-identifier">entry</span>.<span class="ruby-identifier">untaint</span>
+      <span class="ruby-identifier">path</span> = <span class="ruby-identifier">dir</span> <span class="ruby-operator">+</span> [<span class="ruby-identifier">entry</span>]
+      <span class="ruby-identifier">full_path</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span>(<span class="ruby-ivar">@zoneinfo_dir</span>, <span class="ruby-operator">*</span><span class="ruby-identifier">path</span>)
+
+      <span class="ruby-keyword">if</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">directory?</span>(<span class="ruby-identifier">full_path</span>)
+        <span class="ruby-identifier">enum_timezones</span>(<span class="ruby-identifier">path</span>, [], <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)
+      <span class="ruby-keyword">elsif</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">file?</span>(<span class="ruby-identifier">full_path</span>)
+        <span class="ruby-keyword">yield</span> <span class="ruby-identifier">path</span>
+      <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-find_zoneinfo_dir" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">find_zoneinfo_dir</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Finds a zoneinfo directory using {search_path} and {alternate_iso3166_tab_search_path}.</p>
+
+<p>@return [Array&lt;String&gt;] an `Array` containing the iso3166.tab and</p>
+
+<pre>zone.tab paths if a zoneinfo directory was found, otherwise `nil`.</pre>
+          
+          
+
+          
+          <div class="method-source-code" id="find_zoneinfo_dir-source">
+            <pre><span class="ruby-comment"># File lib/tzinfo/data_sources/zoneinfo_data_source.rb, line 369</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">find_zoneinfo_dir</span>
+  <span class="ruby-identifier">alternate_iso3166_tab_path</span> = <span class="ruby-keyword">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">alternate_iso3166_tab_search_path</span>.<span class="ruby-identifier">detect</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">path</span><span class="ruby-operator">|</span>
+    <span class="ruby-constant">File</span>.<span class="ruby-identifier">file?</span>(<span class="ruby-identifier">path</span>)
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">search_path</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">path</span><span class="ruby-operator">|</span>
+    <span class="ruby-comment"># Try without the alternate_iso3166_tab_path first.</span>
+    <span class="ruby-identifier">iso3166_tab_path</span>, <span class="ruby-identifier">zone_tab_path</span> = <span class="ruby-identifier">validate_zoneinfo_dir</span>(<span class="ruby-identifier">path</span>)
+    <span class="ruby-keyword">return</span> <span class="ruby-identifier">path</span>, <span class="ruby-identifier">iso3166_tab_path</span>, <span class="ruby-identifier">zone_tab_path</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">iso3166_tab_path</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">zone_tab_path</span>
+
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">alternate_iso3166_tab_path</span>
+      <span class="ruby-identifier">iso3166_tab_path</span>, <span class="ruby-identifier">zone_tab_path</span> = <span class="ruby-identifier">validate_zoneinfo_dir</span>(<span class="ruby-identifier">path</span>, <span class="ruby-identifier">alternate_iso3166_tab_path</span>)
+      <span class="ruby-keyword">return</span> <span class="ruby-identifier">path</span>, <span class="ruby-identifier">iso3166_tab_path</span>, <span class="ruby-identifier">zone_tab_path</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">iso3166_tab_path</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">zone_tab_path</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-comment"># Not found.</span>
+  <span class="ruby-keyword">nil</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-load_countries" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">load_countries</span><span
+            class="method-args">(iso3166_tab_path, zone_tab_path)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Uses the iso3166.tab and zone1970.tab or zone.tab files to return a Hash mapping country codes to <a href="CountryInfo.html"><code>CountryInfo</code></a> instances.</p>
+
+<p>@param iso3166_tab_path [String] the path to the iso3166.tab file. @param zone_tab_path [String] the path to the zone.tab file. @return [Hash&lt;String, CountryInfo&gt;] a mapping from ISO 3166-1 alpha-2</p>
+
+<pre>country codes to {CountryInfo} instances.</pre>
+          
+          
+
+          
+          <div class="method-source-code" id="load_countries-source">
+            <pre><span class="ruby-comment"># File lib/tzinfo/data_sources/zoneinfo_data_source.rb, line 451</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">load_countries</span>(<span class="ruby-identifier">iso3166_tab_path</span>, <span class="ruby-identifier">zone_tab_path</span>)
+
+  <span class="ruby-comment"># Handle standard 3 to 4 column zone.tab files as well as the 4 to 5</span>
+  <span class="ruby-comment"># column format used by Solaris.</span>
+  <span class="ruby-comment">#</span>
+  <span class="ruby-comment"># On Solaris, an extra column before the comment gives an optional</span>
+  <span class="ruby-comment"># linked/alternate timezone identifier (or &#39;-&#39; if not set).</span>
+  <span class="ruby-comment">#</span>
+  <span class="ruby-comment"># Additionally, there is a section at the end of the file for timezones</span>
+  <span class="ruby-comment"># covering regions. These are given lower-case &quot;country&quot; codes. The timezone</span>
+  <span class="ruby-comment"># identifier column refers to a continent instead of an identifier. These</span>
+  <span class="ruby-comment"># lines will be ignored by TZInfo.</span>
+  <span class="ruby-comment">#</span>
+  <span class="ruby-comment"># Since the last column is optional in both formats, testing for the</span>
+  <span class="ruby-comment"># Solaris format is done in two passes. The first pass identifies if there</span>
+  <span class="ruby-comment"># are any lines using 5 columns.</span>
+
+
+  <span class="ruby-comment"># The first column is allowed to be a comma separated list of country</span>
+  <span class="ruby-comment"># codes, as used in zone1970.tab (introduced in tzdata 2014f).</span>
+  <span class="ruby-comment">#</span>
+  <span class="ruby-comment"># The first country code in the comma-separated list is the country that</span>
+  <span class="ruby-comment"># contains the city the zone identifier is based on. The first country</span>
+  <span class="ruby-comment"># code on each line is considered to be primary with the others</span>
+  <span class="ruby-comment"># secondary.</span>
+  <span class="ruby-comment">#</span>
+  <span class="ruby-comment"># The zones for each country are ordered primary first, then secondary.</span>
+  <span class="ruby-comment"># Within the primary and secondary groups, the zones are ordered by their</span>
+  <span class="ruby-comment"># order in the file.</span>
+
+  <span class="ruby-identifier">file_is_5_column</span> = <span class="ruby-keyword">false</span>
+  <span class="ruby-identifier">zone_tab</span> = []
+
+  <span class="ruby-identifier">file</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">read</span>(<span class="ruby-identifier">zone_tab_path</span>, <span class="ruby-value">external_encoding:</span> <span class="ruby-constant">Encoding</span><span class="ruby-operator">::</span><span class="ruby-constant">UTF_8</span>, <span class="ruby-value">internal_encoding:</span> <span class="ruby-constant">Encoding</span><span class="ruby-operator">::</span><span class="ruby-constant">UTF_8</span>)
+  <span class="ruby-identifier">file</span>.<span class="ruby-identifier">each_line</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">line</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">line</span>.<span class="ruby-identifier">chomp!</span>
+
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">line</span> <span class="ruby-operator">=~</span> <span class="ruby-regexp">/\A([A-Z]{2}(?:,[A-Z]{2})*)\t(?:([+\-])(\d{2})(\d{2})([+\-])(\d{3})(\d{2})|([+\-])(\d{2})(\d{2})(\d{2})([+\-])(\d{3})(\d{2})(\d{2}))\t([^\t]+)(?:\t([^\t]+))?(?:\t([^\t]+))?\z/</span>
+      <span class="ruby-identifier">codes</span> = <span class="ruby-node">$1</span>
+
+      <span class="ruby-keyword">if</span> <span class="ruby-node">$2</span>
+        <span class="ruby-identifier">latitude</span> = <span class="ruby-identifier">dms_to_rational</span>(<span class="ruby-node">$2</span>, <span class="ruby-node">$3</span>, <span class="ruby-node">$4</span>)
+        <span class="ruby-identifier">longitude</span> = <span class="ruby-identifier">dms_to_rational</span>(<span class="ruby-node">$5</span>, <span class="ruby-node">$6</span>, <span class="ruby-node">$7</span>)
+      <span class="ruby-keyword">else</span>
+        <span class="ruby-identifier">latitude</span> = <span class="ruby-identifier">dms_to_rational</span>(<span class="ruby-node">$8</span>, <span class="ruby-node">$9</span>, <span class="ruby-node">$10</span>, <span class="ruby-node">$11</span>)
+        <span class="ruby-identifier">longitude</span> = <span class="ruby-identifier">dms_to_rational</span>(<span class="ruby-node">$12</span>, <span class="ruby-node">$13</span>, <span class="ruby-node">$14</span>, <span class="ruby-node">$15</span>)
+      <span class="ruby-keyword">end</span>
+
+      <span class="ruby-identifier">zone_identifier</span> = <span class="ruby-node">$16</span>
+      <span class="ruby-identifier">column4</span> = <span class="ruby-node">$17</span>
+      <span class="ruby-identifier">column5</span> = <span class="ruby-node">$18</span>
+
+      <span class="ruby-identifier">file_is_5_column</span> = <span class="ruby-keyword">true</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">column5</span>
+
+      <span class="ruby-identifier">zone_tab</span> <span class="ruby-operator">&lt;&lt;</span> [<span class="ruby-identifier">codes</span>.<span class="ruby-identifier">split</span>(<span class="ruby-string">&#39;,&#39;</span>.<span class="ruby-identifier">freeze</span>), <span class="ruby-identifier">zone_identifier</span>, <span class="ruby-identifier">latitude</span>, <span class="ruby-identifier">longitude</span>, <span class="ruby-identifier">column4</span>, <span class="ruby-identifier">column5</span>]
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-identifier">string_deduper</span> = <span class="ruby-constant">StringDeduper</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-identifier">primary_zones</span> = {}
+  <span class="ruby-identifier">secondary_zones</span> = {}
+
+  <span class="ruby-identifier">zone_tab</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">codes</span>, <span class="ruby-identifier">zone_identifier</span>, <span class="ruby-identifier">latitude</span>, <span class="ruby-identifier">longitude</span>, <span class="ruby-identifier">column4</span>, <span class="ruby-identifier">column5</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">description</span> = <span class="ruby-identifier">file_is_5_column</span> <span class="ruby-operator">?</span> <span class="ruby-identifier">column5</span> <span class="ruby-operator">:</span> <span class="ruby-identifier">column4</span>
+    <span class="ruby-identifier">description</span> = <span class="ruby-identifier">string_deduper</span>.<span class="ruby-identifier">dedupe</span>(<span class="ruby-identifier">description</span>) <span class="ruby-keyword">if</span> <span class="ruby-identifier">description</span>
+
+    <span class="ruby-comment"># Lookup the identifier in the timezone index, so that the same</span>
+    <span class="ruby-comment"># String instance can be used (saving memory).</span>
+    <span class="ruby-keyword">begin</span>
+      <span class="ruby-identifier">zone_identifier</span> = <span class="ruby-identifier">validate_timezone_identifier</span>(<span class="ruby-identifier">zone_identifier</span>)
+    <span class="ruby-keyword">rescue</span> <span class="ruby-constant">InvalidTimezoneIdentifier</span>
+      <span class="ruby-comment"># zone_identifier is not valid, dedupe and allow anyway.</span>
+      <span class="ruby-identifier">zone_identifier</span> = <span class="ruby-identifier">string_deduper</span>.<span class="ruby-identifier">dedupe</span>(<span class="ruby-identifier">zone_identifier</span>)
+    <span class="ruby-keyword">end</span>
+
+    <span class="ruby-identifier">country_timezone</span> = <span class="ruby-constant">CountryTimezone</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">zone_identifier</span>, <span class="ruby-identifier">latitude</span>, <span class="ruby-identifier">longitude</span>, <span class="ruby-identifier">description</span>)
+
+    <span class="ruby-comment"># codes will always have at least one element</span>
+
+    (<span class="ruby-identifier">primary_zones</span>[<span class="ruby-identifier">codes</span>.<span class="ruby-identifier">first</span>.<span class="ruby-identifier">freeze</span>] <span class="ruby-operator">||=</span> []) <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">country_timezone</span>
+
+    <span class="ruby-identifier">codes</span>[<span class="ruby-value">1</span><span class="ruby-operator">..</span><span class="ruby-value">-1</span>].<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">code</span><span class="ruby-operator">|</span>
+      (<span class="ruby-identifier">secondary_zones</span>[<span class="ruby-identifier">code</span>.<span class="ruby-identifier">freeze</span>] <span class="ruby-operator">||=</span> []) <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">country_timezone</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-identifier">countries</span> = {}
+
+  <span class="ruby-identifier">file</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">read</span>(<span class="ruby-identifier">iso3166_tab_path</span>, <span class="ruby-value">external_encoding:</span> <span class="ruby-constant">Encoding</span><span class="ruby-operator">::</span><span class="ruby-constant">UTF_8</span>, <span class="ruby-value">internal_encoding:</span> <span class="ruby-constant">Encoding</span><span class="ruby-operator">::</span><span class="ruby-constant">UTF_8</span>)
+  <span class="ruby-identifier">file</span>.<span class="ruby-identifier">each_line</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">line</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">line</span>.<span class="ruby-identifier">chomp!</span>
+
+    <span class="ruby-comment"># Handle both the two column alpha-2 and name format used in the tz</span>
+    <span class="ruby-comment"># database as well as the 4 column alpha-2, alpha-3, numeric-3 and</span>
+    <span class="ruby-comment"># name format used by FreeBSD and OpenBSD.</span>
+
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">line</span> <span class="ruby-operator">=~</span> <span class="ruby-regexp">/\A([A-Z]{2})(?:\t[A-Z]{3}\t[0-9]{3})?\t(.+)\z/</span>
+      <span class="ruby-identifier">code</span> = <span class="ruby-node">$1</span>
+      <span class="ruby-identifier">name</span> = <span class="ruby-node">$2</span>
+      <span class="ruby-identifier">zones</span> = (<span class="ruby-identifier">primary_zones</span>[<span class="ruby-identifier">code</span>] <span class="ruby-operator">||</span> []) <span class="ruby-operator">+</span> (<span class="ruby-identifier">secondary_zones</span>[<span class="ruby-identifier">code</span>] <span class="ruby-operator">||</span> [])
+
+      <span class="ruby-identifier">countries</span>[<span class="ruby-identifier">code</span>] = <span class="ruby-constant">CountryInfo</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">code</span>, <span class="ruby-identifier">name</span>, <span class="ruby-identifier">zones</span>)
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-identifier">countries</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-load_timezone_identifiers" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">load_timezone_identifiers</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Scans @zoneinfo_dir and returns an `Array` of available time zone identifiers. The result is sorted according to `String#&lt;=&gt;`.</p>
+
+<p>@return [Array&lt;String&gt;] an `Array` containing all the time zone</p>
+
+<pre>identifiers found.</pre>
+          
+          
+
+          
+          <div class="method-source-code" id="load_timezone_identifiers-source">
+            <pre><span class="ruby-comment"># File lib/tzinfo/data_sources/zoneinfo_data_source.rb, line 394</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">load_timezone_identifiers</span>
+  <span class="ruby-identifier">index</span> = []
+
+  <span class="ruby-comment"># Ignoring particular files:</span>
+  <span class="ruby-comment"># +VERSION is included on Mac OS X.</span>
+  <span class="ruby-comment"># leapseconds is a list of leap seconds.</span>
+  <span class="ruby-comment"># localtime is the current local timezone (may be a link).</span>
+  <span class="ruby-comment"># posix, posixrules and right are directories containing other versions of the zoneinfo files.</span>
+  <span class="ruby-comment"># src is a directory containing the tzdata source included on Solaris.</span>
+  <span class="ruby-comment"># timeconfig is a symlink included on Slackware.</span>
+
+  <span class="ruby-identifier">enum_timezones</span>([], [<span class="ruby-string">&#39;+VERSION&#39;</span>, <span class="ruby-string">&#39;leapseconds&#39;</span>, <span class="ruby-string">&#39;localtime&#39;</span>, <span class="ruby-string">&#39;posix&#39;</span>, <span class="ruby-string">&#39;posixrules&#39;</span>, <span class="ruby-string">&#39;right&#39;</span>, <span class="ruby-string">&#39;src&#39;</span>, <span class="ruby-string">&#39;timeconfig&#39;</span>]) <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">identifier</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">index</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">identifier</span>.<span class="ruby-identifier">join</span>(<span class="ruby-string">&#39;/&#39;</span>).<span class="ruby-identifier">freeze</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-identifier">index</span>.<span class="ruby-identifier">sort!</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-resolve_tab_path" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">resolve_tab_path</span><span
+            class="method-args">(zoneinfo_path, standard_names, tab_name)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Attempts to resolve the path to a tab file given its standard names and tab sub-directory name (as used on Solaris).</p>
+
+<p>@param zoneinfo_path [String] the path to a zoneinfo directory. @param standard_names [Array&lt;String&gt;] the standard names for the tab</p>
+
+<pre>file.</pre>
+
+<p>@param tab_name [String] the alternate name for the tab file to check in</p>
+
+<pre>the tab sub-directory.</pre>
+
+<p>@return [String] the path to the tab file.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="resolve_tab_path-source">
+            <pre><span class="ruby-comment"># File lib/tzinfo/data_sources/zoneinfo_data_source.rb, line 352</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">resolve_tab_path</span>(<span class="ruby-identifier">zoneinfo_path</span>, <span class="ruby-identifier">standard_names</span>, <span class="ruby-identifier">tab_name</span>)
+  <span class="ruby-identifier">standard_names</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">standard_name</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">path</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span>(<span class="ruby-identifier">zoneinfo_path</span>, <span class="ruby-identifier">standard_name</span>)
+    <span class="ruby-keyword">return</span> <span class="ruby-identifier">path</span> <span class="ruby-keyword">if</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">file?</span>(<span class="ruby-identifier">path</span>)
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-identifier">path</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span>(<span class="ruby-identifier">zoneinfo_path</span>, <span class="ruby-string">&#39;tab&#39;</span>, <span class="ruby-identifier">tab_name</span>)
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">path</span> <span class="ruby-keyword">if</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">file?</span>(<span class="ruby-identifier">path</span>)
+
+  <span class="ruby-keyword">nil</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-validate_zoneinfo_dir" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">validate_zoneinfo_dir</span><span
+            class="method-args">(path, iso3166_tab_path = nil)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Validates a zoneinfo directory and returns the paths to the iso3166.tab and zone1970.tab or zone.tab files if valid. If the directory is not valid, returns `nil`.</p>
+
+<p>The path to the iso3166.tab file may be overridden by passing in a path. This is treated as either absolute or relative to the current working directory.</p>
+
+<p>@param path [String] the path to a possible zoneinfo directory. @param iso3166_tab_path [String] an optional path to an external</p>
+
+<pre>iso3166.tab file.</pre>
+
+<p>@return [Array&lt;String&gt;] an `Array` containing the iso3166.tab and</p>
+
+<pre>zone.tab paths if the directory is valid, otherwise `nil`.</pre>
+          
+          
+
+          
+          <div class="method-source-code" id="validate_zoneinfo_dir-source">
+            <pre><span class="ruby-comment"># File lib/tzinfo/data_sources/zoneinfo_data_source.rb, line 325</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">validate_zoneinfo_dir</span>(<span class="ruby-identifier">path</span>, <span class="ruby-identifier">iso3166_tab_path</span> = <span class="ruby-keyword">nil</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">directory?</span>(<span class="ruby-identifier">path</span>)
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">iso3166_tab_path</span>
+      <span class="ruby-keyword">return</span> <span class="ruby-keyword">nil</span> <span class="ruby-keyword">unless</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">file?</span>(<span class="ruby-identifier">iso3166_tab_path</span>)
+    <span class="ruby-keyword">else</span>
+      <span class="ruby-identifier">iso3166_tab_path</span> = <span class="ruby-identifier">resolve_tab_path</span>(<span class="ruby-identifier">path</span>, [<span class="ruby-string">&#39;iso3166.tab&#39;</span>], <span class="ruby-string">&#39;country.tab&#39;</span>)
+      <span class="ruby-keyword">return</span> <span class="ruby-keyword">nil</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">iso3166_tab_path</span>
+    <span class="ruby-keyword">end</span>
+
+    <span class="ruby-identifier">zone_tab_path</span> = <span class="ruby-identifier">resolve_tab_path</span>(<span class="ruby-identifier">path</span>, [<span class="ruby-string">&#39;zone1970.tab&#39;</span>, <span class="ruby-string">&#39;zone.tab&#39;</span>], <span class="ruby-string">&#39;zone_sun.tab&#39;</span>)
+    <span class="ruby-keyword">return</span> <span class="ruby-keyword">nil</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">zone_tab_path</span>
+
+    [<span class="ruby-identifier">iso3166_tab_path</span>, <span class="ruby-identifier">zone_tab_path</span>]
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-keyword">nil</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+    </section>
+  
+  </section>
+
+</main>
+
+
+<footer id="validator-badges" role="contentinfo">
+  <p><a href="https://validator.w3.org/check/referer">Validate</a>
+  <p>Generated by <a href="https://ruby.github.io/rdoc/">RDoc</a> 6.2.1.
+  <p>Based on <a href="http://deveiate.org/projects/Darkfish-RDoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
+</footer>
+

@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="UTF-8">
+
+<title>module Octokit::Client::Pages - octokit-4.21.0 Documentation</title>
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../../";
+  var index_rel_prefix = "../../";
+</script>
+
+<script src="../../js/navigation.js" defer></script>
+<script src="../../js/search.js" defer></script>
+<script src="../../js/search_index.js" defer></script>
+<script src="../../js/searcher.js" defer></script>
+<script src="../../js/darkfish.js" defer></script>
+
+<link href="../../css/fonts.css" rel="stylesheet">
+<link href="../../css/rdoc.css" rel="stylesheet">
+
+
+
+
+<body id="top" role="document" class="module">
+<nav role="navigation">
+  <div id="project-navigation">
+    <div id="home-section" role="region" title="Quick navigation" class="nav-section">
+  <h2>
+    <a href="../../index.html" rel="home">Home</a>
+  </h2>
+
+  <div id="table-of-contents-navigation">
+    <a href="../../table_of_contents.html#pages">Pages</a>
+    <a href="../../table_of_contents.html#classes">Classes</a>
+    <a href="../../table_of_contents.html#methods">Methods</a>
+  </div>
+</div>
+
+    <div id="search-section" role="search" class="project-section initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <div id="search-field-wrapper">
+      <input id="search-field" role="combobox" aria-label="Search"
+             aria-autocomplete="list" aria-controls="search-results"
+             type="text" name="search" placeholder="Search" spellcheck="false"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </div>
+
+    <ul id="search-results" aria-label="Search Results"
+        aria-busy="false" aria-expanded="false"
+        aria-atomic="false" class="initially-hidden"></ul>
+  </form>
+</div>
+
+  </div>
+
+  
+
+  <div id="class-metadata">
+    
+    
+    
+    
+    <!-- Method Quickref -->
+<div id="method-list-section" class="nav-section">
+  <h3>Methods</h3>
+
+  <ul class="link-list" role="directory">
+    
+    <li ><a href="#method-i-latest_pages_build">#latest_pages_build</a>
+    
+    <li ><a href="#method-i-list_pages_builds">#list_pages_builds</a>
+    
+    <li ><a href="#method-i-pages">#pages</a>
+    
+    <li ><a href="#method-i-pages_build">#pages_build</a>
+    
+    <li ><a href="#method-i-pages_builds">#pages_builds</a>
+    
+    <li ><a href="#method-i-request_page_build">#request_page_build</a>
+    
+  </ul>
+</div>
+
+  </div>
+</nav>
+
+<main role="main" aria-labelledby="module-Octokit::Client::Pages">
+  <h1 id="module-Octokit::Client::Pages" class="module">
+    module Octokit::Client::Pages
+  </h1>
+
+  <section class="description">
+    
+<p>Methods for the <a href="Pages.html"><code>Pages</code></a> API</p>
+
+<p>@see <a href="https://developer.github.com/v3/repos/pages">developer.github.com/v3/repos/pages</a>/</p>
+
+  </section>
+
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+
+    
+
+    
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section">
+       <header>
+         <h3>Public Instance Methods</h3>
+       </header>
+
+    
+      <div id="method-i-latest_pages_build" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">latest_pages_build</span><span
+            class="method-args">(repo, options = {})</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>List the latest <a href="Pages.html"><code>Pages</code></a> build information for a repository</p>
+
+<p>@param repo [Integer, String, <a href="../Repository.html"><code>Repository</code></a>, Hash] A GitHub repository @return Sawyer::Resource A GitHub <a href="Pages.html"><code>Pages</code></a> resource about a build @see <a href="https://developer.github.com/v3/repos/pages/#list-latest-pages-build">developer.github.com/v3/repos/pages/#list-latest-pages-build</a></p>
+          
+          
+
+          
+          <div class="method-source-code" id="latest_pages_build-source">
+            <pre><span class="ruby-comment"># File lib/octokit/client/pages.rb, line 46</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">latest_pages_build</span>(<span class="ruby-identifier">repo</span>, <span class="ruby-identifier">options</span> = {})
+  <span class="ruby-identifier">get</span> <span class="ruby-node">&quot;#{Repository.path repo}/pages/builds/latest&quot;</span>, <span class="ruby-identifier">options</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-list_pages_builds" class="method-detail method-alias">
+        
+        <div class="method-heading">
+          <span class="method-name">list_pages_builds</span><span
+            class="method-args">(repo, options = {})</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+        </div>
+
+        
+
+        
+        <div class="aliases">
+          Alias for: <a href="Pages.html#method-i-pages_builds">pages_builds</a>
+        </div>
+        
+      </div>
+
+    
+      <div id="method-i-pages" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">pages</span><span
+            class="method-args">(repo, options = {})</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>List <a href="Pages.html"><code>Pages</code></a> information for a repository</p>
+
+<p>@param repo [Integer, String, <a href="../Repository.html"><code>Repository</code></a>, Hash] A GitHub repository @return Sawyer::Resource A GitHub <a href="Pages.html"><code>Pages</code></a> resource @see <a href="https://developer.github.com/v3/repos/pages/#get-information-about-a-pages-site">developer.github.com/v3/repos/pages/#get-information-about-a-pages-site</a></p>
+          
+          
+
+          
+          <div class="method-source-code" id="pages-source">
+            <pre><span class="ruby-comment"># File lib/octokit/client/pages.rb, line 14</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">pages</span>(<span class="ruby-identifier">repo</span>, <span class="ruby-identifier">options</span> = {})
+  <span class="ruby-identifier">get</span> <span class="ruby-node">&quot;#{Repository.path repo}/pages&quot;</span>, <span class="ruby-identifier">options</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-pages_build" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">pages_build</span><span
+            class="method-args">(repo, id, options = {})</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Get a specific <a href="Pages.html"><code>Pages</code></a> build by ID</p>
+
+<p>@param repo [Integer, String, <a href="../Repository.html"><code>Repository</code></a>, Hash] A GitHub repository @param id [Integer, String] Build ID @return [Sawyer::Resource] <a href="Pages.html"><code>Pages</code></a> build information @see <a href="https://developer.github.com/v3/repos/pages/#list-a-specific-pages-build">developer.github.com/v3/repos/pages/#list-a-specific-pages-build</a> @example</p>
+
+<pre class="ruby"><span class="ruby-constant">Octokit</span>.<span class="ruby-identifier">pages_build</span>(<span class="ruby-string">&quot;github/developer.github.com&quot;</span>, <span class="ruby-value">5472601</span>)
+</pre>
+          
+          
+
+          
+          <div class="method-source-code" id="pages_build-source">
+            <pre><span class="ruby-comment"># File lib/octokit/client/pages.rb, line 26</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">pages_build</span>(<span class="ruby-identifier">repo</span>, <span class="ruby-identifier">id</span>, <span class="ruby-identifier">options</span> = {})
+  <span class="ruby-identifier">opts</span> = <span class="ruby-identifier">ensure_api_media_type</span>(<span class="ruby-value">:pages</span>, <span class="ruby-identifier">options</span>)
+  <span class="ruby-identifier">get</span> <span class="ruby-node">&quot;#{Repository.path repo}/pages/builds/#{id}&quot;</span>, <span class="ruby-identifier">opts</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-pages_builds" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">pages_builds</span><span
+            class="method-args">(repo, options = {})</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>List <a href="Pages.html"><code>Pages</code></a> builds for a repository</p>
+
+<p>@param repo [Integer, String, <a href="../Repository.html"><code>Repository</code></a>, Hash] A GitHub repository @return [Array&lt;Sawyer::Resource&gt;] A list of build history for a repository. @see <a href="https://developer.github.com/v3/repos/pages/#list-pages-builds">developer.github.com/v3/repos/pages/#list-pages-builds</a></p>
+          
+          
+
+          
+          <div class="method-source-code" id="pages_builds-source">
+            <pre><span class="ruby-comment"># File lib/octokit/client/pages.rb, line 36</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">pages_builds</span>(<span class="ruby-identifier">repo</span>, <span class="ruby-identifier">options</span> = {})
+  <span class="ruby-identifier">get</span> <span class="ruby-node">&quot;#{Repository.path repo}/pages/builds&quot;</span>, <span class="ruby-identifier">options</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+        <div class="aliases">
+          Also aliased as: <a href="Pages.html#method-i-list_pages_builds">list_pages_builds</a>
+        </div>
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-request_page_build" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">request_page_build</span><span
+            class="method-args">(repo, options = {})</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Request a page build for the latest revision of the default branch</p>
+
+<p>You can only request builds for your repositories</p>
+
+<p>@param repo [Integer, String, <a href="../Repository.html"><code>Repository</code></a>, Hash] A GitHub repository @return [Sawyer::Resource] Request result @see <a href="https://developer.github.com/v3/repos/pages/#request-a-page-build">developer.github.com/v3/repos/pages/#request-a-page-build</a></p>
+          
+          
+
+          
+          <div class="method-source-code" id="request_page_build-source">
+            <pre><span class="ruby-comment"># File lib/octokit/client/pages.rb, line 57</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">request_page_build</span>(<span class="ruby-identifier">repo</span>, <span class="ruby-identifier">options</span> = {})
+  <span class="ruby-identifier">opts</span> = <span class="ruby-identifier">ensure_api_media_type</span>(<span class="ruby-value">:pages</span>, <span class="ruby-identifier">options</span>)
+  <span class="ruby-identifier">post</span> <span class="ruby-node">&quot;#{Repository.path repo}/pages/builds&quot;</span>, <span class="ruby-identifier">opts</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+    </section>
+  
+  </section>
+
+</main>
+
+
+<footer id="validator-badges" role="contentinfo">
+  <p><a href="https://validator.w3.org/check/referer">Validate</a>
+  <p>Generated by <a href="https://ruby.github.io/rdoc/">RDoc</a> 6.2.1.
+  <p>Based on <a href="http://deveiate.org/projects/Darkfish-RDoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
+</footer>
+

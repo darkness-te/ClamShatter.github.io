@@ -1,0 +1,1228 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="UTF-8">
+
+<title>class Jekyll::Drops::Drop - jekyll-4.2.0 Documentation</title>
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../../";
+  var index_rel_prefix = "../../";
+</script>
+
+<script src="../../js/navigation.js" defer></script>
+<script src="../../js/search.js" defer></script>
+<script src="../../js/search_index.js" defer></script>
+<script src="../../js/searcher.js" defer></script>
+<script src="../../js/darkfish.js" defer></script>
+
+<link href="../../css/fonts.css" rel="stylesheet">
+<link href="../../css/rdoc.css" rel="stylesheet">
+
+
+
+
+<body id="top" role="document" class="class">
+<nav role="navigation">
+  <div id="project-navigation">
+    <div id="home-section" role="region" title="Quick navigation" class="nav-section">
+  <h2>
+    <a href="../../index.html" rel="home">Home</a>
+  </h2>
+
+  <div id="table-of-contents-navigation">
+    <a href="../../table_of_contents.html#pages">Pages</a>
+    <a href="../../table_of_contents.html#classes">Classes</a>
+    <a href="../../table_of_contents.html#methods">Methods</a>
+  </div>
+</div>
+
+    <div id="search-section" role="search" class="project-section initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <div id="search-field-wrapper">
+      <input id="search-field" role="combobox" aria-label="Search"
+             aria-autocomplete="list" aria-controls="search-results"
+             type="text" name="search" placeholder="Search" spellcheck="false"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </div>
+
+    <ul id="search-results" aria-label="Search Results"
+        aria-busy="false" aria-expanded="false"
+        aria-atomic="false" class="initially-hidden"></ul>
+  </form>
+</div>
+
+  </div>
+
+  
+
+  <div id="class-metadata">
+    
+    <div id="parent-class-section" class="nav-section">
+  <h3>Parent</h3>
+
+  
+  <p class="link">Liquid::Drop
+  
+</div>
+
+    <div id="includes-section" class="nav-section">
+  <h3>Included Modules</h3>
+
+  <ul class="link-list">
+  
+  
+    <li><span class="include">Enumerable</span>
+  
+  
+  </ul>
+</div>
+
+    
+    <!-- Method Quickref -->
+<div id="method-list-section" class="nav-section">
+  <h3>Methods</h3>
+
+  <ul class="link-list" role="directory">
+    
+    <li ><a href="#method-c-data_delegator">::data_delegator</a>
+    
+    <li ><a href="#method-c-data_delegators">::data_delegators</a>
+    
+    <li ><a href="#method-c-delegate_method">::delegate_method</a>
+    
+    <li ><a href="#method-c-delegate_method_as">::delegate_method_as</a>
+    
+    <li ><a href="#method-c-delegate_methods">::delegate_methods</a>
+    
+    <li ><a href="#method-c-getter_method_names">::getter_method_names</a>
+    
+    <li ><a href="#method-c-mutable">::mutable</a>
+    
+    <li ><a href="#method-c-mutable-3F">::mutable?</a>
+    
+    <li ><a href="#method-c-new">::new</a>
+    
+    <li ><a href="#method-c-private_delegate_methods">::private_delegate_methods</a>
+    
+    <li ><a href="#method-i-5B-5D">#[]</a>
+    
+    <li ><a href="#method-i-5B-5D-3D">#[]=</a>
+    
+    <li ><a href="#method-i-content_methods">#content_methods</a>
+    
+    <li ><a href="#method-i-each">#each</a>
+    
+    <li ><a href="#method-i-each_key">#each_key</a>
+    
+    <li ><a href="#method-i-fetch">#fetch</a>
+    
+    <li ><a href="#method-i-hash_for_json">#hash_for_json</a>
+    
+    <li ><a href="#method-i-inspect">#inspect</a>
+    
+    <li ><a href="#method-i-invoke_drop">#invoke_drop</a>
+    
+    <li ><a href="#method-i-key-3F">#key?</a>
+    
+    <li ><a href="#method-i-keys">#keys</a>
+    
+    <li ><a href="#method-i-merge">#merge</a>
+    
+    <li ><a href="#method-i-merge-21">#merge!</a>
+    
+    <li ><a href="#method-i-mutations">#mutations</a>
+    
+    <li ><a href="#method-i-to_h">#to_h</a>
+    
+    <li ><a href="#method-i-to_hash">#to_hash</a>
+    
+    <li ><a href="#method-i-to_json">#to_json</a>
+    
+  </ul>
+</div>
+
+  </div>
+</nav>
+
+<main role="main" aria-labelledby="class-Jekyll::Drops::Drop">
+  <h1 id="class-Jekyll::Drops::Drop" class="class">
+    class Jekyll::Drops::Drop
+  </h1>
+
+  <section class="description">
+    
+  </section>
+
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+    <section class="constants-list">
+      <header>
+        <h3>Constants</h3>
+      </header>
+      <dl>
+      
+        <dt id="NON_CONTENT_METHODS">NON_CONTENT_METHODS
+        
+        <dd>
+        
+      
+        <dt id="NON_CONTENT_METHOD_NAMES">NON_CONTENT_METHOD_NAMES
+        
+        <dd>
+        
+      
+        <dt id="SETTER_KEYS_STASH">SETTER_KEYS_STASH
+        
+        <dd><p>A private stash to avoid repeatedly generating the setter method name string for a call to `Drops::Drop#[]=`. The keys of the stash below have a very high probability of being called upon during the course of various `Jekyll::Renderer#run` calls.</p>
+        
+      
+      </dl>
+    </section>
+    
+
+    
+
+    
+     <section id="public-class-5Buntitled-5D-method-details" class="method-section">
+       <header>
+         <h3>Public Class Methods</h3>
+       </header>
+
+    
+      <div id="method-c-data_delegator" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">data_delegator</span><span
+            class="method-args">(key)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Generate public <a href="Drop.html"><code>Drop</code></a> instance_methods for given string `key`. The generated method access(es) `@obj`&#39;s data hash.</p>
+
+<p>Returns method symbol.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="data_delegator-source">
+            <pre><span class="ruby-comment"># File lib/jekyll/drops/drop.rb, line 90</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">data_delegator</span>(<span class="ruby-identifier">key</span>)
+  <span class="ruby-identifier">define_method</span>(<span class="ruby-identifier">key</span>.<span class="ruby-identifier">to_sym</span>) { <span class="ruby-ivar">@obj</span>.<span class="ruby-identifier">data</span>[<span class="ruby-identifier">key</span>] }
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-c-data_delegators" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">data_delegators</span><span
+            class="method-args">(*strings)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Generate public <a href="Drop.html"><code>Drop</code></a> instance_methods for each string entry in the given list. The generated method(s) access(es) `@obj`&#39;s data hash.</p>
+
+<p>Returns nothing.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="data_delegators-source">
+            <pre><span class="ruby-comment"># File lib/jekyll/drops/drop.rb, line 79</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">data_delegators</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">strings</span>)
+  <span class="ruby-identifier">strings</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">key</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">data_delegator</span>(<span class="ruby-identifier">key</span>) <span class="ruby-keyword">if</span> <span class="ruby-identifier">key</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">String</span>)
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">nil</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-c-delegate_method" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">delegate_method</span><span
+            class="method-args">(symbol)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Generate public <a href="Drop.html"><code>Drop</code></a> instance_method for given symbol that calls `@obj.&lt;sym&gt;`.</p>
+
+<p>Returns delegated method symbol.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="delegate_method-source">
+            <pre><span class="ruby-comment"># File lib/jekyll/drops/drop.rb, line 64</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">delegate_method</span>(<span class="ruby-identifier">symbol</span>)
+  <span class="ruby-identifier">define_method</span>(<span class="ruby-identifier">symbol</span>) { <span class="ruby-ivar">@obj</span>.<span class="ruby-identifier">send</span>(<span class="ruby-identifier">symbol</span>) }
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-c-delegate_method_as" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">delegate_method_as</span><span
+            class="method-args">(original, delegate)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Generate public <a href="Drop.html"><code>Drop</code></a> instance_method named `delegate` that calls `@obj.&lt;original&gt;`.</p>
+
+<p>Returns delegated method symbol.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="delegate_method_as-source">
+            <pre><span class="ruby-comment"># File lib/jekyll/drops/drop.rb, line 71</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">delegate_method_as</span>(<span class="ruby-identifier">original</span>, <span class="ruby-identifier">delegate</span>)
+  <span class="ruby-identifier">define_method</span>(<span class="ruby-identifier">delegate</span>) { <span class="ruby-ivar">@obj</span>.<span class="ruby-identifier">send</span>(<span class="ruby-identifier">original</span>) }
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-c-delegate_methods" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">delegate_methods</span><span
+            class="method-args">(*symbols)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Generate public <a href="Drop.html"><code>Drop</code></a> instance_methods for each symbol in the given list.</p>
+
+<p>Returns nothing.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="delegate_methods-source">
+            <pre><span class="ruby-comment"># File lib/jekyll/drops/drop.rb, line 56</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">delegate_methods</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">symbols</span>)
+  <span class="ruby-identifier">symbols</span>.<span class="ruby-identifier">each</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">symbol</span><span class="ruby-operator">|</span> <span class="ruby-identifier">delegate_method</span>(<span class="ruby-identifier">symbol</span>) }
+  <span class="ruby-keyword">nil</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-c-getter_method_names" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">getter_method_names</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Array of stringified instance methods that do not end with the assignment operator.</p>
+
+<p>(&lt;klass&gt;.instance_methods always generates a new Array object so it can be mutated)</p>
+
+<p>Returns array of strings.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="getter_method_names-source">
+            <pre><span class="ruby-comment"># File lib/jekyll/drops/drop.rb, line 99</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">getter_method_names</span>
+  <span class="ruby-ivar">@getter_method_names</span> <span class="ruby-operator">||=</span> <span class="ruby-identifier">instance_methods</span>.<span class="ruby-identifier">map!</span>(<span class="ruby-operator">&amp;</span><span class="ruby-value">:to_s</span>).<span class="ruby-identifier">tap</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">list</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">list</span>.<span class="ruby-identifier">reject!</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">item</span><span class="ruby-operator">|</span> <span class="ruby-identifier">item</span>.<span class="ruby-identifier">end_with?</span>(<span class="ruby-string">&quot;=&quot;</span>) }
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-c-mutable" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">mutable</span><span
+            class="method-args">(is_mutable = nil)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Get or set whether the drop class is mutable. Mutability determines whether or not pre-defined fields may be overwritten.</p>
+
+<p>is_mutable - Boolean set mutability of the class (default: nil)</p>
+
+<p>Returns the mutability of the class</p>
+          
+          
+
+          
+          <div class="method-source-code" id="mutable-source">
+            <pre><span class="ruby-comment"># File lib/jekyll/drops/drop.rb, line 34</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">mutable</span>(<span class="ruby-identifier">is_mutable</span> = <span class="ruby-keyword">nil</span>)
+  <span class="ruby-ivar">@is_mutable</span> = <span class="ruby-identifier">is_mutable</span> <span class="ruby-operator">||</span> <span class="ruby-keyword">false</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-c-mutable-3F" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">mutable?</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="mutable-3F-source">
+            <pre><span class="ruby-comment"># File lib/jekyll/drops/drop.rb, line 38</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">mutable?</span>
+  <span class="ruby-ivar">@is_mutable</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-c-new" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">new</span><span
+            class="method-args">(obj)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Create a new <a href="Drop.html"><code>Drop</code></a></p>
+
+<p>obj - the <a href="../../Jekyll.html"><code>Jekyll</code></a> <a href="../Site.html"><code>Site</code></a>, <a href="../Collection.html"><code>Collection</code></a>, or <a href="../Document.html"><code>Document</code></a> required by the drop.</p>
+
+<p>Returns nothing</p>
+          
+          
+
+          
+          <div class="method-source-code" id="new-source">
+            <pre><span class="ruby-comment"># File lib/jekyll/drops/drop.rb, line 112</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">initialize</span>(<span class="ruby-identifier">obj</span>)
+  <span class="ruby-ivar">@obj</span> = <span class="ruby-identifier">obj</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-c-private_delegate_methods" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">private_delegate_methods</span><span
+            class="method-args">(*symbols)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Generate private <a href="Drop.html"><code>Drop</code></a> instance_methods for each symbol in the given list.</p>
+
+<p>Returns nothing.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="private_delegate_methods-source">
+            <pre><span class="ruby-comment"># File lib/jekyll/drops/drop.rb, line 48</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">private_delegate_methods</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">symbols</span>)
+  <span class="ruby-identifier">symbols</span>.<span class="ruby-identifier">each</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">symbol</span><span class="ruby-operator">|</span> <span class="ruby-identifier">private</span> <span class="ruby-identifier">delegate_method</span>(<span class="ruby-identifier">symbol</span>) }
+  <span class="ruby-keyword">nil</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+    </section>
+  
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section">
+       <header>
+         <h3>Public Instance Methods</h3>
+       </header>
+
+    
+      <div id="method-i-5B-5D" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">[]</span><span
+            class="method-args">(key)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Access a method in the <a href="Drop.html"><code>Drop</code></a> or a field in the underlying hash data. If mutable, checks the mutations first. Then checks the methods, and finally check the underlying hash (e.g. document front matter) if all the previous places didn&#39;t match.</p>
+
+<p>key - the string key whose value to fetch</p>
+
+<p>Returns the value for the given key, or nil if none exists</p>
+          
+          
+
+          
+          <div class="method-source-code" id="5B-5D-source">
+            <pre><span class="ruby-comment"># File lib/jekyll/drops/drop.rb, line 124</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">[]</span>(<span class="ruby-identifier">key</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">mutable?</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">mutations</span>.<span class="ruby-identifier">key?</span>(<span class="ruby-identifier">key</span>)
+    <span class="ruby-identifier">mutations</span>[<span class="ruby-identifier">key</span>]
+  <span class="ruby-keyword">elsif</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">invokable?</span> <span class="ruby-identifier">key</span>
+    <span class="ruby-identifier">public_send</span> <span class="ruby-identifier">key</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">fallback_data</span>[<span class="ruby-identifier">key</span>]
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+        <div class="aliases">
+          Also aliased as: <a href="Drop.html#method-i-invoke_drop">invoke_drop</a>
+        </div>
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-5B-5D-3D" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">[]=</span><span
+            class="method-args">(key, val)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Set a field in the <a href="Drop.html"><code>Drop</code></a>. If mutable, sets in the mutations and returns. If not mutable, checks first if it&#39;s trying to override a <a href="Drop.html"><code>Drop</code></a> method and raises a DropMutationException if so. If not mutable and the key is not a method on the <a href="Drop.html"><code>Drop</code></a>, then it sets the key to the value in the underlying hash (e.g. document front matter)</p>
+
+<p>key - the String key whose value to set val - the <a href="../../Object.html"><code>Object</code></a> to set the key&#39;s value to</p>
+
+<p>Returns the value the key was set to unless the <a href="Drop.html"><code>Drop</code></a> is not mutable and the key matches a method in which case it raises a DropMutationException.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="5B-5D-3D-source">
+            <pre><span class="ruby-comment"># File lib/jekyll/drops/drop.rb, line 148</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">[]=</span>(<span class="ruby-identifier">key</span>, <span class="ruby-identifier">val</span>)
+  <span class="ruby-identifier">setter</span> = <span class="ruby-constant">SETTER_KEYS_STASH</span>[<span class="ruby-identifier">key</span>] <span class="ruby-operator">||</span> <span class="ruby-node">&quot;#{key}=&quot;</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">respond_to?</span>(<span class="ruby-identifier">setter</span>)
+    <span class="ruby-identifier">public_send</span>(<span class="ruby-identifier">setter</span>, <span class="ruby-identifier">val</span>)
+  <span class="ruby-keyword">elsif</span> <span class="ruby-identifier">respond_to?</span>(<span class="ruby-identifier">key</span>.<span class="ruby-identifier">to_s</span>)
+    <span class="ruby-keyword">if</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">mutable?</span>
+      <span class="ruby-identifier">mutations</span>[<span class="ruby-identifier">key</span>] = <span class="ruby-identifier">val</span>
+    <span class="ruby-keyword">else</span>
+      <span class="ruby-identifier">raise</span> <span class="ruby-constant">Errors</span><span class="ruby-operator">::</span><span class="ruby-constant">DropMutationException</span>, <span class="ruby-node">&quot;Key #{key} cannot be set in the drop.&quot;</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">fallback_data</span>[<span class="ruby-identifier">key</span>] = <span class="ruby-identifier">val</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-content_methods" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">content_methods</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Generates a list of strings which correspond to content getter methods.</p>
+
+<p>Returns an Array of strings which represent method-specific keys.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="content_methods-source">
+            <pre><span class="ruby-comment"># File lib/jekyll/drops/drop.rb, line 167</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">content_methods</span>
+  <span class="ruby-ivar">@content_methods</span> <span class="ruby-operator">||=</span> \
+    <span class="ruby-keyword">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">getter_method_names</span> \
+      <span class="ruby-operator">-</span> <span class="ruby-constant">Jekyll</span><span class="ruby-operator">::</span><span class="ruby-constant">Drops</span><span class="ruby-operator">::</span><span class="ruby-constant">Drop</span>.<span class="ruby-identifier">getter_method_names</span> \
+      <span class="ruby-operator">-</span> <span class="ruby-constant">NON_CONTENT_METHOD_NAMES</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-each" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">each</span><span
+            class="method-args">() { |key, self| ... }</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="each-source">
+            <pre><span class="ruby-comment"># File lib/jekyll/drops/drop.rb, line 244</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">each</span>
+  <span class="ruby-identifier">each_key</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">key</span><span class="ruby-operator">|</span>
+    <span class="ruby-keyword">yield</span> <span class="ruby-identifier">key</span>, <span class="ruby-keyword">self</span>[<span class="ruby-identifier">key</span>]
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-each_key" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">each_key</span><span
+            class="method-args">(&amp;block)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Collects all the keys and passes each to the block in turn.</p>
+
+<p>block - a block which accepts one argument, the key</p>
+
+<p>Returns nothing.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="each_key-source">
+            <pre><span class="ruby-comment"># File lib/jekyll/drops/drop.rb, line 240</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">each_key</span>(<span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)
+  <span class="ruby-identifier">keys</span>.<span class="ruby-identifier">each</span>(<span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-fetch" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">fetch</span><span
+            class="method-args">(key, default = nil) { |key| ... }</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Imitate Hash.fetch method in <a href="Drop.html"><code>Drop</code></a></p>
+
+<p>Returns value if key is present in <a href="Drop.html"><code>Drop</code></a>, otherwise returns default value KeyError is raised if key is not present and no default value given</p>
+          
+          
+
+          
+          <div class="method-source-code" id="fetch-source">
+            <pre><span class="ruby-comment"># File lib/jekyll/drops/drop.rb, line 279</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">fetch</span>(<span class="ruby-identifier">key</span>, <span class="ruby-identifier">default</span> = <span class="ruby-keyword">nil</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)
+  <span class="ruby-keyword">return</span> <span class="ruby-keyword">self</span>[<span class="ruby-identifier">key</span>] <span class="ruby-keyword">if</span> <span class="ruby-identifier">key?</span>(<span class="ruby-identifier">key</span>)
+  <span class="ruby-identifier">raise</span> <span class="ruby-constant">KeyError</span>, <span class="ruby-node">%(key not found: &quot;#{key}&quot;)</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">default</span>.<span class="ruby-identifier">nil?</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">block</span>.<span class="ruby-identifier">nil?</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-keyword">yield</span>(<span class="ruby-identifier">key</span>) <span class="ruby-keyword">unless</span> <span class="ruby-identifier">block</span>.<span class="ruby-identifier">nil?</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">default</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">default</span>.<span class="ruby-identifier">nil?</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-hash_for_json" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">hash_for_json</span><span
+            class="method-args">(*)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Generate a Hash for use in generating JSON. This is useful if fields need to be cleared before the JSON can generate.</p>
+
+<p>Returns a Hash ready for JSON generation.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="hash_for_json-source">
+            <pre><span class="ruby-comment"># File lib/jekyll/drops/drop.rb, line 222</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">hash_for_json</span>(<span class="ruby-operator">*</span>)
+  <span class="ruby-identifier">to_h</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-inspect" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">inspect</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Inspect the drop&#39;s keys and values through a JSON representation of its keys and values.</p>
+
+<p>Returns a pretty generation of the hash representation of the <a href="Drop.html"><code>Drop</code></a>.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="inspect-source">
+            <pre><span class="ruby-comment"># File lib/jekyll/drops/drop.rb, line 214</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">inspect</span>
+  <span class="ruby-constant">JSON</span>.<span class="ruby-identifier">pretty_generate</span> <span class="ruby-identifier">to_h</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-invoke_drop" class="method-detail method-alias">
+        
+        <div class="method-heading">
+          <span class="method-name">invoke_drop</span><span
+            class="method-args">(key)</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+        </div>
+
+        
+
+        
+        <div class="aliases">
+          Alias for: <a href="Drop.html#method-i-5B-5D">[]</a>
+        </div>
+        
+      </div>
+
+    
+      <div id="method-i-key-3F" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">key?</span><span
+            class="method-args">(key)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Check if key exists in <a href="Drop.html"><code>Drop</code></a></p>
+
+<p>key - the string key whose value to fetch</p>
+
+<p>Returns true if the given key is present</p>
+          
+          
+
+          
+          <div class="method-source-code" id="key-3F-source">
+            <pre><span class="ruby-comment"># File lib/jekyll/drops/drop.rb, line 179</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">key?</span>(<span class="ruby-identifier">key</span>)
+  <span class="ruby-keyword">return</span> <span class="ruby-keyword">false</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">key</span>.<span class="ruby-identifier">nil?</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-keyword">true</span> <span class="ruby-keyword">if</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">mutable?</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">mutations</span>.<span class="ruby-identifier">key?</span>(<span class="ruby-identifier">key</span>)
+
+  <span class="ruby-identifier">respond_to?</span>(<span class="ruby-identifier">key</span>) <span class="ruby-operator">||</span> <span class="ruby-identifier">fallback_data</span>.<span class="ruby-identifier">key?</span>(<span class="ruby-identifier">key</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-keys" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">keys</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Generates a list of keys with user content as their values. This gathers up the <a href="Drop.html"><code>Drop</code></a> methods and keys of the mutations and underlying data hashes and performs a set union to ensure a list of unique keys for the <a href="Drop.html"><code>Drop</code></a>.</p>
+
+<p>Returns an Array of unique keys for content for the <a href="Drop.html"><code>Drop</code></a>.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="keys-source">
+            <pre><span class="ruby-comment"># File lib/jekyll/drops/drop.rb, line 192</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">keys</span>
+  (<span class="ruby-identifier">content_methods</span> <span class="ruby-operator">|</span>
+    <span class="ruby-identifier">mutations</span>.<span class="ruby-identifier">keys</span> <span class="ruby-operator">|</span>
+    <span class="ruby-identifier">fallback_data</span>.<span class="ruby-identifier">keys</span>).<span class="ruby-identifier">flatten</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-merge" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">merge</span><span
+            class="method-args">(other, &amp;block)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="merge-source">
+            <pre><span class="ruby-comment"># File lib/jekyll/drops/drop.rb, line 250</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">merge</span>(<span class="ruby-identifier">other</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)
+  <span class="ruby-identifier">dup</span>.<span class="ruby-identifier">tap</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">me</span><span class="ruby-operator">|</span>
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">block</span>.<span class="ruby-identifier">nil?</span>
+      <span class="ruby-identifier">me</span>.<span class="ruby-identifier">merge!</span>(<span class="ruby-identifier">other</span>)
+    <span class="ruby-keyword">else</span>
+      <span class="ruby-identifier">me</span>.<span class="ruby-identifier">merge!</span>(<span class="ruby-identifier">other</span>, <span class="ruby-identifier">block</span>)
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-merge-21" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">merge!</span><span
+            class="method-args">(other) { |key, self, other| ... }</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="merge-21-source">
+            <pre><span class="ruby-comment"># File lib/jekyll/drops/drop.rb, line 260</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">merge!</span>(<span class="ruby-identifier">other</span>)
+  <span class="ruby-identifier">other</span>.<span class="ruby-identifier">each_key</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">key</span><span class="ruby-operator">|</span>
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">block_given?</span>
+      <span class="ruby-keyword">self</span>[<span class="ruby-identifier">key</span>] = <span class="ruby-keyword">yield</span> <span class="ruby-identifier">key</span>, <span class="ruby-keyword">self</span>[<span class="ruby-identifier">key</span>], <span class="ruby-identifier">other</span>[<span class="ruby-identifier">key</span>]
+    <span class="ruby-keyword">else</span>
+      <span class="ruby-keyword">if</span> <span class="ruby-constant">Utils</span>.<span class="ruby-identifier">mergable?</span>(<span class="ruby-keyword">self</span>[<span class="ruby-identifier">key</span>]) <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-constant">Utils</span>.<span class="ruby-identifier">mergable?</span>(<span class="ruby-identifier">other</span>[<span class="ruby-identifier">key</span>])
+        <span class="ruby-keyword">self</span>[<span class="ruby-identifier">key</span>] = <span class="ruby-constant">Utils</span>.<span class="ruby-identifier">deep_merge_hashes</span>(<span class="ruby-keyword">self</span>[<span class="ruby-identifier">key</span>], <span class="ruby-identifier">other</span>[<span class="ruby-identifier">key</span>])
+        <span class="ruby-keyword">next</span>
+      <span class="ruby-keyword">end</span>
+
+      <span class="ruby-keyword">self</span>[<span class="ruby-identifier">key</span>] = <span class="ruby-identifier">other</span>[<span class="ruby-identifier">key</span>] <span class="ruby-keyword">unless</span> <span class="ruby-identifier">other</span>[<span class="ruby-identifier">key</span>].<span class="ruby-identifier">nil?</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-to_h" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">to_h</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Generate a Hash representation of the <a href="Drop.html"><code>Drop</code></a> by resolving each key&#39;s value. It includes <a href="Drop.html"><code>Drop</code></a> methods, mutations, and the underlying object&#39;s data. See the documentation for <a href="Drop.html#method-i-keys"><code>Drop#keys</code></a> for more.</p>
+
+<p>Returns a Hash with all the keys and values resolved.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="to_h-source">
+            <pre><span class="ruby-comment"># File lib/jekyll/drops/drop.rb, line 203</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">to_h</span>
+  <span class="ruby-identifier">keys</span>.<span class="ruby-identifier">each_with_object</span>({}) <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span>(<span class="ruby-identifier">key</span>, <span class="ruby-identifier">_</span>), <span class="ruby-identifier">result</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">result</span>[<span class="ruby-identifier">key</span>] = <span class="ruby-keyword">self</span>[<span class="ruby-identifier">key</span>]
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+        <div class="aliases">
+          Also aliased as: <a href="Drop.html#method-i-to_hash">to_hash</a>
+        </div>
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-to_hash" class="method-detail method-alias">
+        
+        <div class="method-heading">
+          <span class="method-name">to_hash</span><span
+            class="method-args">()</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+        </div>
+
+        
+
+        
+        <div class="aliases">
+          Alias for: <a href="Drop.html#method-i-to_h">to_h</a>
+        </div>
+        
+      </div>
+
+    
+      <div id="method-i-to_json" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">to_json</span><span
+            class="method-args">(state = nil)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Generate a JSON representation of the <a href="Drop.html"><code>Drop</code></a>.</p>
+
+<p>state - the JSON::State object which determines the state of current processing.</p>
+
+<p>Returns a JSON representation of the <a href="Drop.html"><code>Drop</code></a> in a String.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="to_json-source">
+            <pre><span class="ruby-comment"># File lib/jekyll/drops/drop.rb, line 231</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">to_json</span>(<span class="ruby-identifier">state</span> = <span class="ruby-keyword">nil</span>)
+  <span class="ruby-constant">JSON</span>.<span class="ruby-identifier">generate</span>(<span class="ruby-identifier">hash_for_json</span>(<span class="ruby-identifier">state</span>), <span class="ruby-identifier">state</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+    </section>
+  
+     <section id="private-instance-5Buntitled-5D-method-details" class="method-section">
+       <header>
+         <h3>Private Instance Methods</h3>
+       </header>
+
+    
+      <div id="method-i-mutations" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">mutations</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="mutations-source">
+            <pre><span class="ruby-comment"># File lib/jekyll/drops/drop.rb, line 288</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">mutations</span>
+  <span class="ruby-ivar">@mutations</span> <span class="ruby-operator">||=</span> {}
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+    </section>
+  
+  </section>
+
+</main>
+
+
+<footer id="validator-badges" role="contentinfo">
+  <p><a href="https://validator.w3.org/check/referer">Validate</a>
+  <p>Generated by <a href="https://ruby.github.io/rdoc/">RDoc</a> 6.2.1.
+  <p>Based on <a href="http://deveiate.org/projects/Darkfish-RDoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
+</footer>
+

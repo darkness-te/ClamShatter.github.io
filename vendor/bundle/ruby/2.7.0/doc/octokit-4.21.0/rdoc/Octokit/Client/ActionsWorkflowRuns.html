@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="UTF-8">
+
+<title>module Octokit::Client::ActionsWorkflowRuns - octokit-4.21.0 Documentation</title>
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../../";
+  var index_rel_prefix = "../../";
+</script>
+
+<script src="../../js/navigation.js" defer></script>
+<script src="../../js/search.js" defer></script>
+<script src="../../js/search_index.js" defer></script>
+<script src="../../js/searcher.js" defer></script>
+<script src="../../js/darkfish.js" defer></script>
+
+<link href="../../css/fonts.css" rel="stylesheet">
+<link href="../../css/rdoc.css" rel="stylesheet">
+
+
+
+
+<body id="top" role="document" class="module">
+<nav role="navigation">
+  <div id="project-navigation">
+    <div id="home-section" role="region" title="Quick navigation" class="nav-section">
+  <h2>
+    <a href="../../index.html" rel="home">Home</a>
+  </h2>
+
+  <div id="table-of-contents-navigation">
+    <a href="../../table_of_contents.html#pages">Pages</a>
+    <a href="../../table_of_contents.html#classes">Classes</a>
+    <a href="../../table_of_contents.html#methods">Methods</a>
+  </div>
+</div>
+
+    <div id="search-section" role="search" class="project-section initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <div id="search-field-wrapper">
+      <input id="search-field" role="combobox" aria-label="Search"
+             aria-autocomplete="list" aria-controls="search-results"
+             type="text" name="search" placeholder="Search" spellcheck="false"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </div>
+
+    <ul id="search-results" aria-label="Search Results"
+        aria-busy="false" aria-expanded="false"
+        aria-atomic="false" class="initially-hidden"></ul>
+  </form>
+</div>
+
+  </div>
+
+  
+
+  <div id="class-metadata">
+    
+    
+    
+    
+    <!-- Method Quickref -->
+<div id="method-list-section" class="nav-section">
+  <h3>Methods</h3>
+
+  <ul class="link-list" role="directory">
+    
+    <li ><a href="#method-i-cancel_workflow_run">#cancel_workflow_run</a>
+    
+    <li ><a href="#method-i-delete_workflow_run">#delete_workflow_run</a>
+    
+    <li ><a href="#method-i-delete_workflow_run_logs">#delete_workflow_run_logs</a>
+    
+    <li ><a href="#method-i-list_repository_workflow_runs">#list_repository_workflow_runs</a>
+    
+    <li ><a href="#method-i-list_workflow_runs">#list_workflow_runs</a>
+    
+    <li ><a href="#method-i-repository_workflow_runs">#repository_workflow_runs</a>
+    
+    <li ><a href="#method-i-rerun_workflow_run">#rerun_workflow_run</a>
+    
+    <li ><a href="#method-i-workflow_run">#workflow_run</a>
+    
+    <li ><a href="#method-i-workflow_run_logs">#workflow_run_logs</a>
+    
+    <li ><a href="#method-i-workflow_runs">#workflow_runs</a>
+    
+  </ul>
+</div>
+
+  </div>
+</nav>
+
+<main role="main" aria-labelledby="module-Octokit::Client::ActionsWorkflowRuns">
+  <h1 id="module-Octokit::Client::ActionsWorkflowRuns" class="module">
+    module Octokit::Client::ActionsWorkflowRuns
+  </h1>
+
+  <section class="description">
+    
+  </section>
+
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+
+    
+
+    
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section">
+       <header>
+         <h3>Public Instance Methods</h3>
+       </header>
+
+    
+      <div id="method-i-cancel_workflow_run" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">cancel_workflow_run</span><span
+            class="method-args">(repo, id, options = {})</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Cancels a workflow run</p>
+
+<p>@param repo [Integer, String, <a href="../Repository.html"><code>Repository</code></a>, Hash] A GitHub repository @param id [Integer] Id of a workflow run</p>
+
+<p>@return [Boolean] Returns true if the cancellation was accepted @see <a href="https://developer.github.com/v3/actions/workflow-runs/#cancel-a-workflow-run">developer.github.com/v3/actions/workflow-runs/#cancel-a-workflow-run</a></p>
+          
+          
+
+          
+          <div class="method-source-code" id="cancel_workflow_run-source">
+            <pre><span class="ruby-comment"># File lib/octokit/client/actions_workflow_runs.rb, line 64</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">cancel_workflow_run</span>(<span class="ruby-identifier">repo</span>, <span class="ruby-identifier">id</span>, <span class="ruby-identifier">options</span> = {})
+  <span class="ruby-identifier">boolean_from_response</span> <span class="ruby-value">:post</span>, <span class="ruby-node">&quot;#{Repository.path repo}/actions/runs/#{id}/cancel&quot;</span>, <span class="ruby-identifier">options</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-delete_workflow_run" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">delete_workflow_run</span><span
+            class="method-args">(repo, id, options = {})</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Deletes a workflow run</p>
+
+<p>@param repo [Integer, String, <a href="../Repository.html"><code>Repository</code></a>, Hash] A GitHub repository @param id [Integer] Id of a workflow run</p>
+
+<p>@return [Boolean] Returns true if the run is deleted @see <a href="https://docs.github.com/en/rest/reference/actions#delete-a-workflow-run">docs.github.com/en/rest/reference/actions#delete-a-workflow-run</a></p>
+          
+          
+
+          
+          <div class="method-source-code" id="delete_workflow_run-source">
+            <pre><span class="ruby-comment"># File lib/octokit/client/actions_workflow_runs.rb, line 75</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">delete_workflow_run</span>(<span class="ruby-identifier">repo</span>, <span class="ruby-identifier">id</span>, <span class="ruby-identifier">options</span> = {})
+  <span class="ruby-identifier">boolean_from_response</span> <span class="ruby-value">:delete</span>, <span class="ruby-node">&quot;#{Repository.path repo}/actions/runs/#{id}&quot;</span>, <span class="ruby-identifier">options</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-delete_workflow_run_logs" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">delete_workflow_run_logs</span><span
+            class="method-args">(repo, id, options = {})</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Delets all log files of a workflow run</p>
+
+<p>@param repo [Integer, String, <a href="../Repository.html"><code>Repository</code></a>, Hash] A GitHub repository @param id [Integer] Id of a workflow run</p>
+
+<p>@return [Boolean] Returns true if the logs are deleted @see <a href="https://developer.github.com/v3/actions/workflow-runs/#delete-workflow-run-logs">developer.github.com/v3/actions/workflow-runs/#delete-workflow-run-logs</a></p>
+          
+          
+
+          
+          <div class="method-source-code" id="delete_workflow_run_logs-source">
+            <pre><span class="ruby-comment"># File lib/octokit/client/actions_workflow_runs.rb, line 100</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">delete_workflow_run_logs</span>(<span class="ruby-identifier">repo</span>, <span class="ruby-identifier">id</span>, <span class="ruby-identifier">options</span> = {})
+  <span class="ruby-identifier">boolean_from_response</span> <span class="ruby-value">:delete</span>, <span class="ruby-node">&quot;#{Repository.path repo}/actions/runs/#{id}/logs&quot;</span>, <span class="ruby-identifier">options</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-list_repository_workflow_runs" class="method-detail method-alias">
+        
+        <div class="method-heading">
+          <span class="method-name">list_repository_workflow_runs</span><span
+            class="method-args">(repo, options = {})</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+        </div>
+
+        
+
+        
+        <div class="aliases">
+          Alias for: <a href="ActionsWorkflowRuns.html#method-i-repository_workflow_runs">repository_workflow_runs</a>
+        </div>
+        
+      </div>
+
+    
+      <div id="method-i-list_workflow_runs" class="method-detail method-alias">
+        
+        <div class="method-heading">
+          <span class="method-name">list_workflow_runs</span><span
+            class="method-args">(repo, workflow, options = {})</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+        </div>
+
+        
+
+        
+        <div class="aliases">
+          Alias for: <a href="ActionsWorkflowRuns.html#method-i-workflow_runs">workflow_runs</a>
+        </div>
+        
+      </div>
+
+    
+      <div id="method-i-repository_workflow_runs" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">repository_workflow_runs</span><span
+            class="method-args">(repo, options = {})</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>List all workflow runs for a repository</p>
+
+<p>@param repo [Integer, String, <a href="../Repository.html"><code>Repository</code></a>, Hash] A GitHub repository @option options [String] :actor Optional filtering by the login of a user @option options [String] :branch Optional filtering by a branch @option options [String] :event Optional filtering by the event type (e.g. push, pull_request, issue) @option options [String] :status Optional filtering by a status or conclusion (e.g. success, completed…)</p>
+
+<p>@return [Sawyer::Resource] the total count and an array of workflows @see <a href="https://developer.github.com/v3/actions/workflow-runs/#list-repository-workflow-runs">developer.github.com/v3/actions/workflow-runs/#list-repository-workflow-runs</a></p>
+          
+          
+
+          
+          <div class="method-source-code" id="repository_workflow_runs-source">
+            <pre><span class="ruby-comment"># File lib/octokit/client/actions_workflow_runs.rb, line 30</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">repository_workflow_runs</span>(<span class="ruby-identifier">repo</span>, <span class="ruby-identifier">options</span> = {})
+  <span class="ruby-identifier">paginate</span> <span class="ruby-node">&quot;#{Repository.path repo}/actions/runs&quot;</span>, <span class="ruby-identifier">options</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+        <div class="aliases">
+          Also aliased as: <a href="ActionsWorkflowRuns.html#method-i-list_repository_workflow_runs">list_repository_workflow_runs</a>
+        </div>
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-rerun_workflow_run" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">rerun_workflow_run</span><span
+            class="method-args">(repo, id, options = {})</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Re-runs a workflow run</p>
+
+<p>@param repo [Integer, String, <a href="../Repository.html"><code>Repository</code></a>, Hash] A GitHub repository @param id [Integer] Id of a workflow run</p>
+
+<p>@return [Boolean] Returns true if the re-run request was accepted @see <a href="https://developer.github.com/v3/actions/workflow-runs/#re-run-a-workflow">developer.github.com/v3/actions/workflow-runs/#re-run-a-workflow</a></p>
+          
+          
+
+          
+          <div class="method-source-code" id="rerun_workflow_run-source">
+            <pre><span class="ruby-comment"># File lib/octokit/client/actions_workflow_runs.rb, line 53</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">rerun_workflow_run</span>(<span class="ruby-identifier">repo</span>, <span class="ruby-identifier">id</span>, <span class="ruby-identifier">options</span> = {})
+  <span class="ruby-identifier">boolean_from_response</span> <span class="ruby-value">:post</span>, <span class="ruby-node">&quot;#{Repository.path repo}/actions/runs/#{id}/rerun&quot;</span>, <span class="ruby-identifier">options</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-workflow_run" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">workflow_run</span><span
+            class="method-args">(repo, id, options = {})</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Get a workflow run</p>
+
+<p>@param repo [Integer, String, <a href="../Repository.html"><code>Repository</code></a>, Hash] A GitHub repository @param id [Integer] Id of a workflow run</p>
+
+<p>@return [Sawyer::Resource] Run information @see <a href="https://developer.github.com/v3/actions/workflow-runs/#get-a-workflow-run">developer.github.com/v3/actions/workflow-runs/#get-a-workflow-run</a></p>
+          
+          
+
+          
+          <div class="method-source-code" id="workflow_run-source">
+            <pre><span class="ruby-comment"># File lib/octokit/client/actions_workflow_runs.rb, line 42</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">workflow_run</span>(<span class="ruby-identifier">repo</span>, <span class="ruby-identifier">id</span>, <span class="ruby-identifier">options</span> = {})
+  <span class="ruby-identifier">get</span> <span class="ruby-node">&quot;#{Repository.path repo}/actions/runs/#{id}&quot;</span>, <span class="ruby-identifier">options</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-workflow_run_logs" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">workflow_run_logs</span><span
+            class="method-args">(repo, id, options = {})</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Get a download url for archived log files of a workflow run</p>
+
+<p>@param repo [Integer, String, <a href="../Repository.html"><code>Repository</code></a>, Hash] A GitHub repository @param id [Integer] Id of a workflow run</p>
+
+<p>@return [String] URL to the archived log files of the run @see <a href="https://developer.github.com/v3/actions/workflow-runs/#download-workflow-run-logs">developer.github.com/v3/actions/workflow-runs/#download-workflow-run-logs</a></p>
+          
+          
+
+          
+          <div class="method-source-code" id="workflow_run_logs-source">
+            <pre><span class="ruby-comment"># File lib/octokit/client/actions_workflow_runs.rb, line 86</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">workflow_run_logs</span>(<span class="ruby-identifier">repo</span>, <span class="ruby-identifier">id</span>, <span class="ruby-identifier">options</span> = {})
+  <span class="ruby-identifier">url</span> = <span class="ruby-node">&quot;#{Repository.path repo}/actions/runs/#{id}/logs&quot;</span>
+
+  <span class="ruby-identifier">response</span> = <span class="ruby-identifier">client_without_redirects</span>.<span class="ruby-identifier">head</span>(<span class="ruby-identifier">url</span>, <span class="ruby-identifier">options</span>)
+  <span class="ruby-identifier">response</span>.<span class="ruby-identifier">headers</span>[<span class="ruby-string">&#39;Location&#39;</span>]
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-workflow_runs" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">workflow_runs</span><span
+            class="method-args">(repo, workflow, options = {})</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>List all runs for a repository workflow</p>
+
+<p>@param repo [Integer, String, <a href="../Repository.html"><code>Repository</code></a>, Hash] A GitHub repository @param workflow [Integer, String] Id or file name of the workflow @option options [String] :actor Optional filtering by a user @option options [String] :branch Optional filtering by a branch @option options [String] :event Optional filtering by the event type @option options [String] :status Optional filtering by a status or conclusion</p>
+
+<p>@return [Sawyer::Resource] the total count and an array of workflows @see <a href="https://developer.github.com/v3/actions/workflow-runs/#list-workflow-runs">developer.github.com/v3/actions/workflow-runs/#list-workflow-runs</a></p>
+          
+          
+
+          
+          <div class="method-source-code" id="workflow_runs-source">
+            <pre><span class="ruby-comment"># File lib/octokit/client/actions_workflow_runs.rb, line 15</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">workflow_runs</span>(<span class="ruby-identifier">repo</span>, <span class="ruby-identifier">workflow</span>, <span class="ruby-identifier">options</span> = {})
+  <span class="ruby-identifier">paginate</span> <span class="ruby-node">&quot;#{Repository.path repo}/actions/workflows/#{workflow}/runs&quot;</span>, <span class="ruby-identifier">options</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+        <div class="aliases">
+          Also aliased as: <a href="ActionsWorkflowRuns.html#method-i-list_workflow_runs">list_workflow_runs</a>
+        </div>
+        
+
+        
+      </div>
+
+    
+    </section>
+  
+  </section>
+
+</main>
+
+
+<footer id="validator-badges" role="contentinfo">
+  <p><a href="https://validator.w3.org/check/referer">Validate</a>
+  <p>Generated by <a href="https://ruby.github.io/rdoc/">RDoc</a> 6.2.1.
+  <p>Based on <a href="http://deveiate.org/projects/Darkfish-RDoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
+</footer>
+

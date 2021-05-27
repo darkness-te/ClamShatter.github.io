@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="UTF-8">
+
+<title>class TZInfo::DataSources::ConstantOffsetDataTimezoneInfo - TZInfo</title>
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../../";
+  var index_rel_prefix = "../../";
+</script>
+
+<script src="../../js/navigation.js" defer></script>
+<script src="../../js/search.js" defer></script>
+<script src="../../js/search_index.js" defer></script>
+<script src="../../js/searcher.js" defer></script>
+<script src="../../js/darkfish.js" defer></script>
+
+<link href="../../css/fonts.css" rel="stylesheet">
+<link href="../../css/rdoc.css" rel="stylesheet">
+
+
+
+
+<body id="top" role="document" class="class">
+<nav role="navigation">
+  <div id="project-navigation">
+    <div id="home-section" role="region" title="Quick navigation" class="nav-section">
+  <h2>
+    <a href="../../index.html" rel="home">Home</a>
+  </h2>
+
+  <div id="table-of-contents-navigation">
+    <a href="../../table_of_contents.html#pages">Pages</a>
+    <a href="../../table_of_contents.html#classes">Classes</a>
+    <a href="../../table_of_contents.html#methods">Methods</a>
+  </div>
+</div>
+
+    <div id="search-section" role="search" class="project-section initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <div id="search-field-wrapper">
+      <input id="search-field" role="combobox" aria-label="Search"
+             aria-autocomplete="list" aria-controls="search-results"
+             type="text" name="search" placeholder="Search" spellcheck="false"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </div>
+
+    <ul id="search-results" aria-label="Search Results"
+        aria-busy="false" aria-expanded="false"
+        aria-atomic="false" class="initially-hidden"></ul>
+  </form>
+</div>
+
+  </div>
+
+  
+
+  <div id="class-metadata">
+    
+    <div id="parent-class-section" class="nav-section">
+  <h3>Parent</h3>
+
+  
+  <p class="link">DataTimezoneInfo
+  
+</div>
+
+    
+    
+    <!-- Method Quickref -->
+<div id="method-list-section" class="nav-section">
+  <h3>Methods</h3>
+
+  <ul class="link-list" role="directory">
+    
+    <li class="calls-super" ><a href="#method-c-new">::new</a>
+    
+    <li ><a href="#method-i-constant_period">#constant_period</a>
+    
+    <li ><a href="#method-i-period_for">#period_for</a>
+    
+    <li ><a href="#method-i-periods_for_local">#periods_for_local</a>
+    
+    <li ><a href="#method-i-transitions_up_to">#transitions_up_to</a>
+    
+  </ul>
+</div>
+
+  </div>
+</nav>
+
+<main role="main" aria-labelledby="class-TZInfo::DataSources::ConstantOffsetDataTimezoneInfo">
+  <h1 id="class-TZInfo::DataSources::ConstantOffsetDataTimezoneInfo" class="class">
+    class TZInfo::DataSources::ConstantOffsetDataTimezoneInfo
+  </h1>
+
+  <section class="description">
+    
+<p>Represents a data time zone defined by a constantly observed offset.</p>
+
+  </section>
+
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+
+    
+    <section class="attribute-method-details" class="method-section">
+      <header>
+        <h3>Attributes</h3>
+      </header>
+
+      
+      <div id="attribute-i-constant_offset" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">constant_offset</span><span
+            class="attribute-access-type">[R]</span>
+        </div>
+
+        <div class="method-description">
+        
+        <p>@return [TimezoneOffset] the offset that is constantly observed.</p>
+        
+        </div>
+      </div>
+      
+    </section>
+    
+
+    
+     <section id="public-class-5Buntitled-5D-method-details" class="method-section">
+       <header>
+         <h3>Public Class Methods</h3>
+       </header>
+
+    
+      <div id="method-c-new" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">new</span><span
+            class="method-args">(identifier, constant_offset)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Initializes a new {ConstantOffsetDataTimezoneInfo}.</p>
+
+<p>The passed in `identifier` instance will be frozen. A reference to the passed in {TimezoneOffset} will be retained.</p>
+
+<p>@param identifier [String] the identifier of the time zone. @param <a href="ConstantOffsetDataTimezoneInfo.html#attribute-i-constant_offset"><code>constant_offset</code></a> [TimezoneOffset] the constantly observed offset. @raise [ArgumentError] if `identifier` or `constant_offset` is `nil`.</p>
+          
+          
+            <div class="method-calls-super">
+              Calls superclass method
+              
+            </div>
+          
+
+          
+          <div class="method-source-code" id="new-source">
+            <pre><span class="ruby-comment"># File lib/tzinfo/data_sources/constant_offset_data_timezone_info.rb, line 19</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">initialize</span>(<span class="ruby-identifier">identifier</span>, <span class="ruby-identifier">constant_offset</span>)
+  <span class="ruby-keyword">super</span>(<span class="ruby-identifier">identifier</span>)
+  <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-string">&#39;constant_offset must be specified&#39;</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">constant_offset</span>
+  <span class="ruby-ivar">@constant_offset</span> = <span class="ruby-identifier">constant_offset</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+    </section>
+  
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section">
+       <header>
+         <h3>Public Instance Methods</h3>
+       </header>
+
+    
+      <div id="method-i-period_for" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">period_for</span><span
+            class="method-args">(timestamp)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>@param timestamp [Timestamp] ignored. @return [TimezonePeriod] an unbounded {TimezonePeriod} for the time</p>
+
+<pre>zone&#39;s constantly observed offset.</pre>
+          
+          
+
+          
+          <div class="method-source-code" id="period_for-source">
+            <pre><span class="ruby-comment"># File lib/tzinfo/data_sources/constant_offset_data_timezone_info.rb, line 28</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">period_for</span>(<span class="ruby-identifier">timestamp</span>)
+  <span class="ruby-identifier">constant_period</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-periods_for_local" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">periods_for_local</span><span
+            class="method-args">(local_timestamp)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>@param local_timestamp [Timestamp] ignored. @return [Array&lt;TimezonePeriod&gt;] an `Array` containing a single unbounded</p>
+
+<pre>{TimezonePeriod} for the time zone&#39;s constantly observed offset.</pre>
+          
+          
+
+          
+          <div class="method-source-code" id="periods_for_local-source">
+            <pre><span class="ruby-comment"># File lib/tzinfo/data_sources/constant_offset_data_timezone_info.rb, line 35</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">periods_for_local</span>(<span class="ruby-identifier">local_timestamp</span>)
+  [<span class="ruby-identifier">constant_period</span>]
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-transitions_up_to" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">transitions_up_to</span><span
+            class="method-args">(to_timestamp, from_timestamp = nil)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>@param to_timestamp [Timestamp] ignored. @param from_timestamp [Timestamp] ignored. @return [Array] an empty `Array`, since there are no transitions in time</p>
+
+<pre>zones that observe a constant offset.</pre>
+          
+          
+
+          
+          <div class="method-source-code" id="transitions_up_to-source">
+            <pre><span class="ruby-comment"># File lib/tzinfo/data_sources/constant_offset_data_timezone_info.rb, line 43</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">transitions_up_to</span>(<span class="ruby-identifier">to_timestamp</span>, <span class="ruby-identifier">from_timestamp</span> = <span class="ruby-keyword">nil</span>)
+  []
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+    </section>
+  
+     <section id="private-instance-5Buntitled-5D-method-details" class="method-section">
+       <header>
+         <h3>Private Instance Methods</h3>
+       </header>
+
+    
+      <div id="method-i-constant_period" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">constant_period</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>@return [TimezonePeriod] an unbounded {TimezonePeriod} with the constant</p>
+
+<pre>offset of this timezone.</pre>
+          
+          
+
+          
+          <div class="method-source-code" id="constant_period-source">
+            <pre><span class="ruby-comment"># File lib/tzinfo/data_sources/constant_offset_data_timezone_info.rb, line 51</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">constant_period</span>
+  <span class="ruby-constant">OffsetTimezonePeriod</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@constant_offset</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+    </section>
+  
+  </section>
+
+</main>
+
+
+<footer id="validator-badges" role="contentinfo">
+  <p><a href="https://validator.w3.org/check/referer">Validate</a>
+  <p>Generated by <a href="https://ruby.github.io/rdoc/">RDoc</a> 6.2.1.
+  <p>Based on <a href="http://deveiate.org/projects/Darkfish-RDoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
+</footer>
+

@@ -1,0 +1,1303 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="UTF-8">
+
+<title>livereload.js - jekyll-4.2.0 Documentation</title>
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../../../../../";
+  var index_rel_prefix = "../../../../../";
+</script>
+
+<script src="../../../../../js/navigation.js" defer></script>
+<script src="../../../../../js/search.js" defer></script>
+<script src="../../../../../js/search_index.js" defer></script>
+<script src="../../../../../js/searcher.js" defer></script>
+<script src="../../../../../js/darkfish.js" defer></script>
+
+<link href="../../../../../css/fonts.css" rel="stylesheet">
+<link href="../../../../../css/rdoc.css" rel="stylesheet">
+
+
+
+
+<body id="top" role="document" class="file">
+<nav role="navigation">
+  <div id="project-navigation">
+    <div id="home-section" role="region" title="Quick navigation" class="nav-section">
+  <h2>
+    <a href="../../../../../index.html" rel="home">Home</a>
+  </h2>
+
+  <div id="table-of-contents-navigation">
+    <a href="../../../../../table_of_contents.html#pages">Pages</a>
+    <a href="../../../../../table_of_contents.html#classes">Classes</a>
+    <a href="../../../../../table_of_contents.html#methods">Methods</a>
+  </div>
+</div>
+
+    <div id="search-section" role="search" class="project-section initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <div id="search-field-wrapper">
+      <input id="search-field" role="combobox" aria-label="Search"
+             aria-autocomplete="list" aria-controls="search-results"
+             type="text" name="search" placeholder="Search" spellcheck="false"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </div>
+
+    <ul id="search-results" aria-label="Search Results"
+        aria-busy="false" aria-expanded="false"
+        aria-atomic="false" class="initially-hidden"></ul>
+  </form>
+</div>
+
+  </div>
+
+  
+
+  <div id="project-metadata">
+    <div id="fileindex-section" class="nav-section">
+  <h3>Pages</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="../../../../../LICENSE.html">LICENSE</a>
+  
+    <li><a href="../../../../../README_markdown.html">README.markdown</a>
+  
+    <li><a href="../../../../../lib/blank_template/_layouts/default_html.html">default.html</a>
+  
+    <li><a href="../../../../../lib/blank_template/_sass/main_scss.html">main.scss</a>
+  
+    <li><a href="../../../../../lib/blank_template/assets/css/main_scss.html">main.scss</a>
+  
+    <li><a href="../../../../../lib/blank_template/index_md.html">index</a>
+  
+    <li><a href="../../../../../lib/jekyll/commands/serve/livereload_assets/livereload_js.html">livereload.js</a>
+  
+    <li><a href="../../../../../lib/jekyll/mime_types.html">mime.types</a>
+  
+    <li><a href="../../../../../lib/site_template/404_html.html">404.html</a>
+  
+    <li><a href="../../../../../lib/site_template/about_markdown.html">about.markdown</a>
+  
+    <li><a href="../../../../../lib/site_template/index_markdown.html">index.markdown</a>
+  
+    <li><a href="../../../../../lib/theme_template/Gemfile.html">Gemfile</a>
+  
+    <li><a href="../../../../../lib/theme_template/_layouts/default_html.html">default.html</a>
+  
+    <li><a href="../../../../../lib/theme_template/_layouts/page_html.html">page.html</a>
+  
+    <li><a href="../../../../../lib/theme_template/_layouts/post_html.html">post.html</a>
+  
+    <li><a href="../../../../../lib/theme_template/example/_post_md.html">_post</a>
+  
+    <li><a href="../../../../../lib/theme_template/example/index_html.html">index.html</a>
+  
+    <li><a href="../../../../../lib/theme_template/example/style_scss.html">style.scss</a>
+  
+  </ul>
+</div>
+
+  </div>
+</nav>
+
+<main role="main" aria-label="Page lib/jekyll/commands/serve/livereload_assets/livereload.js">
+
+<p>(function e(t,n,r){function s(o,u){<a href="o">if(!n</a>){<a href="o">if(!t</a>){var a=typeof require==“function”&amp;&amp;require;if(!u&amp;&amp;a)return a(o,!0);if(i)return i(o,!0);var f=new Error(“Cannot find module &#39;”<code>o</code>“&#39;”);throw f.code=“MODULE_NOT_FOUND”,f}var <a href="o">l=n</a>={exports:{}};<a href="o">t</a>[0].call(l.exports,function(e){var <a href="o">n=t</a>[<a href="e">1]</a>;return s(n?n:e)},l,l.exports,e,t,n,r)}return <a href="o">n</a>.exports}var i=typeof require==“function”&amp;&amp;require;for(var <a href="o">o=0;o<r.length;o++)s(r</a>);return s})({1:[function(require,module,exports){ (function() {</p>
+
+<pre>var Connector, PROTOCOL_6, PROTOCOL_7, Parser, Version, _ref;
+
+_ref = require(&#39;./protocol&#39;), Parser = _ref.Parser, PROTOCOL_6 = _ref.PROTOCOL_6, PROTOCOL_7 = _ref.PROTOCOL_7;
+
+Version = &#39;2.2.2&#39;;
+
+exports.Connector = Connector = (function() {
+  function Connector(options, WebSocket, Timer, handlers) {
+    this.options = options;
+    this.WebSocket = WebSocket;
+    this.Timer = Timer;
+    this.handlers = handlers;
+    this._uri = &quot;ws&quot; + (this.options.https ? &quot;s&quot; : &quot;&quot;) + &quot;://&quot; + this.options.host + &quot;:&quot; + this.options.port + &quot;/livereload&quot;;
+    this._nextDelay = this.options.mindelay;
+    this._connectionDesired = false;
+    this.protocol = 0;
+    this.protocolParser = new Parser({
+      connected: (function(_this) {
+        return function(protocol) {
+          _this.protocol = protocol;
+          _this._handshakeTimeout.stop();
+          _this._nextDelay = _this.options.mindelay;
+          _this._disconnectionReason = &#39;broken&#39;;
+          return _this.handlers.connected(protocol);
+        };
+      })(this),
+      error: (function(_this) {
+        return function(e) {
+          _this.handlers.error(e);
+          return _this._closeOnError();
+        };
+      })(this),
+      message: (function(_this) {
+        return function(message) {
+          return _this.handlers.message(message);
+        };
+      })(this)
+    });
+    this._handshakeTimeout = new Timer((function(_this) {
+      return function() {
+        if (!_this._isSocketConnected()) {
+          return;
+        }
+        _this._disconnectionReason = &#39;handshake-timeout&#39;;
+        return _this.socket.close();
+      };
+    })(this));
+    this._reconnectTimer = new Timer((function(_this) {
+      return function() {
+        if (!_this._connectionDesired) {
+          return;
+        }
+        return _this.connect();
+      };
+    })(this));
+    this.connect();
+  }
+
+  Connector.prototype._isSocketConnected = function() {
+    return this.socket &amp;&amp; this.socket.readyState === this.WebSocket.OPEN;
+  };
+
+  Connector.prototype.connect = function() {
+    this._connectionDesired = true;
+    if (this._isSocketConnected()) {
+      return;
+    }
+    this._reconnectTimer.stop();
+    this._disconnectionReason = &#39;cannot-connect&#39;;
+    this.protocolParser.reset();
+    this.handlers.connecting();
+    this.socket = new this.WebSocket(this._uri);
+    this.socket.onopen = (function(_this) {
+      return function(e) {
+        return _this._onopen(e);
+      };
+    })(this);
+    this.socket.onclose = (function(_this) {
+      return function(e) {
+        return _this._onclose(e);
+      };
+    })(this);
+    this.socket.onmessage = (function(_this) {
+      return function(e) {
+        return _this._onmessage(e);
+      };
+    })(this);
+    return this.socket.onerror = (function(_this) {
+      return function(e) {
+        return _this._onerror(e);
+      };
+    })(this);
+  };
+
+  Connector.prototype.disconnect = function() {
+    this._connectionDesired = false;
+    this._reconnectTimer.stop();
+    if (!this._isSocketConnected()) {
+      return;
+    }
+    this._disconnectionReason = &#39;manual&#39;;
+    return this.socket.close();
+  };
+
+  Connector.prototype._scheduleReconnection = function() {
+    if (!this._connectionDesired) {
+      return;
+    }
+    if (!this._reconnectTimer.running) {
+      this._reconnectTimer.start(this._nextDelay);
+      return this._nextDelay = Math.min(this.options.maxdelay, this._nextDelay * 2);
+    }
+  };
+
+  Connector.prototype.sendCommand = function(command) {
+    if (this.protocol == null) {
+      return;
+    }
+    return this._sendCommand(command);
+  };
+
+  Connector.prototype._sendCommand = function(command) {
+    return this.socket.send(JSON.stringify(command));
+  };
+
+  Connector.prototype._closeOnError = function() {
+    this._handshakeTimeout.stop();
+    this._disconnectionReason = &#39;error&#39;;
+    return this.socket.close();
+  };
+
+  Connector.prototype._onopen = function(e) {
+    var hello;
+    this.handlers.socketConnected();
+    this._disconnectionReason = &#39;handshake-failed&#39;;
+    hello = {
+      command: &#39;hello&#39;,
+      protocols: [PROTOCOL_6, PROTOCOL_7]
+    };
+    hello.ver = Version;
+    if (this.options.ext) {
+      hello.ext = this.options.ext;
+    }
+    if (this.options.extver) {
+      hello.extver = this.options.extver;
+    }
+    if (this.options.snipver) {
+      hello.snipver = this.options.snipver;
+    }
+    this._sendCommand(hello);
+    return this._handshakeTimeout.start(this.options.handshake_timeout);
+  };
+
+  Connector.prototype._onclose = function(e) {
+    this.protocol = 0;
+    this.handlers.disconnected(this._disconnectionReason, this._nextDelay);
+    return this._scheduleReconnection();
+  };
+
+  Connector.prototype._onerror = function(e) {};
+
+  Connector.prototype._onmessage = function(e) {
+    return this.protocolParser.process(e.data);
+  };
+
+  return Connector;
+
+})();</pre>
+
+<p>}).call(this);</p>
+
+<p>},{“./protocol”:6}],2:[function(require,module,exports){ (function() {</p>
+
+<pre>var CustomEvents;
+
+CustomEvents = {
+  bind: function(element, eventName, handler) {
+    if (element.addEventListener) {
+      return element.addEventListener(eventName, handler, false);
+    } else if (element.attachEvent) {
+      element[eventName] = 1;
+      return element.attachEvent(&#39;onpropertychange&#39;, function(event) {
+        if (event.propertyName === eventName) {
+          return handler();
+        }
+      });
+    } else {
+      throw new Error(&quot;Attempt to attach custom event &quot; + eventName + &quot; to something which isn&#39;t a DOMElement&quot;);
+    }
+  },
+  fire: function(element, eventName) {
+    var event;
+    if (element.addEventListener) {
+      event = document.createEvent(&#39;HTMLEvents&#39;);
+      event.initEvent(eventName, true, true);
+      return document.dispatchEvent(event);
+    } else if (element.attachEvent) {
+      if (element[eventName]) {
+        return element[eventName]++;
+      }
+    } else {
+      throw new Error(&quot;Attempt to fire custom event &quot; + eventName + &quot; on something which isn&#39;t a DOMElement&quot;);
+    }
+  }
+};
+
+exports.bind = CustomEvents.bind;
+
+exports.fire = CustomEvents.fire;</pre>
+
+<p>}).call(this);</p>
+
+<p>},{}],3:[function(require,module,exports){ (function() {</p>
+
+<pre>var LessPlugin;
+
+module.exports = LessPlugin = (function() {
+  LessPlugin.identifier = &#39;less&#39;;
+
+  LessPlugin.version = &#39;1.0&#39;;
+
+  function LessPlugin(window, host) {
+    this.window = window;
+    this.host = host;
+  }
+
+  LessPlugin.prototype.reload = function(path, options) {
+    if (this.window.less &amp;&amp; this.window.less.refresh) {
+      if (path.match(/\.less$/i)) {
+        return this.reloadLess(path);
+      }
+      if (options.originalPath.match(/\.less$/i)) {
+        return this.reloadLess(options.originalPath);
+      }
+    }
+    return false;
+  };
+
+  LessPlugin.prototype.reloadLess = function(path) {
+    var link, links, _i, _len;
+    links = (function() {
+      var _i, _len, _ref, _results;
+      _ref = document.getElementsByTagName(&#39;link&#39;);
+      _results = [];
+      for (_i = 0, _len = _ref.length; _i &lt; _len; _i++) {
+        link = _ref[_i];
+        if (link.href &amp;&amp; link.rel.match(/^stylesheet\/less$/i) || (link.rel.match(/stylesheet/i) &amp;&amp; link.type.match(/^text\/(x-)?less$/i))) {
+          _results.push(link);
+        }
+      }
+      return _results;
+    })();
+    if (links.length === 0) {
+      return false;
+    }
+    for (_i = 0, _len = links.length; _i &lt; _len; _i++) {
+      link = links[_i];
+      link.href = this.host.generateCacheBustUrl(link.href);
+    }
+    this.host.console.log(&quot;LiveReload is asking LESS to recompile all stylesheets&quot;);
+    this.window.less.refresh(true);
+    return true;
+  };
+
+  LessPlugin.prototype.analyze = function() {
+    return {
+      disable: !!(this.window.less &amp;&amp; this.window.less.refresh)
+    };
+  };
+
+  return LessPlugin;
+
+})();</pre>
+
+<p>}).call(this);</p>
+
+<p>},{}],4:[function(require,module,exports){ (function() {</p>
+
+<pre>var Connector, LiveReload, Options, Reloader, Timer,
+  __hasProp = {}.hasOwnProperty;
+
+Connector = require(&#39;./connector&#39;).Connector;
+
+Timer = require(&#39;./timer&#39;).Timer;
+
+Options = require(&#39;./options&#39;).Options;
+
+Reloader = require(&#39;./reloader&#39;).Reloader;
+
+exports.LiveReload = LiveReload = (function() {
+  function LiveReload(window) {
+    var k, v, _ref;
+    this.window = window;
+    this.listeners = {};
+    this.plugins = [];
+    this.pluginIdentifiers = {};
+    this.console = this.window.console &amp;&amp; this.window.console.log &amp;&amp; this.window.console.error ? this.window.location.href.match(/LR-verbose/) ? this.window.console : {
+      log: function() {},
+      error: this.window.console.error.bind(this.window.console)
+    } : {
+      log: function() {},
+      error: function() {}
+    };
+    if (!(this.WebSocket = this.window.WebSocket || this.window.MozWebSocket)) {
+      this.console.error(&quot;LiveReload disabled because the browser does not seem to support web sockets&quot;);
+      return;
+    }
+    if (&#39;LiveReloadOptions&#39; in window) {
+      this.options = new Options();
+      _ref = window[&#39;LiveReloadOptions&#39;];
+      for (k in _ref) {
+        if (!__hasProp.call(_ref, k)) continue;
+        v = _ref[k];
+        this.options.set(k, v);
+      }
+    } else {
+      this.options = Options.extract(this.window.document);
+      if (!this.options) {
+        this.console.error(&quot;LiveReload disabled because it could not find its own &lt;SCRIPT&gt; tag&quot;);
+        return;
+      }
+    }
+    this.reloader = new Reloader(this.window, this.console, Timer);
+    this.connector = new Connector(this.options, this.WebSocket, Timer, {
+      connecting: (function(_this) {
+        return function() {};
+      })(this),
+      socketConnected: (function(_this) {
+        return function() {};
+      })(this),
+      connected: (function(_this) {
+        return function(protocol) {
+          var _base;
+          if (typeof (_base = _this.listeners).connect === &quot;function&quot;) {
+            _base.connect();
+          }
+          _this.log(&quot;LiveReload is connected to &quot; + _this.options.host + &quot;:&quot; + _this.options.port + &quot; (protocol v&quot; + protocol + &quot;).&quot;);
+          return _this.analyze();
+        };
+      })(this),
+      error: (function(_this) {
+        return function(e) {
+          if (e instanceof ProtocolError) {
+            if (typeof console !== &quot;undefined&quot; &amp;&amp; console !== null) {
+              return console.log(&quot;&quot; + e.message + &quot;.&quot;);
+            }
+          } else {
+            if (typeof console !== &quot;undefined&quot; &amp;&amp; console !== null) {
+              return console.log(&quot;LiveReload internal error: &quot; + e.message);
+            }
+          }
+        };
+      })(this),
+      disconnected: (function(_this) {
+        return function(reason, nextDelay) {
+          var _base;
+          if (typeof (_base = _this.listeners).disconnect === &quot;function&quot;) {
+            _base.disconnect();
+          }
+          switch (reason) {
+            case &#39;cannot-connect&#39;:
+              return _this.log(&quot;LiveReload cannot connect to &quot; + _this.options.host + &quot;:&quot; + _this.options.port + &quot;, will retry in &quot; + nextDelay + &quot; sec.&quot;);
+            case &#39;broken&#39;:
+              return _this.log(&quot;LiveReload disconnected from &quot; + _this.options.host + &quot;:&quot; + _this.options.port + &quot;, reconnecting in &quot; + nextDelay + &quot; sec.&quot;);
+            case &#39;handshake-timeout&#39;:
+              return _this.log(&quot;LiveReload cannot connect to &quot; + _this.options.host + &quot;:&quot; + _this.options.port + &quot; (handshake timeout), will retry in &quot; + nextDelay + &quot; sec.&quot;);
+            case &#39;handshake-failed&#39;:
+              return _this.log(&quot;LiveReload cannot connect to &quot; + _this.options.host + &quot;:&quot; + _this.options.port + &quot; (handshake failed), will retry in &quot; + nextDelay + &quot; sec.&quot;);
+            case &#39;manual&#39;:
+              break;
+            case &#39;error&#39;:
+              break;
+            default:
+              return _this.log(&quot;LiveReload disconnected from &quot; + _this.options.host + &quot;:&quot; + _this.options.port + &quot; (&quot; + reason + &quot;), reconnecting in &quot; + nextDelay + &quot; sec.&quot;);
+          }
+        };
+      })(this),
+      message: (function(_this) {
+        return function(message) {
+          switch (message.command) {
+            case &#39;reload&#39;:
+              return _this.performReload(message);
+            case &#39;alert&#39;:
+              return _this.performAlert(message);
+          }
+        };
+      })(this)
+    });
+    this.initialized = true;
+  }
+
+  LiveReload.prototype.on = function(eventName, handler) {
+    return this.listeners[eventName] = handler;
+  };
+
+  LiveReload.prototype.log = function(message) {
+    return this.console.log(&quot;&quot; + message);
+  };
+
+  LiveReload.prototype.performReload = function(message) {
+    var _ref, _ref1;
+    this.log(&quot;LiveReload received reload request: &quot; + (JSON.stringify(message, null, 2)));
+    return this.reloader.reload(message.path, {
+      liveCSS: (_ref = message.liveCSS) != null ? _ref : true,
+      liveImg: (_ref1 = message.liveImg) != null ? _ref1 : true,
+      originalPath: message.originalPath || &#39;&#39;,
+      overrideURL: message.overrideURL || &#39;&#39;,
+      serverURL: &quot;http://&quot; + this.options.host + &quot;:&quot; + this.options.port
+    });
+  };
+
+  LiveReload.prototype.performAlert = function(message) {
+    return alert(message.message);
+  };
+
+  LiveReload.prototype.shutDown = function() {
+    var _base;
+    if (!this.initialized) {
+      return;
+    }
+    this.connector.disconnect();
+    this.log(&quot;LiveReload disconnected.&quot;);
+    return typeof (_base = this.listeners).shutdown === &quot;function&quot; ? _base.shutdown() : void 0;
+  };
+
+  LiveReload.prototype.hasPlugin = function(identifier) {
+    return !!this.pluginIdentifiers[identifier];
+  };
+
+  LiveReload.prototype.addPlugin = function(pluginClass) {
+    var plugin;
+    if (!this.initialized) {
+      return;
+    }
+    if (this.hasPlugin(pluginClass.identifier)) {
+      return;
+    }
+    this.pluginIdentifiers[pluginClass.identifier] = true;
+    plugin = new pluginClass(this.window, {
+      _livereload: this,
+      _reloader: this.reloader,
+      _connector: this.connector,
+      console: this.console,
+      Timer: Timer,
+      generateCacheBustUrl: (function(_this) {
+        return function(url) {
+          return _this.reloader.generateCacheBustUrl(url);
+        };
+      })(this)
+    });
+    this.plugins.push(plugin);
+    this.reloader.addPlugin(plugin);
+  };
+
+  LiveReload.prototype.analyze = function() {
+    var plugin, pluginData, pluginsData, _i, _len, _ref;
+    if (!this.initialized) {
+      return;
+    }
+    if (!(this.connector.protocol &gt;= 7)) {
+      return;
+    }
+    pluginsData = {};
+    _ref = this.plugins;
+    for (_i = 0, _len = _ref.length; _i &lt; _len; _i++) {
+      plugin = _ref[_i];
+      pluginsData[plugin.constructor.identifier] = pluginData = (typeof plugin.analyze === &quot;function&quot; ? plugin.analyze() : void 0) || {};
+      pluginData.version = plugin.constructor.version;
+    }
+    this.connector.sendCommand({
+      command: &#39;info&#39;,
+      plugins: pluginsData,
+      url: this.window.location.href
+    });
+  };
+
+  return LiveReload;
+
+})();</pre>
+
+<p>}).call(this);</p>
+
+<p>},{“./connector”:1,“./options”:5,“./reloader”:7,“./timer”:9}],5:[function(require,module,exports){ (function() {</p>
+
+<pre>var Options;
+
+exports.Options = Options = (function() {
+  function Options() {
+    this.https = false;
+    this.host = null;
+    this.port = 35729;
+    this.snipver = null;
+    this.ext = null;
+    this.extver = null;
+    this.mindelay = 1000;
+    this.maxdelay = 60000;
+    this.handshake_timeout = 5000;
+  }
+
+  Options.prototype.set = function(name, value) {
+    if (typeof value === &#39;undefined&#39;) {
+      return;
+    }
+    if (!isNaN(+value)) {
+      value = +value;
+    }
+    return this[name] = value;
+  };
+
+  return Options;
+
+})();
+
+Options.extract = function(document) {
+  var element, keyAndValue, m, mm, options, pair, src, _i, _j, _len, _len1, _ref, _ref1;
+  _ref = document.getElementsByTagName(&#39;script&#39;);
+  for (_i = 0, _len = _ref.length; _i &lt; _len; _i++) {
+    element = _ref[_i];
+    if ((src = element.src) &amp;&amp; (m = src.match(/^[^:]+:\/\/(.*)\/z?livereload\.js(?:\?(.*))?$/))) {
+      options = new Options();
+      options.https = src.indexOf(&quot;https&quot;) === 0;
+      if (mm = m[1].match(/^([^\/:]+)(?::(\d+))?$/)) {
+        options.host = mm[1];
+        if (mm[2]) {
+          options.port = parseInt(mm[2], 10);
+        }
+      }
+      if (m[2]) {
+        _ref1 = m[2].split(&#39;&amp;&#39;);
+        for (_j = 0, _len1 = _ref1.length; _j &lt; _len1; _j++) {
+          pair = _ref1[_j];
+          if ((keyAndValue = pair.split(&#39;=&#39;)).length &gt; 1) {
+            options.set(keyAndValue[0].replace(/-/g, &#39;_&#39;), keyAndValue.slice(1).join(&#39;=&#39;));
+          }
+        }
+      }
+      return options;
+    }
+  }
+  return null;
+};</pre>
+
+<p>}).call(this);</p>
+
+<p>},{}],6:[function(require,module,exports){ (function() {</p>
+
+<pre>var PROTOCOL_6, PROTOCOL_7, Parser, ProtocolError,
+  __indexOf = [].indexOf || function(item) { for (var i = 0, l = this.length; i &lt; l; i++) { if (i in this &amp;&amp; this[i] === item) return i; } return -1; };
+
+exports.PROTOCOL_6 = PROTOCOL_6 = &#39;http://livereload.com/protocols/official-6&#39;;
+
+exports.PROTOCOL_7 = PROTOCOL_7 = &#39;http://livereload.com/protocols/official-7&#39;;
+
+exports.ProtocolError = ProtocolError = (function() {
+  function ProtocolError(reason, data) {
+    this.message = &quot;LiveReload protocol error (&quot; + reason + &quot;) after receiving data: \&quot;&quot; + data + &quot;\&quot;.&quot;;
+  }
+
+  return ProtocolError;
+
+})();
+
+exports.Parser = Parser = (function() {
+  function Parser(handlers) {
+    this.handlers = handlers;
+    this.reset();
+  }
+
+  Parser.prototype.reset = function() {
+    return this.protocol = null;
+  };
+
+  Parser.prototype.process = function(data) {
+    var command, e, message, options, _ref;
+    try {
+      if (this.protocol == null) {
+        if (data.match(/^!!ver:([\d.]+)$/)) {
+          this.protocol = 6;
+        } else if (message = this._parseMessage(data, [&#39;hello&#39;])) {
+          if (!message.protocols.length) {
+            throw new ProtocolError(&quot;no protocols specified in handshake message&quot;);
+          } else if (__indexOf.call(message.protocols, PROTOCOL_7) &gt;= 0) {
+            this.protocol = 7;
+          } else if (__indexOf.call(message.protocols, PROTOCOL_6) &gt;= 0) {
+            this.protocol = 6;
+          } else {
+            throw new ProtocolError(&quot;no supported protocols found&quot;);
+          }
+        }
+        return this.handlers.connected(this.protocol);
+      } else if (this.protocol === 6) {
+        message = JSON.parse(data);
+        if (!message.length) {
+          throw new ProtocolError(&quot;protocol 6 messages must be arrays&quot;);
+        }
+        command = message[0], options = message[1];
+        if (command !== &#39;refresh&#39;) {
+          throw new ProtocolError(&quot;unknown protocol 6 command&quot;);
+        }
+        return this.handlers.message({
+          command: &#39;reload&#39;,
+          path: options.path,
+          liveCSS: (_ref = options.apply_css_live) != null ? _ref : true
+        });
+      } else {
+        message = this._parseMessage(data, [&#39;reload&#39;, &#39;alert&#39;]);
+        return this.handlers.message(message);
+      }
+    } catch (_error) {
+      e = _error;
+      if (e instanceof ProtocolError) {
+        return this.handlers.error(e);
+      } else {
+        throw e;
+      }
+    }
+  };
+
+  Parser.prototype._parseMessage = function(data, validCommands) {
+    var e, message, _ref;
+    try {
+      message = JSON.parse(data);
+    } catch (_error) {
+      e = _error;
+      throw new ProtocolError(&#39;unparsable JSON&#39;, data);
+    }
+    if (!message.command) {
+      throw new ProtocolError(&#39;missing &quot;command&quot; key&#39;, data);
+    }
+    if (_ref = message.command, __indexOf.call(validCommands, _ref) &lt; 0) {
+      throw new ProtocolError(&quot;invalid command &#39;&quot; + message.command + &quot;&#39;, only valid commands are: &quot; + (validCommands.join(&#39;, &#39;)) + &quot;)&quot;, data);
+    }
+    return message;
+  };
+
+  return Parser;
+
+})();</pre>
+
+<p>}).call(this);</p>
+
+<p>},{}],7:[function(require,module,exports){ (function() {</p>
+
+<pre>var IMAGE_STYLES, Reloader, numberOfMatchingSegments, pathFromUrl, pathsMatch, pickBestMatch, splitUrl;
+
+splitUrl = function(url) {
+  var hash, index, params;
+  if ((index = url.indexOf(&#39;#&#39;)) &gt;= 0) {
+    hash = url.slice(index);
+    url = url.slice(0, index);
+  } else {
+    hash = &#39;&#39;;
+  }
+  if ((index = url.indexOf(&#39;?&#39;)) &gt;= 0) {
+    params = url.slice(index);
+    url = url.slice(0, index);
+  } else {
+    params = &#39;&#39;;
+  }
+  return {
+    url: url,
+    params: params,
+    hash: hash
+  };
+};
+
+pathFromUrl = function(url) {
+  var path;
+  url = splitUrl(url).url;
+  if (url.indexOf(&#39;file://&#39;) === 0) {
+    path = url.replace(/^file:\/\/(localhost)?/, &#39;&#39;);
+  } else {
+    path = url.replace(/^([^:]+:)?\/\/([^:\/]+)(:\d*)?\//, &#39;/&#39;);
+  }
+  return decodeURIComponent(path);
+};
+
+pickBestMatch = function(path, objects, pathFunc) {
+  var bestMatch, object, score, _i, _len;
+  bestMatch = {
+    score: 0
+  };
+  for (_i = 0, _len = objects.length; _i &lt; _len; _i++) {
+    object = objects[_i];
+    score = numberOfMatchingSegments(path, pathFunc(object));
+    if (score &gt; bestMatch.score) {
+      bestMatch = {
+        object: object,
+        score: score
+      };
+    }
+  }
+  if (bestMatch.score &gt; 0) {
+    return bestMatch;
+  } else {
+    return null;
+  }
+};
+
+numberOfMatchingSegments = function(path1, path2) {
+  var comps1, comps2, eqCount, len;
+  path1 = path1.replace(/^\/+/, &#39;&#39;).toLowerCase();
+  path2 = path2.replace(/^\/+/, &#39;&#39;).toLowerCase();
+  if (path1 === path2) {
+    return 10000;
+  }
+  comps1 = path1.split(&#39;/&#39;).reverse();
+  comps2 = path2.split(&#39;/&#39;).reverse();
+  len = Math.min(comps1.length, comps2.length);
+  eqCount = 0;
+  while (eqCount &lt; len &amp;&amp; comps1[eqCount] === comps2[eqCount]) {
+    ++eqCount;
+  }
+  return eqCount;
+};
+
+pathsMatch = function(path1, path2) {
+  return numberOfMatchingSegments(path1, path2) &gt; 0;
+};
+
+IMAGE_STYLES = [
+  {
+    selector: &#39;background&#39;,
+    styleNames: [&#39;backgroundImage&#39;]
+  }, {
+    selector: &#39;border&#39;,
+    styleNames: [&#39;borderImage&#39;, &#39;webkitBorderImage&#39;, &#39;MozBorderImage&#39;]
+  }
+];
+
+exports.Reloader = Reloader = (function() {
+  function Reloader(window, console, Timer) {
+    this.window = window;
+    this.console = console;
+    this.Timer = Timer;
+    this.document = this.window.document;
+    this.importCacheWaitPeriod = 200;
+    this.plugins = [];
+  }
+
+  Reloader.prototype.addPlugin = function(plugin) {
+    return this.plugins.push(plugin);
+  };
+
+  Reloader.prototype.analyze = function(callback) {
+    return results;
+  };
+
+  Reloader.prototype.reload = function(path, options) {
+    var plugin, _base, _i, _len, _ref;
+    this.options = options;
+    if ((_base = this.options).stylesheetReloadTimeout == null) {
+      _base.stylesheetReloadTimeout = 15000;
+    }
+    _ref = this.plugins;
+    for (_i = 0, _len = _ref.length; _i &lt; _len; _i++) {
+      plugin = _ref[_i];
+      if (plugin.reload &amp;&amp; plugin.reload(path, options)) {
+        return;
+      }
+    }
+    if (options.liveCSS) {
+      if (path.match(/\.css$/i)) {
+        if (this.reloadStylesheet(path)) {
+          return;
+        }
+      }
+    }
+    if (options.liveImg) {
+      if (path.match(/\.(jpe?g|png|gif)$/i)) {
+        this.reloadImages(path);
+        return;
+      }
+    }
+    return this.reloadPage();
+  };
+
+  Reloader.prototype.reloadPage = function() {
+    return this.window.document.location.reload();
+  };
+
+  Reloader.prototype.reloadImages = function(path) {
+    var expando, img, selector, styleNames, styleSheet, _i, _j, _k, _l, _len, _len1, _len2, _len3, _ref, _ref1, _ref2, _ref3, _results;
+    expando = this.generateUniqueString();
+    _ref = this.document.images;
+    for (_i = 0, _len = _ref.length; _i &lt; _len; _i++) {
+      img = _ref[_i];
+      if (pathsMatch(path, pathFromUrl(img.src))) {
+        img.src = this.generateCacheBustUrl(img.src, expando);
+      }
+    }
+    if (this.document.querySelectorAll) {
+      for (_j = 0, _len1 = IMAGE_STYLES.length; _j &lt; _len1; _j++) {
+        _ref1 = IMAGE_STYLES[_j], selector = _ref1.selector, styleNames = _ref1.styleNames;
+        _ref2 = this.document.querySelectorAll(&quot;[style*=&quot; + selector + &quot;]&quot;);
+        for (_k = 0, _len2 = _ref2.length; _k &lt; _len2; _k++) {
+          img = _ref2[_k];
+          this.reloadStyleImages(img.style, styleNames, path, expando);
+        }
+      }
+    }
+    if (this.document.styleSheets) {
+      _ref3 = this.document.styleSheets;
+      _results = [];
+      for (_l = 0, _len3 = _ref3.length; _l &lt; _len3; _l++) {
+        styleSheet = _ref3[_l];
+        _results.push(this.reloadStylesheetImages(styleSheet, path, expando));
+      }
+      return _results;
+    }
+  };
+
+  Reloader.prototype.reloadStylesheetImages = function(styleSheet, path, expando) {
+    var e, rule, rules, styleNames, _i, _j, _len, _len1;
+    try {
+      rules = styleSheet != null ? styleSheet.cssRules : void 0;
+    } catch (_error) {
+      e = _error;
+    }
+    if (!rules) {
+      return;
+    }
+    for (_i = 0, _len = rules.length; _i &lt; _len; _i++) {
+      rule = rules[_i];
+      switch (rule.type) {
+        case CSSRule.IMPORT_RULE:
+          this.reloadStylesheetImages(rule.styleSheet, path, expando);
+          break;
+        case CSSRule.STYLE_RULE:
+          for (_j = 0, _len1 = IMAGE_STYLES.length; _j &lt; _len1; _j++) {
+            styleNames = IMAGE_STYLES[_j].styleNames;
+            this.reloadStyleImages(rule.style, styleNames, path, expando);
+          }
+          break;
+        case CSSRule.MEDIA_RULE:
+          this.reloadStylesheetImages(rule, path, expando);
+      }
+    }
+  };
+
+  Reloader.prototype.reloadStyleImages = function(style, styleNames, path, expando) {
+    var newValue, styleName, value, _i, _len;
+    for (_i = 0, _len = styleNames.length; _i &lt; _len; _i++) {
+      styleName = styleNames[_i];
+      value = style[styleName];
+      if (typeof value === &#39;string&#39;) {
+        newValue = value.replace(/\burl\s*\(([^)]*)\)/, (function(_this) {
+          return function(match, src) {
+            if (pathsMatch(path, pathFromUrl(src))) {
+              return &quot;url(&quot; + (_this.generateCacheBustUrl(src, expando)) + &quot;)&quot;;
+            } else {
+              return match;
+            }
+          };
+        })(this));
+        if (newValue !== value) {
+          style[styleName] = newValue;
+        }
+      }
+    }
+  };
+
+  Reloader.prototype.reloadStylesheet = function(path) {
+    var imported, link, links, match, style, _i, _j, _k, _l, _len, _len1, _len2, _len3, _ref, _ref1;
+    links = (function() {
+      var _i, _len, _ref, _results;
+      _ref = this.document.getElementsByTagName(&#39;link&#39;);
+      _results = [];
+      for (_i = 0, _len = _ref.length; _i &lt; _len; _i++) {
+        link = _ref[_i];
+        if (link.rel.match(/^stylesheet$/i) &amp;&amp; !link.__LiveReload_pendingRemoval) {
+          _results.push(link);
+        }
+      }
+      return _results;
+    }).call(this);
+    imported = [];
+    _ref = this.document.getElementsByTagName(&#39;style&#39;);
+    for (_i = 0, _len = _ref.length; _i &lt; _len; _i++) {
+      style = _ref[_i];
+      if (style.sheet) {
+        this.collectImportedStylesheets(style, style.sheet, imported);
+      }
+    }
+    for (_j = 0, _len1 = links.length; _j &lt; _len1; _j++) {
+      link = links[_j];
+      this.collectImportedStylesheets(link, link.sheet, imported);
+    }
+    if (this.window.StyleFix &amp;&amp; this.document.querySelectorAll) {
+      _ref1 = this.document.querySelectorAll(&#39;style[data-href]&#39;);
+      for (_k = 0, _len2 = _ref1.length; _k &lt; _len2; _k++) {
+        style = _ref1[_k];
+        links.push(style);
+      }
+    }
+    this.console.log(&quot;LiveReload found &quot; + links.length + &quot; LINKed stylesheets, &quot; + imported.length + &quot; @imported stylesheets&quot;);
+    match = pickBestMatch(path, links.concat(imported), (function(_this) {
+      return function(l) {
+        return pathFromUrl(_this.linkHref(l));
+      };
+    })(this));
+    if (match) {
+      if (match.object.rule) {
+        this.console.log(&quot;LiveReload is reloading imported stylesheet: &quot; + match.object.href);
+        this.reattachImportedRule(match.object);
+      } else {
+        this.console.log(&quot;LiveReload is reloading stylesheet: &quot; + (this.linkHref(match.object)));
+        this.reattachStylesheetLink(match.object);
+      }
+    } else {
+      this.console.log(&quot;LiveReload will reload all stylesheets because path &#39;&quot; + path + &quot;&#39; did not match any specific one&quot;);
+      for (_l = 0, _len3 = links.length; _l &lt; _len3; _l++) {
+        link = links[_l];
+        this.reattachStylesheetLink(link);
+      }
+    }
+    return true;
+  };
+
+  Reloader.prototype.collectImportedStylesheets = function(link, styleSheet, result) {
+    var e, index, rule, rules, _i, _len;
+    try {
+      rules = styleSheet != null ? styleSheet.cssRules : void 0;
+    } catch (_error) {
+      e = _error;
+    }
+    if (rules &amp;&amp; rules.length) {
+      for (index = _i = 0, _len = rules.length; _i &lt; _len; index = ++_i) {
+        rule = rules[index];
+        switch (rule.type) {
+          case CSSRule.CHARSET_RULE:
+            continue;
+          case CSSRule.IMPORT_RULE:
+            result.push({
+              link: link,
+              rule: rule,
+              index: index,
+              href: rule.href
+            });
+            this.collectImportedStylesheets(link, rule.styleSheet, result);
+            break;
+          default:
+            break;
+        }
+      }
+    }
+  };
+
+  Reloader.prototype.waitUntilCssLoads = function(clone, func) {
+    var callbackExecuted, executeCallback, poll;
+    callbackExecuted = false;
+    executeCallback = (function(_this) {
+      return function() {
+        if (callbackExecuted) {
+          return;
+        }
+        callbackExecuted = true;
+        return func();
+      };
+    })(this);
+    clone.onload = (function(_this) {
+      return function() {
+        _this.console.log(&quot;LiveReload: the new stylesheet has finished loading&quot;);
+        _this.knownToSupportCssOnLoad = true;
+        return executeCallback();
+      };
+    })(this);
+    if (!this.knownToSupportCssOnLoad) {
+      (poll = (function(_this) {
+        return function() {
+          if (clone.sheet) {
+            _this.console.log(&quot;LiveReload is polling until the new CSS finishes loading...&quot;);
+            return executeCallback();
+          } else {
+            return _this.Timer.start(50, poll);
+          }
+        };
+      })(this))();
+    }
+    return this.Timer.start(this.options.stylesheetReloadTimeout, executeCallback);
+  };
+
+  Reloader.prototype.linkHref = function(link) {
+    return link.href || link.getAttribute(&#39;data-href&#39;);
+  };
+
+  Reloader.prototype.reattachStylesheetLink = function(link) {
+    var clone, parent;
+    if (link.__LiveReload_pendingRemoval) {
+      return;
+    }
+    link.__LiveReload_pendingRemoval = true;
+    if (link.tagName === &#39;STYLE&#39;) {
+      clone = this.document.createElement(&#39;link&#39;);
+      clone.rel = &#39;stylesheet&#39;;
+      clone.media = link.media;
+      clone.disabled = link.disabled;
+    } else {
+      clone = link.cloneNode(false);
+    }
+    clone.href = this.generateCacheBustUrl(this.linkHref(link));
+    parent = link.parentNode;
+    if (parent.lastChild === link) {
+      parent.appendChild(clone);
+    } else {
+      parent.insertBefore(clone, link.nextSibling);
+    }
+    return this.waitUntilCssLoads(clone, (function(_this) {
+      return function() {
+        var additionalWaitingTime;
+        if (/AppleWebKit/.test(navigator.userAgent)) {
+          additionalWaitingTime = 5;
+        } else {
+          additionalWaitingTime = 200;
+        }
+        return _this.Timer.start(additionalWaitingTime, function() {
+          var _ref;
+          if (!link.parentNode) {
+            return;
+          }
+          link.parentNode.removeChild(link);
+          clone.onreadystatechange = null;
+          return (_ref = _this.window.StyleFix) != null ? _ref.link(clone) : void 0;
+        });
+      };
+    })(this));
+  };
+
+  Reloader.prototype.reattachImportedRule = function(_arg) {
+    var href, index, link, media, newRule, parent, rule, tempLink;
+    rule = _arg.rule, index = _arg.index, link = _arg.link;
+    parent = rule.parentStyleSheet;
+    href = this.generateCacheBustUrl(rule.href);
+    media = rule.media.length ? [].join.call(rule.media, &#39;, &#39;) : &#39;&#39;;
+    newRule = &quot;@import url(\&quot;&quot; + href + &quot;\&quot;) &quot; + media + &quot;;&quot;;
+    rule.__LiveReload_newHref = href;
+    tempLink = this.document.createElement(&quot;link&quot;);
+    tempLink.rel = &#39;stylesheet&#39;;
+    tempLink.href = href;
+    tempLink.__LiveReload_pendingRemoval = true;
+    if (link.parentNode) {
+      link.parentNode.insertBefore(tempLink, link);
+    }
+    return this.Timer.start(this.importCacheWaitPeriod, (function(_this) {
+      return function() {
+        if (tempLink.parentNode) {
+          tempLink.parentNode.removeChild(tempLink);
+        }
+        if (rule.__LiveReload_newHref !== href) {
+          return;
+        }
+        parent.insertRule(newRule, index);
+        parent.deleteRule(index + 1);
+        rule = parent.cssRules[index];
+        rule.__LiveReload_newHref = href;
+        return _this.Timer.start(_this.importCacheWaitPeriod, function() {
+          if (rule.__LiveReload_newHref !== href) {
+            return;
+          }
+          parent.insertRule(newRule, index);
+          return parent.deleteRule(index + 1);
+        });
+      };
+    })(this));
+  };
+
+  Reloader.prototype.generateUniqueString = function() {
+    return &#39;livereload=&#39; + Date.now();
+  };
+
+  Reloader.prototype.generateCacheBustUrl = function(url, expando) {
+    var hash, oldParams, originalUrl, params, _ref;
+    if (expando == null) {
+      expando = this.generateUniqueString();
+    }
+    _ref = splitUrl(url), url = _ref.url, hash = _ref.hash, oldParams = _ref.params;
+    if (this.options.overrideURL) {
+      if (url.indexOf(this.options.serverURL) &lt; 0) {
+        originalUrl = url;
+        url = this.options.serverURL + this.options.overrideURL + &quot;?url=&quot; + encodeURIComponent(url);
+        this.console.log(&quot;LiveReload is overriding source URL &quot; + originalUrl + &quot; with &quot; + url);
+      }
+    }
+    params = oldParams.replace(/(\?|&amp;)livereload=(\d+)/, function(match, sep) {
+      return &quot;&quot; + sep + expando;
+    });
+    if (params === oldParams) {
+      if (oldParams.length === 0) {
+        params = &quot;?&quot; + expando;
+      } else {
+        params = &quot;&quot; + oldParams + &quot;&amp;&quot; + expando;
+      }
+    }
+    return url + params + hash;
+  };
+
+  return Reloader;
+
+})();</pre>
+
+<p>}).call(this);</p>
+
+<p>},{}],8:[function(require,module,exports){ (function() {</p>
+
+<pre>var CustomEvents, LiveReload, k;
+
+CustomEvents = require(&#39;./customevents&#39;);
+
+LiveReload = window.LiveReload = new (require(&#39;./livereload&#39;).LiveReload)(window);
+
+for (k in window) {
+  if (k.match(/^LiveReloadPlugin/)) {
+    LiveReload.addPlugin(window[k]);
+  }
+}
+
+LiveReload.addPlugin(require(&#39;./less&#39;));
+
+LiveReload.on(&#39;shutdown&#39;, function() {
+  return delete window.LiveReload;
+});
+
+LiveReload.on(&#39;connect&#39;, function() {
+  return CustomEvents.fire(document, &#39;LiveReloadConnect&#39;);
+});
+
+LiveReload.on(&#39;disconnect&#39;, function() {
+  return CustomEvents.fire(document, &#39;LiveReloadDisconnect&#39;);
+});
+
+CustomEvents.bind(document, &#39;LiveReloadShutDown&#39;, function() {
+  return LiveReload.shutDown();
+});</pre>
+
+<p>}).call(this);</p>
+
+<p>},{“./customevents”:2,“./less”:3,“./livereload”:4}],9:[function(require,module,exports){ (function() {</p>
+
+<pre>var Timer;
+
+exports.Timer = Timer = (function() {
+  function Timer(func) {
+    this.func = func;
+    this.running = false;
+    this.id = null;
+    this._handler = (function(_this) {
+      return function() {
+        _this.running = false;
+        _this.id = null;
+        return _this.func();
+      };
+    })(this);
+  }
+
+  Timer.prototype.start = function(timeout) {
+    if (this.running) {
+      clearTimeout(this.id);
+    }
+    this.id = setTimeout(this._handler, timeout);
+    return this.running = true;
+  };
+
+  Timer.prototype.stop = function() {
+    if (this.running) {
+      clearTimeout(this.id);
+      this.running = false;
+      return this.id = null;
+    }
+  };
+
+  return Timer;
+
+})();
+
+Timer.start = function(timeout, func) {
+  return setTimeout(func, timeout);
+};</pre>
+
+<p>}).call(this);</p>
+
+<p>},{}]},{},[8]);</p>
+
+</main>
+
+
+
+<footer id="validator-badges" role="contentinfo">
+  <p><a href="https://validator.w3.org/check/referer">Validate</a>
+  <p>Generated by <a href="https://ruby.github.io/rdoc/">RDoc</a> 6.2.1.
+  <p>Based on <a href="http://deveiate.org/projects/Darkfish-RDoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
+</footer>
+

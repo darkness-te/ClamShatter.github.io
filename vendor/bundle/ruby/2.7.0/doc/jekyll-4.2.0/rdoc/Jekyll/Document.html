@@ -1,0 +1,2480 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="UTF-8">
+
+<title>class Jekyll::Document - jekyll-4.2.0 Documentation</title>
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../";
+  var index_rel_prefix = "../";
+</script>
+
+<script src="../js/navigation.js" defer></script>
+<script src="../js/search.js" defer></script>
+<script src="../js/search_index.js" defer></script>
+<script src="../js/searcher.js" defer></script>
+<script src="../js/darkfish.js" defer></script>
+
+<link href="../css/fonts.css" rel="stylesheet">
+<link href="../css/rdoc.css" rel="stylesheet">
+
+
+
+
+<body id="top" role="document" class="class">
+<nav role="navigation">
+  <div id="project-navigation">
+    <div id="home-section" role="region" title="Quick navigation" class="nav-section">
+  <h2>
+    <a href="../index.html" rel="home">Home</a>
+  </h2>
+
+  <div id="table-of-contents-navigation">
+    <a href="../table_of_contents.html#pages">Pages</a>
+    <a href="../table_of_contents.html#classes">Classes</a>
+    <a href="../table_of_contents.html#methods">Methods</a>
+  </div>
+</div>
+
+    <div id="search-section" role="search" class="project-section initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <div id="search-field-wrapper">
+      <input id="search-field" role="combobox" aria-label="Search"
+             aria-autocomplete="list" aria-controls="search-results"
+             type="text" name="search" placeholder="Search" spellcheck="false"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </div>
+
+    <ul id="search-results" aria-label="Search Results"
+        aria-busy="false" aria-expanded="false"
+        aria-atomic="false" class="initially-hidden"></ul>
+  </form>
+</div>
+
+  </div>
+
+  
+
+  <div id="class-metadata">
+    
+    <div id="parent-class-section" class="nav-section">
+  <h3>Parent</h3>
+
+  
+  <p class="link"><a href="../Object.html">Object</a>
+  
+</div>
+
+    <div id="includes-section" class="nav-section">
+  <h3>Included Modules</h3>
+
+  <ul class="link-list">
+  
+  
+    <li><span class="include">Comparable</span>
+  
+  
+  </ul>
+</div>
+
+    <div id="extends-section" class="nav-section">
+  <h3>Extended With Modules</h3>
+
+  <ul class="link-list">
+    
+  
+    <li><span class="extend">Forwardable</span>
+  
+  
+  </ul>
+</div>
+
+    <!-- Method Quickref -->
+<div id="method-list-section" class="nav-section">
+  <h3>Methods</h3>
+
+  <ul class="link-list" role="directory">
+    
+    <li ><a href="#method-c-new">::new</a>
+    
+    <li ><a href="#method-c-superdirs_regex">::superdirs_regex</a>
+    
+    <li ><a href="#method-i-3C-3D-3E">#&lt;=&gt;</a>
+    
+    <li ><a href="#method-i-5B-5D">#[]</a>
+    
+    <li ><a href="#method-i-asset_file-3F">#asset_file?</a>
+    
+    <li ><a href="#method-i-basename">#basename</a>
+    
+    <li ><a href="#method-i-basename_without_ext">#basename_without_ext</a>
+    
+    <li ><a href="#method-i-categories_from_path">#categories_from_path</a>
+    
+    <li ><a href="#method-i-cleaned_relative_path">#cleaned_relative_path</a>
+    
+    <li ><a href="#method-i-coffeescript_file-3F">#coffeescript_file?</a>
+    
+    <li ><a href="#method-i-data">#data</a>
+    
+    <li ><a href="#method-i-date">#date</a>
+    
+    <li ><a href="#method-i-destination">#destination</a>
+    
+    <li ><a href="#method-i-draft-3F">#draft?</a>
+    
+    <li ><a href="#method-i-excerpt_separator">#excerpt_separator</a>
+    
+    <li ><a href="#method-i-generate_excerpt">#generate_excerpt</a>
+    
+    <li ><a href="#method-i-generate_excerpt-3F">#generate_excerpt?</a>
+    
+    <li ><a href="#method-i-handle_read_error">#handle_read_error</a>
+    
+    <li ><a href="#method-i-id">#id</a>
+    
+    <li ><a href="#method-i-inspect">#inspect</a>
+    
+    <li ><a href="#method-i-merge_categories-21">#merge_categories!</a>
+    
+    <li ><a href="#method-i-merge_data-21">#merge_data!</a>
+    
+    <li ><a href="#method-i-merge_date-21">#merge_date!</a>
+    
+    <li ><a href="#method-i-merge_defaults">#merge_defaults</a>
+    
+    <li class="calls-super" ><a href="#method-i-method_missing">#method_missing</a>
+    
+    <li ><a href="#method-i-modify_date">#modify_date</a>
+    
+    <li ><a href="#method-i-next_doc">#next_doc</a>
+    
+    <li ><a href="#method-i-no_layout-3F">#no_layout?</a>
+    
+    <li ><a href="#method-i-output_ext">#output_ext</a>
+    
+    <li ><a href="#method-i-permalink">#permalink</a>
+    
+    <li ><a href="#method-i-place_in_layout-3F">#place_in_layout?</a>
+    
+    <li ><a href="#method-i-populate_categories">#populate_categories</a>
+    
+    <li ><a href="#method-i-populate_tags">#populate_tags</a>
+    
+    <li ><a href="#method-i-populate_title">#populate_title</a>
+    
+    <li ><a href="#method-i-previous_doc">#previous_doc</a>
+    
+    <li ><a href="#method-i-published-3F">#published?</a>
+    
+    <li ><a href="#method-i-read">#read</a>
+    
+    <li ><a href="#method-i-read_content">#read_content</a>
+    
+    <li ><a href="#method-i-read_post_data">#read_post_data</a>
+    
+    <li ><a href="#method-i-related_posts">#related_posts</a>
+    
+    <li ><a href="#method-i-relative_path">#relative_path</a>
+    
+    <li ><a href="#method-i-render_with_liquid-3F">#render_with_liquid?</a>
+    
+    <li ><a href="#method-i-renderer">#renderer</a>
+    
+    <li class="calls-super" ><a href="#method-i-respond_to_missing-3F">#respond_to_missing?</a>
+    
+    <li ><a href="#method-i-sass_file-3F">#sass_file?</a>
+    
+    <li ><a href="#method-i-source_file_mtime">#source_file_mtime</a>
+    
+    <li ><a href="#method-i-to_liquid">#to_liquid</a>
+    
+    <li ><a href="#method-i-to_s">#to_s</a>
+    
+    <li ><a href="#method-i-trigger_hooks">#trigger_hooks</a>
+    
+    <li ><a href="#method-i-url">#url</a>
+    
+    <li ><a href="#method-i-url_placeholders">#url_placeholders</a>
+    
+    <li ><a href="#method-i-url_template">#url_template</a>
+    
+    <li ><a href="#method-i-write">#write</a>
+    
+    <li ><a href="#method-i-write-3F">#write?</a>
+    
+    <li ><a href="#method-i-yaml_file-3F">#yaml_file?</a>
+    
+  </ul>
+</div>
+
+  </div>
+</nav>
+
+<main role="main" aria-labelledby="class-Jekyll::Document">
+  <h1 id="class-Jekyll::Document" class="class">
+    class Jekyll::Document
+  </h1>
+
+  <section class="description">
+    
+  </section>
+
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+    <section class="constants-list">
+      <header>
+        <h3>Constants</h3>
+      </header>
+      <dl>
+      
+        <dt id="DATELESS_FILENAME_MATCHER">DATELESS_FILENAME_MATCHER
+        
+        <dd>
+        
+      
+        <dt id="DATE_FILENAME_MATCHER">DATE_FILENAME_MATCHER
+        
+        <dd>
+        
+      
+        <dt id="SASS_FILE_EXTS">SASS_FILE_EXTS
+        
+        <dd>
+        
+      
+        <dt id="YAML_FILE_EXTS">YAML_FILE_EXTS
+        
+        <dd>
+        
+      
+        <dt id="YAML_FRONT_MATTER_REGEXP">YAML_FRONT_MATTER_REGEXP
+        
+        <dd>
+        
+      
+      </dl>
+    </section>
+    
+
+    
+    <section class="attribute-method-details" class="method-section">
+      <header>
+        <h3>Attributes</h3>
+      </header>
+
+      
+      <div id="attribute-i-collection" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">collection</span><span
+            class="attribute-access-type">[R]</span>
+        </div>
+
+        <div class="method-description">
+        
+        
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-content" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">content</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-extname" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">extname</span><span
+            class="attribute-access-type">[R]</span>
+        </div>
+
+        <div class="method-description">
+        
+        
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-output" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">output</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-path" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">path</span><span
+            class="attribute-access-type">[R]</span>
+        </div>
+
+        <div class="method-description">
+        
+        
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-site" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">site</span><span
+            class="attribute-access-type">[R]</span>
+        </div>
+
+        <div class="method-description">
+        
+        
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-type" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">type</span><span
+            class="attribute-access-type">[R]</span>
+        </div>
+
+        <div class="method-description">
+        
+        
+        
+        </div>
+      </div>
+      
+    </section>
+    
+
+    
+     <section id="public-class-5Buntitled-5D-method-details" class="method-section">
+       <header>
+         <h3>Public Class Methods</h3>
+       </header>
+
+    
+      <div id="method-c-new" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">new</span><span
+            class="method-args">(path, relations = {})</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Create a new <a href="Document.html"><code>Document</code></a>.</p>
+
+<p>path - the path to the file relations - a hash with keys :site and :collection, the values of which</p>
+
+<pre>are the Jekyll::Site and Jekyll::Collection to which this
+Document belong.</pre>
+
+<p>Returns nothing.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="new-source">
+            <pre><span class="ruby-comment"># File lib/jekyll/document.rb, line 42</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">initialize</span>(<span class="ruby-identifier">path</span>, <span class="ruby-identifier">relations</span> = {})
+  <span class="ruby-ivar">@site</span> = <span class="ruby-identifier">relations</span>[<span class="ruby-value">:site</span>]
+  <span class="ruby-ivar">@path</span> = <span class="ruby-identifier">path</span>
+  <span class="ruby-ivar">@extname</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">extname</span>(<span class="ruby-identifier">path</span>)
+  <span class="ruby-ivar">@collection</span> = <span class="ruby-identifier">relations</span>[<span class="ruby-value">:collection</span>]
+  <span class="ruby-ivar">@type</span> = <span class="ruby-ivar">@collection</span>.<span class="ruby-identifier">label</span>.<span class="ruby-identifier">to_sym</span>
+
+  <span class="ruby-ivar">@has_yaml_header</span> = <span class="ruby-keyword">nil</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">draft?</span>
+    <span class="ruby-identifier">categories_from_path</span>(<span class="ruby-string">&quot;_drafts&quot;</span>)
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">categories_from_path</span>(<span class="ruby-identifier">collection</span>.<span class="ruby-identifier">relative_directory</span>)
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-identifier">data</span>.<span class="ruby-identifier">default_proc</span> = <span class="ruby-identifier">proc</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">_</span>, <span class="ruby-identifier">key</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">site</span>.<span class="ruby-identifier">frontmatter_defaults</span>.<span class="ruby-identifier">find</span>(<span class="ruby-identifier">relative_path</span>, <span class="ruby-identifier">type</span>, <span class="ruby-identifier">key</span>)
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-identifier">trigger_hooks</span>(<span class="ruby-value">:post_init</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-c-superdirs_regex" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">superdirs_regex</span><span
+            class="method-args">(dirname)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Class-wide cache to stash and retrieve regexp to detect “super-directories” of a particular <a href="Document.html"><code>Jekyll::Document</code></a> object.</p>
+
+<p>dirname - The *special directory* for the <a href="Document.html"><code>Document</code></a>.</p>
+
+<pre>e.g. &quot;_posts&quot; or &quot;_drafts&quot; for Documents from the `site.posts` collection.</pre>
+          
+          
+
+          
+          <div class="method-source-code" id="superdirs_regex-source">
+            <pre><span class="ruby-comment"># File lib/jekyll/document.rb, line 27</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier ruby-title">superdirs_regex</span>(<span class="ruby-identifier">dirname</span>)
+  <span class="ruby-ivar">@superdirs_regex</span> <span class="ruby-operator">||=</span> {}
+  <span class="ruby-ivar">@superdirs_regex</span>[<span class="ruby-identifier">dirname</span>] <span class="ruby-operator">||=</span> <span class="ruby-regexp">%r!#{dirname}.*!</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+    </section>
+  
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section">
+       <header>
+         <h3>Public Instance Methods</h3>
+       </header>
+
+    
+      <div id="method-i-3C-3D-3E" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">&lt;=&gt;</span><span
+            class="method-args">(other)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Compare this document against another document. Comparison is a comparison between the 2 paths of the documents.</p>
+
+<p>Returns -1, 0, +1 or nil depending on whether this doc&#39;s path is less than,</p>
+
+<pre>equal or greater than the other doc&#39;s path. See String#&lt;=&gt; for more details.</pre>
+          
+          
+
+          
+          <div class="method-source-code" id="3C-3D-3E-source">
+            <pre><span class="ruby-comment"># File lib/jekyll/document.rb, line 342</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">&lt;=&gt;</span>(<span class="ruby-identifier">other</span>)
+  <span class="ruby-keyword">return</span> <span class="ruby-keyword">nil</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">respond_to?</span>(<span class="ruby-value">:data</span>)
+
+  <span class="ruby-identifier">cmp</span> = <span class="ruby-identifier">data</span>[<span class="ruby-string">&quot;date&quot;</span>] <span class="ruby-operator">&lt;=&gt;</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">data</span>[<span class="ruby-string">&quot;date&quot;</span>]
+  <span class="ruby-identifier">cmp</span> = <span class="ruby-identifier">path</span> <span class="ruby-operator">&lt;=&gt;</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">path</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">cmp</span>.<span class="ruby-identifier">nil?</span> <span class="ruby-operator">||</span> <span class="ruby-identifier">cmp</span>.<span class="ruby-identifier">zero?</span>
+  <span class="ruby-identifier">cmp</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-5B-5D" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">[]</span><span
+            class="method-args">(key)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="5B-5D-source">
+            <pre><span class="ruby-comment"># File lib/jekyll/document.rb, line 250</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">[]</span>(<span class="ruby-identifier">key</span>)
+  <span class="ruby-identifier">data</span>[<span class="ruby-identifier">key</span>]
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-asset_file-3F" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">asset_file?</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Determine whether the document is an asset file. Asset files include CoffeeScript files and Sass/SCSS files.</p>
+
+<p>Returns true if the extname belongs to the set of extensions</p>
+
+<pre>that asset files use.</pre>
+          
+          
+
+          
+          <div class="method-source-code" id="asset_file-3F-source">
+            <pre><span class="ruby-comment"># File lib/jekyll/document.rb, line 172</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">asset_file?</span>
+  <span class="ruby-identifier">sass_file?</span> <span class="ruby-operator">||</span> <span class="ruby-identifier">coffeescript_file?</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-basename" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">basename</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>The base filename of the document.</p>
+
+<p>Returns the base filename of the document.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="basename-source">
+            <pre><span class="ruby-comment"># File lib/jekyll/document.rb, line 132</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">basename</span>
+  <span class="ruby-ivar">@basename</span> <span class="ruby-operator">||=</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">basename</span>(<span class="ruby-identifier">path</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-basename_without_ext" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">basename_without_ext</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>The base filename of the document, without the file extname.</p>
+
+<p>Returns the basename without the file extname.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="basename_without_ext-source">
+            <pre><span class="ruby-comment"># File lib/jekyll/document.rb, line 125</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">basename_without_ext</span>
+  <span class="ruby-ivar">@basename_without_ext</span> <span class="ruby-operator">||=</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">basename</span>(<span class="ruby-identifier">path</span>, <span class="ruby-string">&quot;.*&quot;</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-categories_from_path" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">categories_from_path</span><span
+            class="method-args">(special_dir)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Add superdirectories of the special_dir to categories. In the case of es/_posts, &#39;es&#39; is added as a category. In the case of _posts/es, &#39;es&#39; is NOT added as a category.</p>
+
+<p>Returns nothing.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="categories_from_path-source">
+            <pre><span class="ruby-comment"># File lib/jekyll/document.rb, line 427</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">categories_from_path</span>(<span class="ruby-identifier">special_dir</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">relative_path</span>.<span class="ruby-identifier">start_with?</span>(<span class="ruby-identifier">special_dir</span>)
+    <span class="ruby-identifier">superdirs</span> = []
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">superdirs</span> = <span class="ruby-identifier">relative_path</span>.<span class="ruby-identifier">sub</span>(<span class="ruby-constant">Document</span>.<span class="ruby-identifier">superdirs_regex</span>(<span class="ruby-identifier">special_dir</span>), <span class="ruby-string">&quot;&quot;</span>)
+    <span class="ruby-identifier">superdirs</span> = <span class="ruby-identifier">superdirs</span>.<span class="ruby-identifier">split</span>(<span class="ruby-constant">File</span><span class="ruby-operator">::</span><span class="ruby-constant">SEPARATOR</span>)
+    <span class="ruby-identifier">superdirs</span>.<span class="ruby-identifier">reject!</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">c</span><span class="ruby-operator">|</span> <span class="ruby-identifier">c</span>.<span class="ruby-identifier">empty?</span> <span class="ruby-operator">||</span> <span class="ruby-identifier">c</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">special_dir</span> <span class="ruby-operator">||</span> <span class="ruby-identifier">c</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">basename</span> }
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-identifier">merge_data!</span>({ <span class="ruby-string">&quot;categories&quot;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-identifier">superdirs</span> }, <span class="ruby-value">:source</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-string">&quot;file path&quot;</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-cleaned_relative_path" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">cleaned_relative_path</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Produces a “cleaned” relative path. The “cleaned” relative path is the relative path without the extname</p>
+
+<pre>and with the collection&#39;s directory removed as well.</pre>
+
+<p>This method is useful when building the <a href="URL.html"><code>URL</code></a> of the document.</p>
+
+<p>NOTE: `String#gsub` removes all trailing periods (in comparison to `String#chomp`)</p>
+
+<p>Examples:</p>
+
+<pre class="ruby"><span class="ruby-constant">When</span> <span class="ruby-identifier">relative_path</span> <span class="ruby-identifier">is</span> <span class="ruby-value">&quot;_methods/site/generate...md&quot;:</span>
+  <span class="ruby-identifier">cleaned_relative_path</span>
+  <span class="ruby-comment"># =&gt; &quot;/site/generate&quot;</span>
+</pre>
+
+<p>Returns the cleaned relative path of the document.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="cleaned_relative_path-source">
+            <pre><span class="ruby-comment"># File lib/jekyll/document.rb, line 153</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">cleaned_relative_path</span>
+  <span class="ruby-ivar">@cleaned_relative_path</span> <span class="ruby-operator">||=</span>
+    <span class="ruby-identifier">relative_path</span>[<span class="ruby-value">0</span><span class="ruby-operator">..</span><span class="ruby-operator">-</span><span class="ruby-identifier">extname</span>.<span class="ruby-identifier">length</span> <span class="ruby-operator">-</span> <span class="ruby-value">1</span>]
+      .<span class="ruby-identifier">sub</span>(<span class="ruby-identifier">collection</span>.<span class="ruby-identifier">relative_directory</span>, <span class="ruby-string">&quot;&quot;</span>)
+      .<span class="ruby-identifier">gsub</span>(<span class="ruby-regexp">%r!\.*\z!</span>, <span class="ruby-string">&quot;&quot;</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-coffeescript_file-3F" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">coffeescript_file?</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Determine whether the document is a CoffeeScript file.</p>
+
+<p>Returns true if extname == .coffee, false otherwise.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="coffeescript_file-3F-source">
+            <pre><span class="ruby-comment"># File lib/jekyll/document.rb, line 186</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">coffeescript_file?</span>
+  <span class="ruby-identifier">extname</span> <span class="ruby-operator">==</span> <span class="ruby-string">&quot;.coffee&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-data" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">data</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Fetch the Document&#39;s data.</p>
+
+<p>Returns a Hash containing the data. An empty hash is returned if</p>
+
+<pre>no data was read.</pre>
+          
+          
+
+          
+          <div class="method-source-code" id="data-source">
+            <pre><span class="ruby-comment"># File lib/jekyll/document.rb, line 68</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">data</span>
+  <span class="ruby-ivar">@data</span> <span class="ruby-operator">||=</span> {}
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-date" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">date</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Returns the document date. If metadata is not present then calculates it based on <a href="Site.html#attribute-i-time"><code>Jekyll::Site#time</code></a> or the document file modification time.</p>
+
+<p>Return document date string.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="date-source">
+            <pre><span class="ruby-comment"># File lib/jekyll/document.rb, line 86</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">date</span>
+  <span class="ruby-identifier">data</span>[<span class="ruby-string">&quot;date&quot;</span>] <span class="ruby-operator">||=</span> (<span class="ruby-identifier">draft?</span> <span class="ruby-operator">?</span> <span class="ruby-identifier">source_file_mtime</span> <span class="ruby-operator">:</span> <span class="ruby-identifier">site</span>.<span class="ruby-identifier">time</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-destination" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">destination</span><span
+            class="method-args">(base_directory)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>The full path to the output file.</p>
+
+<p>base_directory - the base path of the output directory</p>
+
+<p>Returns the full path to the output file of this document.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="destination-source">
+            <pre><span class="ruby-comment"># File lib/jekyll/document.rb, line 259</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">destination</span>(<span class="ruby-identifier">base_directory</span>)
+  <span class="ruby-ivar">@destination</span> <span class="ruby-operator">||=</span> {}
+  <span class="ruby-ivar">@destination</span>[<span class="ruby-identifier">base_directory</span>] <span class="ruby-operator">||=</span> <span class="ruby-keyword">begin</span>
+    <span class="ruby-identifier">path</span> = <span class="ruby-identifier">site</span>.<span class="ruby-identifier">in_dest_dir</span>(<span class="ruby-identifier">base_directory</span>, <span class="ruby-constant">URL</span>.<span class="ruby-identifier">unescape_path</span>(<span class="ruby-identifier">url</span>))
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">url</span>.<span class="ruby-identifier">end_with?</span> <span class="ruby-string">&quot;/&quot;</span>
+      <span class="ruby-identifier">path</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span>(<span class="ruby-identifier">path</span>, <span class="ruby-string">&quot;index.html&quot;</span>)
+    <span class="ruby-keyword">else</span>
+      <span class="ruby-identifier">path</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">output_ext</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">path</span>.<span class="ruby-identifier">end_with?</span> <span class="ruby-identifier">output_ext</span>
+    <span class="ruby-keyword">end</span>
+    <span class="ruby-identifier">path</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-draft-3F" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">draft?</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Returns whether the document is a draft. This is only the case if the document is in the &#39;posts&#39; collection but in a different directory than &#39;_posts&#39;.</p>
+
+<p>Returns whether the document is a draft.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="draft-3F-source">
+            <pre><span class="ruby-comment"># File lib/jekyll/document.rb, line 102</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">draft?</span>
+  <span class="ruby-identifier">data</span>[<span class="ruby-string">&quot;draft&quot;</span>] <span class="ruby-operator">||=</span> <span class="ruby-identifier">relative_path</span>.<span class="ruby-identifier">index</span>(<span class="ruby-identifier">collection</span>.<span class="ruby-identifier">relative_directory</span>).<span class="ruby-identifier">nil?</span> <span class="ruby-operator">&amp;&amp;</span>
+    <span class="ruby-identifier">collection</span>.<span class="ruby-identifier">label</span> <span class="ruby-operator">==</span> <span class="ruby-string">&quot;posts&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-excerpt_separator" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">excerpt_separator</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>The <a href="Document.html"><code>Document</code></a> <a href="Document.html#method-i-excerpt_separator"><code>excerpt_separator</code></a>, from the YAML Front-Matter or site default <a href="Document.html#method-i-excerpt_separator"><code>excerpt_separator</code></a> value</p>
+
+<p>Returns the document <a href="Document.html#method-i-excerpt_separator"><code>excerpt_separator</code></a></p>
+          
+          
+
+          
+          <div class="method-source-code" id="excerpt_separator-source">
+            <pre><span class="ruby-comment"># File lib/jekyll/document.rb, line 369</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">excerpt_separator</span>
+  <span class="ruby-ivar">@excerpt_separator</span> <span class="ruby-operator">||=</span> (<span class="ruby-identifier">data</span>[<span class="ruby-string">&quot;excerpt_separator&quot;</span>] <span class="ruby-operator">||</span> <span class="ruby-identifier">site</span>.<span class="ruby-identifier">config</span>[<span class="ruby-string">&quot;excerpt_separator&quot;</span>]).<span class="ruby-identifier">to_s</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-generate_excerpt-3F" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">generate_excerpt?</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Whether to generate an excerpt</p>
+
+<p>Returns true if the excerpt separator is configured.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="generate_excerpt-3F-source">
+            <pre><span class="ruby-comment"># File lib/jekyll/document.rb, line 376</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">generate_excerpt?</span>
+  <span class="ruby-operator">!</span><span class="ruby-identifier">excerpt_separator</span>.<span class="ruby-identifier">empty?</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-id" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">id</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="id-source">
+            <pre><span class="ruby-comment"># File lib/jekyll/document.rb, line 395</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">id</span>
+  <span class="ruby-ivar">@id</span> <span class="ruby-operator">||=</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span>(<span class="ruby-constant">File</span>.<span class="ruby-identifier">dirname</span>(<span class="ruby-identifier">url</span>), (<span class="ruby-identifier">data</span>[<span class="ruby-string">&quot;slug&quot;</span>] <span class="ruby-operator">||</span> <span class="ruby-identifier">basename_without_ext</span>).<span class="ruby-identifier">to_s</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-inspect" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">inspect</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>The inspect string for this document. Includes the relative path and the collection label.</p>
+
+<p>Returns the inspect string for this document.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="inspect-source">
+            <pre><span class="ruby-comment"># File lib/jekyll/document.rb, line 326</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">inspect</span>
+  <span class="ruby-node">&quot;#&lt;#{self.class} #{relative_path} collection=#{collection.label}&gt;&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-merge_data-21" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">merge_data!</span><span
+            class="method-args">(other, source: &quot;YAML front matter&quot;)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Merge some data in with this document&#39;s data.</p>
+
+<p>Returns the merged data.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="merge_data-21-source">
+            <pre><span class="ruby-comment"># File lib/jekyll/document.rb, line 75</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">merge_data!</span>(<span class="ruby-identifier">other</span>, <span class="ruby-value">source:</span> <span class="ruby-string">&quot;YAML front matter&quot;</span>)
+  <span class="ruby-identifier">merge_categories!</span>(<span class="ruby-identifier">other</span>)
+  <span class="ruby-constant">Utils</span>.<span class="ruby-identifier">deep_merge_hashes!</span>(<span class="ruby-identifier">data</span>, <span class="ruby-identifier">other</span>)
+  <span class="ruby-identifier">merge_date!</span>(<span class="ruby-identifier">source</span>)
+  <span class="ruby-identifier">data</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-method_missing" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">method_missing</span><span
+            class="method-args">(method, *args, &amp;blck)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Override of <a href="Document.html#method-i-method_missing"><code>method_missing</code></a> to check in @data for the key.</p>
+          
+          
+            <div class="method-calls-super">
+              Calls superclass method
+              
+            </div>
+          
+
+          
+          <div class="method-source-code" id="method_missing-source">
+            <pre><span class="ruby-comment"># File lib/jekyll/document.rb, line 407</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">method_missing</span>(<span class="ruby-identifier">method</span>, <span class="ruby-operator">*</span><span class="ruby-identifier">args</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">blck</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">data</span>.<span class="ruby-identifier">key?</span>(<span class="ruby-identifier">method</span>.<span class="ruby-identifier">to_s</span>)
+    <span class="ruby-constant">Jekyll</span><span class="ruby-operator">::</span><span class="ruby-constant">Deprecator</span>.<span class="ruby-identifier">deprecation_message</span> <span class="ruby-node">&quot;Document##{method} is now a key &quot;</span>\
+                       <span class="ruby-string">&quot;in the #data hash.&quot;</span>
+    <span class="ruby-constant">Jekyll</span><span class="ruby-operator">::</span><span class="ruby-constant">Deprecator</span>.<span class="ruby-identifier">deprecation_message</span> <span class="ruby-node">&quot;Called by #{caller(0..0)}.&quot;</span>
+    <span class="ruby-identifier">data</span>[<span class="ruby-identifier">method</span>.<span class="ruby-identifier">to_s</span>]
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-keyword">super</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-next_doc" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">next_doc</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="next_doc-source">
+            <pre><span class="ruby-comment"># File lib/jekyll/document.rb, line 380</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">next_doc</span>
+  <span class="ruby-identifier">pos</span> = <span class="ruby-identifier">collection</span>.<span class="ruby-identifier">docs</span>.<span class="ruby-identifier">index</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">post</span><span class="ruby-operator">|</span> <span class="ruby-identifier">post</span>.<span class="ruby-identifier">equal?</span>(<span class="ruby-keyword">self</span>) }
+  <span class="ruby-identifier">collection</span>.<span class="ruby-identifier">docs</span>[<span class="ruby-identifier">pos</span> <span class="ruby-operator">+</span> <span class="ruby-value">1</span>] <span class="ruby-keyword">if</span> <span class="ruby-identifier">pos</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">pos</span> <span class="ruby-operator">&lt;</span> <span class="ruby-identifier">collection</span>.<span class="ruby-identifier">docs</span>.<span class="ruby-identifier">length</span> <span class="ruby-operator">-</span> <span class="ruby-value">1</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-no_layout-3F" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">no_layout?</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Determine whether the file should be rendered with a layout.</p>
+
+<p>Returns true if the Front Matter specifies that `layout` is set to `none`.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="no_layout-3F-source">
+            <pre><span class="ruby-comment"># File lib/jekyll/document.rb, line 204</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">no_layout?</span>
+  <span class="ruby-identifier">data</span>[<span class="ruby-string">&quot;layout&quot;</span>] <span class="ruby-operator">==</span> <span class="ruby-string">&quot;none&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-output_ext" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">output_ext</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>The output extension of the document.</p>
+
+<p>Returns the output extension</p>
+          
+          
+
+          
+          <div class="method-source-code" id="output_ext-source">
+            <pre><span class="ruby-comment"># File lib/jekyll/document.rb, line 118</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">output_ext</span>
+  <span class="ruby-identifier">renderer</span>.<span class="ruby-identifier">output_ext</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-permalink" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">permalink</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>The permalink for this <a href="Document.html"><code>Document</code></a>. Permalink is set via the data Hash.</p>
+
+<p>Returns the permalink or nil if no permalink was set in the data.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="permalink-source">
+            <pre><span class="ruby-comment"># File lib/jekyll/document.rb, line 235</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">permalink</span>
+  <span class="ruby-identifier">data</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">data</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Hash</span>) <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">data</span>[<span class="ruby-string">&quot;permalink&quot;</span>]
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-place_in_layout-3F" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">place_in_layout?</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Determine whether the file should be placed into layouts.</p>
+
+<p>Returns false if the document is set to `layouts: none`, or is either an</p>
+
+<pre>asset file or a yaml file. Returns true otherwise.</pre>
+          
+          
+
+          
+          <div class="method-source-code" id="place_in_layout-3F-source">
+            <pre><span class="ruby-comment"># File lib/jekyll/document.rb, line 212</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">place_in_layout?</span>
+  <span class="ruby-operator">!</span>(<span class="ruby-identifier">asset_file?</span> <span class="ruby-operator">||</span> <span class="ruby-identifier">yaml_file?</span> <span class="ruby-operator">||</span> <span class="ruby-identifier">no_layout?</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-populate_categories" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">populate_categories</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="populate_categories-source">
+            <pre><span class="ruby-comment"># File lib/jekyll/document.rb, line 439</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">populate_categories</span>
+  <span class="ruby-identifier">categories</span> = <span class="ruby-constant">Array</span>(<span class="ruby-identifier">data</span>[<span class="ruby-string">&quot;categories&quot;</span>]) <span class="ruby-operator">+</span> <span class="ruby-constant">Utils</span>.<span class="ruby-identifier">pluralized_array_from_hash</span>(
+    <span class="ruby-identifier">data</span>, <span class="ruby-string">&quot;category&quot;</span>, <span class="ruby-string">&quot;categories&quot;</span>
+  )
+  <span class="ruby-identifier">categories</span>.<span class="ruby-identifier">map!</span>(<span class="ruby-operator">&amp;</span><span class="ruby-value">:to_s</span>)
+  <span class="ruby-identifier">categories</span>.<span class="ruby-identifier">flatten!</span>
+  <span class="ruby-identifier">categories</span>.<span class="ruby-identifier">uniq!</span>
+
+  <span class="ruby-identifier">merge_data!</span>({ <span class="ruby-string">&quot;categories&quot;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-identifier">categories</span> })
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-populate_tags" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">populate_tags</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="populate_tags-source">
+            <pre><span class="ruby-comment"># File lib/jekyll/document.rb, line 450</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">populate_tags</span>
+  <span class="ruby-identifier">tags</span> = <span class="ruby-constant">Utils</span>.<span class="ruby-identifier">pluralized_array_from_hash</span>(<span class="ruby-identifier">data</span>, <span class="ruby-string">&quot;tag&quot;</span>, <span class="ruby-string">&quot;tags&quot;</span>)
+  <span class="ruby-identifier">tags</span>.<span class="ruby-identifier">flatten!</span>
+
+  <span class="ruby-identifier">merge_data!</span>({ <span class="ruby-string">&quot;tags&quot;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-identifier">tags</span> })
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-previous_doc" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">previous_doc</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="previous_doc-source">
+            <pre><span class="ruby-comment"># File lib/jekyll/document.rb, line 385</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">previous_doc</span>
+  <span class="ruby-identifier">pos</span> = <span class="ruby-identifier">collection</span>.<span class="ruby-identifier">docs</span>.<span class="ruby-identifier">index</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">post</span><span class="ruby-operator">|</span> <span class="ruby-identifier">post</span>.<span class="ruby-identifier">equal?</span>(<span class="ruby-keyword">self</span>) }
+  <span class="ruby-identifier">collection</span>.<span class="ruby-identifier">docs</span>[<span class="ruby-identifier">pos</span> <span class="ruby-operator">-</span> <span class="ruby-value">1</span>] <span class="ruby-keyword">if</span> <span class="ruby-identifier">pos</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">pos</span>.<span class="ruby-identifier">positive?</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-published-3F" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">published?</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Whether the file is published or not, as indicated in YAML front-matter</p>
+
+<p>Returns &#39;false&#39; if the &#39;published&#39; key is specified in the YAML front-matter and is &#39;false&#39;. Otherwise returns &#39;true&#39;.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="published-3F-source">
+            <pre><span class="ruby-comment"># File lib/jekyll/document.rb, line 290</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">published?</span>
+  <span class="ruby-operator">!</span>(<span class="ruby-identifier">data</span>.<span class="ruby-identifier">key?</span>(<span class="ruby-string">&quot;published&quot;</span>) <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">data</span>[<span class="ruby-string">&quot;published&quot;</span>] <span class="ruby-operator">==</span> <span class="ruby-keyword">false</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-read" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">read</span><span
+            class="method-args">(opts = {})</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Read in the file and assign the content and data based on the file contents. Merge the frontmatter of the file with the frontmatter default values</p>
+
+<p>Returns nothing.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="read-source">
+            <pre><span class="ruby-comment"># File lib/jekyll/document.rb, line 299</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">read</span>(<span class="ruby-identifier">opts</span> = {})
+  <span class="ruby-constant">Jekyll</span>.<span class="ruby-identifier">logger</span>.<span class="ruby-identifier">debug</span> <span class="ruby-string">&quot;Reading:&quot;</span>, <span class="ruby-identifier">relative_path</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">yaml_file?</span>
+    <span class="ruby-ivar">@data</span> = <span class="ruby-constant">SafeYAML</span>.<span class="ruby-identifier">load_file</span>(<span class="ruby-identifier">path</span>)
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-keyword">begin</span>
+      <span class="ruby-identifier">merge_defaults</span>
+      <span class="ruby-identifier">read_content</span>(<span class="ruby-operator">**</span><span class="ruby-identifier">opts</span>)
+      <span class="ruby-identifier">read_post_data</span>
+    <span class="ruby-keyword">rescue</span> <span class="ruby-constant">StandardError</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-identifier">e</span>
+      <span class="ruby-identifier">handle_read_error</span>(<span class="ruby-identifier">e</span>)
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-related_posts" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">related_posts</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Calculate related posts.</p>
+
+<p>Returns an Array of related Posts.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="related_posts-source">
+            <pre><span class="ruby-comment"># File lib/jekyll/document.rb, line 402</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">related_posts</span>
+  <span class="ruby-ivar">@related_posts</span> <span class="ruby-operator">||=</span> <span class="ruby-constant">Jekyll</span><span class="ruby-operator">::</span><span class="ruby-constant">RelatedPosts</span>.<span class="ruby-identifier">new</span>(<span class="ruby-keyword">self</span>).<span class="ruby-identifier">build</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-relative_path" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">relative_path</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>The path to the document, relative to the collections_dir.</p>
+
+<p>Returns a String path which represents the relative path from the collections_dir to this document.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="relative_path-source">
+            <pre><span class="ruby-comment"># File lib/jekyll/document.rb, line 111</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">relative_path</span>
+  <span class="ruby-ivar">@relative_path</span> <span class="ruby-operator">||=</span> <span class="ruby-identifier">path</span>.<span class="ruby-identifier">sub</span>(<span class="ruby-node">&quot;#{site.collections_path}/&quot;</span>, <span class="ruby-string">&quot;&quot;</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-render_with_liquid-3F" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">render_with_liquid?</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Determine whether the file should be rendered with Liquid.</p>
+
+<p>Returns false if the document is either an asset file or a yaml file,</p>
+
+<pre>or if the document doesn&#39;t contain any Liquid Tags or Variables,
+true otherwise.</pre>
+          
+          
+
+          
+          <div class="method-source-code" id="render_with_liquid-3F-source">
+            <pre><span class="ruby-comment"># File lib/jekyll/document.rb, line 195</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">render_with_liquid?</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-keyword">false</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">data</span>[<span class="ruby-string">&quot;render_with_liquid&quot;</span>] <span class="ruby-operator">==</span> <span class="ruby-keyword">false</span>
+
+  <span class="ruby-operator">!</span>(<span class="ruby-identifier">coffeescript_file?</span> <span class="ruby-operator">||</span> <span class="ruby-identifier">yaml_file?</span> <span class="ruby-operator">||</span> <span class="ruby-operator">!</span><span class="ruby-constant">Utils</span>.<span class="ruby-identifier">has_liquid_construct?</span>(<span class="ruby-identifier">content</span>))
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-renderer" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">renderer</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="renderer-source">
+            <pre><span class="ruby-comment"># File lib/jekyll/document.rb, line 136</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">renderer</span>
+  <span class="ruby-ivar">@renderer</span> <span class="ruby-operator">||=</span> <span class="ruby-constant">Jekyll</span><span class="ruby-operator">::</span><span class="ruby-constant">Renderer</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">site</span>, <span class="ruby-keyword">self</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-respond_to_missing-3F" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">respond_to_missing?</span><span
+            class="method-args">(method, *)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+            <div class="method-calls-super">
+              Calls superclass method
+              
+            </div>
+          
+
+          
+          <div class="method-source-code" id="respond_to_missing-3F-source">
+            <pre><span class="ruby-comment"># File lib/jekyll/document.rb, line 418</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">respond_to_missing?</span>(<span class="ruby-identifier">method</span>, <span class="ruby-operator">*</span>)
+  <span class="ruby-identifier">data</span>.<span class="ruby-identifier">key?</span>(<span class="ruby-identifier">method</span>.<span class="ruby-identifier">to_s</span>) <span class="ruby-operator">||</span> <span class="ruby-keyword">super</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-sass_file-3F" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">sass_file?</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Determine whether the document is a Sass file.</p>
+
+<p>Returns true if extname == .sass or .scss, false otherwise.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="sass_file-3F-source">
+            <pre><span class="ruby-comment"># File lib/jekyll/document.rb, line 179</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">sass_file?</span>
+  <span class="ruby-constant">SASS_FILE_EXTS</span>.<span class="ruby-identifier">include?</span>(<span class="ruby-identifier">extname</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-source_file_mtime" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">source_file_mtime</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Return document file modification time in the form of a Time object.</p>
+
+<p>Return document file modification Time object.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="source_file_mtime-source">
+            <pre><span class="ruby-comment"># File lib/jekyll/document.rb, line 93</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">source_file_mtime</span>
+  <span class="ruby-constant">File</span>.<span class="ruby-identifier">mtime</span>(<span class="ruby-identifier">path</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-to_liquid" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">to_liquid</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Create a Liquid-understandable version of this <a href="Document.html"><code>Document</code></a>.</p>
+
+<p>Returns a Hash representing this Document&#39;s data.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="to_liquid-source">
+            <pre><span class="ruby-comment"># File lib/jekyll/document.rb, line 318</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">to_liquid</span>
+  <span class="ruby-ivar">@to_liquid</span> <span class="ruby-operator">||=</span> <span class="ruby-constant">Drops</span><span class="ruby-operator">::</span><span class="ruby-constant">DocumentDrop</span>.<span class="ruby-identifier">new</span>(<span class="ruby-keyword">self</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-to_s" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">to_s</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>The string representation for this document.</p>
+
+<p>Returns the content of the document</p>
+          
+          
+
+          
+          <div class="method-source-code" id="to_s-source">
+            <pre><span class="ruby-comment"># File lib/jekyll/document.rb, line 333</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">to_s</span>
+  <span class="ruby-identifier">output</span> <span class="ruby-operator">||</span> <span class="ruby-identifier">content</span> <span class="ruby-operator">||</span> <span class="ruby-string">&quot;NO CONTENT&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-trigger_hooks" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">trigger_hooks</span><span
+            class="method-args">(hook_name, *args)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="trigger_hooks-source">
+            <pre><span class="ruby-comment"># File lib/jekyll/document.rb, line 390</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">trigger_hooks</span>(<span class="ruby-identifier">hook_name</span>, <span class="ruby-operator">*</span><span class="ruby-identifier">args</span>)
+  <span class="ruby-constant">Jekyll</span><span class="ruby-operator">::</span><span class="ruby-constant">Hooks</span>.<span class="ruby-identifier">trigger</span> <span class="ruby-identifier">collection</span>.<span class="ruby-identifier">label</span>.<span class="ruby-identifier">to_sym</span>, <span class="ruby-identifier">hook_name</span>, <span class="ruby-keyword">self</span>, <span class="ruby-operator">*</span><span class="ruby-identifier">args</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">collection</span>
+  <span class="ruby-constant">Jekyll</span><span class="ruby-operator">::</span><span class="ruby-constant">Hooks</span>.<span class="ruby-identifier">trigger</span> <span class="ruby-value">:documents</span>, <span class="ruby-identifier">hook_name</span>, <span class="ruby-keyword">self</span>, <span class="ruby-operator">*</span><span class="ruby-identifier">args</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-url" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">url</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>The computed <a href="URL.html"><code>URL</code></a> for the document. See `Jekyll::URL#to_s` for more details.</p>
+
+<p>Returns the computed <a href="URL.html"><code>URL</code></a> for the document.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="url-source">
+            <pre><span class="ruby-comment"># File lib/jekyll/document.rb, line 242</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">url</span>
+  <span class="ruby-ivar">@url</span> <span class="ruby-operator">||=</span> <span class="ruby-constant">URL</span>.<span class="ruby-identifier">new</span>(
+    <span class="ruby-value">:template</span>     <span class="ruby-operator">=&gt;</span> <span class="ruby-identifier">url_template</span>,
+    <span class="ruby-value">:placeholders</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-identifier">url_placeholders</span>,
+    <span class="ruby-value">:permalink</span>    <span class="ruby-operator">=&gt;</span> <span class="ruby-identifier">permalink</span>
+  ).<span class="ruby-identifier">to_s</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-url_placeholders" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">url_placeholders</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Construct a Hash of key-value pairs which contain a mapping between</p>
+
+<pre>a key in the URL template and the corresponding value for this document.</pre>
+
+<p>Returns the Hash of key-value pairs for replacement in the <a href="URL.html"><code>URL</code></a>.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="url_placeholders-source">
+            <pre><span class="ruby-comment"># File lib/jekyll/document.rb, line 227</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">url_placeholders</span>
+  <span class="ruby-ivar">@url_placeholders</span> <span class="ruby-operator">||=</span> <span class="ruby-constant">Drops</span><span class="ruby-operator">::</span><span class="ruby-constant">UrlDrop</span>.<span class="ruby-identifier">new</span>(<span class="ruby-keyword">self</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-url_template" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">url_template</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>The <a href="URL.html"><code>URL</code></a> template where the document would be accessible.</p>
+
+<p>Returns the <a href="URL.html"><code>URL</code></a> template for the document.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="url_template-source">
+            <pre><span class="ruby-comment"># File lib/jekyll/document.rb, line 219</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">url_template</span>
+  <span class="ruby-identifier">collection</span>.<span class="ruby-identifier">url_template</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-write" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">write</span><span
+            class="method-args">(dest)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Write the generated <a href="Document.html"><code>Document</code></a> file to the destination directory.</p>
+
+<p>dest - The String path to the destination dir.</p>
+
+<p>Returns nothing.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="write-source">
+            <pre><span class="ruby-comment"># File lib/jekyll/document.rb, line 277</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">write</span>(<span class="ruby-identifier">dest</span>)
+  <span class="ruby-identifier">path</span> = <span class="ruby-identifier">destination</span>(<span class="ruby-identifier">dest</span>)
+  <span class="ruby-constant">FileUtils</span>.<span class="ruby-identifier">mkdir_p</span>(<span class="ruby-constant">File</span>.<span class="ruby-identifier">dirname</span>(<span class="ruby-identifier">path</span>))
+  <span class="ruby-constant">Jekyll</span>.<span class="ruby-identifier">logger</span>.<span class="ruby-identifier">debug</span> <span class="ruby-string">&quot;Writing:&quot;</span>, <span class="ruby-identifier">path</span>
+  <span class="ruby-constant">File</span>.<span class="ruby-identifier">write</span>(<span class="ruby-identifier">path</span>, <span class="ruby-identifier">output</span>, <span class="ruby-value">:mode</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-string">&quot;wb&quot;</span>)
+
+  <span class="ruby-identifier">trigger_hooks</span>(<span class="ruby-value">:post_write</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-write-3F" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">write?</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Determine whether this document should be written. Based on the <a href="Collection.html"><code>Collection</code></a> to which it belongs.</p>
+
+<p>True if the document has a collection and if that collection&#39;s <a href="Document.html#method-i-write-3F"><code>write?</code></a> method returns true, and if the site&#39;s <a href="Publisher.html"><code>Publisher</code></a> will publish the document. False otherwise.</p>
+
+<p>rubocop:disable Naming/MemoizedInstanceVariableName</p>
+          
+          
+
+          
+          <div class="method-source-code" id="write-3F-source">
+            <pre><span class="ruby-comment"># File lib/jekyll/document.rb, line 358</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">write?</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-ivar">@write_p</span> <span class="ruby-keyword">if</span> <span class="ruby-keyword">defined?</span>(<span class="ruby-ivar">@write_p</span>)
+
+  <span class="ruby-ivar">@write_p</span> = <span class="ruby-identifier">collection</span>&amp;.<span class="ruby-identifier">write?</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">site</span>.<span class="ruby-identifier">publisher</span>.<span class="ruby-identifier">publish?</span>(<span class="ruby-keyword">self</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-yaml_file-3F" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">yaml_file?</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Determine whether the document is a YAML file.</p>
+
+<p>Returns true if the extname is either .yml or .yaml, false otherwise.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="yaml_file-3F-source">
+            <pre><span class="ruby-comment"># File lib/jekyll/document.rb, line 163</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">yaml_file?</span>
+  <span class="ruby-constant">YAML_FILE_EXTS</span>.<span class="ruby-identifier">include?</span>(<span class="ruby-identifier">extname</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+    </section>
+  
+     <section id="private-instance-5Buntitled-5D-method-details" class="method-section">
+       <header>
+         <h3>Private Instance Methods</h3>
+       </header>
+
+    
+      <div id="method-i-generate_excerpt" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">generate_excerpt</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="generate_excerpt-source">
+            <pre><span class="ruby-comment"># File lib/jekyll/document.rb, line 540</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">generate_excerpt</span>
+  <span class="ruby-identifier">data</span>[<span class="ruby-string">&quot;excerpt&quot;</span>] <span class="ruby-operator">||=</span> <span class="ruby-constant">Jekyll</span><span class="ruby-operator">::</span><span class="ruby-constant">Excerpt</span>.<span class="ruby-identifier">new</span>(<span class="ruby-keyword">self</span>) <span class="ruby-keyword">if</span> <span class="ruby-identifier">generate_excerpt?</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-handle_read_error" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">handle_read_error</span><span
+            class="method-args">(error)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="handle_read_error-source">
+            <pre><span class="ruby-comment"># File lib/jekyll/document.rb, line 499</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">handle_read_error</span>(<span class="ruby-identifier">error</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">error</span>.<span class="ruby-identifier">is_a?</span> <span class="ruby-constant">Psych</span><span class="ruby-operator">::</span><span class="ruby-constant">SyntaxError</span>
+    <span class="ruby-constant">Jekyll</span>.<span class="ruby-identifier">logger</span>.<span class="ruby-identifier">error</span> <span class="ruby-string">&quot;Error:&quot;</span>, <span class="ruby-node">&quot;YAML Exception reading #{path}: #{error.message}&quot;</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-constant">Jekyll</span>.<span class="ruby-identifier">logger</span>.<span class="ruby-identifier">error</span> <span class="ruby-string">&quot;Error:&quot;</span>, <span class="ruby-node">&quot;could not read file #{path}: #{error.message}&quot;</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">site</span>.<span class="ruby-identifier">config</span>[<span class="ruby-string">&quot;strict_front_matter&quot;</span>] <span class="ruby-operator">||</span> <span class="ruby-identifier">error</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Jekyll</span><span class="ruby-operator">::</span><span class="ruby-constant">Errors</span><span class="ruby-operator">::</span><span class="ruby-constant">FatalException</span>)
+    <span class="ruby-identifier">raise</span> <span class="ruby-identifier">error</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-merge_categories-21" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">merge_categories!</span><span
+            class="method-args">(other)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="merge_categories-21-source">
+            <pre><span class="ruby-comment"># File lib/jekyll/document.rb, line 459</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">merge_categories!</span>(<span class="ruby-identifier">other</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">key?</span>(<span class="ruby-string">&quot;categories&quot;</span>) <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-operator">!</span><span class="ruby-identifier">other</span>[<span class="ruby-string">&quot;categories&quot;</span>].<span class="ruby-identifier">nil?</span>
+    <span class="ruby-identifier">other</span>[<span class="ruby-string">&quot;categories&quot;</span>] = <span class="ruby-identifier">other</span>[<span class="ruby-string">&quot;categories&quot;</span>].<span class="ruby-identifier">split</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">other</span>[<span class="ruby-string">&quot;categories&quot;</span>].<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">String</span>)
+
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">data</span>[<span class="ruby-string">&quot;categories&quot;</span>].<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Array</span>)
+      <span class="ruby-identifier">other</span>[<span class="ruby-string">&quot;categories&quot;</span>] = <span class="ruby-identifier">data</span>[<span class="ruby-string">&quot;categories&quot;</span>] <span class="ruby-operator">|</span> <span class="ruby-identifier">other</span>[<span class="ruby-string">&quot;categories&quot;</span>]
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-merge_date-21" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">merge_date!</span><span
+            class="method-args">(source)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="merge_date-21-source">
+            <pre><span class="ruby-comment"># File lib/jekyll/document.rb, line 469</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">merge_date!</span>(<span class="ruby-identifier">source</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">data</span>.<span class="ruby-identifier">key?</span>(<span class="ruby-string">&quot;date&quot;</span>)
+    <span class="ruby-identifier">data</span>[<span class="ruby-string">&quot;date&quot;</span>] = <span class="ruby-constant">Utils</span>.<span class="ruby-identifier">parse_date</span>(
+      <span class="ruby-identifier">data</span>[<span class="ruby-string">&quot;date&quot;</span>].<span class="ruby-identifier">to_s</span>,
+      <span class="ruby-node">&quot;Document &#39;#{relative_path}&#39; does not have a valid date in the #{source}.&quot;</span>
+    )
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-merge_defaults" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">merge_defaults</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="merge_defaults-source">
+            <pre><span class="ruby-comment"># File lib/jekyll/document.rb, line 478</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">merge_defaults</span>
+  <span class="ruby-identifier">defaults</span> = <span class="ruby-ivar">@site</span>.<span class="ruby-identifier">frontmatter_defaults</span>.<span class="ruby-identifier">all</span>(<span class="ruby-identifier">relative_path</span>, <span class="ruby-identifier">type</span>)
+  <span class="ruby-identifier">merge_data!</span>(<span class="ruby-identifier">defaults</span>, <span class="ruby-value">:source</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-string">&quot;front matter defaults&quot;</span>) <span class="ruby-keyword">unless</span> <span class="ruby-identifier">defaults</span>.<span class="ruby-identifier">empty?</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-modify_date" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">modify_date</span><span
+            class="method-args">(date)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="modify_date-source">
+            <pre><span class="ruby-comment"># File lib/jekyll/document.rb, line 534</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">modify_date</span>(<span class="ruby-identifier">date</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-operator">!</span><span class="ruby-identifier">data</span>[<span class="ruby-string">&quot;date&quot;</span>] <span class="ruby-operator">||</span> <span class="ruby-identifier">data</span>[<span class="ruby-string">&quot;date&quot;</span>].<span class="ruby-identifier">to_i</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">site</span>.<span class="ruby-identifier">time</span>.<span class="ruby-identifier">to_i</span>
+    <span class="ruby-identifier">merge_data!</span>({ <span class="ruby-string">&quot;date&quot;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-identifier">date</span> }, <span class="ruby-value">:source</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-string">&quot;filename&quot;</span>)
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-populate_title" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">populate_title</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="populate_title-source">
+            <pre><span class="ruby-comment"># File lib/jekyll/document.rb, line 511</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">populate_title</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">relative_path</span> <span class="ruby-operator">=~</span> <span class="ruby-constant">DATE_FILENAME_MATCHER</span>
+    <span class="ruby-identifier">date</span>, <span class="ruby-identifier">slug</span>, <span class="ruby-identifier">ext</span> = <span class="ruby-constant">Regexp</span>.<span class="ruby-identifier">last_match</span>.<span class="ruby-identifier">captures</span>
+    <span class="ruby-identifier">modify_date</span>(<span class="ruby-identifier">date</span>)
+  <span class="ruby-keyword">elsif</span> <span class="ruby-identifier">relative_path</span> <span class="ruby-operator">=~</span> <span class="ruby-constant">DATELESS_FILENAME_MATCHER</span>
+    <span class="ruby-identifier">slug</span>, <span class="ruby-identifier">ext</span> = <span class="ruby-constant">Regexp</span>.<span class="ruby-identifier">last_match</span>.<span class="ruby-identifier">captures</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-comment"># `slug` will be nil for documents without an extension since the regex patterns</span>
+  <span class="ruby-comment"># above tests for an extension as well.</span>
+  <span class="ruby-comment"># In such cases, assign `basename_without_ext` as the slug.</span>
+  <span class="ruby-identifier">slug</span> <span class="ruby-operator">||=</span> <span class="ruby-identifier">basename_without_ext</span>
+
+  <span class="ruby-comment"># slugs shouldn&#39;t end with a period</span>
+  <span class="ruby-comment"># `String#gsub!` removes all trailing periods (in comparison to `String#chomp!`)</span>
+  <span class="ruby-identifier">slug</span>.<span class="ruby-identifier">gsub!</span>(<span class="ruby-regexp">%r!\.*\z!</span>, <span class="ruby-string">&quot;&quot;</span>)
+
+  <span class="ruby-comment"># Try to ensure the user gets a title.</span>
+  <span class="ruby-identifier">data</span>[<span class="ruby-string">&quot;title&quot;</span>] <span class="ruby-operator">||=</span> <span class="ruby-constant">Utils</span>.<span class="ruby-identifier">titleize_slug</span>(<span class="ruby-identifier">slug</span>)
+  <span class="ruby-comment"># Only overwrite slug &amp; ext if they aren&#39;t specified.</span>
+  <span class="ruby-identifier">data</span>[<span class="ruby-string">&quot;slug&quot;</span>]  <span class="ruby-operator">||=</span> <span class="ruby-identifier">slug</span>
+  <span class="ruby-identifier">data</span>[<span class="ruby-string">&quot;ext&quot;</span>]   <span class="ruby-operator">||=</span> <span class="ruby-identifier">ext</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-read_content" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">read_content</span><span
+            class="method-args">(**opts)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="read_content-source">
+            <pre><span class="ruby-comment"># File lib/jekyll/document.rb, line 483</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">read_content</span>(<span class="ruby-operator">**</span><span class="ruby-identifier">opts</span>)
+  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">content</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">read</span>(<span class="ruby-identifier">path</span>, <span class="ruby-operator">**</span><span class="ruby-constant">Utils</span>.<span class="ruby-identifier">merged_file_read_opts</span>(<span class="ruby-identifier">site</span>, <span class="ruby-identifier">opts</span>))
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">content</span> <span class="ruby-operator">=~</span> <span class="ruby-constant">YAML_FRONT_MATTER_REGEXP</span>
+    <span class="ruby-keyword">self</span>.<span class="ruby-identifier">content</span> = <span class="ruby-constant">Regexp</span>.<span class="ruby-identifier">last_match</span>.<span class="ruby-identifier">post_match</span>
+    <span class="ruby-identifier">data_file</span> = <span class="ruby-constant">SafeYAML</span>.<span class="ruby-identifier">load</span>(<span class="ruby-constant">Regexp</span>.<span class="ruby-identifier">last_match</span>(<span class="ruby-value">1</span>))
+    <span class="ruby-identifier">merge_data!</span>(<span class="ruby-identifier">data_file</span>, <span class="ruby-value">:source</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-string">&quot;YAML front matter&quot;</span>) <span class="ruby-keyword">if</span> <span class="ruby-identifier">data_file</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-read_post_data" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">read_post_data</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="read_post_data-source">
+            <pre><span class="ruby-comment"># File lib/jekyll/document.rb, line 492</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">read_post_data</span>
+  <span class="ruby-identifier">populate_title</span>
+  <span class="ruby-identifier">populate_categories</span>
+  <span class="ruby-identifier">populate_tags</span>
+  <span class="ruby-identifier">generate_excerpt</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+    </section>
+  
+  </section>
+
+</main>
+
+
+<footer id="validator-badges" role="contentinfo">
+  <p><a href="https://validator.w3.org/check/referer">Validate</a>
+  <p>Generated by <a href="https://ruby.github.io/rdoc/">RDoc</a> 6.2.1.
+  <p>Based on <a href="http://deveiate.org/projects/Darkfish-RDoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
+</footer>
+

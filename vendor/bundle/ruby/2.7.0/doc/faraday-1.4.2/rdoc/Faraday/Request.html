@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="UTF-8">
+
+<title>class Faraday::Request - faraday-1.4.2 Documentation</title>
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../";
+  var index_rel_prefix = "../";
+</script>
+
+<script src="../js/navigation.js" defer></script>
+<script src="../js/search.js" defer></script>
+<script src="../js/search_index.js" defer></script>
+<script src="../js/searcher.js" defer></script>
+<script src="../js/darkfish.js" defer></script>
+
+<link href="../css/fonts.css" rel="stylesheet">
+<link href="../css/rdoc.css" rel="stylesheet">
+
+
+
+
+<body id="top" role="document" class="class">
+<nav role="navigation">
+  <div id="project-navigation">
+    <div id="home-section" role="region" title="Quick navigation" class="nav-section">
+  <h2>
+    <a href="../index.html" rel="home">Home</a>
+  </h2>
+
+  <div id="table-of-contents-navigation">
+    <a href="../table_of_contents.html#pages">Pages</a>
+    <a href="../table_of_contents.html#classes">Classes</a>
+    <a href="../table_of_contents.html#methods">Methods</a>
+  </div>
+</div>
+
+    <div id="search-section" role="search" class="project-section initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <div id="search-field-wrapper">
+      <input id="search-field" role="combobox" aria-label="Search"
+             aria-autocomplete="list" aria-controls="search-results"
+             type="text" name="search" placeholder="Search" spellcheck="false"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </div>
+
+    <ul id="search-results" aria-label="Search Results"
+        aria-busy="false" aria-expanded="false"
+        aria-atomic="false" class="initially-hidden"></ul>
+  </form>
+</div>
+
+  </div>
+
+  
+
+  <div id="class-metadata">
+    
+    <div id="parent-class-section" class="nav-section">
+  <h3>Parent</h3>
+
+  
+  <p class="link">Struct.new(     :http_method, :path, :params, :headers, :body, :options
+  
+</div>
+
+    
+    <div id="extends-section" class="nav-section">
+  <h3>Extended With Modules</h3>
+
+  <ul class="link-list">
+    
+  
+    <li><a class="extend" href="AutoloadHelper.html">Faraday::AutoloadHelper</a>
+  
+  
+  
+    <li><a class="extend" href="MiddlewareRegistry.html">Faraday::MiddlewareRegistry</a>
+  
+  
+  </ul>
+</div>
+
+    <!-- Method Quickref -->
+<div id="method-list-section" class="nav-section">
+  <h3>Methods</h3>
+
+  <ul class="link-list" role="directory">
+    
+    <li ><a href="#method-c-create">::create</a>
+    
+    <li ><a href="#method-i-5B-5D">#[]</a>
+    
+    <li ><a href="#method-i-5B-5D-3D">#[]=</a>
+    
+    <li class="calls-super" ><a href="#method-i-headers-3D">#headers=</a>
+    
+    <li ><a href="#method-i-marshal_dump">#marshal_dump</a>
+    
+    <li ><a href="#method-i-marshal_load">#marshal_load</a>
+    
+    <li ><a href="#method-i-method">#method</a>
+    
+    <li class="calls-super" ><a href="#method-i-params-3D">#params=</a>
+    
+    <li ><a href="#method-i-to_env">#to_env</a>
+    
+    <li ><a href="#method-i-url">#url</a>
+    
+  </ul>
+</div>
+
+  </div>
+</nav>
+
+<main role="main" aria-labelledby="class-Faraday::Request">
+  <h1 id="class-Faraday::Request" class="class">
+    class Faraday::Request
+  </h1>
+
+  <section class="description">
+    
+<p><a href="Request.html"><code>Request</code></a> represents a single HTTP request for a <a href="../Faraday.html"><code>Faraday</code></a> adapter to make. @see lib/faraday/request.rb Original class location</p>
+
+<p>Used to setup URLs, params, headers, and the request body in a sane manner.</p>
+
+<p>@example</p>
+
+<pre class="ruby"><span class="ruby-ivar">@connection</span>.<span class="ruby-identifier">post</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">req</span><span class="ruby-operator">|</span>
+  <span class="ruby-identifier">req</span>.<span class="ruby-identifier">url</span> <span class="ruby-string">&#39;http://localhost&#39;</span>, <span class="ruby-string">&#39;a&#39;</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-string">&#39;1&#39;</span> <span class="ruby-comment"># &#39;http://localhost?a=1&#39;</span>
+  <span class="ruby-identifier">req</span>.<span class="ruby-identifier">headers</span>[<span class="ruby-string">&#39;b&#39;</span>] = <span class="ruby-string">&#39;2&#39;</span> <span class="ruby-comment"># Header</span>
+  <span class="ruby-identifier">req</span>.<span class="ruby-identifier">params</span>[<span class="ruby-string">&#39;c&#39;</span>]  = <span class="ruby-string">&#39;3&#39;</span> <span class="ruby-comment"># GET Param</span>
+  <span class="ruby-identifier">req</span>[<span class="ruby-string">&#39;b&#39;</span>]         = <span class="ruby-string">&#39;2&#39;</span> <span class="ruby-comment"># also Header</span>
+  <span class="ruby-identifier">req</span>.<span class="ruby-identifier">body</span> = <span class="ruby-string">&#39;abc&#39;</span>
+<span class="ruby-keyword">end</span>
+</pre>
+
+<p>@!attribute http_method</p>
+
+<pre>@return [Symbol] the HTTP method of the Request</pre>
+
+<p>@!attribute path</p>
+
+<pre>@return [URI, String] the path</pre>
+
+<p>@!attribute params</p>
+
+<pre>@return [Hash] query parameters</pre>
+
+<p>@!attribute headers</p>
+
+<pre>@return [Faraday::Utils::Headers] headers</pre>
+
+<p>@!attribute body</p>
+
+<pre>@return [Hash] body</pre>
+
+<p>@!attribute options</p>
+
+<pre>@return [RequestOptions] options</pre>
+
+<p>rubocop:disable Style/StructInheritance</p>
+
+  </section>
+
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+
+    
+
+    
+     <section id="public-class-5Buntitled-5D-method-details" class="method-section">
+       <header>
+         <h3>Public Class Methods</h3>
+       </header>
+
+    
+      <div id="method-c-create" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">create</span><span
+            class="method-args">(request_method) { |request| ... }</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>@param request_method [String] @yield [request] for block customization, if block given @yieldparam request [Request] @return [Request]</p>
+          
+          
+
+          
+          <div class="method-source-code" id="create-source">
+            <pre><span class="ruby-comment"># File lib/faraday/request.rb, line 55</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier ruby-title">create</span>(<span class="ruby-identifier">request_method</span>)
+  <span class="ruby-identifier">new</span>(<span class="ruby-identifier">request_method</span>).<span class="ruby-identifier">tap</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">request</span><span class="ruby-operator">|</span>
+    <span class="ruby-keyword">yield</span>(<span class="ruby-identifier">request</span>) <span class="ruby-keyword">if</span> <span class="ruby-identifier">block_given?</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+    </section>
+  
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section">
+       <header>
+         <h3>Public Instance Methods</h3>
+       </header>
+
+    
+      <div id="method-i-5B-5D" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">[]</span><span
+            class="method-args">(key)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>@param key [Object] key to look up in headers @return [Object] value of the given header name</p>
+          
+          
+
+          
+          <div class="method-source-code" id="5B-5D-source">
+            <pre><span class="ruby-comment"># File lib/faraday/request.rb, line 114</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">[]</span>(<span class="ruby-identifier">key</span>)
+  <span class="ruby-identifier">headers</span>[<span class="ruby-identifier">key</span>]
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-5B-5D-3D" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">[]=</span><span
+            class="method-args">(key, value)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>@param key [Object] key of header to write @param value [Object] value of header</p>
+          
+          
+
+          
+          <div class="method-source-code" id="5B-5D-3D-source">
+            <pre><span class="ruby-comment"># File lib/faraday/request.rb, line 120</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">[]=</span>(<span class="ruby-identifier">key</span>, <span class="ruby-identifier">value</span>)
+  <span class="ruby-identifier">headers</span>[<span class="ruby-identifier">key</span>] = <span class="ruby-identifier">value</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-headers-3D" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">headers=</span><span
+            class="method-args">(hash)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Replace request headers, preserving the existing hash type.</p>
+
+<p>@param hash [Hash] new headers</p>
+          
+          
+            <div class="method-calls-super">
+              Calls superclass method
+              
+            </div>
+          
+
+          
+          <div class="method-source-code" id="headers-3D-source">
+            <pre><span class="ruby-comment"># File lib/faraday/request.rb, line 83</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">headers=</span>(<span class="ruby-identifier">hash</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">headers</span>
+    <span class="ruby-identifier">headers</span>.<span class="ruby-identifier">replace</span> <span class="ruby-identifier">hash</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-keyword">super</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-marshal_dump" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">marshal_dump</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Marshal serialization support.</p>
+
+<p>@return [Hash] the hash ready to be serialized in Marshal.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="marshal_dump-source">
+            <pre><span class="ruby-comment"># File lib/faraday/request.rb, line 127</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">marshal_dump</span>
+  {
+    <span class="ruby-value">http_method:</span> <span class="ruby-identifier">http_method</span>,
+    <span class="ruby-value">body:</span> <span class="ruby-identifier">body</span>,
+    <span class="ruby-value">headers:</span> <span class="ruby-identifier">headers</span>,
+    <span class="ruby-value">path:</span> <span class="ruby-identifier">path</span>,
+    <span class="ruby-value">params:</span> <span class="ruby-identifier">params</span>,
+    <span class="ruby-value">options:</span> <span class="ruby-identifier">options</span>
+  }
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-marshal_load" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">marshal_load</span><span
+            class="method-args">(serialised)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Marshal serialization support. Restores the instance variables according to the <code>serialised</code>. @param serialised [Hash] the serialised object.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="marshal_load-source">
+            <pre><span class="ruby-comment"># File lib/faraday/request.rb, line 141</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">marshal_load</span>(<span class="ruby-identifier">serialised</span>)
+  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">http_method</span> = <span class="ruby-identifier">serialised</span>[<span class="ruby-value">:http_method</span>]
+  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">body</span>        = <span class="ruby-identifier">serialised</span>[<span class="ruby-value">:body</span>]
+  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">headers</span>     = <span class="ruby-identifier">serialised</span>[<span class="ruby-value">:headers</span>]
+  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">path</span>        = <span class="ruby-identifier">serialised</span>[<span class="ruby-value">:path</span>]
+  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">params</span>      = <span class="ruby-identifier">serialised</span>[<span class="ruby-value">:params</span>]
+  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">options</span>     = <span class="ruby-identifier">serialised</span>[<span class="ruby-value">:options</span>]
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-method" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">method</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="method-source">
+            <pre><span class="ruby-comment"># File lib/faraday/request.rb, line 61</span>
+    <span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">method</span>
+      <span class="ruby-identifier">warn</span> <span class="ruby-identifier">&lt;&lt;~TEXT</span>
+<span class="ruby-value">        WARNING: `Faraday::Request##{__method__}` is deprecated; use `#http_method` instead. It will be removed in or after version 2.0.
+        `Faraday::Request##{__method__}` called from #{caller_locations(1..1).first}
+</span><span class="ruby-identifier">      TEXT</span>
+      <span class="ruby-identifier">http_method</span>
+    <span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-params-3D" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">params=</span><span
+            class="method-args">(hash)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Replace params, preserving the existing hash type.</p>
+
+<p>@param hash [Hash] new params</p>
+          
+          
+            <div class="method-calls-super">
+              Calls superclass method
+              
+            </div>
+          
+
+          
+          <div class="method-source-code" id="params-3D-source">
+            <pre><span class="ruby-comment"># File lib/faraday/request.rb, line 72</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">params=</span>(<span class="ruby-identifier">hash</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">params</span>
+    <span class="ruby-identifier">params</span>.<span class="ruby-identifier">replace</span> <span class="ruby-identifier">hash</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-keyword">super</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-to_env" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">to_env</span><span
+            class="method-args">(connection)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>@return [Env] the <a href="Env.html"><code>Env</code></a> for this <a href="Request.html"><code>Request</code></a></p>
+          
+          
+
+          
+          <div class="method-source-code" id="to_env-source">
+            <pre><span class="ruby-comment"># File lib/faraday/request.rb, line 151</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">to_env</span>(<span class="ruby-identifier">connection</span>)
+  <span class="ruby-constant">Env</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">http_method</span>, <span class="ruby-identifier">body</span>, <span class="ruby-identifier">connection</span>.<span class="ruby-identifier">build_exclusive_url</span>(<span class="ruby-identifier">path</span>, <span class="ruby-identifier">params</span>),
+          <span class="ruby-identifier">options</span>, <span class="ruby-identifier">headers</span>, <span class="ruby-identifier">connection</span>.<span class="ruby-identifier">ssl</span>, <span class="ruby-identifier">connection</span>.<span class="ruby-identifier">parallel_manager</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-url" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">url</span><span
+            class="method-args">(path, params = nil)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Update path and params.</p>
+
+<p>@param path [URI, String] @param params [Hash, nil] @return [void]</p>
+          
+          
+
+          
+          <div class="method-source-code" id="url-source">
+            <pre><span class="ruby-comment"># File lib/faraday/request.rb, line 96</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">url</span>(<span class="ruby-identifier">path</span>, <span class="ruby-identifier">params</span> = <span class="ruby-keyword">nil</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">path</span>.<span class="ruby-identifier">respond_to?</span> <span class="ruby-value">:query</span>
+    <span class="ruby-keyword">if</span> (<span class="ruby-identifier">query</span> = <span class="ruby-identifier">path</span>.<span class="ruby-identifier">query</span>)
+      <span class="ruby-identifier">path</span> = <span class="ruby-identifier">path</span>.<span class="ruby-identifier">dup</span>
+      <span class="ruby-identifier">path</span>.<span class="ruby-identifier">query</span> = <span class="ruby-keyword">nil</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">anchor_index</span> = <span class="ruby-identifier">path</span>.<span class="ruby-identifier">index</span>(<span class="ruby-string">&#39;#&#39;</span>)
+    <span class="ruby-identifier">path</span> = <span class="ruby-identifier">path</span>.<span class="ruby-identifier">slice</span>(<span class="ruby-value">0</span>, <span class="ruby-identifier">anchor_index</span>) <span class="ruby-keyword">unless</span> <span class="ruby-identifier">anchor_index</span>.<span class="ruby-identifier">nil?</span>
+    <span class="ruby-identifier">path</span>, <span class="ruby-identifier">query</span> = <span class="ruby-identifier">path</span>.<span class="ruby-identifier">split</span>(<span class="ruby-string">&#39;?&#39;</span>, <span class="ruby-value">2</span>)
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">path</span> = <span class="ruby-identifier">path</span>
+  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">params</span>.<span class="ruby-identifier">merge_query</span> <span class="ruby-identifier">query</span>, <span class="ruby-identifier">options</span>.<span class="ruby-identifier">params_encoder</span>
+  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">params</span>.<span class="ruby-identifier">update</span>(<span class="ruby-identifier">params</span>) <span class="ruby-keyword">if</span> <span class="ruby-identifier">params</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+    </section>
+  
+  </section>
+
+</main>
+
+
+<footer id="validator-badges" role="contentinfo">
+  <p><a href="https://validator.w3.org/check/referer">Validate</a>
+  <p>Generated by <a href="https://ruby.github.io/rdoc/">RDoc</a> 6.2.1.
+  <p>Based on <a href="http://deveiate.org/projects/Darkfish-RDoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
+</footer>
+

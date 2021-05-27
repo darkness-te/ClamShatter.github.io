@@ -1,0 +1,1545 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="UTF-8">
+
+<title>class TZInfo::Timestamp - TZInfo</title>
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../";
+  var index_rel_prefix = "../";
+</script>
+
+<script src="../js/navigation.js" defer></script>
+<script src="../js/search.js" defer></script>
+<script src="../js/search_index.js" defer></script>
+<script src="../js/searcher.js" defer></script>
+<script src="../js/darkfish.js" defer></script>
+
+<link href="../css/fonts.css" rel="stylesheet">
+<link href="../css/rdoc.css" rel="stylesheet">
+
+
+
+
+<body id="top" role="document" class="class">
+<nav role="navigation">
+  <div id="project-navigation">
+    <div id="home-section" role="region" title="Quick navigation" class="nav-section">
+  <h2>
+    <a href="../index.html" rel="home">Home</a>
+  </h2>
+
+  <div id="table-of-contents-navigation">
+    <a href="../table_of_contents.html#pages">Pages</a>
+    <a href="../table_of_contents.html#classes">Classes</a>
+    <a href="../table_of_contents.html#methods">Methods</a>
+  </div>
+</div>
+
+    <div id="search-section" role="search" class="project-section initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <div id="search-field-wrapper">
+      <input id="search-field" role="combobox" aria-label="Search"
+             aria-autocomplete="list" aria-controls="search-results"
+             type="text" name="search" placeholder="Search" spellcheck="false"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </div>
+
+    <ul id="search-results" aria-label="Search Results"
+        aria-busy="false" aria-expanded="false"
+        aria-atomic="false" class="initially-hidden"></ul>
+  </form>
+</div>
+
+  </div>
+
+  
+
+  <div id="class-metadata">
+    
+    <div id="parent-class-section" class="nav-section">
+  <h3>Parent</h3>
+
+  
+  <p class="link">Object
+  
+</div>
+
+    <div id="includes-section" class="nav-section">
+  <h3>Included Modules</h3>
+
+  <ul class="link-list">
+  
+  
+    <li><span class="include">Comparable</span>
+  
+  
+  </ul>
+</div>
+
+    
+    <!-- Method Quickref -->
+<div id="method-list-section" class="nav-section">
+  <h3>Methods</h3>
+
+  <ul class="link-list" role="directory">
+    
+    <li ><a href="#method-c-create">::create</a>
+    
+    <li ><a href="#method-c-for">::for</a>
+    
+    <li ><a href="#method-c-for_datetime">::for_datetime</a>
+    
+    <li ><a href="#method-c-for_time">::for_time</a>
+    
+    <li ><a href="#method-c-for_time_like">::for_time_like</a>
+    
+    <li ><a href="#method-c-for_timestamp">::for_timestamp</a>
+    
+    <li ><a href="#method-c-is_time_like-3F">::is_time_like?</a>
+    
+    <li ><a href="#method-c-new">::new</a>
+    
+    <li ><a href="#method-c-new-21">::new!</a>
+    
+    <li ><a href="#method-c-utc">::utc</a>
+    
+    <li ><a href="#method-i-3C-3D-3E">#&lt;=&gt;</a>
+    
+    <li ><a href="#method-i-add_and_set_utc_offset">#add_and_set_utc_offset</a>
+    
+    <li ><a href="#method-i-hash">#hash</a>
+    
+    <li ><a href="#method-i-initialize-21">#initialize!</a>
+    
+    <li ><a href="#method-i-inspect">#inspect</a>
+    
+    <li ><a href="#method-i-new_datetime">#new_datetime</a>
+    
+    <li ><a href="#method-i-new_time">#new_time</a>
+    
+    <li ><a href="#method-i-strftime">#strftime</a>
+    
+    <li ><a href="#method-i-sub_second_to_s">#sub_second_to_s</a>
+    
+    <li ><a href="#method-i-to_datetime">#to_datetime</a>
+    
+    <li ><a href="#method-i-to_i">#to_i</a>
+    
+    <li ><a href="#method-i-to_s">#to_s</a>
+    
+    <li ><a href="#method-i-to_time">#to_time</a>
+    
+    <li ><a href="#method-i-utc">#utc</a>
+    
+    <li ><a href="#method-i-utc-3F">#utc?</a>
+    
+    <li ><a href="#method-i-value_and_sub_second_to_s">#value_and_sub_second_to_s</a>
+    
+  </ul>
+</div>
+
+  </div>
+</nav>
+
+<main role="main" aria-labelledby="class-TZInfo::Timestamp">
+  <h1 id="class-TZInfo::Timestamp" class="class">
+    class TZInfo::Timestamp
+  </h1>
+
+  <section class="description">
+    
+<p>A time represented as an `Integer` number of seconds since 1970-01-01 00:00:00 UTC (ignoring leap seconds), the fraction through the second (<a href="Timestamp.html#attribute-i-sub_second"><code>sub_second</code></a> as a `Rational`) and an optional UTC offset. Like Ruby&#39;s `Time` class, {Timestamp} can distinguish between a local time with a zero offset and a time specified explicitly as UTC.</p>
+
+  </section>
+
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+    <section class="constants-list">
+      <header>
+        <h3>Constants</h3>
+      </header>
+      <dl>
+      
+        <dt id="JD_EPOCH">JD_EPOCH
+        
+        <dd><p>The Unix epoch (1970-01-01 00:00:00 UTC) as a chronological Julian day number.</p>
+        
+      
+      </dl>
+    </section>
+    
+
+    
+    <section class="attribute-method-details" class="method-section">
+      <header>
+        <h3>Attributes</h3>
+      </header>
+
+      
+      <div id="attribute-i-sub_second" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">sub_second</span><span
+            class="attribute-access-type">[R]</span>
+        </div>
+
+        <div class="method-description">
+        
+        <p>@return [Numeric] the fraction of a second elapsed since timestamp as</p>
+
+<pre>either a `Rational` or the `Integer` 0. Always greater than or equal to
+0 and less than 1.</pre>
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-utc_offset" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">utc_offset</span><span
+            class="attribute-access-type">[R]</span>
+        </div>
+
+        <div class="method-description">
+        
+        <p>@return [Integer] the offset from UTC in seconds or `nil` if the</p>
+
+<pre>{Timestamp} doesn&#39;t have a specified offset.</pre>
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-value" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">value</span><span
+            class="attribute-access-type">[R]</span>
+        </div>
+
+        <div class="method-description">
+        
+        <p>@return [Integer] the number of seconds since 1970-01-01 00:00:00 UTC</p>
+
+<pre>ignoring leap seconds (i.e. each day is treated as if it were 86,400
+seconds long).</pre>
+        
+        </div>
+      </div>
+      
+    </section>
+    
+
+    
+     <section id="public-class-5Buntitled-5D-method-details" class="method-section">
+       <header>
+         <h3>Public Class Methods</h3>
+       </header>
+
+    
+      <div id="method-c-create" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">create</span><span
+            class="method-args">(year, month = 1, day = 1, hour = 0, minute = 0, second = 0, sub_second = 0, utc_offset = nil)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Returns a new {Timestamp} representing the (Gregorian calendar) date and time specified by the supplied parameters.</p>
+
+<p>If `utc_offset` is `nil`, `:utc` or 0, the date and time parameters will be interpreted as representing a UTC date and time. Otherwise the date and time parameters will be interpreted as a local date and time with the given offset.</p>
+
+<p>@param year [Integer] the year. @param month [Integer] the month (1-12). @param day [Integer] the day of the month (1-31). @param hour [Integer] the hour (0-23). @param minute [Integer] the minute (0-59). @param second [Integer] the second (0-59). @param <a href="Timestamp.html#attribute-i-sub_second"><code>sub_second</code></a> [Numeric] the fractional part of the second as either</p>
+
+<pre>a `Rational` that is greater than or equal to 0 and less than 1, or
+the `Integer` 0.</pre>
+
+<p>@param <a href="Timestamp.html#attribute-i-utc_offset"><code>utc_offset</code></a> [Object] either `nil` for a {Timestamp} without a</p>
+
+<pre>specified offset, an offset from UTC specified as an `Integer` number
+of seconds or the `Symbol` `:utc`).</pre>
+
+<p>@return [Timestamp] a new {Timestamp} representing the specified</p>
+
+<pre>(Gregorian calendar) date and time.</pre>
+
+<p>@raise [ArgumentError] if either of `year`, `month`, `day`, `hour`,</p>
+
+<pre>`minute`, or `second` is not an `Integer`.</pre>
+
+<p>@raise [ArgumentError] if `sub_second` is not a `Rational`, or the</p>
+
+<pre>`Integer` 0.</pre>
+
+<p>@raise [ArgumentError] if `utc_offset` is not `nil`, not an `Integer`</p>
+
+<pre>and not the `Symbol` `:utc`.</pre>
+
+<p>@raise [RangeError] if `month` is not between 1 and 12. @raise [RangeError] if `day` is not between 1 and 31. @raise [RangeError] if `hour` is not between 0 and 23. @raise [RangeError] if `minute` is not between 0 and 59. @raise [RangeError] if `second` is not between 0 and 59. @raise [RangeError] if `sub_second` is a `Rational` but that is less</p>
+
+<pre class="ruby"><span class="ruby-identifier">than</span> <span class="ruby-value">0</span> <span class="ruby-keyword">or</span> <span class="ruby-identifier">greater</span> <span class="ruby-identifier">than</span> <span class="ruby-keyword">or</span> <span class="ruby-identifier">equal</span> <span class="ruby-identifier">to</span> <span class="ruby-value">1</span>
+</pre>
+          
+          
+
+          
+          <div class="method-source-code" id="create-source">
+            <pre><span class="ruby-comment"># File lib/tzinfo/timestamp.rb, line 54</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">create</span>(<span class="ruby-identifier">year</span>, <span class="ruby-identifier">month</span> = <span class="ruby-value">1</span>, <span class="ruby-identifier">day</span> = <span class="ruby-value">1</span>, <span class="ruby-identifier">hour</span> = <span class="ruby-value">0</span>, <span class="ruby-identifier">minute</span> = <span class="ruby-value">0</span>, <span class="ruby-identifier">second</span> = <span class="ruby-value">0</span>, <span class="ruby-identifier">sub_second</span> = <span class="ruby-value">0</span>, <span class="ruby-identifier">utc_offset</span> = <span class="ruby-keyword">nil</span>)
+  <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-string">&#39;year must be an Integer&#39;</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">year</span>.<span class="ruby-identifier">kind_of?</span>(<span class="ruby-constant">Integer</span>)
+  <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-string">&#39;month must be an Integer&#39;</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">month</span>.<span class="ruby-identifier">kind_of?</span>(<span class="ruby-constant">Integer</span>)
+  <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-string">&#39;day must be an Integer&#39;</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">day</span>.<span class="ruby-identifier">kind_of?</span>(<span class="ruby-constant">Integer</span>)
+  <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-string">&#39;hour must be an Integer&#39;</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">hour</span>.<span class="ruby-identifier">kind_of?</span>(<span class="ruby-constant">Integer</span>)
+  <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-string">&#39;minute must be an Integer&#39;</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">minute</span>.<span class="ruby-identifier">kind_of?</span>(<span class="ruby-constant">Integer</span>)
+  <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-string">&#39;second must be an Integer&#39;</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">second</span>.<span class="ruby-identifier">kind_of?</span>(<span class="ruby-constant">Integer</span>)
+  <span class="ruby-identifier">raise</span> <span class="ruby-constant">RangeError</span>, <span class="ruby-string">&#39;month must be between 1 and 12&#39;</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">month</span> <span class="ruby-operator">&lt;</span> <span class="ruby-value">1</span> <span class="ruby-operator">||</span> <span class="ruby-identifier">month</span> <span class="ruby-operator">&gt;</span> <span class="ruby-value">12</span>
+  <span class="ruby-identifier">raise</span> <span class="ruby-constant">RangeError</span>, <span class="ruby-string">&#39;day must be between 1 and 31&#39;</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">day</span> <span class="ruby-operator">&lt;</span> <span class="ruby-value">1</span> <span class="ruby-operator">||</span> <span class="ruby-identifier">day</span> <span class="ruby-operator">&gt;</span> <span class="ruby-value">31</span>
+  <span class="ruby-identifier">raise</span> <span class="ruby-constant">RangeError</span>, <span class="ruby-string">&#39;hour must be between 0 and 23&#39;</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">hour</span> <span class="ruby-operator">&lt;</span> <span class="ruby-value">0</span> <span class="ruby-operator">||</span> <span class="ruby-identifier">hour</span> <span class="ruby-operator">&gt;</span> <span class="ruby-value">23</span>
+  <span class="ruby-identifier">raise</span> <span class="ruby-constant">RangeError</span>, <span class="ruby-string">&#39;minute must be between 0 and 59&#39;</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">minute</span> <span class="ruby-operator">&lt;</span> <span class="ruby-value">0</span> <span class="ruby-operator">||</span> <span class="ruby-identifier">minute</span> <span class="ruby-operator">&gt;</span> <span class="ruby-value">59</span>
+  <span class="ruby-identifier">raise</span> <span class="ruby-constant">RangeError</span>, <span class="ruby-string">&#39;second must be between 0 and 59&#39;</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">second</span> <span class="ruby-operator">&lt;</span> <span class="ruby-value">0</span> <span class="ruby-operator">||</span> <span class="ruby-identifier">second</span> <span class="ruby-operator">&gt;</span> <span class="ruby-value">59</span>
+
+  <span class="ruby-comment"># Based on days_from_civil from https://howardhinnant.github.io/date_algorithms.html#days_from_civil</span>
+  <span class="ruby-identifier">after_february</span> = <span class="ruby-identifier">month</span> <span class="ruby-operator">&gt;</span> <span class="ruby-value">2</span>
+  <span class="ruby-identifier">year</span> <span class="ruby-operator">-=</span> <span class="ruby-value">1</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">after_february</span>
+  <span class="ruby-identifier">era</span> = <span class="ruby-identifier">year</span> <span class="ruby-operator">/</span> <span class="ruby-value">400</span>
+  <span class="ruby-identifier">year_of_era</span> = <span class="ruby-identifier">year</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">era</span> <span class="ruby-operator">*</span> <span class="ruby-value">400</span>
+  <span class="ruby-identifier">day_of_year</span> = (<span class="ruby-value">153</span> <span class="ruby-operator">*</span> (<span class="ruby-identifier">month</span> <span class="ruby-operator">+</span> (<span class="ruby-identifier">after_february</span> <span class="ruby-operator">?</span> <span class="ruby-value">-3</span> <span class="ruby-operator">:</span> <span class="ruby-value">9</span>)) <span class="ruby-operator">+</span> <span class="ruby-value">2</span>) <span class="ruby-operator">/</span> <span class="ruby-value">5</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">day</span> <span class="ruby-operator">-</span> <span class="ruby-value">1</span>
+  <span class="ruby-identifier">day_of_era</span> = <span class="ruby-identifier">year_of_era</span> <span class="ruby-operator">*</span> <span class="ruby-value">365</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">year_of_era</span> <span class="ruby-operator">/</span> <span class="ruby-value">4</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">year_of_era</span> <span class="ruby-operator">/</span> <span class="ruby-value">100</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">day_of_year</span>
+  <span class="ruby-identifier">days_since_epoch</span> = <span class="ruby-identifier">era</span> <span class="ruby-operator">*</span> <span class="ruby-value">146097</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">day_of_era</span> <span class="ruby-operator">-</span> <span class="ruby-value">719468</span>
+  <span class="ruby-identifier">value</span> = ((<span class="ruby-identifier">days_since_epoch</span> <span class="ruby-operator">*</span> <span class="ruby-value">24</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">hour</span>) <span class="ruby-operator">*</span> <span class="ruby-value">60</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">minute</span>) <span class="ruby-operator">*</span> <span class="ruby-value">60</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">second</span>
+  <span class="ruby-identifier">value</span> <span class="ruby-operator">-=</span> <span class="ruby-identifier">utc_offset</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">utc_offset</span>.<span class="ruby-identifier">kind_of?</span>(<span class="ruby-constant">Integer</span>)
+
+  <span class="ruby-identifier">new</span>(<span class="ruby-identifier">value</span>, <span class="ruby-identifier">sub_second</span>, <span class="ruby-identifier">utc_offset</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-c-for" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">for</span><span
+            class="method-args">(value, offset = :preserve) { |timestamp| ... }</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>When used without a block, returns a {Timestamp} representation of a given `Time`, `DateTime` or {Timestamp}.</p>
+
+<p>When called with a block, the {Timestamp} representation of `value` is passed to the block. The block must then return a {Timestamp}, which will be converted back to the type of the initial value. If the initial value was a {Timestamp}, the block result will just be returned.</p>
+
+<p>The UTC offset of `value` can either be preserved (the {Timestamp} representation will have the same UTC offset as `value`), ignored (the {Timestamp} representation will have no defined UTC offset), or treated as though it were UTC (the {Timestamp} representation will have a {utc_offset} of 0 and {utc?} will return `true`).</p>
+
+<p>@param value [Object] a `Time`, `DateTime` or {Timestamp}. @param offset [Symbol] either `:preserve` to preserve the offset of</p>
+
+<pre>`value`, `:ignore` to ignore the offset of `value` and create a
+{Timestamp} with an unspecified offset, or `:treat_as_utc` to treat
+the offset of `value` as though it were UTC and create a UTC
+{Timestamp}.</pre>
+
+<p>@yield [timestamp] if a block is provided, the {Timestamp}</p>
+
+<pre>representation is passed to the block.</pre>
+
+<p>@yieldparam timestamp [Timestamp] the {Timestamp} representation of</p>
+
+<pre>`value`.</pre>
+
+<p>@yieldreturn [Timestamp] a {Timestamp} to be converted back to the type</p>
+
+<pre>of `value`.</pre>
+
+<p>@return [Object] if called without a block, the {Timestamp}</p>
+
+<pre>representation of `value`, otherwise the result of the block,
+converted back to the type of `value`.</pre>
+          
+          
+
+          
+          <div class="method-source-code" id="for-source">
+            <pre><span class="ruby-comment"># File lib/tzinfo/timestamp.rb, line 110</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword">for</span>(<span class="ruby-identifier ruby-title">value</span>, <span class="ruby-identifier">offset</span> = <span class="ruby-value">:preserve</span>)
+  <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-string">&#39;value must be specified&#39;</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">value</span>
+
+  <span class="ruby-keyword">case</span> <span class="ruby-identifier">offset</span>
+    <span class="ruby-keyword">when</span> <span class="ruby-value">:ignore</span>
+      <span class="ruby-identifier">ignore_offset</span> = <span class="ruby-keyword">true</span>
+      <span class="ruby-identifier">target_utc_offset</span> = <span class="ruby-keyword">nil</span>
+    <span class="ruby-keyword">when</span> <span class="ruby-value">:treat_as_utc</span>
+      <span class="ruby-identifier">ignore_offset</span> = <span class="ruby-keyword">true</span>
+      <span class="ruby-identifier">target_utc_offset</span> = <span class="ruby-value">:utc</span>
+    <span class="ruby-keyword">when</span> <span class="ruby-value">:preserve</span>
+      <span class="ruby-identifier">ignore_offset</span> = <span class="ruby-keyword">false</span>
+      <span class="ruby-identifier">target_utc_offset</span> = <span class="ruby-keyword">nil</span>
+    <span class="ruby-keyword">else</span>
+      <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-string">&#39;offset must be :preserve, :ignore or :treat_as_utc&#39;</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-identifier">time_like</span> = <span class="ruby-keyword">false</span>
+  <span class="ruby-identifier">timestamp</span> = <span class="ruby-keyword">case</span> <span class="ruby-identifier">value</span>
+    <span class="ruby-keyword">when</span> <span class="ruby-constant">Time</span>
+      <span class="ruby-identifier">for_time</span>(<span class="ruby-identifier">value</span>, <span class="ruby-identifier">ignore_offset</span>, <span class="ruby-identifier">target_utc_offset</span>)
+    <span class="ruby-keyword">when</span> <span class="ruby-constant">DateTime</span>
+      <span class="ruby-identifier">for_datetime</span>(<span class="ruby-identifier">value</span>, <span class="ruby-identifier">ignore_offset</span>, <span class="ruby-identifier">target_utc_offset</span>)
+    <span class="ruby-keyword">when</span> <span class="ruby-constant">Timestamp</span>
+      <span class="ruby-identifier">for_timestamp</span>(<span class="ruby-identifier">value</span>, <span class="ruby-identifier">ignore_offset</span>, <span class="ruby-identifier">target_utc_offset</span>)
+    <span class="ruby-keyword">else</span>
+      <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-node">&quot;#{value.class} values are not supported&quot;</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">is_time_like?</span>(<span class="ruby-identifier">value</span>)
+      <span class="ruby-identifier">time_like</span> = <span class="ruby-keyword">true</span>
+      <span class="ruby-identifier">for_time_like</span>(<span class="ruby-identifier">value</span>, <span class="ruby-identifier">ignore_offset</span>, <span class="ruby-identifier">target_utc_offset</span>)
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">block_given?</span>
+    <span class="ruby-identifier">result</span> = <span class="ruby-keyword">yield</span> <span class="ruby-identifier">timestamp</span>
+    <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-string">&#39;block must return a Timestamp&#39;</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">result</span>.<span class="ruby-identifier">kind_of?</span>(<span class="ruby-constant">Timestamp</span>)
+
+    <span class="ruby-keyword">case</span> <span class="ruby-identifier">value</span>
+      <span class="ruby-keyword">when</span> <span class="ruby-constant">Time</span>
+        <span class="ruby-identifier">result</span>.<span class="ruby-identifier">to_time</span>
+      <span class="ruby-keyword">when</span> <span class="ruby-constant">DateTime</span>
+        <span class="ruby-identifier">result</span>.<span class="ruby-identifier">to_datetime</span>
+      <span class="ruby-keyword">else</span> <span class="ruby-comment"># A Time-like value or a Timestamp</span>
+        <span class="ruby-identifier">time_like</span> <span class="ruby-operator">?</span> <span class="ruby-identifier">result</span>.<span class="ruby-identifier">to_time</span> <span class="ruby-operator">:</span> <span class="ruby-identifier">result</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">timestamp</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-c-new" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">new</span><span
+            class="method-args">(value, sub_second = 0, utc_offset = nil)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Initializes a new {Timestamp}.</p>
+
+<p>@param value [Integer] the number of seconds since 1970-01-01 00:00:00 UTC</p>
+
+<pre>ignoring leap seconds.</pre>
+
+<p>@param <a href="Timestamp.html#attribute-i-sub_second"><code>sub_second</code></a> [Numeric] the fractional part of the second as either a</p>
+
+<pre>`Rational` that is greater than or equal to 0 and less than 1, or
+the `Integer` 0.</pre>
+
+<p>@param <a href="Timestamp.html#attribute-i-utc_offset"><code>utc_offset</code></a> [Object] either `nil` for a {Timestamp} without a</p>
+
+<pre>specified offset, an offset from UTC specified as an `Integer` number of
+seconds or the `Symbol` `:utc`).</pre>
+
+<p>@raise [ArgumentError] if `value` is not an `Integer`. @raise [ArgumentError] if `sub_second` is not a `Rational`, or the</p>
+
+<pre>`Integer` 0.</pre>
+
+<p>@raise [RangeError] if `sub_second` is a `Rational` but that is less</p>
+
+<pre class="ruby"><span class="ruby-identifier">than</span> <span class="ruby-value">0</span> <span class="ruby-keyword">or</span> <span class="ruby-identifier">greater</span> <span class="ruby-identifier">than</span> <span class="ruby-keyword">or</span> <span class="ruby-identifier">equal</span> <span class="ruby-identifier">to</span> <span class="ruby-value">1</span>
+</pre>
+
+<p>@raise [ArgumentError] if `utc_offset` is not `nil`, not an `Integer` and</p>
+
+<pre>not the `Symbol` `:utc`.</pre>
+          
+          
+
+          
+          <div class="method-source-code" id="new-source">
+            <pre><span class="ruby-comment"># File lib/tzinfo/timestamp.rb, line 342</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">initialize</span>(<span class="ruby-identifier">value</span>, <span class="ruby-identifier">sub_second</span> = <span class="ruby-value">0</span>, <span class="ruby-identifier">utc_offset</span> = <span class="ruby-keyword">nil</span>)
+  <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-string">&#39;value must be an Integer&#39;</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">value</span>.<span class="ruby-identifier">kind_of?</span>(<span class="ruby-constant">Integer</span>)
+  <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-string">&#39;sub_second must be a Rational or the Integer 0&#39;</span> <span class="ruby-keyword">unless</span> (<span class="ruby-identifier">sub_second</span>.<span class="ruby-identifier">kind_of?</span>(<span class="ruby-constant">Integer</span>) <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">sub_second</span> <span class="ruby-operator">==</span> <span class="ruby-value">0</span>) <span class="ruby-operator">||</span> <span class="ruby-identifier">sub_second</span>.<span class="ruby-identifier">kind_of?</span>(<span class="ruby-constant">Rational</span>)
+  <span class="ruby-identifier">raise</span> <span class="ruby-constant">RangeError</span>, <span class="ruby-string">&#39;sub_second must be &gt;= 0 and &lt; 1&#39;</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">sub_second</span> <span class="ruby-operator">&lt;</span> <span class="ruby-value">0</span> <span class="ruby-operator">||</span> <span class="ruby-identifier">sub_second</span> <span class="ruby-operator">&gt;=</span> <span class="ruby-value">1</span>
+  <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-string">&#39;utc_offset must be an Integer, :utc or nil&#39;</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">utc_offset</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">utc_offset</span> <span class="ruby-operator">!=</span> <span class="ruby-value">:utc</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-operator">!</span><span class="ruby-identifier">utc_offset</span>.<span class="ruby-identifier">kind_of?</span>(<span class="ruby-constant">Integer</span>)
+  <span class="ruby-identifier">initialize!</span>(<span class="ruby-identifier">value</span>, <span class="ruby-identifier">sub_second</span>, <span class="ruby-identifier">utc_offset</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-c-utc" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">utc</span><span
+            class="method-args">(value, sub_second = 0)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Creates a new UTC {Timestamp}.</p>
+
+<p>@param value [Integer] the number of seconds since 1970-01-01 00:00:00</p>
+
+<pre>UTC ignoring leap seconds.</pre>
+
+<p>@param <a href="Timestamp.html#attribute-i-sub_second"><code>sub_second</code></a> [Numeric] the fractional part of the second as either</p>
+
+<pre>a `Rational` that is greater than or equal to 0 and less than 1, or
+the `Integer` 0.</pre>
+
+<p>@raise [ArgumentError] if `value` is not an `Integer`. @raise [ArgumentError] if `sub_second` is not a `Rational`, or the</p>
+
+<pre>`Integer` 0.</pre>
+
+<p>@raise [RangeError] if `sub_second` is a `Rational` but that is less</p>
+
+<pre class="ruby"><span class="ruby-identifier">than</span> <span class="ruby-value">0</span> <span class="ruby-keyword">or</span> <span class="ruby-identifier">greater</span> <span class="ruby-identifier">than</span> <span class="ruby-keyword">or</span> <span class="ruby-identifier">equal</span> <span class="ruby-identifier">to</span> <span class="ruby-value">1</span>
+</pre>
+          
+          
+
+          
+          <div class="method-source-code" id="utc-source">
+            <pre><span class="ruby-comment"># File lib/tzinfo/timestamp.rb, line 170</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">utc</span>(<span class="ruby-identifier">value</span>, <span class="ruby-identifier">sub_second</span> = <span class="ruby-value">0</span>)
+  <span class="ruby-identifier">new</span>(<span class="ruby-identifier">value</span>, <span class="ruby-identifier">sub_second</span>, <span class="ruby-value">:utc</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+    </section>
+  
+     <section id="private-class-5Buntitled-5D-method-details" class="method-section">
+       <header>
+         <h3>Private Class Methods</h3>
+       </header>
+
+    
+      <div id="method-c-for_datetime" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">for_datetime</span><span
+            class="method-args">(datetime, ignore_offset, target_utc_offset)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Creates a {Timestamp} that represents a given `DateTime`, optionally ignoring the offset.</p>
+
+<p>@param datetime [DateTime] a `DateTime`. @param ignore_offset [Boolean] whether to ignore the offset of</p>
+
+<pre>`datetime`.</pre>
+
+<p>@param target_utc_offset [Object] if `ignore_offset` is `true`, the UTC</p>
+
+<pre>offset of the result (`:utc`, `nil` or an `Integer`).</pre>
+
+<p>@return [Timestamp] the {Timestamp} representation of `datetime`.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="for_datetime-source">
+            <pre><span class="ruby-comment"># File lib/tzinfo/timestamp.rb, line 229</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">for_datetime</span>(<span class="ruby-identifier">datetime</span>, <span class="ruby-identifier">ignore_offset</span>, <span class="ruby-identifier">target_utc_offset</span>)
+  <span class="ruby-identifier">value</span> = (<span class="ruby-identifier">datetime</span>.<span class="ruby-identifier">jd</span> <span class="ruby-operator">-</span> <span class="ruby-constant">JD_EPOCH</span>) <span class="ruby-operator">*</span> <span class="ruby-value">86400</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">datetime</span>.<span class="ruby-identifier">sec</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">datetime</span>.<span class="ruby-identifier">min</span> <span class="ruby-operator">*</span> <span class="ruby-value">60</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">datetime</span>.<span class="ruby-identifier">hour</span> <span class="ruby-operator">*</span> <span class="ruby-value">3600</span>
+  <span class="ruby-identifier">sub_second</span> = <span class="ruby-identifier">datetime</span>.<span class="ruby-identifier">sec_fraction</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">ignore_offset</span>
+    <span class="ruby-identifier">utc_offset</span> = <span class="ruby-identifier">target_utc_offset</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">utc_offset</span> = (<span class="ruby-identifier">datetime</span>.<span class="ruby-identifier">offset</span> <span class="ruby-operator">*</span> <span class="ruby-value">86400</span>).<span class="ruby-identifier">to_i</span>
+    <span class="ruby-identifier">value</span> <span class="ruby-operator">-=</span> <span class="ruby-identifier">utc_offset</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-identifier">new!</span>(<span class="ruby-identifier">value</span>, <span class="ruby-identifier">sub_second</span>, <span class="ruby-identifier">utc_offset</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-c-for_time" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">for_time</span><span
+            class="method-args">(time, ignore_offset, target_utc_offset)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Creates a {Timestamp} that represents a given `Time`, optionally ignoring the offset.</p>
+
+<p>@param time [Time] a `Time`. @param ignore_offset [Boolean] whether to ignore the offset of `time`. @param target_utc_offset [Object] if `ignore_offset` is `true`, the UTC</p>
+
+<pre>offset of the result (`:utc`, `nil` or an `Integer`).</pre>
+
+<p>@return [Timestamp] the {Timestamp} representation of `time`.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="for_time-source">
+            <pre><span class="ruby-comment"># File lib/tzinfo/timestamp.rb, line 204</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">for_time</span>(<span class="ruby-identifier">time</span>, <span class="ruby-identifier">ignore_offset</span>, <span class="ruby-identifier">target_utc_offset</span>)
+  <span class="ruby-identifier">value</span> = <span class="ruby-identifier">time</span>.<span class="ruby-identifier">to_i</span>
+  <span class="ruby-identifier">sub_second</span> = <span class="ruby-identifier">time</span>.<span class="ruby-identifier">subsec</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">ignore_offset</span>
+    <span class="ruby-identifier">utc_offset</span> = <span class="ruby-identifier">target_utc_offset</span>
+    <span class="ruby-identifier">value</span> <span class="ruby-operator">+=</span> <span class="ruby-identifier">time</span>.<span class="ruby-identifier">utc_offset</span>
+  <span class="ruby-keyword">elsif</span> <span class="ruby-identifier">time</span>.<span class="ruby-identifier">utc?</span>
+    <span class="ruby-identifier">utc_offset</span> = <span class="ruby-value">:utc</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">utc_offset</span> = <span class="ruby-identifier">time</span>.<span class="ruby-identifier">utc_offset</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-identifier">new!</span>(<span class="ruby-identifier">value</span>, <span class="ruby-identifier">sub_second</span>, <span class="ruby-identifier">utc_offset</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-c-for_time_like" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">for_time_like</span><span
+            class="method-args">(time_like, ignore_offset, target_utc_offset)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Creates a {Timestamp} that represents a given `Time`-like object, optionally ignoring the offset (if the `time_like` responds to `utc_offset`).</p>
+
+<p>@param time_like [Object] a `Time`-like object. @param ignore_offset [Boolean] whether to ignore the offset of `time`. @param target_utc_offset [Object] if `ignore_offset` is `true`, the UTC</p>
+
+<pre>offset of the result (`:utc`, `nil` or an `Integer`).</pre>
+
+<p>@return [Timestamp] the {Timestamp} representation of `time_like`.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="for_time_like-source">
+            <pre><span class="ruby-comment"># File lib/tzinfo/timestamp.rb, line 294</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">for_time_like</span>(<span class="ruby-identifier">time_like</span>, <span class="ruby-identifier">ignore_offset</span>, <span class="ruby-identifier">target_utc_offset</span>)
+  <span class="ruby-identifier">value</span> = <span class="ruby-identifier">time_like</span>.<span class="ruby-identifier">to_i</span>
+  <span class="ruby-identifier">sub_second</span> = <span class="ruby-identifier">time_like</span>.<span class="ruby-identifier">subsec</span>.<span class="ruby-identifier">to_r</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">ignore_offset</span>
+    <span class="ruby-identifier">utc_offset</span> = <span class="ruby-identifier">target_utc_offset</span>
+    <span class="ruby-identifier">value</span> <span class="ruby-operator">+=</span> <span class="ruby-identifier">time_like</span>.<span class="ruby-identifier">utc_offset</span>.<span class="ruby-identifier">to_i</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">time_like</span>.<span class="ruby-identifier">respond_to?</span>(<span class="ruby-value">:utc_offset</span>)
+  <span class="ruby-keyword">elsif</span> <span class="ruby-identifier">time_like</span>.<span class="ruby-identifier">respond_to?</span>(<span class="ruby-value">:utc_offset</span>)
+    <span class="ruby-identifier">utc_offset</span> = <span class="ruby-identifier">time_like</span>.<span class="ruby-identifier">utc_offset</span>.<span class="ruby-identifier">to_i</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">utc_offset</span> = <span class="ruby-value">0</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-identifier">new</span>(<span class="ruby-identifier">value</span>, <span class="ruby-identifier">sub_second</span>, <span class="ruby-identifier">utc_offset</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-c-for_timestamp" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">for_timestamp</span><span
+            class="method-args">(timestamp, ignore_offset, target_utc_offset)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Returns a {Timestamp} that represents another {Timestamp}, optionally ignoring the offset. If the result would be identical to `value`, the same instance is returned. If the passed in value is an instance of a subclass of {Timestamp}, then a new {Timestamp} will always be returned.</p>
+
+<p>@param timestamp [Timestamp] a {Timestamp}. @param ignore_offset [Boolean] whether to ignore the offset of</p>
+
+<pre>`timestamp`.</pre>
+
+<p>@param target_utc_offset [Object] if `ignore_offset` is `true`, the UTC</p>
+
+<pre>offset of the result (`:utc`, `nil` or an `Integer`).</pre>
+
+<p>@return [Timestamp] a [Timestamp] representation of `timestamp`.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="for_timestamp-source">
+            <pre><span class="ruby-comment"># File lib/tzinfo/timestamp.rb, line 254</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">for_timestamp</span>(<span class="ruby-identifier">timestamp</span>, <span class="ruby-identifier">ignore_offset</span>, <span class="ruby-identifier">target_utc_offset</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">ignore_offset</span>
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">target_utc_offset</span>
+      <span class="ruby-keyword">unless</span> <span class="ruby-identifier">target_utc_offset</span> <span class="ruby-operator">==</span> <span class="ruby-value">:utc</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">timestamp</span>.<span class="ruby-identifier">utc?</span> <span class="ruby-operator">||</span> <span class="ruby-identifier">timestamp</span>.<span class="ruby-identifier">utc_offset</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">target_utc_offset</span>
+        <span class="ruby-keyword">return</span> <span class="ruby-identifier">new!</span>(<span class="ruby-identifier">timestamp</span>.<span class="ruby-identifier">value</span> <span class="ruby-operator">+</span> (<span class="ruby-identifier">timestamp</span>.<span class="ruby-identifier">utc_offset</span> <span class="ruby-operator">||</span> <span class="ruby-value">0</span>), <span class="ruby-identifier">timestamp</span>.<span class="ruby-identifier">sub_second</span>, <span class="ruby-identifier">target_utc_offset</span>)
+      <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">elsif</span> <span class="ruby-identifier">timestamp</span>.<span class="ruby-identifier">utc_offset</span>
+      <span class="ruby-keyword">return</span> <span class="ruby-identifier">new!</span>(<span class="ruby-identifier">timestamp</span>.<span class="ruby-identifier">value</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">timestamp</span>.<span class="ruby-identifier">utc_offset</span>, <span class="ruby-identifier">timestamp</span>.<span class="ruby-identifier">sub_second</span>)
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">unless</span> <span class="ruby-identifier">timestamp</span>.<span class="ruby-identifier">instance_of?</span>(<span class="ruby-constant">Timestamp</span>)
+    <span class="ruby-comment"># timestamp is identical in value, sub_second and utc_offset but is a</span>
+    <span class="ruby-comment"># subclass (i.e. TimestampWithOffset). Return a new Timestamp</span>
+    <span class="ruby-comment"># instance.</span>
+    <span class="ruby-keyword">return</span> <span class="ruby-identifier">new!</span>(<span class="ruby-identifier">timestamp</span>.<span class="ruby-identifier">value</span>, <span class="ruby-identifier">timestamp</span>.<span class="ruby-identifier">sub_second</span>, <span class="ruby-identifier">timestamp</span>.<span class="ruby-identifier">utc?</span> <span class="ruby-operator">?</span> <span class="ruby-value">:utc</span> <span class="ruby-operator">:</span> <span class="ruby-identifier">timestamp</span>.<span class="ruby-identifier">utc_offset</span>)
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-identifier">timestamp</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-c-is_time_like-3F" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">is_time_like?</span><span
+            class="method-args">(value)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Determines if an object is like a `Time` (for the purposes of converting to a {Timestamp} with {for}), responding to `to_i` and `subsec`.</p>
+
+<p>@param value [Object] an object to test. @return [Boolean] `true` if the object is `Time`-like, otherwise</p>
+
+<pre>`false`.</pre>
+          
+          
+
+          
+          <div class="method-source-code" id="is_time_like-3F-source">
+            <pre><span class="ruby-comment"># File lib/tzinfo/timestamp.rb, line 281</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">is_time_like?</span>(<span class="ruby-identifier">value</span>)
+  <span class="ruby-identifier">value</span>.<span class="ruby-identifier">respond_to?</span>(<span class="ruby-value">:to_i</span>) <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">value</span>.<span class="ruby-identifier">respond_to?</span>(<span class="ruby-value">:subsec</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-c-new-21" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">new!</span><span
+            class="method-args">(value, sub_second = 0, utc_offset = nil)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Constructs a new instance of `self` (i.e. {Timestamp} or a subclass of {Timestamp}) without validating the parameters. This method is used internally within {Timestamp} to avoid the overhead of checking parameters.</p>
+
+<p>@param value [Integer] the number of seconds since 1970-01-01 00:00:00</p>
+
+<pre>UTC ignoring leap seconds.</pre>
+
+<p>@param <a href="Timestamp.html#attribute-i-sub_second"><code>sub_second</code></a> [Numeric] the fractional part of the second as either</p>
+
+<pre>a `Rational` that is greater than or equal to 0 and less than 1, or
+the `Integer` 0.</pre>
+
+<p>@param <a href="Timestamp.html#attribute-i-utc_offset"><code>utc_offset</code></a> [Object] either `nil` for a {Timestamp} without a</p>
+
+<pre>specified offset, an offset from UTC specified as an `Integer` number
+of seconds or the `Symbol` `:utc`).</pre>
+
+<p>@return [Timestamp] a new instance of `self`.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="new-21-source">
+            <pre><span class="ruby-comment"># File lib/tzinfo/timestamp.rb, line 190</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">new!</span>(<span class="ruby-identifier">value</span>, <span class="ruby-identifier">sub_second</span> = <span class="ruby-value">0</span>, <span class="ruby-identifier">utc_offset</span> = <span class="ruby-keyword">nil</span>)
+  <span class="ruby-identifier">result</span> = <span class="ruby-identifier">allocate</span>
+  <span class="ruby-identifier">result</span>.<span class="ruby-identifier">send</span>(<span class="ruby-value">:initialize!</span>, <span class="ruby-identifier">value</span>, <span class="ruby-identifier">sub_second</span>, <span class="ruby-identifier">utc_offset</span>)
+  <span class="ruby-identifier">result</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+    </section>
+  
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section">
+       <header>
+         <h3>Public Instance Methods</h3>
+       </header>
+
+    
+      <div id="method-i-3C-3D-3E" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">&lt;=&gt;</span><span
+            class="method-args">(t)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Compares this {Timestamp} with another.</p>
+
+<p>{Timestamp} instances without a defined UTC offset are not comparable with {Timestamp} instances that have a defined UTC offset.</p>
+
+<p>@param t [Timestamp] the {Timestamp} to compare this instance with. @return [Integer] -1, 0 or 1 depending if this instance is earlier, equal</p>
+
+<pre>or later than `t` respectively. Returns `nil` when comparing a
+{Timestamp} that does not have a defined UTC offset with a {Timestamp}
+that does have a defined UTC offset. Returns `nil` if `t` is not a
+{Timestamp}.</pre>
+          
+          
+
+          
+          <div class="method-source-code" id="3C-3D-3E-source">
+            <pre><span class="ruby-comment"># File lib/tzinfo/timestamp.rb, line 452</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">&lt;=&gt;</span>(<span class="ruby-identifier">t</span>)
+  <span class="ruby-keyword">return</span> <span class="ruby-keyword">nil</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">t</span>.<span class="ruby-identifier">kind_of?</span>(<span class="ruby-constant">Timestamp</span>)
+  <span class="ruby-keyword">return</span> <span class="ruby-keyword">nil</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">utc_offset</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-operator">!</span><span class="ruby-identifier">t</span>.<span class="ruby-identifier">utc_offset</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-keyword">nil</span> <span class="ruby-keyword">if</span> <span class="ruby-operator">!</span><span class="ruby-identifier">utc_offset</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">t</span>.<span class="ruby-identifier">utc_offset</span>
+
+  <span class="ruby-identifier">result</span> = <span class="ruby-identifier">value</span> <span class="ruby-operator">&lt;=&gt;</span> <span class="ruby-identifier">t</span>.<span class="ruby-identifier">value</span>
+  <span class="ruby-identifier">result</span> = <span class="ruby-identifier">sub_second</span> <span class="ruby-operator">&lt;=&gt;</span> <span class="ruby-identifier">t</span>.<span class="ruby-identifier">sub_second</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">result</span> <span class="ruby-operator">==</span> <span class="ruby-value">0</span>
+  <span class="ruby-identifier">result</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-add_and_set_utc_offset" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">add_and_set_utc_offset</span><span
+            class="method-args">(seconds, utc_offset)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Adds a number of seconds to the {Timestamp} value, setting the UTC offset of the result.</p>
+
+<p>@param seconds [Integer] the number of seconds to be added. @param <a href="Timestamp.html#attribute-i-utc_offset"><code>utc_offset</code></a> [Object] either `nil` for a {Timestamp} without a</p>
+
+<pre>specified offset, an offset from UTC specified as an `Integer` number of
+seconds or the `Symbol` `:utc`).</pre>
+
+<p>@return [Timestamp] the result of adding `seconds` to the</p>
+
+<pre>{Timestamp} value as a new {Timestamp} instance with the chosen
+`utc_offset`.</pre>
+
+<p>@raise [ArgumentError] if `seconds` is not an `Integer`. @raise [ArgumentError] if `utc_offset` is not `nil`, not an `Integer` and</p>
+
+<pre>not the `Symbol` `:utc`.</pre>
+          
+          
+
+          
+          <div class="method-source-code" id="add_and_set_utc_offset-source">
+            <pre><span class="ruby-comment"># File lib/tzinfo/timestamp.rb, line 370</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">add_and_set_utc_offset</span>(<span class="ruby-identifier">seconds</span>, <span class="ruby-identifier">utc_offset</span>)
+  <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-string">&#39;seconds must be an Integer&#39;</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">seconds</span>.<span class="ruby-identifier">kind_of?</span>(<span class="ruby-constant">Integer</span>)
+  <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-string">&#39;utc_offset must be an Integer, :utc or nil&#39;</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">utc_offset</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">utc_offset</span> <span class="ruby-operator">!=</span> <span class="ruby-value">:utc</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-operator">!</span><span class="ruby-identifier">utc_offset</span>.<span class="ruby-identifier">kind_of?</span>(<span class="ruby-constant">Integer</span>)
+  <span class="ruby-keyword">return</span> <span class="ruby-keyword">self</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">seconds</span> <span class="ruby-operator">==</span> <span class="ruby-value">0</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">utc_offset</span> <span class="ruby-operator">==</span> (<span class="ruby-ivar">@utc</span> <span class="ruby-operator">?</span> <span class="ruby-value">:utc</span> <span class="ruby-operator">:</span> <span class="ruby-ivar">@utc_offset</span>)
+  <span class="ruby-constant">Timestamp</span>.<span class="ruby-identifier">send</span>(<span class="ruby-value">:new!</span>, <span class="ruby-ivar">@value</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">seconds</span>, <span class="ruby-ivar">@sub_second</span>, <span class="ruby-identifier">utc_offset</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-hash" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">hash</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>@return [Integer] a hash based on the value, sub-second and whether there</p>
+
+<pre>is a defined UTC offset.</pre>
+          
+          
+
+          
+          <div class="method-source-code" id="hash-source">
+            <pre><span class="ruby-comment"># File lib/tzinfo/timestamp.rb, line 466</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">hash</span>
+  [<span class="ruby-ivar">@value</span>, <span class="ruby-ivar">@sub_second</span>, <span class="ruby-operator">!</span><span class="ruby-operator">!</span><span class="ruby-ivar">@utc_offset</span>].<span class="ruby-identifier">hash</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-inspect" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">inspect</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>@return [String] the internal object state as a programmer-readable</p>
+
+<pre>`String`.</pre>
+          
+          
+
+          
+          <div class="method-source-code" id="inspect-source">
+            <pre><span class="ruby-comment"># File lib/tzinfo/timestamp.rb, line 472</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">inspect</span>
+  <span class="ruby-node">&quot;#&lt;#{self.class}: @value=#{@value}, @sub_second=#{@sub_second}, @utc_offset=#{@utc_offset.inspect}, @utc=#{@utc.inspect}&gt;&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-strftime" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">strftime</span><span
+            class="method-args">(format)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Formats this {Timestamp} according to the directives in the given format string.</p>
+
+<p>@param format [String] the format string. Please refer to `Time#strftime`</p>
+
+<pre>for a list of supported format directives.</pre>
+
+<p>@return [String] the formatted {Timestamp}. @raise [ArgumentError] if `format` is not specified.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="strftime-source">
+            <pre><span class="ruby-comment"># File lib/tzinfo/timestamp.rb, line 424</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">strftime</span>(<span class="ruby-identifier">format</span>)
+  <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-string">&#39;format must be specified&#39;</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">format</span>
+  <span class="ruby-identifier">to_time</span>.<span class="ruby-identifier">strftime</span>(<span class="ruby-identifier">format</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-to_datetime" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">to_datetime</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Converts this {Timestamp} to a `DateTime`.</p>
+
+<p>@return [DateTime] a DateTime representation of this {Timestamp}. If the</p>
+
+<pre>UTC offset of this {Timestamp} is not specified, a UTC `DateTime` will
+be returned.</pre>
+          
+          
+
+          
+          <div class="method-source-code" id="to_datetime-source">
+            <pre><span class="ruby-comment"># File lib/tzinfo/timestamp.rb, line 404</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">to_datetime</span>
+  <span class="ruby-identifier">new_datetime</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-to_i" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">to_i</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Converts this {Timestamp} to an `Integer` number of seconds since 1970-01-01 00:00:00 UTC (ignoring leap seconds).</p>
+
+<p>@return [Integer] an Integer representation of this {Timestamp} (the</p>
+
+<pre>number of seconds since 1970-01-01 00:00:00 UTC ignoring leap seconds).</pre>
+          
+          
+
+          
+          <div class="method-source-code" id="to_i-source">
+            <pre><span class="ruby-comment"># File lib/tzinfo/timestamp.rb, line 413</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">to_i</span>
+  <span class="ruby-identifier">value</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-to_s" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">to_s</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>@return [String] a `String` representation of this {Timestamp}.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="to_s-source">
+            <pre><span class="ruby-comment"># File lib/tzinfo/timestamp.rb, line 430</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">to_s</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">value_and_sub_second_to_s</span> <span class="ruby-keyword">unless</span> <span class="ruby-ivar">@utc_offset</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-node">&quot;#{value_and_sub_second_to_s} UTC&quot;</span> <span class="ruby-keyword">if</span> <span class="ruby-ivar">@utc</span>
+
+  <span class="ruby-identifier">sign</span> = <span class="ruby-ivar">@utc_offset</span> <span class="ruby-operator">&gt;=</span> <span class="ruby-value">0</span> <span class="ruby-operator">?</span> <span class="ruby-string">&#39;+&#39;</span> <span class="ruby-operator">:</span> <span class="ruby-string">&#39;-&#39;</span>
+  <span class="ruby-identifier">min</span>, <span class="ruby-identifier">sec</span> = <span class="ruby-ivar">@utc_offset</span>.<span class="ruby-identifier">abs</span>.<span class="ruby-identifier">divmod</span>(<span class="ruby-value">60</span>)
+  <span class="ruby-identifier">hour</span>, <span class="ruby-identifier">min</span> = <span class="ruby-identifier">min</span>.<span class="ruby-identifier">divmod</span>(<span class="ruby-value">60</span>)
+
+  <span class="ruby-node">&quot;#{value_and_sub_second_to_s(@utc_offset)} #{sign}#{&#39;%02d&#39; % hour}:#{&#39;%02d&#39; % min}#{sec &gt; 0 ? &#39;:%02d&#39; % sec : nil}#{@utc_offset != 0 ? &quot; (#{value_and_sub_second_to_s} UTC)&quot; : nil}&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-to_time" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">to_time</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Converts this {Timestamp} to a `Time`.</p>
+
+<p>@return [Time] a `Time` representation of this {Timestamp}. If the UTC</p>
+
+<pre>offset of this {Timestamp} is not specified, a UTC `Time` will be
+returned.</pre>
+          
+          
+
+          
+          <div class="method-source-code" id="to_time-source">
+            <pre><span class="ruby-comment"># File lib/tzinfo/timestamp.rb, line 389</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">to_time</span>
+  <span class="ruby-identifier">time</span> = <span class="ruby-identifier">new_time</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-ivar">@utc_offset</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-operator">!</span><span class="ruby-ivar">@utc</span>
+    <span class="ruby-identifier">time</span>.<span class="ruby-identifier">localtime</span>(<span class="ruby-ivar">@utc_offset</span>)
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">time</span>.<span class="ruby-identifier">utc</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-utc" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">utc</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>@return [Timestamp] a UTC {Timestamp} equivalent to this instance. Returns</p>
+
+<pre>`self` if {#utc? self.utc?} is `true`.</pre>
+          
+          
+
+          
+          <div class="method-source-code" id="utc-source">
+            <pre><span class="ruby-comment"># File lib/tzinfo/timestamp.rb, line 379</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">utc</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-keyword">self</span> <span class="ruby-keyword">if</span> <span class="ruby-ivar">@utc</span>
+  <span class="ruby-constant">Timestamp</span>.<span class="ruby-identifier">send</span>(<span class="ruby-value">:new!</span>, <span class="ruby-ivar">@value</span>, <span class="ruby-ivar">@sub_second</span>, <span class="ruby-value">:utc</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-utc-3F" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">utc?</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>@return [Boolean] `true` if this {Timestamp} represents UTC, `false` if</p>
+
+<pre>the {Timestamp} wasn&#39;t specified as UTC or `nil` if the {Timestamp} has
+no specified offset.</pre>
+          
+          
+
+          
+          <div class="method-source-code" id="utc-3F-source">
+            <pre><span class="ruby-comment"># File lib/tzinfo/timestamp.rb, line 353</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">utc?</span>
+  <span class="ruby-ivar">@utc</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+    </section>
+  
+     <section id="protected-instance-5Buntitled-5D-method-details" class="method-section">
+       <header>
+         <h3>Protected Instance Methods</h3>
+       </header>
+
+    
+      <div id="method-i-new_datetime" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">new_datetime</span><span
+            class="method-args">(klass = DateTime)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Constructs a new instance of a `DateTime` or `DateTime`-like class with the same {value}, {sub_second} and {utc_offset} as this {Timestamp}.</p>
+
+<p>@param klass [Class] the class to instantiate.</p>
+
+<p>@private</p>
+          
+          
+
+          
+          <div class="method-source-code" id="new_datetime-source">
+            <pre><span class="ruby-comment"># File lib/tzinfo/timestamp.rb, line 494</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">new_datetime</span>(<span class="ruby-identifier">klass</span> = <span class="ruby-constant">DateTime</span>)
+  <span class="ruby-identifier">datetime</span> = <span class="ruby-identifier">klass</span>.<span class="ruby-identifier">jd</span>(<span class="ruby-constant">JD_EPOCH</span> <span class="ruby-operator">+</span> ((<span class="ruby-ivar">@value</span>.<span class="ruby-identifier">to_r</span> <span class="ruby-operator">+</span> <span class="ruby-ivar">@sub_second</span>) <span class="ruby-operator">/</span> <span class="ruby-value">86400</span>))
+  <span class="ruby-ivar">@utc_offset</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-ivar">@utc_offset</span> <span class="ruby-operator">!=</span> <span class="ruby-value">0</span> <span class="ruby-operator">?</span> <span class="ruby-identifier">datetime</span>.<span class="ruby-identifier">new_offset</span>(<span class="ruby-constant">Rational</span>(<span class="ruby-ivar">@utc_offset</span>, <span class="ruby-value">86400</span>)) <span class="ruby-operator">:</span> <span class="ruby-identifier">datetime</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-new_time" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">new_time</span><span
+            class="method-args">(klass = Time)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Creates a new instance of a `Time` or `Time`-like class matching the {value} and {sub_second} of this {Timestamp}, but not setting the offset.</p>
+
+<p>@param klass [Class] the class to instantiate.</p>
+
+<p>@private</p>
+          
+          
+
+          
+          <div class="method-source-code" id="new_time-source">
+            <pre><span class="ruby-comment"># File lib/tzinfo/timestamp.rb, line 484</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">new_time</span>(<span class="ruby-identifier">klass</span> = <span class="ruby-constant">Time</span>)
+  <span class="ruby-identifier">klass</span>.<span class="ruby-identifier">at</span>(<span class="ruby-ivar">@value</span>, <span class="ruby-ivar">@sub_second</span> <span class="ruby-operator">*</span> <span class="ruby-value">1_000_000</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+    </section>
+  
+     <section id="private-instance-5Buntitled-5D-method-details" class="method-section">
+       <header>
+         <h3>Private Instance Methods</h3>
+       </header>
+
+    
+      <div id="method-i-initialize-21" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">initialize!</span><span
+            class="method-args">(value, sub_second = 0, utc_offset = nil)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Initializes a new {Timestamp} without validating the parameters. This method is used internally within {Timestamp} to avoid the overhead of checking parameters.</p>
+
+<p>@param value [Integer] the number of seconds since 1970-01-01 00:00:00 UTC</p>
+
+<pre>ignoring leap seconds.</pre>
+
+<p>@param <a href="Timestamp.html#attribute-i-sub_second"><code>sub_second</code></a> [Numeric] the fractional part of the second as either a</p>
+
+<pre>`Rational` that is greater than or equal to 0 and less than 1, or the
+`Integer` 0.</pre>
+
+<p>@param <a href="Timestamp.html#attribute-i-utc_offset"><code>utc_offset</code></a> [Object] either `nil` for a {Timestamp} without a</p>
+
+<pre>specified offset, an offset from UTC specified as an `Integer` number of
+seconds or the `Symbol` `:utc`).</pre>
+          
+          
+
+          
+          <div class="method-source-code" id="initialize-21-source">
+            <pre><span class="ruby-comment"># File lib/tzinfo/timestamp.rb, line 534</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">initialize!</span>(<span class="ruby-identifier">value</span>, <span class="ruby-identifier">sub_second</span> = <span class="ruby-value">0</span>, <span class="ruby-identifier">utc_offset</span> = <span class="ruby-keyword">nil</span>)
+  <span class="ruby-ivar">@value</span> = <span class="ruby-identifier">value</span>
+
+  <span class="ruby-comment"># Convert Rational(0,1) to 0.</span>
+  <span class="ruby-ivar">@sub_second</span> = <span class="ruby-identifier">sub_second</span> <span class="ruby-operator">==</span> <span class="ruby-value">0</span> <span class="ruby-operator">?</span> <span class="ruby-value">0</span> <span class="ruby-operator">:</span> <span class="ruby-identifier">sub_second</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">utc_offset</span>
+    <span class="ruby-ivar">@utc</span> = <span class="ruby-identifier">utc_offset</span> <span class="ruby-operator">==</span> <span class="ruby-value">:utc</span>
+    <span class="ruby-ivar">@utc_offset</span> = <span class="ruby-ivar">@utc</span> <span class="ruby-operator">?</span> <span class="ruby-value">0</span> <span class="ruby-operator">:</span> <span class="ruby-identifier">utc_offset</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-ivar">@utc</span> = <span class="ruby-ivar">@utc_offset</span> = <span class="ruby-keyword">nil</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-sub_second_to_s" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">sub_second_to_s</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Converts the {sub_second} value to a `String` suitable for appending to the `String` representation of a {Timestamp}.</p>
+
+<p>@return [String] a `String` representation of {sub_second}.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="sub_second_to_s-source">
+            <pre><span class="ruby-comment"># File lib/tzinfo/timestamp.rb, line 514</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">sub_second_to_s</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-ivar">@sub_second</span> <span class="ruby-operator">==</span> <span class="ruby-value">0</span>
+    <span class="ruby-string">&#39;&#39;</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-node">&quot; #{@sub_second.numerator}/#{@sub_second.denominator}&quot;</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-value_and_sub_second_to_s" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">value_and_sub_second_to_s</span><span
+            class="method-args">(offset = 0)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Converts the value and sub-seconds to a `String`, adding on the given offset.</p>
+
+<p>@param offset [Integer] the offset to add to the value. @return [String] the value and sub-seconds.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="value_and_sub_second_to_s-source">
+            <pre><span class="ruby-comment"># File lib/tzinfo/timestamp.rb, line 506</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">value_and_sub_second_to_s</span>(<span class="ruby-identifier">offset</span> = <span class="ruby-value">0</span>)
+  <span class="ruby-node">&quot;#{@value + offset}#{sub_second_to_s}&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+    </section>
+  
+  </section>
+
+</main>
+
+
+<footer id="validator-badges" role="contentinfo">
+  <p><a href="https://validator.w3.org/check/referer">Validate</a>
+  <p>Generated by <a href="https://ruby.github.io/rdoc/">RDoc</a> 6.2.1.
+  <p>Based on <a href="http://deveiate.org/projects/Darkfish-RDoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
+</footer>
+

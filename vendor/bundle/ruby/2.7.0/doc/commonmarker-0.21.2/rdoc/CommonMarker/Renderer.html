@@ -1,0 +1,835 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="UTF-8">
+
+<title>class CommonMarker::Renderer - commonmarker-0.21.2 Documentation</title>
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../";
+  var index_rel_prefix = "../";
+</script>
+
+<script src="../js/navigation.js" defer></script>
+<script src="../js/search.js" defer></script>
+<script src="../js/search_index.js" defer></script>
+<script src="../js/searcher.js" defer></script>
+<script src="../js/darkfish.js" defer></script>
+
+<link href="../css/fonts.css" rel="stylesheet">
+<link href="../css/rdoc.css" rel="stylesheet">
+
+
+
+
+<body id="top" role="document" class="class">
+<nav role="navigation">
+  <div id="project-navigation">
+    <div id="home-section" role="region" title="Quick navigation" class="nav-section">
+  <h2>
+    <a href="../index.html" rel="home">Home</a>
+  </h2>
+
+  <div id="table-of-contents-navigation">
+    <a href="../table_of_contents.html#pages">Pages</a>
+    <a href="../table_of_contents.html#classes">Classes</a>
+    <a href="../table_of_contents.html#methods">Methods</a>
+  </div>
+</div>
+
+    <div id="search-section" role="search" class="project-section initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <div id="search-field-wrapper">
+      <input id="search-field" role="combobox" aria-label="Search"
+             aria-autocomplete="list" aria-controls="search-results"
+             type="text" name="search" placeholder="Search" spellcheck="false"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </div>
+
+    <ul id="search-results" aria-label="Search Results"
+        aria-busy="false" aria-expanded="false"
+        aria-atomic="false" class="initially-hidden"></ul>
+  </form>
+</div>
+
+  </div>
+
+  
+
+  <div id="class-metadata">
+    
+    <div id="parent-class-section" class="nav-section">
+  <h3>Parent</h3>
+
+  
+  <p class="link">Object
+  
+</div>
+
+    
+    
+    <!-- Method Quickref -->
+<div id="method-list-section" class="nav-section">
+  <h3>Methods</h3>
+
+  <ul class="link-list" role="directory">
+    
+    <li ><a href="#method-c-new">::new</a>
+    
+    <li ><a href="#method-i-block">#block</a>
+    
+    <li ><a href="#method-i-blocksep">#blocksep</a>
+    
+    <li ><a href="#method-i-code_block">#code_block</a>
+    
+    <li ><a href="#method-i-container">#container</a>
+    
+    <li ><a href="#method-i-containersep">#containersep</a>
+    
+    <li ><a href="#method-i-cr">#cr</a>
+    
+    <li ><a href="#method-i-document">#document</a>
+    
+    <li ><a href="#method-i-escape_href">#escape_href</a>
+    
+    <li ><a href="#method-i-escape_html">#escape_html</a>
+    
+    <li ><a href="#method-i-option_enabled-3F">#option_enabled?</a>
+    
+    <li ><a href="#method-i-out">#out</a>
+    
+    <li ><a href="#method-i-plain">#plain</a>
+    
+    <li ><a href="#method-i-reference_def">#reference_def</a>
+    
+    <li ><a href="#method-i-render">#render</a>
+    
+    <li ><a href="#method-i-sourcepos">#sourcepos</a>
+    
+    <li ><a href="#method-i-tagfilter">#tagfilter</a>
+    
+  </ul>
+</div>
+
+  </div>
+</nav>
+
+<main role="main" aria-labelledby="class-CommonMarker::Renderer">
+  <h1 id="class-CommonMarker::Renderer" class="class">
+    class CommonMarker::Renderer
+  </h1>
+
+  <section class="description">
+    
+  </section>
+
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+
+    
+    <section class="attribute-method-details" class="method-section">
+      <header>
+        <h3>Attributes</h3>
+      </header>
+
+      
+      <div id="attribute-i-in_plain" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">in_plain</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-in_tight" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">in_tight</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-warnings" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">warnings</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        
+        
+        </div>
+      </div>
+      
+    </section>
+    
+
+    
+     <section id="public-class-5Buntitled-5D-method-details" class="method-section">
+       <header>
+         <h3>Public Class Methods</h3>
+       </header>
+
+    
+      <div id="method-c-new" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">new</span><span
+            class="method-args">(options: :DEFAULT, extensions: [])</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="new-source">
+            <pre><span class="ruby-comment"># File lib/commonmarker/renderer.rb, line 10</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">initialize</span>(<span class="ruby-value">options:</span> <span class="ruby-value">:DEFAULT</span>, <span class="ruby-value">extensions:</span> [])
+  <span class="ruby-ivar">@opts</span> = <span class="ruby-constant">Config</span>.<span class="ruby-identifier">process_options</span>(<span class="ruby-identifier">options</span>, <span class="ruby-value">:render</span>)
+  <span class="ruby-ivar">@stream</span> = <span class="ruby-constant">StringIO</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">+&#39;&#39;</span>)
+  <span class="ruby-ivar">@need_blocksep</span> = <span class="ruby-keyword">false</span>
+  <span class="ruby-ivar">@warnings</span> = <span class="ruby-constant">Set</span>.<span class="ruby-identifier">new</span> []
+  <span class="ruby-ivar">@in_tight</span> = <span class="ruby-keyword">false</span>
+  <span class="ruby-ivar">@in_plain</span> = <span class="ruby-keyword">false</span>
+  <span class="ruby-ivar">@tagfilter</span> = <span class="ruby-identifier">extensions</span>.<span class="ruby-identifier">include?</span>(<span class="ruby-value">:tagfilter</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+    </section>
+  
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section">
+       <header>
+         <h3>Public Instance Methods</h3>
+       </header>
+
+    
+      <div id="method-i-block" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">block</span><span
+            class="method-args">() { || ... }</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="block-source">
+            <pre><span class="ruby-comment"># File lib/commonmarker/renderer.rb, line 76</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">block</span>
+  <span class="ruby-identifier">cr</span>
+  <span class="ruby-keyword">yield</span>
+  <span class="ruby-identifier">cr</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-blocksep" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">blocksep</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="blocksep-source">
+            <pre><span class="ruby-comment"># File lib/commonmarker/renderer.rb, line 68</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">blocksep</span>
+  <span class="ruby-identifier">out</span>(<span class="ruby-string">&quot;\n&quot;</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-code_block" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">code_block</span><span
+            class="method-args">(node)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="code_block-source">
+            <pre><span class="ruby-comment"># File lib/commonmarker/renderer.rb, line 56</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">code_block</span>(<span class="ruby-identifier">node</span>)
+  <span class="ruby-identifier">code_block</span>(<span class="ruby-identifier">node</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-container" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">container</span><span
+            class="method-args">(starter, ender) { || ... }</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="container-source">
+            <pre><span class="ruby-comment"># File lib/commonmarker/renderer.rb, line 82</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">container</span>(<span class="ruby-identifier">starter</span>, <span class="ruby-identifier">ender</span>)
+  <span class="ruby-identifier">out</span>(<span class="ruby-identifier">starter</span>)
+  <span class="ruby-keyword">yield</span>
+  <span class="ruby-identifier">out</span>(<span class="ruby-identifier">ender</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-containersep" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">containersep</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="containersep-source">
+            <pre><span class="ruby-comment"># File lib/commonmarker/renderer.rb, line 72</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">containersep</span>
+  <span class="ruby-identifier">cr</span> <span class="ruby-keyword">unless</span> <span class="ruby-ivar">@in_tight</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-cr" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">cr</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="cr-source">
+            <pre><span class="ruby-comment"># File lib/commonmarker/renderer.rb, line 62</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">cr</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-keyword">if</span> <span class="ruby-ivar">@stream</span>.<span class="ruby-identifier">string</span>.<span class="ruby-identifier">empty?</span> <span class="ruby-operator">||</span> <span class="ruby-ivar">@stream</span>.<span class="ruby-identifier">string</span>[<span class="ruby-value">-1</span>] <span class="ruby-operator">==</span> <span class="ruby-string">&quot;\n&quot;</span>
+
+  <span class="ruby-identifier">out</span>(<span class="ruby-string">&quot;\n&quot;</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-document" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">document</span><span
+            class="method-args">(_node)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="document-source">
+            <pre><span class="ruby-comment"># File lib/commonmarker/renderer.rb, line 52</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">document</span>(<span class="ruby-identifier">_node</span>)
+  <span class="ruby-identifier">out</span>(<span class="ruby-value">:children</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-out" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">out</span><span
+            class="method-args">(*args)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="out-source">
+            <pre><span class="ruby-comment"># File lib/commonmarker/renderer.rb, line 20</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">out</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">args</span>)
+  <span class="ruby-identifier">args</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">arg</span><span class="ruby-operator">|</span>
+    <span class="ruby-keyword">case</span> <span class="ruby-identifier">arg</span>
+    <span class="ruby-keyword">when</span> <span class="ruby-value">:children</span>
+      <span class="ruby-ivar">@node</span>.<span class="ruby-identifier">each</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">child</span><span class="ruby-operator">|</span> <span class="ruby-identifier">out</span>(<span class="ruby-identifier">child</span>) }
+    <span class="ruby-keyword">when</span> <span class="ruby-constant">Array</span>
+      <span class="ruby-identifier">arg</span>.<span class="ruby-identifier">each</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">x</span><span class="ruby-operator">|</span> <span class="ruby-identifier">render</span>(<span class="ruby-identifier">x</span>) }
+    <span class="ruby-keyword">when</span> <span class="ruby-constant">Node</span>
+      <span class="ruby-identifier">render</span>(<span class="ruby-identifier">arg</span>)
+    <span class="ruby-keyword">else</span>
+      <span class="ruby-ivar">@stream</span>.<span class="ruby-identifier">write</span>(<span class="ruby-identifier">arg</span>)
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-plain" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">plain</span><span
+            class="method-args">() { || ... }</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="plain-source">
+            <pre><span class="ruby-comment"># File lib/commonmarker/renderer.rb, line 88</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">plain</span>
+  <span class="ruby-identifier">old_in_plain</span> = <span class="ruby-ivar">@in_plain</span>
+  <span class="ruby-ivar">@in_plain</span> = <span class="ruby-keyword">true</span>
+  <span class="ruby-keyword">yield</span>
+  <span class="ruby-ivar">@in_plain</span> = <span class="ruby-identifier">old_in_plain</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-reference_def" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">reference_def</span><span
+            class="method-args">(_node)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="reference_def-source">
+            <pre><span class="ruby-comment"># File lib/commonmarker/renderer.rb, line 60</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">reference_def</span>(<span class="ruby-identifier">_node</span>); <span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-render" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">render</span><span
+            class="method-args">(node)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="render-source">
+            <pre><span class="ruby-comment"># File lib/commonmarker/renderer.rb, line 35</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">render</span>(<span class="ruby-identifier">node</span>)
+  <span class="ruby-ivar">@node</span> = <span class="ruby-identifier">node</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">node</span>.<span class="ruby-identifier">type</span> <span class="ruby-operator">==</span> <span class="ruby-value">:document</span>
+    <span class="ruby-identifier">document</span>(<span class="ruby-identifier">node</span>)
+    <span class="ruby-ivar">@stream</span>.<span class="ruby-identifier">string</span>
+  <span class="ruby-keyword">elsif</span> <span class="ruby-ivar">@in_plain</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">node</span>.<span class="ruby-identifier">type</span> <span class="ruby-operator">!=</span> <span class="ruby-value">:text</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">node</span>.<span class="ruby-identifier">type</span> <span class="ruby-operator">!=</span> <span class="ruby-value">:softbreak</span>
+    <span class="ruby-identifier">node</span>.<span class="ruby-identifier">each</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">child</span><span class="ruby-operator">|</span> <span class="ruby-identifier">render</span>(<span class="ruby-identifier">child</span>) }
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-keyword">begin</span>
+      <span class="ruby-identifier">send</span>(<span class="ruby-identifier">node</span>.<span class="ruby-identifier">type</span>, <span class="ruby-identifier">node</span>)
+    <span class="ruby-keyword">rescue</span> <span class="ruby-constant">NoMethodError</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-identifier">e</span>
+      <span class="ruby-ivar">@warnings</span>.<span class="ruby-identifier">add</span>(<span class="ruby-node">&quot;WARNING: #{node.type} not implemented.&quot;</span>)
+      <span class="ruby-identifier">raise</span> <span class="ruby-identifier">e</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+    </section>
+  
+     <section id="private-instance-5Buntitled-5D-method-details" class="method-section">
+       <header>
+         <h3>Private Instance Methods</h3>
+       </header>
+
+    
+      <div id="method-i-escape_href" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">escape_href</span><span
+            class="method-args">(str)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="escape_href-source">
+            <pre><span class="ruby-comment"># File lib/commonmarker/renderer.rb, line 97</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">escape_href</span>(<span class="ruby-identifier">str</span>)
+  <span class="ruby-ivar">@node</span>.<span class="ruby-identifier">html_escape_href</span>(<span class="ruby-identifier">str</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-escape_html" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">escape_html</span><span
+            class="method-args">(str)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="escape_html-source">
+            <pre><span class="ruby-comment"># File lib/commonmarker/renderer.rb, line 101</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">escape_html</span>(<span class="ruby-identifier">str</span>)
+  <span class="ruby-ivar">@node</span>.<span class="ruby-identifier">html_escape_html</span>(<span class="ruby-identifier">str</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-option_enabled-3F" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">option_enabled?</span><span
+            class="method-args">(opt)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="option_enabled-3F-source">
+            <pre><span class="ruby-comment"># File lib/commonmarker/renderer.rb, line 131</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">option_enabled?</span>(<span class="ruby-identifier">opt</span>)
+  (<span class="ruby-ivar">@opts</span> <span class="ruby-operator">&amp;</span> <span class="ruby-constant">CommonMarker</span><span class="ruby-operator">::</span><span class="ruby-constant">Config</span><span class="ruby-operator">::</span><span class="ruby-constant">Render</span>.<span class="ruby-identifier">value</span>(<span class="ruby-identifier">opt</span>)) <span class="ruby-operator">!=</span> <span class="ruby-value">0</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-sourcepos" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">sourcepos</span><span
+            class="method-args">(node)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="sourcepos-source">
+            <pre><span class="ruby-comment"># File lib/commonmarker/renderer.rb, line 123</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">sourcepos</span>(<span class="ruby-identifier">node</span>)
+  <span class="ruby-keyword">return</span> <span class="ruby-string">&#39;&#39;</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">option_enabled?</span>(<span class="ruby-value">:SOURCEPOS</span>)
+
+  <span class="ruby-identifier">s</span> = <span class="ruby-identifier">node</span>.<span class="ruby-identifier">sourcepos</span>
+  <span class="ruby-node">&quot; data-sourcepos=\&quot;#{s[:start_line]}:#{s[:start_column]}-&quot;</span> \
+    <span class="ruby-node">&quot;#{s[:end_line]}:#{s[:end_column]}\&quot;&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-tagfilter" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">tagfilter</span><span
+            class="method-args">(str)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="tagfilter-source">
+            <pre><span class="ruby-comment"># File lib/commonmarker/renderer.rb, line 105</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">tagfilter</span>(<span class="ruby-identifier">str</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-ivar">@tagfilter</span>
+    <span class="ruby-identifier">str</span>.<span class="ruby-identifier">gsub</span>(
+      <span class="ruby-regexp">%r{
+        &lt;
+        (
+        title|textarea|style|xmp|iframe|
+        noembed|noframes|script|plaintext
+        )
+        (?=\s|&gt;|/&gt;)
+      }xi</span>,
+      <span class="ruby-string">&#39;&amp;lt;\1&#39;</span>
+    )
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">str</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+    </section>
+  
+  </section>
+
+</main>
+
+
+<footer id="validator-badges" role="contentinfo">
+  <p><a href="https://validator.w3.org/check/referer">Validate</a>
+  <p>Generated by <a href="https://ruby.github.io/rdoc/">RDoc</a> 6.2.1.
+  <p>Based on <a href="http://deveiate.org/projects/Darkfish-RDoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
+</footer>
+

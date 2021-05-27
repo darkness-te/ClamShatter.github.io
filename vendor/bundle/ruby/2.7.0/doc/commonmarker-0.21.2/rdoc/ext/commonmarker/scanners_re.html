@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="UTF-8">
+
+<title>scanners.re - commonmarker-0.21.2 Documentation</title>
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../../";
+  var index_rel_prefix = "../../";
+</script>
+
+<script src="../../js/navigation.js" defer></script>
+<script src="../../js/search.js" defer></script>
+<script src="../../js/search_index.js" defer></script>
+<script src="../../js/searcher.js" defer></script>
+<script src="../../js/darkfish.js" defer></script>
+
+<link href="../../css/fonts.css" rel="stylesheet">
+<link href="../../css/rdoc.css" rel="stylesheet">
+
+
+
+
+<body id="top" role="document" class="file">
+<nav role="navigation">
+  <div id="project-navigation">
+    <div id="home-section" role="region" title="Quick navigation" class="nav-section">
+  <h2>
+    <a href="../../index.html" rel="home">Home</a>
+  </h2>
+
+  <div id="table-of-contents-navigation">
+    <a href="../../table_of_contents.html#pages">Pages</a>
+    <a href="../../table_of_contents.html#classes">Classes</a>
+    <a href="../../table_of_contents.html#methods">Methods</a>
+  </div>
+</div>
+
+    <div id="search-section" role="search" class="project-section initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <div id="search-field-wrapper">
+      <input id="search-field" role="combobox" aria-label="Search"
+             aria-autocomplete="list" aria-controls="search-results"
+             type="text" name="search" placeholder="Search" spellcheck="false"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </div>
+
+    <ul id="search-results" aria-label="Search Results"
+        aria-busy="false" aria-expanded="false"
+        aria-atomic="false" class="initially-hidden"></ul>
+  </form>
+</div>
+
+  </div>
+
+  
+
+  <div id="project-metadata">
+    <div id="fileindex-section" class="nav-section">
+  <h3>Pages</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="../../ext/commonmarker/Makefile.html">Makefile</a>
+  
+    <li><a href="../../ext/commonmarker/case_fold_switch_inc.html">case_fold_switch.inc</a>
+  
+    <li><a href="../../ext/commonmarker/commonmarker-x64-mingw32_def.html">commonmarker-x64-mingw32.def</a>
+  
+    <li><a href="../../ext/commonmarker/entities_inc.html">entities.inc</a>
+  
+    <li><a href="../../ext/commonmarker/scanners_re.html">scanners.re</a>
+  
+  </ul>
+</div>
+
+  </div>
+</nav>
+
+<main role="main" aria-label="Page ext/commonmarker/scanners.re">
+
+<p>include &lt;stdlib.h&gt; include “chunk.h” include “scanners.h”</p>
+
+<p>bufsize_t _scan_at(bufsize_t (*scanner)(const unsigned char *), cmark_chunk *c, bufsize_t offset) {</p>
+
+<pre>bufsize_t res;
+unsigned char *ptr = (unsigned char *)c-&gt;data;
+
+if (ptr == NULL || offset &gt; c-&gt;len) {
+  return 0;
+} else {
+  unsigned char lim = ptr[c-&gt;len];
+
+  ptr[c-&gt;len] = &#39;\0&#39;;
+  res = scanner(ptr + offset);
+  ptr[c-&gt;len] = lim;
+}
+
+return res;</pre>
+
+<p>}</p>
+
+<p>/*!re2c</p>
+
+<pre>re2c:define:YYCTYPE  = &quot;unsigned char&quot;;
+re2c:define:YYCURSOR = p;
+re2c:define:YYMARKER = marker;
+re2c:define:YYCTXMARKER = marker;
+re2c:yyfill:enable = 0;
+
+wordchar = [^\x00-\x20];
+
+spacechar = [ \t\v\f\r\n];
+
+reg_char     = [^\\()\x00-\x20];
+
+escaped_char = [\\][!&quot;#$%&amp;&#39;()*+,./:;&lt;=&gt;?@[\\\]^_`{|}~-];
+
+tagname = [A-Za-z][A-Za-z0-9-]*;
+
+blocktagname = &#39;address&#39;|&#39;article&#39;|&#39;aside&#39;|&#39;base&#39;|&#39;basefont&#39;|&#39;blockquote&#39;|&#39;body&#39;|&#39;caption&#39;|&#39;center&#39;|&#39;col&#39;|&#39;colgroup&#39;|&#39;dd&#39;|&#39;details&#39;|&#39;dialog&#39;|&#39;dir&#39;|&#39;div&#39;|&#39;dl&#39;|&#39;dt&#39;|&#39;fieldset&#39;|&#39;figcaption&#39;|&#39;figure&#39;|&#39;footer&#39;|&#39;form&#39;|&#39;frame&#39;|&#39;frameset&#39;|&#39;h1&#39;|&#39;h2&#39;|&#39;h3&#39;|&#39;h4&#39;|&#39;h5&#39;|&#39;h6&#39;|&#39;head&#39;|&#39;header&#39;|&#39;hr&#39;|&#39;html&#39;|&#39;iframe&#39;|&#39;legend&#39;|&#39;li&#39;|&#39;link&#39;|&#39;main&#39;|&#39;menu&#39;|&#39;menuitem&#39;|&#39;meta&#39;|&#39;nav&#39;|&#39;noframes&#39;|&#39;ol&#39;|&#39;optgroup&#39;|&#39;option&#39;|&#39;p&#39;|&#39;param&#39;|&#39;section&#39;|&#39;source&#39;|&#39;title&#39;|&#39;summary&#39;|&#39;table&#39;|&#39;tbody&#39;|&#39;td&#39;|&#39;tfoot&#39;|&#39;th&#39;|&#39;thead&#39;|&#39;title&#39;|&#39;tr&#39;|&#39;track&#39;|&#39;ul&#39;;
+
+attributename = [a-zA-Z_:][a-zA-Z0-9:._-]*;
+
+unquotedvalue = [^&quot;&#39;=&lt;&gt;`\x00]+;
+singlequotedvalue = [&#39;][^&#39;\x00]*[&#39;];
+doublequotedvalue = [&quot;][^&quot;\x00]*[&quot;];
+
+attributevalue = unquotedvalue | singlequotedvalue | doublequotedvalue;
+
+attributevaluespec = spacechar* [=] spacechar* attributevalue;
+
+attribute = spacechar+ attributename attributevaluespec?;
+
+opentag = tagname attribute* spacechar* [/]? [&gt;];
+closetag = [/] tagname spacechar* [&gt;];
+
+htmlcomment = &quot;!----&gt;&quot; | (&quot;!--&quot; ([-]? [^\x00&gt;-]) ([-]? [^\x00-])* &quot;--&gt;&quot;);
+
+processinginstruction = &quot;?&quot; ([^?&gt;\x00]+ | [?][^&gt;\x00] | [&gt;])* &quot;?&gt;&quot;;
+
+declaration = &quot;!&quot; [A-Z]+ spacechar+ [^&gt;\x00]* &quot;&gt;&quot;;
+
+cdata = &quot;![CDATA[&quot; ([^\]\x00]+ | &quot;]&quot; [^\]\x00] | &quot;]]&quot; [^&gt;\x00])* &quot;]]&gt;&quot;;
+
+htmltag = opentag | closetag | htmlcomment | processinginstruction |
+          declaration | cdata;
+
+in_parens_nosp   = [(] (reg_char|escaped_char|[\\])* [)];
+
+in_double_quotes = [&quot;] (escaped_char|[^&quot;\x00])* [&quot;];
+in_single_quotes = [&#39;] (escaped_char|[^&#39;\x00])* [&#39;];
+in_parens        = [(] (escaped_char|[^)\x00])* [)];
+
+scheme           = [A-Za-z][A-Za-z0-9.+-]{1,31};</pre>
+
+<p>*/</p>
+
+<p>// Try to match a scheme including colon. bufsize_t _scan_scheme(const unsigned char *p) {</p>
+
+<pre class="ruby"><span class="ruby-identifier">const</span> <span class="ruby-identifier">unsigned</span> <span class="ruby-identifier">char</span> <span class="ruby-operator">*</span><span class="ruby-identifier">marker</span> = <span class="ruby-constant">NULL</span>;
+<span class="ruby-identifier">const</span> <span class="ruby-identifier">unsigned</span> <span class="ruby-identifier">char</span> <span class="ruby-operator">*</span><span class="ruby-identifier">start</span> = <span class="ruby-identifier">p</span>;
+</pre>
+
+<p>/*!re2c</p>
+
+<pre>scheme [:] { return (bufsize_t)(p - start); }
+* { return 0; }</pre>
+
+<p>*/ }</p>
+
+<p>// Try to match URI autolink after first &lt;, returning number of chars matched. bufsize_t _scan_autolink_uri(const unsigned char *p) {</p>
+
+<pre class="ruby"><span class="ruby-identifier">const</span> <span class="ruby-identifier">unsigned</span> <span class="ruby-identifier">char</span> <span class="ruby-operator">*</span><span class="ruby-identifier">marker</span> = <span class="ruby-constant">NULL</span>;
+<span class="ruby-identifier">const</span> <span class="ruby-identifier">unsigned</span> <span class="ruby-identifier">char</span> <span class="ruby-operator">*</span><span class="ruby-identifier">start</span> = <span class="ruby-identifier">p</span>;
+</pre>
+
+<p>/*!re2c</p>
+
+<pre>scheme [:][^\x00-\x20&lt;&gt;]*[&gt;]  { return (bufsize_t)(p - start); }
+* { return 0; }</pre>
+
+<p>*/ }</p>
+
+<p>// Try to match email autolink after first &lt;, returning num of chars matched. bufsize_t _scan_autolink_email(const unsigned char *p) {</p>
+
+<pre class="ruby"><span class="ruby-identifier">const</span> <span class="ruby-identifier">unsigned</span> <span class="ruby-identifier">char</span> <span class="ruby-operator">*</span><span class="ruby-identifier">marker</span> = <span class="ruby-constant">NULL</span>;
+<span class="ruby-identifier">const</span> <span class="ruby-identifier">unsigned</span> <span class="ruby-identifier">char</span> <span class="ruby-operator">*</span><span class="ruby-identifier">start</span> = <span class="ruby-identifier">p</span>;
+</pre>
+
+<p>/*!re2c</p>
+
+<pre>[a-zA-Z0-9.!#$%&amp;&#39;*+/=?^_`{|}~-]+
+  [@]
+  [a-zA-Z0-9]([a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?
+  ([.][a-zA-Z0-9]([a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*
+  [&gt;] { return (bufsize_t)(p - start); }
+* { return 0; }</pre>
+
+<p>*/ }</p>
+
+<p>// Try to match an HTML tag after first &lt;, returning num of chars matched. bufsize_t _scan_html_tag(const unsigned char *p) {</p>
+
+<pre class="ruby"><span class="ruby-identifier">const</span> <span class="ruby-identifier">unsigned</span> <span class="ruby-identifier">char</span> <span class="ruby-operator">*</span><span class="ruby-identifier">marker</span> = <span class="ruby-constant">NULL</span>;
+<span class="ruby-identifier">const</span> <span class="ruby-identifier">unsigned</span> <span class="ruby-identifier">char</span> <span class="ruby-operator">*</span><span class="ruby-identifier">start</span> = <span class="ruby-identifier">p</span>;
+</pre>
+
+<p>/*!re2c</p>
+
+<pre>htmltag { return (bufsize_t)(p - start); }
+* { return 0; }</pre>
+
+<p>*/ }</p>
+
+<p>// Try to (liberally) match an HTML tag after first &lt;, returning num of chars matched. bufsize_t _scan_liberal_html_tag(const unsigned char *p) {</p>
+
+<pre class="ruby"><span class="ruby-identifier">const</span> <span class="ruby-identifier">unsigned</span> <span class="ruby-identifier">char</span> <span class="ruby-operator">*</span><span class="ruby-identifier">marker</span> = <span class="ruby-constant">NULL</span>;
+<span class="ruby-identifier">const</span> <span class="ruby-identifier">unsigned</span> <span class="ruby-identifier">char</span> <span class="ruby-operator">*</span><span class="ruby-identifier">start</span> = <span class="ruby-identifier">p</span>;
+</pre>
+
+<p>/*!re2c</p>
+
+<pre>[^\n\x00]+ [&gt;] { return (bufsize_t)(p - start); }
+* { return 0; }</pre>
+
+<p>*/ }</p>
+
+<p>// Try to match an HTML block tag start line, returning // an integer code for the type of block (1-6, matching the spec). // #7 is handled by a separate function, below. bufsize_t _scan_html_block_start(const unsigned char *p) {</p>
+
+<pre class="ruby"><span class="ruby-identifier">const</span> <span class="ruby-identifier">unsigned</span> <span class="ruby-identifier">char</span> <span class="ruby-operator">*</span><span class="ruby-identifier">marker</span> = <span class="ruby-constant">NULL</span>;
+</pre>
+
+<p>/*!re2c</p>
+
+<pre>[&lt;] (&#39;script&#39;|&#39;pre&#39;|&#39;style&#39;) (spacechar | [&gt;]) { return 1; }
+&#39;&lt;!--&#39; { return 2; }
+&#39;&lt;?&#39; { return 3; }
+&#39;&lt;!&#39; [A-Z] { return 4; }
+&#39;&lt;![CDATA[&#39; { return 5; }
+[&lt;] [/]? blocktagname (spacechar | [/]? [&gt;])  { return 6; }
+* { return 0; }</pre>
+
+<p>*/ }</p>
+
+<p>// Try to match an HTML block tag start line of type 7, returning // 7 if successful, 0 if not. bufsize_t _scan_html_block_start_7(const unsigned char *p) {</p>
+
+<pre class="ruby"><span class="ruby-identifier">const</span> <span class="ruby-identifier">unsigned</span> <span class="ruby-identifier">char</span> <span class="ruby-operator">*</span><span class="ruby-identifier">marker</span> = <span class="ruby-constant">NULL</span>;
+</pre>
+
+<p>/*!re2c</p>
+
+<pre>[&lt;] (opentag | closetag) [\t\n\f ]* [\r\n] { return 7; }
+* { return 0; }</pre>
+
+<p>*/ }</p>
+
+<p>// Try to match an HTML block end line of type 1 bufsize_t _scan_html_block_end_1(const unsigned char *p) {</p>
+
+<pre class="ruby"><span class="ruby-identifier">const</span> <span class="ruby-identifier">unsigned</span> <span class="ruby-identifier">char</span> <span class="ruby-operator">*</span><span class="ruby-identifier">marker</span> = <span class="ruby-constant">NULL</span>;
+<span class="ruby-identifier">const</span> <span class="ruby-identifier">unsigned</span> <span class="ruby-identifier">char</span> <span class="ruby-operator">*</span><span class="ruby-identifier">start</span> = <span class="ruby-identifier">p</span>;
+</pre>
+
+<p>/*!re2c</p>
+
+<pre>[^\n\x00]* [&lt;] [/] (&#39;script&#39;|&#39;pre&#39;|&#39;style&#39;) [&gt;] { return (bufsize_t)(p - start); }
+* { return 0; }</pre>
+
+<p>*/ }</p>
+
+<p>// Try to match an HTML block end line of type 2 bufsize_t _scan_html_block_end_2(const unsigned char *p) {</p>
+
+<pre class="ruby"><span class="ruby-identifier">const</span> <span class="ruby-identifier">unsigned</span> <span class="ruby-identifier">char</span> <span class="ruby-operator">*</span><span class="ruby-identifier">marker</span> = <span class="ruby-constant">NULL</span>;
+<span class="ruby-identifier">const</span> <span class="ruby-identifier">unsigned</span> <span class="ruby-identifier">char</span> <span class="ruby-operator">*</span><span class="ruby-identifier">start</span> = <span class="ruby-identifier">p</span>;
+</pre>
+
+<p>/*!re2c</p>
+
+<pre>[^\n\x00]* &#39;--&gt;&#39; { return (bufsize_t)(p - start); }
+* { return 0; }</pre>
+
+<p>*/ }</p>
+
+<p>// Try to match an HTML block end line of type 3 bufsize_t _scan_html_block_end_3(const unsigned char *p) {</p>
+
+<pre class="ruby"><span class="ruby-identifier">const</span> <span class="ruby-identifier">unsigned</span> <span class="ruby-identifier">char</span> <span class="ruby-operator">*</span><span class="ruby-identifier">marker</span> = <span class="ruby-constant">NULL</span>;
+<span class="ruby-identifier">const</span> <span class="ruby-identifier">unsigned</span> <span class="ruby-identifier">char</span> <span class="ruby-operator">*</span><span class="ruby-identifier">start</span> = <span class="ruby-identifier">p</span>;
+</pre>
+
+<p>/*!re2c</p>
+
+<pre>[^\n\x00]* &#39;?&gt;&#39; { return (bufsize_t)(p - start); }
+* { return 0; }</pre>
+
+<p>*/ }</p>
+
+<p>// Try to match an HTML block end line of type 4 bufsize_t _scan_html_block_end_4(const unsigned char *p) {</p>
+
+<pre class="ruby"><span class="ruby-identifier">const</span> <span class="ruby-identifier">unsigned</span> <span class="ruby-identifier">char</span> <span class="ruby-operator">*</span><span class="ruby-identifier">marker</span> = <span class="ruby-constant">NULL</span>;
+<span class="ruby-identifier">const</span> <span class="ruby-identifier">unsigned</span> <span class="ruby-identifier">char</span> <span class="ruby-operator">*</span><span class="ruby-identifier">start</span> = <span class="ruby-identifier">p</span>;
+</pre>
+
+<p>/*!re2c</p>
+
+<pre>[^\n\x00]* &#39;&gt;&#39; { return (bufsize_t)(p - start); }
+* { return 0; }</pre>
+
+<p>*/ }</p>
+
+<p>// Try to match an HTML block end line of type 5 bufsize_t _scan_html_block_end_5(const unsigned char *p) {</p>
+
+<pre class="ruby"><span class="ruby-identifier">const</span> <span class="ruby-identifier">unsigned</span> <span class="ruby-identifier">char</span> <span class="ruby-operator">*</span><span class="ruby-identifier">marker</span> = <span class="ruby-constant">NULL</span>;
+<span class="ruby-identifier">const</span> <span class="ruby-identifier">unsigned</span> <span class="ruby-identifier">char</span> <span class="ruby-operator">*</span><span class="ruby-identifier">start</span> = <span class="ruby-identifier">p</span>;
+</pre>
+
+<p>/*!re2c</p>
+
+<pre>[^\n\x00]* &#39;]]&gt;&#39; { return (bufsize_t)(p - start); }
+* { return 0; }</pre>
+
+<p>*/ }</p>
+
+<p>// Try to match a link title (in single quotes, in double quotes, or // in parentheses), returning number of chars matched.  Allow one // level of internal nesting (quotes within quotes). bufsize_t _scan_link_title(const unsigned char *p) {</p>
+
+<pre class="ruby"><span class="ruby-identifier">const</span> <span class="ruby-identifier">unsigned</span> <span class="ruby-identifier">char</span> <span class="ruby-operator">*</span><span class="ruby-identifier">marker</span> = <span class="ruby-constant">NULL</span>;
+<span class="ruby-identifier">const</span> <span class="ruby-identifier">unsigned</span> <span class="ruby-identifier">char</span> <span class="ruby-operator">*</span><span class="ruby-identifier">start</span> = <span class="ruby-identifier">p</span>;
+</pre>
+
+<p>/*!re2c</p>
+
+<pre>[&quot;] (escaped_char|[^&quot;\x00])* [&quot;]   { return (bufsize_t)(p - start); }
+[&#39;] (escaped_char|[^&#39;\x00])* [&#39;] { return (bufsize_t)(p - start); }
+[(] (escaped_char|[^)\x00])* [)]  { return (bufsize_t)(p - start); }
+* { return 0; }</pre>
+
+<p>*/ }</p>
+
+<p>// Match space characters, including newlines. bufsize_t _scan_spacechars(const unsigned char *p) {</p>
+
+<pre>const unsigned char *start = p; \</pre>
+
+<p>/*!re2c</p>
+
+<pre>[ \t\v\f\r\n]+ { return (bufsize_t)(p - start); }
+* { return 0; }</pre>
+
+<p>*/ }</p>
+
+<p>// Match ATX heading start. bufsize_t _scan_atx_heading_start(const unsigned char *p) {</p>
+
+<pre class="ruby"><span class="ruby-identifier">const</span> <span class="ruby-identifier">unsigned</span> <span class="ruby-identifier">char</span> <span class="ruby-operator">*</span><span class="ruby-identifier">marker</span> = <span class="ruby-constant">NULL</span>;
+<span class="ruby-identifier">const</span> <span class="ruby-identifier">unsigned</span> <span class="ruby-identifier">char</span> <span class="ruby-operator">*</span><span class="ruby-identifier">start</span> = <span class="ruby-identifier">p</span>;
+</pre>
+
+<p>/*!re2c</p>
+
+<pre>[#]{1,6} ([ \t]+|[\r\n])  { return (bufsize_t)(p - start); }
+* { return 0; }</pre>
+
+<p>*/ }</p>
+
+<p>// Match setext heading line.  Return 1 for level-1 heading, // 2 for level-2, 0 for no match. bufsize_t _scan_setext_heading_line(const unsigned char *p) {</p>
+
+<pre class="ruby"><span class="ruby-identifier">const</span> <span class="ruby-identifier">unsigned</span> <span class="ruby-identifier">char</span> <span class="ruby-operator">*</span><span class="ruby-identifier">marker</span> = <span class="ruby-constant">NULL</span>;
+</pre>
+
+<p>/*!re2c</p>
+
+<pre>[=]+ [ \t]* [\r\n] { return 1; }
+[-]+ [ \t]* [\r\n] { return 2; }
+* { return 0; }</pre>
+
+<p>*/ }</p>
+
+<p>// Scan a thematic break line: “…three or more hyphens, asterisks, // or underscores on a line by themselves. If you wish, you may use // spaces between the hyphens or asterisks.” bufsize_t _scan_thematic_break(const unsigned char *p) {</p>
+
+<pre class="ruby"><span class="ruby-identifier">const</span> <span class="ruby-identifier">unsigned</span> <span class="ruby-identifier">char</span> <span class="ruby-operator">*</span><span class="ruby-identifier">marker</span> = <span class="ruby-constant">NULL</span>;
+<span class="ruby-identifier">const</span> <span class="ruby-identifier">unsigned</span> <span class="ruby-identifier">char</span> <span class="ruby-operator">*</span><span class="ruby-identifier">start</span> = <span class="ruby-identifier">p</span>;
+</pre>
+
+<p>/*!re2c</p>
+
+<pre>([*][ \t]*){3,} [ \t]* [\r\n] { return (bufsize_t)(p - start); }
+([_][ \t]*){3,} [ \t]* [\r\n] { return (bufsize_t)(p - start); }
+([-][ \t]*){3,} [ \t]* [\r\n] { return (bufsize_t)(p - start); }
+* { return 0; }</pre>
+
+<p>*/ }</p>
+
+<p>// Scan an opening code fence. bufsize_t _scan_open_code_fence(const unsigned char *p) {</p>
+
+<pre class="ruby"><span class="ruby-identifier">const</span> <span class="ruby-identifier">unsigned</span> <span class="ruby-identifier">char</span> <span class="ruby-operator">*</span><span class="ruby-identifier">marker</span> = <span class="ruby-constant">NULL</span>;
+<span class="ruby-identifier">const</span> <span class="ruby-identifier">unsigned</span> <span class="ruby-identifier">char</span> <span class="ruby-operator">*</span><span class="ruby-identifier">start</span> = <span class="ruby-identifier">p</span>;
+</pre>
+
+<p>/*!re2c</p>
+
+<pre>[`]{3,} / [^`\r\n\x00]*[\r\n] { return (bufsize_t)(p - start); }
+[~]{3,} / [^~\r\n\x00]*[\r\n] { return (bufsize_t)(p - start); }
+* { return 0; }</pre>
+
+<p>*/ }</p>
+
+<p>// Scan a closing code fence with length at least len. bufsize_t _scan_close_code_fence(const unsigned char *p) {</p>
+
+<pre class="ruby"><span class="ruby-identifier">const</span> <span class="ruby-identifier">unsigned</span> <span class="ruby-identifier">char</span> <span class="ruby-operator">*</span><span class="ruby-identifier">marker</span> = <span class="ruby-constant">NULL</span>;
+<span class="ruby-identifier">const</span> <span class="ruby-identifier">unsigned</span> <span class="ruby-identifier">char</span> <span class="ruby-operator">*</span><span class="ruby-identifier">start</span> = <span class="ruby-identifier">p</span>;
+</pre>
+
+<p>/*!re2c</p>
+
+<pre>[`]{3,} / [ \t]*[\r\n] { return (bufsize_t)(p - start); }
+[~]{3,} / [ \t]*[\r\n] { return (bufsize_t)(p - start); }
+* { return 0; }</pre>
+
+<p>*/ }</p>
+
+<p>// Scans an entity. // Returns number of chars matched. bufsize_t _scan_entity(const unsigned char *p) {</p>
+
+<pre class="ruby"><span class="ruby-identifier">const</span> <span class="ruby-identifier">unsigned</span> <span class="ruby-identifier">char</span> <span class="ruby-operator">*</span><span class="ruby-identifier">marker</span> = <span class="ruby-constant">NULL</span>;
+<span class="ruby-identifier">const</span> <span class="ruby-identifier">unsigned</span> <span class="ruby-identifier">char</span> <span class="ruby-operator">*</span><span class="ruby-identifier">start</span> = <span class="ruby-identifier">p</span>;
+</pre>
+
+<p>/*!re2c</p>
+
+<pre>[&amp;] ([#] ([Xx][A-Fa-f0-9]{1,8}|[0-9]{1,8}) |[A-Za-z][A-Za-z0-9]{1,31} ) [;]
+   { return (bufsize_t)(p - start); }
+* { return 0; }</pre>
+
+<p>*/ }</p>
+
+<p>// Returns positive value if a URL begins in a way that is potentially // dangerous, with javascript:, vbscript:, file:, or data:, otherwise 0. bufsize_t _scan_dangerous_url(const unsigned char *p) {</p>
+
+<pre class="ruby"><span class="ruby-identifier">const</span> <span class="ruby-identifier">unsigned</span> <span class="ruby-identifier">char</span> <span class="ruby-operator">*</span><span class="ruby-identifier">marker</span> = <span class="ruby-constant">NULL</span>;
+<span class="ruby-identifier">const</span> <span class="ruby-identifier">unsigned</span> <span class="ruby-identifier">char</span> <span class="ruby-operator">*</span><span class="ruby-identifier">start</span> = <span class="ruby-identifier">p</span>;
+</pre>
+
+<p>/*!re2c</p>
+
+<pre>&#39;data:image/&#39; (&#39;png&#39;|&#39;gif&#39;|&#39;jpeg&#39;|&#39;webp&#39;) { return 0; }
+&#39;javascript:&#39; | &#39;vbscript:&#39; | &#39;file:&#39; | &#39;data:&#39; { return (bufsize_t)(p - start); }
+* { return 0; }</pre>
+
+<p>*/ }</p>
+
+<p>// Scans a footnote definition opening. bufsize_t _scan_footnote_definition(const unsigned char *p) {</p>
+
+<pre class="ruby"><span class="ruby-identifier">const</span> <span class="ruby-identifier">unsigned</span> <span class="ruby-identifier">char</span> <span class="ruby-operator">*</span><span class="ruby-identifier">marker</span> = <span class="ruby-constant">NULL</span>;
+<span class="ruby-identifier">const</span> <span class="ruby-identifier">unsigned</span> <span class="ruby-identifier">char</span> <span class="ruby-operator">*</span><span class="ruby-identifier">start</span> = <span class="ruby-identifier">p</span>;
+</pre>
+
+<p>/*!re2c</p>
+
+<pre>&#39;[^&#39; ([^\] \r\n\x00\t]+) &#39;]:&#39; [ \t]* { return (bufsize_t)(p - start); }
+* { return 0; }</pre>
+
+<p>*/ }</p>
+
+</main>
+
+
+
+<footer id="validator-badges" role="contentinfo">
+  <p><a href="https://validator.w3.org/check/referer">Validate</a>
+  <p>Generated by <a href="https://ruby.github.io/rdoc/">RDoc</a> 6.2.1.
+  <p>Based on <a href="http://deveiate.org/projects/Darkfish-RDoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
+</footer>
+

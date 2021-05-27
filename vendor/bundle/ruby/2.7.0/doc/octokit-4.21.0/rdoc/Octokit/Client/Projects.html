@@ -1,0 +1,1052 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="UTF-8">
+
+<title>module Octokit::Client::Projects - octokit-4.21.0 Documentation</title>
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../../";
+  var index_rel_prefix = "../../";
+</script>
+
+<script src="../../js/navigation.js" defer></script>
+<script src="../../js/search.js" defer></script>
+<script src="../../js/search_index.js" defer></script>
+<script src="../../js/searcher.js" defer></script>
+<script src="../../js/darkfish.js" defer></script>
+
+<link href="../../css/fonts.css" rel="stylesheet">
+<link href="../../css/rdoc.css" rel="stylesheet">
+
+
+
+
+<body id="top" role="document" class="module">
+<nav role="navigation">
+  <div id="project-navigation">
+    <div id="home-section" role="region" title="Quick navigation" class="nav-section">
+  <h2>
+    <a href="../../index.html" rel="home">Home</a>
+  </h2>
+
+  <div id="table-of-contents-navigation">
+    <a href="../../table_of_contents.html#pages">Pages</a>
+    <a href="../../table_of_contents.html#classes">Classes</a>
+    <a href="../../table_of_contents.html#methods">Methods</a>
+  </div>
+</div>
+
+    <div id="search-section" role="search" class="project-section initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <div id="search-field-wrapper">
+      <input id="search-field" role="combobox" aria-label="Search"
+             aria-autocomplete="list" aria-controls="search-results"
+             type="text" name="search" placeholder="Search" spellcheck="false"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </div>
+
+    <ul id="search-results" aria-label="Search Results"
+        aria-busy="false" aria-expanded="false"
+        aria-atomic="false" class="initially-hidden"></ul>
+  </form>
+</div>
+
+  </div>
+
+  
+
+  <div id="class-metadata">
+    
+    
+    
+    
+    <!-- Method Quickref -->
+<div id="method-list-section" class="nav-section">
+  <h3>Methods</h3>
+
+  <ul class="link-list" role="directory">
+    
+    <li ><a href="#method-i-column_cards">#column_cards</a>
+    
+    <li ><a href="#method-i-create_org_project">#create_org_project</a>
+    
+    <li ><a href="#method-i-create_organization_project">#create_organization_project</a>
+    
+    <li ><a href="#method-i-create_project">#create_project</a>
+    
+    <li ><a href="#method-i-create_project_card">#create_project_card</a>
+    
+    <li ><a href="#method-i-create_project_column">#create_project_column</a>
+    
+    <li ><a href="#method-i-delete_project">#delete_project</a>
+    
+    <li ><a href="#method-i-delete_project_card">#delete_project_card</a>
+    
+    <li ><a href="#method-i-delete_project_column">#delete_project_column</a>
+    
+    <li ><a href="#method-i-move_project_card">#move_project_card</a>
+    
+    <li ><a href="#method-i-move_project_column">#move_project_column</a>
+    
+    <li ><a href="#method-i-org_projects">#org_projects</a>
+    
+    <li ><a href="#method-i-organization_projects">#organization_projects</a>
+    
+    <li ><a href="#method-i-project">#project</a>
+    
+    <li ><a href="#method-i-project_card">#project_card</a>
+    
+    <li ><a href="#method-i-project_column">#project_column</a>
+    
+    <li ><a href="#method-i-project_columns">#project_columns</a>
+    
+    <li ><a href="#method-i-projects">#projects</a>
+    
+    <li ><a href="#method-i-update_project">#update_project</a>
+    
+    <li ><a href="#method-i-update_project_card">#update_project_card</a>
+    
+    <li ><a href="#method-i-update_project_column">#update_project_column</a>
+    
+  </ul>
+</div>
+
+  </div>
+</nav>
+
+<main role="main" aria-labelledby="module-Octokit::Client::Projects">
+  <h1 id="module-Octokit::Client::Projects" class="module">
+    module Octokit::Client::Projects
+  </h1>
+
+  <section class="description">
+    
+<p>Methods for <a href="Projects.html"><code>Projects</code></a> API</p>
+
+<p>@see <a href="https://developer.github.com/v3/repos/projects">developer.github.com/v3/repos/projects</a></p>
+
+  </section>
+
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+
+    
+
+    
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section">
+       <header>
+         <h3>Public Instance Methods</h3>
+       </header>
+
+    
+      <div id="method-i-column_cards" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">column_cards</span><span
+            class="method-args">(id, options = {})</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>List columns cards</p>
+
+<p>Requires authenticated client</p>
+
+<p>@param id [Integer] Project column id @return [Array&lt;Sawyer::Resource&gt;] Cards in the column @see <a href="https://developer.github.com/v3/projects/cards/#list-project-cards">developer.github.com/v3/projects/cards/#list-project-cards</a> @example</p>
+
+<pre class="ruby"><span class="ruby-ivar">@client</span>.<span class="ruby-identifier">column_cards</span>(<span class="ruby-value">30294</span>)
+</pre>
+          
+          
+
+          
+          <div class="method-source-code" id="column_cards-source">
+            <pre><span class="ruby-comment"># File lib/octokit/client/projects.rb, line 217</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">column_cards</span>(<span class="ruby-identifier">id</span>, <span class="ruby-identifier">options</span> = {})
+  <span class="ruby-identifier">opts</span> = <span class="ruby-identifier">ensure_api_media_type</span>(<span class="ruby-value">:projects</span>, <span class="ruby-identifier">options</span>)
+  <span class="ruby-identifier">paginate</span> <span class="ruby-node">&quot;projects/columns/#{id}/cards&quot;</span>, <span class="ruby-identifier">opts</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-create_org_project" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">create_org_project</span><span
+            class="method-args">(org, name, options = {})</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Create organization project</p>
+
+<p>Requires authenticated client</p>
+
+<p>@param org [String] A GitHub organization @param name [String] Project name @option options [String] :body Project body @return [Sawyer::Resource] <a href="../Organization.html"><code>Organization</code></a> project @see <a href="https://developer.github.com/v3/projects/#create-an-organization-project">developer.github.com/v3/projects/#create-an-organization-project</a> @example Create with only a name</p>
+
+<pre class="ruby"><span class="ruby-ivar">@client</span>.<span class="ruby-identifier">create_org_project</span>(<span class="ruby-string">&quot;octocat&quot;</span>, <span class="ruby-string">&quot;make more octocats&quot;</span>)
+</pre>
+
+<p>@example Create a project with name and body</p>
+
+<pre class="ruby"><span class="ruby-ivar">@client</span>.<span class="ruby-identifier">create_org_project</span>(<span class="ruby-string">&quot;octokit&quot;</span>, <span class="ruby-string">&quot;octocan&quot;</span>, <span class="ruby-value">body:</span> <span class="ruby-string">&#39;Improve clients&#39;</span>)
+</pre>
+          
+          
+
+          
+          <div class="method-source-code" id="create_org_project-source">
+            <pre><span class="ruby-comment"># File lib/octokit/client/projects.rb, line 71</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">create_org_project</span>(<span class="ruby-identifier">org</span>, <span class="ruby-identifier">name</span>, <span class="ruby-identifier">options</span> = {})
+  <span class="ruby-identifier">opts</span> = <span class="ruby-identifier">ensure_api_media_type</span>(<span class="ruby-value">:projects</span>, <span class="ruby-identifier">options</span>)
+  <span class="ruby-identifier">opts</span>[<span class="ruby-value">:name</span>] = <span class="ruby-identifier">name</span>
+  <span class="ruby-identifier">post</span> <span class="ruby-node">&quot;orgs/#{org}/projects&quot;</span>, <span class="ruby-identifier">opts</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+        <div class="aliases">
+          Also aliased as: <a href="Projects.html#method-i-create_organization_project">create_organization_project</a>
+        </div>
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-create_organization_project" class="method-detail method-alias">
+        
+        <div class="method-heading">
+          <span class="method-name">create_organization_project</span><span
+            class="method-args">(org, name, options = {})</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+        </div>
+
+        
+
+        
+        <div class="aliases">
+          Alias for: <a href="Projects.html#method-i-create_org_project">create_org_project</a>
+        </div>
+        
+      </div>
+
+    
+      <div id="method-i-create_project" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">create_project</span><span
+            class="method-args">(repo, name, options = {})</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Create a project</p>
+
+<p>Requires authenticated client</p>
+
+<p>@param repo [Integer, String, <a href="../Repository.html"><code>Repository</code></a>, Hash] A GitHub repository @param name [String] Project name @option options [String] :body Body of the project @return [Sawyer::Resource] Fresh new project @see <a href="https://developer.github.com/v3/projects/#create-a-repository-project">developer.github.com/v3/projects/#create-a-repository-project</a>  @example Create project with only a name</p>
+
+<pre class="ruby"><span class="ruby-ivar">@client</span>.<span class="ruby-identifier">create_project</span>(<span class="ruby-string">&#39;octokit/octokit.rb&#39;</span>, <span class="ruby-string">&#39;implement new APIs&#39;</span>)
+</pre>
+
+<p>@example Create project with name and body</p>
+
+<pre class="ruby"><span class="ruby-ivar">@client</span>.<span class="ruby-identifier">create_project</span>(<span class="ruby-string">&#39;octokit/octokit.rb&#39;</span>, <span class="ruby-string">&#39;bugs be gone&#39;</span>, <span class="ruby-value">body:</span> <span class="ruby-string">&#39;Fix all the bugs @joeyw creates&#39;</span>)
+</pre>
+          
+          
+
+          
+          <div class="method-source-code" id="create_project-source">
+            <pre><span class="ruby-comment"># File lib/octokit/client/projects.rb, line 37</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">create_project</span>(<span class="ruby-identifier">repo</span>, <span class="ruby-identifier">name</span>, <span class="ruby-identifier">options</span> = {})
+  <span class="ruby-identifier">opts</span> = <span class="ruby-identifier">ensure_api_media_type</span>(<span class="ruby-value">:projects</span>, <span class="ruby-identifier">options</span>)
+  <span class="ruby-identifier">opts</span>[<span class="ruby-value">:name</span>] = <span class="ruby-identifier">name</span>
+  <span class="ruby-identifier">post</span> <span class="ruby-node">&quot;#{Repository.path repo}/projects&quot;</span>, <span class="ruby-identifier">opts</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-create_project_card" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">create_project_card</span><span
+            class="method-args">(id, options = {})</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Create project card</p>
+
+<p>Requires authenticated client</p>
+
+<p>@param id [Integer] Project column id @option options [String] :note Card contents for a note type @option options [Integer] :content_id Issue ID for the card contents @option options [String] :content_type Type of content to associate</p>
+
+<pre>with the card. &lt;tt&gt;Issue&lt;/tt&gt; is presently the only avaiable value</pre>
+
+<p>@note If :note is supplied, :content_id and :content_type must be</p>
+
+<pre>excluded. Similarly, if :content_id is supplied, :content_type must
+be set and :note must not be included.</pre>
+
+<p>@return [Sawyer::Resource] Newly created card @see <a href="https://developer.github.com/v3/projects/cards/#create-a-project-card">developer.github.com/v3/projects/cards/#create-a-project-card</a> @example Create a project card with a note</p>
+
+<pre class="ruby"><span class="ruby-ivar">@client</span>.<span class="ruby-identifier">create_project_card</span>(<span class="ruby-value">123495</span>, <span class="ruby-value">note:</span> <span class="ruby-string">&#39;New note card&#39;</span>)
+</pre>
+
+<p>@example Create a project card for an repository issue</p>
+
+<pre class="ruby"><span class="ruby-ivar">@client</span>.<span class="ruby-identifier">create_project_card</span>(<span class="ruby-value">123495</span>, <span class="ruby-value">content_id:</span> <span class="ruby-value">1</span>, <span class="ruby-value">content_type:</span> <span class="ruby-string">&#39;Issue&#39;</span>)
+</pre>
+          
+          
+
+          
+          <div class="method-source-code" id="create_project_card-source">
+            <pre><span class="ruby-comment"># File lib/octokit/client/projects.rb, line 240</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">create_project_card</span>(<span class="ruby-identifier">id</span>, <span class="ruby-identifier">options</span> = {})
+  <span class="ruby-identifier">opts</span> = <span class="ruby-identifier">ensure_api_media_type</span>(<span class="ruby-value">:projects</span>, <span class="ruby-identifier">options</span>)
+  <span class="ruby-identifier">post</span> <span class="ruby-node">&quot;projects/columns/#{id}/cards&quot;</span>, <span class="ruby-identifier">opts</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-create_project_column" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">create_project_column</span><span
+            class="method-args">(id, name, options = {})</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Create a project column</p>
+
+<p>Requires authenticated client</p>
+
+<p>@param id [Integer] Project column id @param name [String] New column name @return [Sawyer::Resource] Newly created column @see <a href="https://developer.github.com/v3/projects/columns/#create-a-project-column">developer.github.com/v3/projects/columns/#create-a-project-column</a>  @example</p>
+
+<pre class="ruby"><span class="ruby-ivar">@client</span>.<span class="ruby-identifier">create_project_column</span>(<span class="ruby-value">123942</span>, <span class="ruby-string">&quot;To Dones&quot;</span>)
+</pre>
+          
+          
+
+          
+          <div class="method-source-code" id="create_project_column-source">
+            <pre><span class="ruby-comment"># File lib/octokit/client/projects.rb, line 142</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">create_project_column</span>(<span class="ruby-identifier">id</span>, <span class="ruby-identifier">name</span>, <span class="ruby-identifier">options</span> = {})
+  <span class="ruby-identifier">opts</span> = <span class="ruby-identifier">ensure_api_media_type</span>(<span class="ruby-value">:projects</span>, <span class="ruby-identifier">options</span>)
+  <span class="ruby-identifier">opts</span>[<span class="ruby-value">:name</span>] = <span class="ruby-identifier">name</span>
+  <span class="ruby-identifier">post</span> <span class="ruby-node">&quot;projects/#{id}/columns&quot;</span>, <span class="ruby-identifier">opts</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-delete_project" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">delete_project</span><span
+            class="method-args">(id, options = {})</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Delete a project</p>
+
+<p>Requires authenticated client</p>
+
+<p>@param id [Integer] Project id @return [Boolean] Result of deletion @see <a href="https://developer.github.com/v3/projects/#delete-a-project">developer.github.com/v3/projects/#delete-a-project</a>  @example</p>
+
+<pre class="ruby"><span class="ruby-ivar">@client</span>.<span class="ruby-identifier">delete_project</span>(<span class="ruby-value">123942</span>)
+</pre>
+          
+          
+
+          
+          <div class="method-source-code" id="delete_project-source">
+            <pre><span class="ruby-comment"># File lib/octokit/client/projects.rb, line 115</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">delete_project</span>(<span class="ruby-identifier">id</span>, <span class="ruby-identifier">options</span> = {})
+  <span class="ruby-identifier">opts</span> = <span class="ruby-identifier">ensure_api_media_type</span>(<span class="ruby-value">:projects</span>, <span class="ruby-identifier">options</span>)
+  <span class="ruby-identifier">boolean_from_response</span> <span class="ruby-value">:delete</span>, <span class="ruby-node">&quot;projects/#{id}&quot;</span>, <span class="ruby-identifier">opts</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-delete_project_card" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">delete_project_card</span><span
+            class="method-args">(id, options = {})</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Delete a project card</p>
+
+<p>Requires authenticated client</p>
+
+<p>@param id [Integer] Project card id @return [Boolean] True of deleted, false otherwise @see <a href="https://developer.github.com/v3/projects/cards/#delete-a-project-card">developer.github.com/v3/projects/cards/#delete-a-project-card</a> @example</p>
+
+<pre class="ruby"><span class="ruby-ivar">@client</span>.<span class="ruby-identifier">delete_project_card</span>(<span class="ruby-value">123495</span>)
+</pre>
+          
+          
+
+          
+          <div class="method-source-code" id="delete_project_card-source">
+            <pre><span class="ruby-comment"># File lib/octokit/client/projects.rb, line 307</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">delete_project_card</span>(<span class="ruby-identifier">id</span>, <span class="ruby-identifier">options</span> = {})
+  <span class="ruby-identifier">opts</span> = <span class="ruby-identifier">ensure_api_media_type</span>(<span class="ruby-value">:projects</span>, <span class="ruby-identifier">options</span>)
+  <span class="ruby-identifier">boolean_from_response</span> <span class="ruby-value">:delete</span>, <span class="ruby-node">&quot;projects/columns/cards/#{id}&quot;</span>, <span class="ruby-identifier">opts</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-delete_project_column" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">delete_project_column</span><span
+            class="method-args">(id, options = {})</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Delete a project column</p>
+
+<p>Requires authenticated client</p>
+
+<p>@param id [Integer] Project column id @return [Boolean] Result of deletion request, true when deleted @see <a href="https://developer.github.com/v3/projects/columns/#delete-a-project-column">developer.github.com/v3/projects/columns/#delete-a-project-column</a>  @example</p>
+
+<pre class="ruby"><span class="ruby-ivar">@client</span>.<span class="ruby-identifier">delete_project_column</span>(<span class="ruby-value">30294</span>)
+</pre>
+          
+          
+
+          
+          <div class="method-source-code" id="delete_project_column-source">
+            <pre><span class="ruby-comment"># File lib/octokit/client/projects.rb, line 185</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">delete_project_column</span>(<span class="ruby-identifier">id</span>, <span class="ruby-identifier">options</span> = {})
+  <span class="ruby-identifier">opts</span> = <span class="ruby-identifier">ensure_api_media_type</span>(<span class="ruby-value">:projects</span>, <span class="ruby-identifier">options</span>)
+  <span class="ruby-identifier">boolean_from_response</span> <span class="ruby-value">:delete</span>, <span class="ruby-node">&quot;projects/columns/#{id}&quot;</span>, <span class="ruby-identifier">opts</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-move_project_card" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">move_project_card</span><span
+            class="method-args">(id, position, options = {})</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Move a project card</p>
+
+<p>Requires authenticated client</p>
+
+<p>@param id [Integer] Project card id @param position [String] Can be one of <code>top</code>, <code>bottom</code>,</p>
+
+<pre>or &lt;tt&gt;after:&lt;card-id&gt;&lt;/tt&gt;, where &lt;card-id&gt; is the id value of a
+card in the same column, or in the new column specified by column_id.</pre>
+
+<p>@option options [Integer] :column_id The column id to move the card to,</p>
+
+<pre>must be column in same project</pre>
+
+<p>@return [Sawyer::Resource] Empty sawyer resource @see <a href="https://developer.github.com/v3/projects/cards/#move-a-project-card">developer.github.com/v3/projects/cards/#move-a-project-card</a> @example Move a card to the bottom of the same column</p>
+
+<pre class="ruby"><span class="ruby-ivar">@client</span>.<span class="ruby-identifier">move_project_card</span>(<span class="ruby-value">123495</span>, <span class="ruby-string">&#39;bottom&#39;</span>)
+</pre>
+
+<p>@example Move a card to the top of another column</p>
+
+<pre class="ruby"><span class="ruby-ivar">@client</span>.<span class="ruby-identifier">move_project_card</span>(<span class="ruby-value">123495</span>, <span class="ruby-string">&#39;top&#39;</span>, <span class="ruby-value">column_id:</span> <span class="ruby-value">59402</span>)
+</pre>
+          
+          
+
+          
+          <div class="method-source-code" id="move_project_card-source">
+            <pre><span class="ruby-comment"># File lib/octokit/client/projects.rb, line 292</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">move_project_card</span>(<span class="ruby-identifier">id</span>, <span class="ruby-identifier">position</span>, <span class="ruby-identifier">options</span> = {})
+  <span class="ruby-identifier">opts</span> = <span class="ruby-identifier">ensure_api_media_type</span>(<span class="ruby-value">:projects</span>, <span class="ruby-identifier">options</span>)
+  <span class="ruby-identifier">opts</span>[<span class="ruby-value">:position</span>] = <span class="ruby-identifier">position</span>
+  <span class="ruby-identifier">post</span> <span class="ruby-node">&quot;projects/columns/cards/#{id}/moves&quot;</span>, <span class="ruby-identifier">opts</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-move_project_column" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">move_project_column</span><span
+            class="method-args">(id, position, options = {})</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Move a project column</p>
+
+<p>Requires authenticated client</p>
+
+<p>@param id [Integer] Project column id @param position [String] New position for the column. Can be one of </p>
+
+<pre>&lt;tt&gt;first&lt;/tt&gt;, &lt;tt&gt;last&lt;/tt&gt;, or &lt;tt&gt;after:&lt;column-id&gt;&lt;/tt&gt;, where
+&lt;tt&gt;&lt;column-id&gt;&lt;/tt&gt; is the id value of a column in the same project.</pre>
+
+<p>@return [Sawyer::Resource] Result @see <a href="https://developer.github.com/v3/projects/columns/#move-a-project-column">developer.github.com/v3/projects/columns/#move-a-project-column</a> @example</p>
+
+<pre class="ruby"><span class="ruby-ivar">@client</span>.<span class="ruby-identifier">move_project_column</span>(<span class="ruby-value">30294</span>, <span class="ruby-string">&quot;last&quot;</span>)
+</pre>
+          
+          
+
+          
+          <div class="method-source-code" id="move_project_column-source">
+            <pre><span class="ruby-comment"># File lib/octokit/client/projects.rb, line 202</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">move_project_column</span>(<span class="ruby-identifier">id</span>, <span class="ruby-identifier">position</span>, <span class="ruby-identifier">options</span> = {})
+  <span class="ruby-identifier">opts</span> = <span class="ruby-identifier">ensure_api_media_type</span>(<span class="ruby-value">:projects</span>, <span class="ruby-identifier">options</span>)
+  <span class="ruby-identifier">opts</span>[<span class="ruby-value">:position</span>] = <span class="ruby-identifier">position</span>
+  <span class="ruby-identifier">post</span> <span class="ruby-node">&quot;projects/columns/#{id}/moves&quot;</span>, <span class="ruby-identifier">opts</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-org_projects" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">org_projects</span><span
+            class="method-args">(org, options = {})</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>List organization projects</p>
+
+<p>Requires authenticated client</p>
+
+<p>@param org [String] A GitHub organization @return [Array&lt;Sawyer::Resource&gt;] <a href="../Organization.html"><code>Organization</code></a> projects @see <a href="https://developer.github.com/v3/projects/#list-organization-projects">developer.github.com/v3/projects/#list-organization-projects</a> @example</p>
+
+<pre class="ruby"><span class="ruby-ivar">@client</span>.<span class="ruby-identifier">org_projects</span>(<span class="ruby-string">&quot;octokit&quot;</span>)
+</pre>
+          
+          
+
+          
+          <div class="method-source-code" id="org_projects-source">
+            <pre><span class="ruby-comment"># File lib/octokit/client/projects.rb, line 52</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">org_projects</span>(<span class="ruby-identifier">org</span>, <span class="ruby-identifier">options</span> = {})
+  <span class="ruby-identifier">opts</span> = <span class="ruby-identifier">ensure_api_media_type</span>(<span class="ruby-value">:projects</span>, <span class="ruby-identifier">options</span>)
+  <span class="ruby-identifier">paginate</span> <span class="ruby-node">&quot;orgs/#{org}/projects&quot;</span>, <span class="ruby-identifier">opts</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+        <div class="aliases">
+          Also aliased as: <a href="Projects.html#method-i-organization_projects">organization_projects</a>
+        </div>
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-organization_projects" class="method-detail method-alias">
+        
+        <div class="method-heading">
+          <span class="method-name">organization_projects</span><span
+            class="method-args">(org, options = {})</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+        </div>
+
+        
+
+        
+        <div class="aliases">
+          Alias for: <a href="Projects.html#method-i-org_projects">org_projects</a>
+        </div>
+        
+      </div>
+
+    
+      <div id="method-i-project" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">project</span><span
+            class="method-args">(id, options = {})</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Get a project by id </p>
+
+<p>@param id [Integer] Project id @return [Sawyer::Resource] Project @see <a href="https://developer.github.com/v3/projects/#get-a-project">developer.github.com/v3/projects/#get-a-project</a>  @example</p>
+
+<pre class="ruby"><span class="ruby-constant">Octokit</span>.<span class="ruby-identifier">project</span>(<span class="ruby-value">123942</span>)
+</pre>
+          
+          
+
+          
+          <div class="method-source-code" id="project-source">
+            <pre><span class="ruby-comment"># File lib/octokit/client/projects.rb, line 85</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">project</span>(<span class="ruby-identifier">id</span>, <span class="ruby-identifier">options</span> = {})
+  <span class="ruby-identifier">opts</span> = <span class="ruby-identifier">ensure_api_media_type</span>(<span class="ruby-value">:projects</span>, <span class="ruby-identifier">options</span>)
+  <span class="ruby-identifier">get</span> <span class="ruby-node">&quot;projects/#{id}&quot;</span>, <span class="ruby-identifier">opts</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-project_card" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">project_card</span><span
+            class="method-args">(id, options = {})</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Get a project card</p>
+
+<p>Requires authenticated client</p>
+
+<p>@param id [Integer] Project card id @return [Sawyer::Resource] Project card @see <a href="https://developer.github.com/v3/projects/cards/#get-a-project-card">developer.github.com/v3/projects/cards/#get-a-project-card</a> @example</p>
+
+<pre class="ruby"><span class="ruby-ivar">@client</span>.<span class="ruby-identifier">project_card</span>(<span class="ruby-value">123495</span>)
+</pre>
+          
+          
+
+          
+          <div class="method-source-code" id="project_card-source">
+            <pre><span class="ruby-comment"># File lib/octokit/client/projects.rb, line 254</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">project_card</span>(<span class="ruby-identifier">id</span>, <span class="ruby-identifier">options</span> = {})
+  <span class="ruby-identifier">opts</span> = <span class="ruby-identifier">ensure_api_media_type</span>(<span class="ruby-value">:projects</span>, <span class="ruby-identifier">options</span>)
+  <span class="ruby-identifier">get</span> <span class="ruby-node">&quot;projects/columns/cards/#{id}&quot;</span>, <span class="ruby-identifier">opts</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-project_column" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">project_column</span><span
+            class="method-args">(id, options = {})</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Get a project column by ID</p>
+
+<p>@param id [Integer] Project column id @return [Sawyer::Resource] Project column @see <a href="https://developer.github.com/v3/projects/columns/#get-a-project-column">developer.github.com/v3/projects/columns/#get-a-project-column</a>  @example</p>
+
+<pre class="ruby"><span class="ruby-constant">Octokit</span>.<span class="ruby-identifier">project_column</span>(<span class="ruby-value">30294</span>)
+</pre>
+          
+          
+
+          
+          <div class="method-source-code" id="project_column-source">
+            <pre><span class="ruby-comment"># File lib/octokit/client/projects.rb, line 155</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">project_column</span>(<span class="ruby-identifier">id</span>, <span class="ruby-identifier">options</span> = {})
+  <span class="ruby-identifier">opts</span> = <span class="ruby-identifier">ensure_api_media_type</span>(<span class="ruby-value">:projects</span>, <span class="ruby-identifier">options</span>)
+  <span class="ruby-identifier">get</span> <span class="ruby-node">&quot;projects/columns/#{id}&quot;</span>, <span class="ruby-identifier">opts</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-project_columns" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">project_columns</span><span
+            class="method-args">(id, options = {})</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>List project columns</p>
+
+<p>@param id [Integer] Project id  @return [Array&lt;Sawyer::Resource&gt;] List of project columns @see <a href="https://developer.github.com/v3/projects/columns/#list-project-columns">developer.github.com/v3/projects/columns/#list-project-columns</a>  @example</p>
+
+<pre class="ruby"><span class="ruby-ivar">@client</span>.<span class="ruby-identifier">project_columns</span>(<span class="ruby-value">123942</span>)
+</pre>
+          
+          
+
+          
+          <div class="method-source-code" id="project_columns-source">
+            <pre><span class="ruby-comment"># File lib/octokit/client/projects.rb, line 127</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">project_columns</span>(<span class="ruby-identifier">id</span>, <span class="ruby-identifier">options</span> = {})
+  <span class="ruby-identifier">opts</span> = <span class="ruby-identifier">ensure_api_media_type</span>(<span class="ruby-value">:projects</span>, <span class="ruby-identifier">options</span>)
+  <span class="ruby-identifier">paginate</span> <span class="ruby-node">&quot;projects/#{id}/columns&quot;</span>, <span class="ruby-identifier">opts</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-projects" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">projects</span><span
+            class="method-args">(repo, options = {})</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>List projects for a repository</p>
+
+<p>Requires authenticated client</p>
+
+<p>@param repo [Integer, String, <a href="../Repository.html"><code>Repository</code></a>, Hash] A GitHub repository @return [Array&lt;Sawyer::Resource&gt;] <a href="../Repository.html"><code>Repository</code></a> projects @see <a href="https://developer.github.com/v3/projects/#list-repository-projects">developer.github.com/v3/projects/#list-repository-projects</a>  @example</p>
+
+<pre class="ruby"><span class="ruby-ivar">@client</span>.<span class="ruby-identifier">projects</span>(<span class="ruby-string">&#39;octokit/octokit.rb&#39;</span>)
+</pre>
+          
+          
+
+          
+          <div class="method-source-code" id="projects-source">
+            <pre><span class="ruby-comment"># File lib/octokit/client/projects.rb, line 18</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">projects</span>(<span class="ruby-identifier">repo</span>, <span class="ruby-identifier">options</span> = {})
+  <span class="ruby-identifier">opts</span> = <span class="ruby-identifier">ensure_api_media_type</span>(<span class="ruby-value">:projects</span>, <span class="ruby-identifier">options</span>)
+  <span class="ruby-identifier">paginate</span> <span class="ruby-node">&quot;#{Repository.path repo}/projects&quot;</span>, <span class="ruby-identifier">opts</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-update_project" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">update_project</span><span
+            class="method-args">(id, options = {})</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Update a project</p>
+
+<p>Requires authenticated client</p>
+
+<p>@param id [Integer] Project id @option options [String] :name Project name @option options [String] :body Project body @return [Sawyer::Resource] Project @see <a href="https://developer.github.com/v3/projects/#update-a-project">developer.github.com/v3/projects/#update-a-project</a>  @example Update project name</p>
+
+<pre class="ruby"><span class="ruby-ivar">@client</span>.<span class="ruby-identifier">update_project</span>(<span class="ruby-value">123942</span>, <span class="ruby-value">name:</span> <span class="ruby-string">&#39;New name&#39;</span>)
+</pre>
+          
+          
+
+          
+          <div class="method-source-code" id="update_project-source">
+            <pre><span class="ruby-comment"># File lib/octokit/client/projects.rb, line 101</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">update_project</span>(<span class="ruby-identifier">id</span>, <span class="ruby-identifier">options</span> = {})
+  <span class="ruby-identifier">opts</span> = <span class="ruby-identifier">ensure_api_media_type</span>(<span class="ruby-value">:projects</span>, <span class="ruby-identifier">options</span>)
+  <span class="ruby-identifier">patch</span> <span class="ruby-node">&quot;projects/#{id}&quot;</span>, <span class="ruby-identifier">opts</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-update_project_card" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">update_project_card</span><span
+            class="method-args">(id, options = {})</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Update a project card</p>
+
+<p>Requires authenticated client</p>
+
+<p>@param id [Integer] Project card id @option options [String] :note The card&#39;s note content. Only valid for</p>
+
+<pre>cards without another type of content, so this cannot be specified if
+the card already has a content_id and content_type.</pre>
+
+<p>@return [Sawyer::Resource] Updated project card @see <a href="https://developer.github.com/v3/projects/cards/#update-a-project-card">developer.github.com/v3/projects/cards/#update-a-project-card</a> @example</p>
+
+<pre class="ruby"><span class="ruby-ivar">@client</span>.<span class="ruby-identifier">update_project_card</span>(<span class="ruby-value">12345</span>, <span class="ruby-value">note:</span> <span class="ruby-string">&#39;new note&#39;</span>)
+</pre>
+          
+          
+
+          
+          <div class="method-source-code" id="update_project_card-source">
+            <pre><span class="ruby-comment"># File lib/octokit/client/projects.rb, line 271</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">update_project_card</span>(<span class="ruby-identifier">id</span>, <span class="ruby-identifier">options</span> = {})
+  <span class="ruby-identifier">opts</span> = <span class="ruby-identifier">ensure_api_media_type</span>(<span class="ruby-value">:projects</span>, <span class="ruby-identifier">options</span>)
+  <span class="ruby-identifier">patch</span> <span class="ruby-node">&quot;projects/columns/cards/#{id}&quot;</span>, <span class="ruby-identifier">opts</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-update_project_column" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">update_project_column</span><span
+            class="method-args">(id, name, options = {})</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Update a project column</p>
+
+<p>Requires authenticated client</p>
+
+<p>@param id [Integer] Project column id @param name [String] New column name @return [Sawyer::Resource] Updated column @see <a href="https://developer.github.com/v3/projects/columns/#update-a-project-column">developer.github.com/v3/projects/columns/#update-a-project-column</a>  @example</p>
+
+<pre class="ruby"><span class="ruby-ivar">@client</span>.<span class="ruby-identifier">update_project_column</span>(<span class="ruby-value">30294</span>, <span class="ruby-string">&quot;new column name&quot;</span>)
+</pre>
+          
+          
+
+          
+          <div class="method-source-code" id="update_project_column-source">
+            <pre><span class="ruby-comment"># File lib/octokit/client/projects.rb, line 170</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">update_project_column</span>(<span class="ruby-identifier">id</span>, <span class="ruby-identifier">name</span>, <span class="ruby-identifier">options</span> = {})
+  <span class="ruby-identifier">opts</span> = <span class="ruby-identifier">ensure_api_media_type</span>(<span class="ruby-value">:projects</span>, <span class="ruby-identifier">options</span>)
+  <span class="ruby-identifier">opts</span>[<span class="ruby-value">:name</span>] = <span class="ruby-identifier">name</span>
+  <span class="ruby-identifier">patch</span> <span class="ruby-node">&quot;projects/columns/#{id}&quot;</span>, <span class="ruby-identifier">opts</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+    </section>
+  
+  </section>
+
+</main>
+
+
+<footer id="validator-badges" role="contentinfo">
+  <p><a href="https://validator.w3.org/check/referer">Validate</a>
+  <p>Generated by <a href="https://ruby.github.io/rdoc/">RDoc</a> 6.2.1.
+  <p>Based on <a href="http://deveiate.org/projects/Darkfish-RDoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
+</footer>
+

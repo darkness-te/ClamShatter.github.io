@@ -1,0 +1,681 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="UTF-8">
+
+<title>module Faraday - faraday-1.4.2 Documentation</title>
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "./";
+  var index_rel_prefix = "./";
+</script>
+
+<script src="./js/navigation.js" defer></script>
+<script src="./js/search.js" defer></script>
+<script src="./js/search_index.js" defer></script>
+<script src="./js/searcher.js" defer></script>
+<script src="./js/darkfish.js" defer></script>
+
+<link href="./css/fonts.css" rel="stylesheet">
+<link href="./css/rdoc.css" rel="stylesheet">
+
+
+
+
+<body id="top" role="document" class="module">
+<nav role="navigation">
+  <div id="project-navigation">
+    <div id="home-section" role="region" title="Quick navigation" class="nav-section">
+  <h2>
+    <a href="./index.html" rel="home">Home</a>
+  </h2>
+
+  <div id="table-of-contents-navigation">
+    <a href="./table_of_contents.html#pages">Pages</a>
+    <a href="./table_of_contents.html#classes">Classes</a>
+    <a href="./table_of_contents.html#methods">Methods</a>
+  </div>
+</div>
+
+    <div id="search-section" role="search" class="project-section initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <div id="search-field-wrapper">
+      <input id="search-field" role="combobox" aria-label="Search"
+             aria-autocomplete="list" aria-controls="search-results"
+             type="text" name="search" placeholder="Search" spellcheck="false"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </div>
+
+    <ul id="search-results" aria-label="Search Results"
+        aria-busy="false" aria-expanded="false"
+        aria-atomic="false" class="initially-hidden"></ul>
+  </form>
+</div>
+
+  </div>
+
+  
+
+  <div id="class-metadata">
+    
+    
+    
+    
+    <!-- Method Quickref -->
+<div id="method-list-section" class="nav-section">
+  <h3>Methods</h3>
+
+  <ul class="link-list" role="directory">
+    
+    <li ><a href="#method-c-default_adapter-3D">::default_adapter=</a>
+    
+    <li ><a href="#method-c-default_connection">::default_connection</a>
+    
+    <li ><a href="#method-c-default_connection_options">::default_connection_options</a>
+    
+    <li ><a href="#method-c-default_connection_options-3D">::default_connection_options=</a>
+    
+    <li class="calls-super" ><a href="#method-c-method_missing">::method_missing</a>
+    
+    <li ><a href="#method-c-new">::new</a>
+    
+    <li ><a href="#method-c-require_lib">::require_lib</a>
+    
+    <li ><a href="#method-c-require_libs">::require_libs</a>
+    
+    <li class="calls-super" ><a href="#method-c-respond_to_missing-3F">::respond_to_missing?</a>
+    
+  </ul>
+</div>
+
+  </div>
+</nav>
+
+<main role="main" aria-labelledby="module-Faraday">
+  <h1 id="module-Faraday" class="module">
+    module Faraday
+  </h1>
+
+  <section class="description">
+    
+<p>This is the main namespace for <a href="Faraday.html"><code>Faraday</code></a>.</p>
+
+<p>It provides methods to create {Connection} objects, and HTTP-related methods to use directly.</p>
+
+<p>@example Helpful class methods for easy usage</p>
+
+<pre class="ruby"><span class="ruby-constant">Faraday</span>.<span class="ruby-identifier">get</span> <span class="ruby-string">&quot;http://faraday.com&quot;</span>
+</pre>
+
+<p>@example Helpful class method `.new` to create {Connection} objects.</p>
+
+<pre class="ruby"><span class="ruby-identifier">conn</span> = <span class="ruby-constant">Faraday</span>.<span class="ruby-identifier">new</span> <span class="ruby-string">&quot;http://faraday.com&quot;</span>
+<span class="ruby-identifier">conn</span>.<span class="ruby-identifier">get</span> <span class="ruby-string">&#39;/&#39;</span>
+</pre>
+
+<p><a href="Faraday.html"><code>Faraday</code></a> namespace.</p>
+
+  </section>
+
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+    <section class="constants-list">
+      <header>
+        <h3>Constants</h3>
+      </header>
+      <dl>
+      
+        <dt id="FilePart">FilePart
+        
+        <dd><p>@!method initialize(filename_or_io, content_type, filename = nil, opts = {})</p>
+
+<pre>@param filename_or_io [String, IO] Either a String filename to a local
+  file or an open IO object.
+@param content_type [String] String content type of the file data.
+@param filename [String] Optional String filename, usually to add context
+  to a given IO object.
+@param opts [Hash] Optional Hash of String key/value pairs to describethis
+  this uploaded file. Expected Header keys include:
+  * Content-Transfer-Encoding - Defaults to &quot;binary&quot;
+  * Content-Disposition - Defaults to &quot;form-data&quot;
+  * Content-Type - Defaults to the content_type argument.
+  * Content-ID - Optional.</pre>
+
+<p>@return [Faraday::FilePart]</p>
+
+<p>@!attribute [r] content_type The uploaded binary data&#39;s content type.</p>
+
+<p>@return [String]</p>
+
+<p>@!attribute [r] original_filename The base filename, taken either from the filename_or_io or filename arguments in initialize.</p>
+
+<p>@return [String]</p>
+
+<p>@!attribute [r] opts Extra String key/value pairs to make up the header for this uploaded file.</p>
+
+<p>@return [Hash]</p>
+
+<p>@!attribute [r] io The open IO object for the uploaded file.</p>
+
+<p>@return [IO]</p>
+        
+      
+        <dt id="METHODS_WITH_BODY">METHODS_WITH_BODY
+        
+        <dd>
+        
+      
+        <dt id="METHODS_WITH_QUERY">METHODS_WITH_QUERY
+        
+        <dd>
+        
+      
+        <dt id="Parts">Parts
+        
+        <dd>
+        
+      
+        <dt id="Timer">Timer
+        
+        <dd>
+        
+      
+        <dt id="UploadIO">UploadIO
+        
+        <dd><p>Multipart value used to POST a file.</p>
+
+<p>@deprecated Use <a href="Faraday.html#FilePart"><code>FilePart</code></a> instead of this class. It behaves identically, with</p>
+
+<pre>a matching name to ParamPart.</pre>
+        
+      
+        <dt id="VERSION">VERSION
+        
+        <dd>
+        
+      
+      </dl>
+    </section>
+    
+
+    
+    <section class="attribute-method-details" class="method-section">
+      <header>
+        <h3>Attributes</h3>
+      </header>
+
+      
+      <div id="attribute-c-default_adapter" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">default_adapter</span><span
+            class="attribute-access-type">[R]</span>
+        </div>
+
+        <div class="method-description">
+        
+        <p>@overload <a href="Faraday.html#attribute-c-default_adapter"><code>default_adapter</code></a></p>
+
+<pre>Gets the Symbol key identifying a default Adapter to use
+for the default {Faraday::Connection}. Defaults to `:net_http`.
+@return [Symbol] the default adapter</pre>
+
+<p>@overload <a href="Faraday.html#attribute-c-default_adapter"><code>default_adapter</code></a>=(adapter)</p>
+
+<pre>Updates default adapter while resetting {.default_connection}.
+@return [Symbol] the new default_adapter.</pre>
+        
+        </div>
+      </div>
+      
+      <div id="attribute-c-default_connection" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">default_connection</span><span
+            class="attribute-access-type">[W]</span>
+        </div>
+
+        <div class="method-description">
+        
+        <p>Documented below, see <a href="Faraday.html#method-c-default_connection"><code>default_connection</code></a></p>
+        
+        </div>
+      </div>
+      
+      <div id="attribute-c-ignore_env_proxy" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">ignore_env_proxy</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        <p>Tells <a href="Faraday.html"><code>Faraday</code></a> to ignore the environment proxy (http_proxy). Defaults to `false`. @return [Boolean]</p>
+        
+        </div>
+      </div>
+      
+      <div id="attribute-c-lib_path" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">lib_path</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        <p>Gets or sets the path that the <a href="Faraday.html"><code>Faraday</code></a> libs are loaded from. @return [String]</p>
+        
+        </div>
+      </div>
+      
+      <div id="attribute-c-root_path" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">root_path</span><span
+            class="attribute-access-type">[RW]</span>
+        </div>
+
+        <div class="method-description">
+        
+        <p>The root path that <a href="Faraday.html"><code>Faraday</code></a> is being loaded from.</p>
+
+<p>This is the root from where the libraries are auto-loaded.</p>
+
+<p>@return [String]</p>
+        
+        </div>
+      </div>
+      
+    </section>
+    
+
+    
+     <section id="public-class-5Buntitled-5D-method-details" class="method-section">
+       <header>
+         <h3>Public Class Methods</h3>
+       </header>
+
+    
+      <div id="method-c-default_adapter-3D" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">default_adapter=</span><span
+            class="method-args">(adapter)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Documented elsewhere, see <a href="Faraday.html#attribute-c-default_adapter"><code>default_adapter</code></a> reader</p>
+          
+          
+
+          
+          <div class="method-source-code" id="default_adapter-3D-source">
+            <pre><span class="ruby-comment"># File lib/faraday.rb, line 124</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">default_adapter=</span>(<span class="ruby-identifier">adapter</span>)
+  <span class="ruby-ivar">@default_connection</span> = <span class="ruby-keyword">nil</span>
+  <span class="ruby-ivar">@default_adapter</span> = <span class="ruby-identifier">adapter</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-c-default_connection" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">default_connection</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>@overload <a href="Faraday.html#method-c-default_connection"><code>default_connection</code></a></p>
+
+<pre>Gets the default connection used for simple scripts.
+@return [Faraday::Connection] a connection configured with
+the default_adapter.</pre>
+
+<p>@overload <a href="Faraday.html#method-c-default_connection"><code>default_connection</code></a>=(connection)</p>
+
+<pre>@param connection [Faraday::Connection]
+Sets the default {Faraday::Connection} for simple scripts that
+access the Faraday constant directly, such as
+&lt;code&gt;Faraday.get &quot;https://faraday.com&quot;&lt;/code&gt;.</pre>
+          
+          
+
+          
+          <div class="method-source-code" id="default_connection-source">
+            <pre><span class="ruby-comment"># File lib/faraday.rb, line 142</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">default_connection</span>
+  <span class="ruby-ivar">@default_connection</span> <span class="ruby-operator">||=</span> <span class="ruby-constant">Connection</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">default_connection_options</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-c-default_connection_options" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">default_connection_options</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Gets the default connection options used when calling {Faraday#new}.</p>
+
+<p>@return [Faraday::ConnectionOptions]</p>
+          
+          
+
+          
+          <div class="method-source-code" id="default_connection_options-source">
+            <pre><span class="ruby-comment"># File lib/faraday.rb, line 149</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">default_connection_options</span>
+  <span class="ruby-ivar">@default_connection_options</span> <span class="ruby-operator">||=</span> <span class="ruby-constant">ConnectionOptions</span>.<span class="ruby-identifier">new</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-c-default_connection_options-3D" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">default_connection_options=</span><span
+            class="method-args">(options)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Sets the default options used when calling {Faraday#new}.</p>
+
+<p>@param options [Hash, Faraday::ConnectionOptions]</p>
+          
+          
+
+          
+          <div class="method-source-code" id="default_connection_options-3D-source">
+            <pre><span class="ruby-comment"># File lib/faraday.rb, line 156</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">default_connection_options=</span>(<span class="ruby-identifier">options</span>)
+  <span class="ruby-ivar">@default_connection</span> = <span class="ruby-keyword">nil</span>
+  <span class="ruby-ivar">@default_connection_options</span> = <span class="ruby-constant">ConnectionOptions</span>.<span class="ruby-identifier">from</span>(<span class="ruby-identifier">options</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-c-new" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">new</span><span
+            class="method-args">(url = nil, options = {}, &amp;block)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Initializes a new {Connection}.</p>
+
+<p>@param url [String,Hash] The optional String base URL to use as a prefix</p>
+
+<pre>for all requests.  Can also be the options Hash. Any of these
+values will be set on every request made, unless overridden
+for a specific request.</pre>
+
+<p>@param options [Hash] @option options [String] :url Base URL @option options [Hash] :params Hash of unencoded URI query params. @option options [Hash] :headers Hash of unencoded HTTP headers. @option options [Hash] :request Hash of request options. @option options [Hash] :ssl Hash of SSL options. @option options [Hash] :proxy Hash of Proxy options. @return [Faraday::Connection]</p>
+
+<p>@example With an URL argument</p>
+
+<pre class="ruby"><span class="ruby-constant">Faraday</span>.<span class="ruby-identifier">new</span> <span class="ruby-string">&#39;http://faraday.com&#39;</span>
+<span class="ruby-comment"># =&gt; Faraday::Connection to http://faraday.com</span>
+</pre>
+
+<p>@example With an URL argument and an options hash</p>
+
+<pre class="ruby"><span class="ruby-constant">Faraday</span>.<span class="ruby-identifier">new</span> <span class="ruby-string">&#39;http://faraday.com&#39;</span>, <span class="ruby-value">params:</span> { <span class="ruby-value">page:</span> <span class="ruby-value">1</span> }
+<span class="ruby-comment"># =&gt; Faraday::Connection to http://faraday.com?page=1</span>
+</pre>
+
+<p>@example With everything in an options hash</p>
+
+<pre class="ruby"><span class="ruby-constant">Faraday</span>.<span class="ruby-identifier">new</span> <span class="ruby-value">url:</span> <span class="ruby-string">&#39;http://faraday.com&#39;</span>,
+            <span class="ruby-value">params:</span> { <span class="ruby-value">page:</span> <span class="ruby-value">1</span> }
+<span class="ruby-comment"># =&gt; Faraday::Connection to http://faraday.com?page=1</span>
+</pre>
+          
+          
+
+          
+          <div class="method-source-code" id="new-source">
+            <pre><span class="ruby-comment"># File lib/faraday.rb, line 105</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">new</span>(<span class="ruby-identifier">url</span> = <span class="ruby-keyword">nil</span>, <span class="ruby-identifier">options</span> = {}, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)
+  <span class="ruby-identifier">options</span> = <span class="ruby-identifier">default_connection_options</span>.<span class="ruby-identifier">merge</span>(<span class="ruby-identifier">options</span>)
+  <span class="ruby-constant">Faraday</span><span class="ruby-operator">::</span><span class="ruby-constant">Connection</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">url</span>, <span class="ruby-identifier">options</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-c-require_lib" class="method-detail method-alias">
+        
+        <div class="method-heading">
+          <span class="method-name">require_lib</span><span
+            class="method-args">(*libs)</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+        </div>
+
+        
+
+        
+        <div class="aliases">
+          Alias for: <a href="Faraday.html#method-c-require_libs">require_libs</a>
+        </div>
+        
+      </div>
+
+    
+      <div id="method-c-require_libs" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">require_libs</span><span
+            class="method-args">(*libs)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>@private Internal: Requires internal <a href="Faraday.html"><code>Faraday</code></a> libraries.</p>
+
+<p>@param libs [Array] one or more relative String names to <a href="Faraday.html"><code>Faraday</code></a> classes. @return [void]</p>
+          
+          
+
+          
+          <div class="method-source-code" id="require_libs-source">
+            <pre><span class="ruby-comment"># File lib/faraday.rb, line 115</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">require_libs</span>(<span class="ruby-operator">*</span><span class="ruby-identifier">libs</span>)
+  <span class="ruby-identifier">libs</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">lib</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">require</span> <span class="ruby-node">&quot;#{lib_path}/#{lib}&quot;</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+        <div class="aliases">
+          Also aliased as: <a href="Faraday.html#method-c-require_lib">require_lib</a>
+        </div>
+        
+
+        
+      </div>
+
+    
+      <div id="method-c-respond_to_missing-3F" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">respond_to_missing?</span><span
+            class="method-args">(symbol, include_private = false)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+            <div class="method-calls-super">
+              Calls superclass method
+              
+            </div>
+          
+
+          
+          <div class="method-source-code" id="respond_to_missing-3F-source">
+            <pre><span class="ruby-comment"># File lib/faraday.rb, line 129</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">respond_to_missing?</span>(<span class="ruby-identifier">symbol</span>, <span class="ruby-identifier">include_private</span> = <span class="ruby-keyword">false</span>)
+  <span class="ruby-identifier">default_connection</span>.<span class="ruby-identifier">respond_to?</span>(<span class="ruby-identifier">symbol</span>, <span class="ruby-identifier">include_private</span>) <span class="ruby-operator">||</span> <span class="ruby-keyword">super</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+    </section>
+  
+     <section id="private-class-5Buntitled-5D-method-details" class="method-section">
+       <header>
+         <h3>Private Class Methods</h3>
+       </header>
+
+    
+      <div id="method-c-method_missing" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">method_missing</span><span
+            class="method-args">(name, *args, &amp;block)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Internal: Proxies method calls on the <a href="Faraday.html"><code>Faraday</code></a> constant to .default_connection.</p>
+          
+          
+            <div class="method-calls-super">
+              Calls superclass method
+              
+            </div>
+          
+
+          
+          <div class="method-source-code" id="method_missing-source">
+            <pre><span class="ruby-comment"># File lib/faraday.rb, line 165</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">method_missing</span>(<span class="ruby-identifier">name</span>, <span class="ruby-operator">*</span><span class="ruby-identifier">args</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">default_connection</span>.<span class="ruby-identifier">respond_to?</span>(<span class="ruby-identifier">name</span>)
+    <span class="ruby-identifier">default_connection</span>.<span class="ruby-identifier">send</span>(<span class="ruby-identifier">name</span>, <span class="ruby-operator">*</span><span class="ruby-identifier">args</span>, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-keyword">super</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+    </section>
+  
+  </section>
+
+</main>
+
+
+<footer id="validator-badges" role="contentinfo">
+  <p><a href="https://validator.w3.org/check/referer">Validate</a>
+  <p>Generated by <a href="https://ruby.github.io/rdoc/">RDoc</a> 6.2.1.
+  <p>Based on <a href="http://deveiate.org/projects/Darkfish-RDoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
+</footer>
+

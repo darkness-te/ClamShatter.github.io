@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="UTF-8">
+
+<title>History - liquid-5.0.1 Documentation</title>
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "./";
+  var index_rel_prefix = "./";
+</script>
+
+<script src="./js/navigation.js" defer></script>
+<script src="./js/search.js" defer></script>
+<script src="./js/search_index.js" defer></script>
+<script src="./js/searcher.js" defer></script>
+<script src="./js/darkfish.js" defer></script>
+
+<link href="./css/fonts.css" rel="stylesheet">
+<link href="./css/rdoc.css" rel="stylesheet">
+
+
+
+
+<body id="top" role="document" class="file">
+<nav role="navigation">
+  <div id="project-navigation">
+    <div id="home-section" role="region" title="Quick navigation" class="nav-section">
+  <h2>
+    <a href="./index.html" rel="home">Home</a>
+  </h2>
+
+  <div id="table-of-contents-navigation">
+    <a href="./table_of_contents.html#pages">Pages</a>
+    <a href="./table_of_contents.html#classes">Classes</a>
+    <a href="./table_of_contents.html#methods">Methods</a>
+  </div>
+</div>
+
+    <div id="search-section" role="search" class="project-section initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <div id="search-field-wrapper">
+      <input id="search-field" role="combobox" aria-label="Search"
+             aria-autocomplete="list" aria-controls="search-results"
+             type="text" name="search" placeholder="Search" spellcheck="false"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </div>
+
+    <ul id="search-results" aria-label="Search Results"
+        aria-busy="false" aria-expanded="false"
+        aria-atomic="false" class="initially-hidden"></ul>
+  </form>
+</div>
+
+  </div>
+
+  
+<div class="nav-section">
+  <h3>Table of Contents</h3>
+
+  <ul class="link-list" role="directory">
+    <li><a href="#label-Liquid+Change+Log">Liquid Change Log</a>
+    <li><a href="#label-5.0.1+-2F+2021-03-24">5.0.1 / 2021-03-24</a>
+    <li><a href="#label-Fixes">Fixes</a>
+    <li><a href="#label-Performance+Improvements">Performance Improvements</a>
+    <li><a href="#label-5.0.0+-2F+2021-01-06">5.0.0 / 2021-01-06</a>
+    <li><a href="#label-Features">Features</a>
+    <li><a href="#label-Fixes">Fixes</a>
+    <li><a href="#label-Breaking+Changes">Breaking Changes</a>
+    <li><a href="#label-Performance+Improvements">Performance Improvements</a>
+    <li><a href="#label-4.0.3+-2F+2019-03-12">4.0.3 / 2019-03-12</a>
+    <li><a href="#label-Fixed">Fixed</a>
+    <li><a href="#label-4.0.2+-2F+2019-03-08">4.0.2 / 2019-03-08</a>
+    <li><a href="#label-Changed">Changed</a>
+    <li><a href="#label-Fixed">Fixed</a>
+    <li><a href="#label-4.0.1+-2F+2018-10-09">4.0.1 / 2018-10-09</a>
+    <li><a href="#label-Changed">Changed</a>
+    <li><a href="#label-Fixed">Fixed</a>
+    <li><a href="#label-4.0.0+-2F+2016-12-14+-2F+branch+-224-0-stable-22">4.0.0 / 2016-12-14 / branch “4-0-stable”</a>
+    <li><a href="#label-Changed">Changed</a>
+    <li><a href="#label-Fixed">Fixed</a>
+    <li><a href="#label-3.0.5+-2F+2015-07-23+-2F+branch+-223-0-stable-22">3.0.5 / 2015-07-23 / branch “3-0-stable”</a>
+    <li><a href="#label-3.0.4+-2F+2015-07-17">3.0.4 / 2015-07-17</a>
+    <li><a href="#label-3.0.3+-2F+2015-05-28">3.0.3 / 2015-05-28</a>
+    <li><a href="#label-3.0.2+-2F+2015-04-24">3.0.2 / 2015-04-24</a>
+    <li><a href="#label-3.0.1+-2F+2015-01-23">3.0.1 / 2015-01-23</a>
+    <li><a href="#label-3.0.0+-2F+2014-11-12">3.0.0 / 2014-11-12</a>
+    <li><a href="#label-2.6.3+-2F+2015-07-23+-2F+branch+-222-6-stable-22">2.6.3 / 2015-07-23 / branch “2-6-stable”</a>
+    <li><a href="#label-2.6.2+-2F+2015-01-23">2.6.2 / 2015-01-23</a>
+    <li><a href="#label-2.6.1+-2F+2014-01-10">2.6.1 / 2014-01-10</a>
+    <li><a href="#label-2.6.0+-2F+2013-11-25">2.6.0 / 2013-11-25</a>
+    <li><a href="#label-2.5.5+-2F+2014-01-10+-2F+branch+-222-5-stable-22">2.5.5 / 2014-01-10 / branch “2-5-stable”</a>
+    <li><a href="#label-2.5.4+-2F+2013-11-11">2.5.4 / 2013-11-11</a>
+    <li><a href="#label-2.5.3+-2F+2013-10-09">2.5.3 / 2013-10-09</a>
+    <li><a href="#label-232-2C+-23234-2C+-23237-3A+Fix+map+filter+bugs+-5BFlorian+Weingarten-5D">232, #234, #237: Fix map filter bugs [Florian Weingarten]</a>
+    <li><a href="#label-2.5.2+-2F+2013-09-03+-2F+deleted">2.5.2 / 2013-09-03 / deleted</a>
+    <li><a href="#label-2.5.1+-2F+2013-07-24">2.5.1 / 2013-07-24</a>
+    <li><a href="#label-230-3A+Fix+security+issue+with+map+filter-2C+Use+invoke_drop+in+map+filter+-5BFlorian+Weingarten-5D">230: Fix security issue with map filter, Use invoke_drop in map filter [Florian Weingarten]</a>
+    <li><a href="#label-2.5.0+-2F+2013-03-06">2.5.0 / 2013-03-06</a>
+    <li><a href="#label-2.4.0+-2F+2012-08-03">2.4.0 / 2012-08-03</a>
+    <li><a href="#label-2.3.0+-2F+2011-10-16">2.3.0 / 2011-10-16</a>
+    <li><a href="#label-2.2.1+-2F+2010-08-23">2.2.1 / 2010-08-23</a>
+    <li><a href="#label-2.2.0+-2F+2010-08-22">2.2.0 / 2010-08-22</a>
+    <li><a href="#label-1.9.0+-2F+2008-03-04">1.9.0 / 2008-03-04</a>
+    <li><a href="#label-Before+1.9.0">Before 1.9.0</a>
+  </ul>
+</div>
+
+
+  <div id="project-metadata">
+    <div id="fileindex-section" class="nav-section">
+  <h3>Pages</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="./History_md.html">History</a>
+  
+    <li><a href="./README_md.html">README</a>
+  
+  </ul>
+</div>
+
+  </div>
+</nav>
+
+<main role="main" aria-label="Page History.md">
+
+<h1 id="label-Liquid+Change+Log"><a href="Liquid.html"><code>Liquid</code></a> Change Log<span><a href="#label-Liquid+Change+Log">&para;</a> <a href="#top">&uarr;</a></span></h1>
+
+<h2 id="label-5.0.1+-2F+2021-03-24">5.0.1 / 2021-03-24<span><a href="#label-5.0.1+-2F+2021-03-24">&para;</a> <a href="#top">&uarr;</a></span></h2>
+
+<h3 id="label-Fixes">Fixes<span><a href="#label-Fixes">&para;</a> <a href="#top">&uarr;</a></span></h3>
+<ul><li>
+<p>Add ParseTreeVisitor to Echo tag (#1414) [CP Clermont]</p>
+</li><li>
+<p>Test with ruby 3.0 as the latest ruby version (#1398) [Dylan Thacker-Smith]</p>
+</li><li>
+<p>Handle carriage return in newlines_to_br (#1391) [Unending]</p>
+</li></ul>
+
+<h3 id="label-Performance+Improvements">Performance Improvements<span><a href="#label-Performance+Improvements">&para;</a> <a href="#top">&uarr;</a></span></h3>
+<ul><li>
+<p>Use split limit in truncatewords (#1361) [Dylan Thacker-Smith]</p>
+</li></ul>
+
+<h2 id="label-5.0.0+-2F+2021-01-06">5.0.0 / 2021-01-06<span><a href="#label-5.0.0+-2F+2021-01-06">&para;</a> <a href="#top">&uarr;</a></span></h2>
+
+<h3 id="label-Features">Features<span><a href="#label-Features">&para;</a> <a href="#top">&uarr;</a></span></h3>
+<ul><li>
+<p>Add new <code>{% render %}</code> tag (#1122) [Samuel Doiron]</p>
+</li><li>
+<p>Add support for <code>as</code> in <code>{% render %}</code> and <code>{% include %}</code> (#1181) [Mike Angell]</p>
+</li><li>
+<p>Add <code>{% liquid %}</code> and <code>{% echo %}</code> tags (#1086) [Justin Li]</p>
+</li><li>
+<p>Add <a href="README.md#usage-tracking">usage tracking</a> [Mike Angell]</p>
+</li><li>
+<p>Add <code>Tag.disable_tags</code> for disabling tags that prepend <code>Tag::Disableable</code> at render time (#1162, #1274, #1275) [Mike Angell]</p>
+</li><li>
+<p>Support using a profiler for multiple renders (#1365, #1366) [Dylan Thacker-Smith]</p>
+</li></ul>
+
+<h3 id="label-Fixes">Fixes<span><a href="#label-Fixes">&para;</a> <a href="#top">&uarr;</a></span></h3>
+<ul><li>
+<p>Fix catastrophic backtracking in <code>RANGES_REGEX</code> regular expression (#1357) [Dylan Thacker-Smith]</p>
+</li><li>
+<p>Make sure the for tag&#39;s limit and offset are integers (#1094) [David Cornu]</p>
+</li><li>
+<p>Invokable methods for enumerable reject include (#1151) [Thierry Joyal]</p>
+</li><li>
+<p>Allow <code>default</code> filter to handle <code>false</code> as value (#1144) [Mike Angell]</p>
+</li><li>
+<p>Fix render length resource limit so it doesn&#39;t multiply nested output (#1285) [Dylan Thacker-Smith]</p>
+</li><li>
+<p>Fix duplication of text in raw tags (#1304) [Peter Zhu]</p>
+</li><li>
+<p>Fix strict parsing of find variable with a name expression (#1317) [Dylan Thacker-Smith]</p>
+</li><li>
+<p>Use monotonic time to measure durations in <a href="Liquid/Profiler.html"><code>Liquid::Profiler</code></a> (#1362) [Dylan Thacker-Smith]</p>
+</li></ul>
+
+<h3 id="label-Breaking+Changes">Breaking Changes<span><a href="#label-Breaking+Changes">&para;</a> <a href="#top">&uarr;</a></span></h3>
+<ul><li>
+<p>Require Ruby &gt;= 2.5 (#1131, #1310) [Mike Angell, Dylan Thacker-Smith]</p>
+</li><li>
+<p>Remove support for taint checking (#1268) [Dylan Thacker-Smith]</p>
+</li><li>
+<p>Split Strainer class into StrainerFactory and StrainerTemplate (#1208) [Thierry Joyal]</p>
+</li><li>
+<p>Remove handling of a nil context in the Strainer class (#1218) [Thierry Joyal]</p>
+</li><li>
+<p>Handle <code>BlockBody#blank?</code> at parse time (#1287) [Dylan Thacker-Smith]</p>
+</li><li>
+<p>Pass the tag markup and tokenizer to <code>Document#unknown_tag</code> (#1290) [Dylan Thacker-Smith]</p>
+</li><li>
+<p>And several internal changes</p>
+</li></ul>
+
+<h3 id="label-Performance+Improvements">Performance Improvements<span><a href="#label-Performance+Improvements">&para;</a> <a href="#top">&uarr;</a></span></h3>
+<ul><li>
+<p>Reduce allocations (#1073, #1091, #1115, #1099, #1117, #1141, #1322, #1341) [Richard Monette, Florian Weingarten, Ashwin Maroli]</p>
+</li><li>
+<p>Improve resources limits performance (#1093, #1323) [Florian Weingarten, Dylan Thacker-Smith]</p>
+</li></ul>
+
+<h2 id="label-4.0.3+-2F+2019-03-12">4.0.3 / 2019-03-12<span><a href="#label-4.0.3+-2F+2019-03-12">&para;</a> <a href="#top">&uarr;</a></span></h2>
+
+<h3 id="label-Fixed">Fixed<span><a href="#label-Fixed">&para;</a> <a href="#top">&uarr;</a></span></h3>
+<ul><li>
+<p>Fix break and continue tags inside included templates in loops (#1072) [Justin Li]</p>
+</li></ul>
+
+<h2 id="label-4.0.2+-2F+2019-03-08">4.0.2 / 2019-03-08<span><a href="#label-4.0.2+-2F+2019-03-08">&para;</a> <a href="#top">&uarr;</a></span></h2>
+
+<h3 id="label-Changed">Changed<span><a href="#label-Changed">&para;</a> <a href="#top">&uarr;</a></span></h3>
+<ul><li>
+<p>Add <code>where</code> filter (#1026) [Samuel Doiron]</p>
+</li><li>
+<p>Add <code>ParseTreeVisitor</code> to iterate the <a href="Liquid.html"><code>Liquid</code></a> AST (#1025) [Stephen Paul Weber]</p>
+</li><li>
+<p>Improve <code>strip_html</code> performance (#1032) [printercu]</p>
+</li></ul>
+
+<h3 id="label-Fixed">Fixed<span><a href="#label-Fixed">&para;</a> <a href="#top">&uarr;</a></span></h3>
+<ul><li>
+<p>Add error checking for invalid combinations of inputs to sort, sort_natural, where, uniq, map, compact filters (#1059) [Garland Zhang]</p>
+</li><li>
+<p>Validate the character encoding in url_decode (#1070) [Clayton Smith]</p>
+</li></ul>
+
+<h2 id="label-4.0.1+-2F+2018-10-09">4.0.1 / 2018-10-09<span><a href="#label-4.0.1+-2F+2018-10-09">&para;</a> <a href="#top">&uarr;</a></span></h2>
+
+<h3 id="label-Changed">Changed<span><a href="#label-Changed">&para;</a> <a href="#top">&uarr;</a></span></h3>
+<ul><li>
+<p>Add benchmark group in Gemfile (#855) [Jerry Liu]</p>
+</li><li>
+<p>Allow benchmarks to benchmark render by itself (#851) [Jerry Liu]</p>
+</li><li>
+<p>Avoid calling <code>line_number</code> on <a href="String.html"><code>String</code></a> node when rescuing a render error. (#860) [Dylan Thacker-Smith]</p>
+</li><li>
+<p>Avoid duck typing to detect whether to call render on a node. [Dylan Thacker-Smith]</p>
+</li><li>
+<p>Clarify spelling of <code>reversed</code> on <code>for</code> block tag (#843) [Mark Crossfield]</p>
+</li><li>
+<p>Replace recursion with loop to avoid potential stack overflow from malicious input (#891, #892) [Dylan Thacker-Smith]</p>
+</li><li>
+<p>Limit block tag nesting to 100 (#894) [Dylan Thacker-Smith]</p>
+</li><li>
+<p>Replace <code>assert_equal nil</code> with <code>assert_nil</code> (#895) [Dylan Thacker-Smith]</p>
+</li><li>
+<p>Remove Spy Gem (#896) [Dylan Thacker-Smith]</p>
+</li><li>
+<p>Add <code>collection_name</code> and <code>variable_name</code> reader to <code>For</code> block (#909)</p>
+</li><li>
+<p>Symbols render as strings (#920) [Justin Li]</p>
+</li><li>
+<p>Remove default value from <a href="Hash.html"><code>Hash</code></a> objects (#932) [Maxime Bedard]</p>
+</li><li>
+<p>Remove one level of nesting (#944) [Dylan Thacker-Smith]</p>
+</li><li>
+<p>Update Rubocop version (#952) [Justin Li]</p>
+</li><li>
+<p>Add <code>at_least</code> and <code>at_most</code> filters (#954, #958) [Nithin Bekal]</p>
+</li><li>
+<p>Add a regression test for a liquid-c trim mode bug (#972) [Dylan Thacker-Smith]</p>
+</li><li>
+<p>Use https rather than git protocol to fetch liquid-c [Dylan Thacker-Smith]</p>
+</li><li>
+<p>Add tests against Ruby 2.4 (#963) and 2.5 (#981)</p>
+</li><li>
+<p>Replace RegExp literals with constants (#988) [Ashwin Maroli]</p>
+</li><li>
+<p>Replace unnecessary <code>#each_with_index</code> with <code>#each</code> (#992) [Ashwin Maroli]</p>
+</li><li>
+<p>Improve the unexpected end delimiter message for block tags. (#1003) [Dylan Thacker-Smith]</p>
+</li><li>
+<p>Refactor and optimize rendering (#1005) [Christopher Aue]</p>
+</li><li>
+<p>Add installation instruction (#1006) [Ben Gift]</p>
+</li><li>
+<p>Remove Circle CI (#1010)</p>
+</li><li>
+<p>Rename deprecated <code>BigDecimal.new</code> to <code>BigDecimal</code> (#1024) [Koichi ITO]</p>
+</li><li>
+<p>Rename deprecated Rubocop name (#1027) [Justin Li]</p>
+</li></ul>
+
+<h3 id="label-Fixed">Fixed<span><a href="#label-Fixed">&para;</a> <a href="#top">&uarr;</a></span></h3>
+<ul><li>
+<p>Handle <code>join</code> filter on non <a href="String.html"><code>String</code></a> joiners (#857) [Richard Monette]</p>
+</li><li>
+<p>Fix duplicate inclusion condition logic error of <code>Liquid::Strainer.add_filter</code> method (#861)</p>
+</li><li>
+<p>Fix <code>escape</code>, <code>url_encode</code>, <code>url_decode</code> not handling non-string values (#898) [Thierry Joyal]</p>
+</li><li>
+<p>Fix raise when variable is defined but nil when using <code>strict_variables</code> [Pascal Betz]</p>
+</li><li>
+<p>Fix <code>sort</code> and <code>sort_natural</code> to handle arrays with nils (#930) [Eric Chan]</p>
+</li></ul>
+
+<h2 id="label-4.0.0+-2F+2016-12-14+-2F+branch+-224-0-stable-22">4.0.0 / 2016-12-14 / branch “4-0-stable”<span><a href="#label-4.0.0+-2F+2016-12-14+-2F+branch+-224-0-stable-22">&para;</a> <a href="#top">&uarr;</a></span></h2>
+
+<h3 id="label-Changed">Changed<span><a href="#label-Changed">&para;</a> <a href="#top">&uarr;</a></span></h3>
+<ul><li>
+<p>Render an opaque internal error by default for non-Liquid::Error (#835) [Dylan Thacker-Smith]</p>
+</li><li>
+<p>Ruby 2.0 support dropped (#832) [Dylan Thacker-Smith]</p>
+</li><li>
+<p>Add to_number Drop method to allow custom drops to work with number filters (#731)</p>
+</li><li>
+<p>Add strict_variables and strict_filters options to detect undefined references (#691)</p>
+</li><li>
+<p>Improve loop performance (#681) [Florian Weingarten]</p>
+</li><li>
+<p>Rename Drop method <code>before_method</code> to <code>liquid_method_missing</code> (#661) [Thierry Joyal]</p>
+</li><li>
+<p>Add url_decode filter to invert url_encode (#645) [Larry Archer]</p>
+</li><li>
+<p>Add global_filter to apply a filter to all output (#610) [Loren Hale]</p>
+</li><li>
+<p>Add compact filter (#600) [Carson Reinke]</p>
+</li><li>
+<p>Rename deprecated “has_key?” and “has_interrupt?” methods (#593) [Florian Weingarten]</p>
+</li><li>
+<p>Include template name with line numbers in render errors (574) [Dylan Thacker-Smith]</p>
+</li><li>
+<p>Add sort_natural filter (#554) [Martin Hanzel]</p>
+</li><li>
+<p>Add forloop.parentloop as a reference to the parent loop (#520) [Justin Li]</p>
+</li><li>
+<p>Block parsing moved to BlockBody class (#458) [Dylan Thacker-Smith]</p>
+</li><li>
+<p>Add concat filter to concatenate arrays (#429) [Diogo Beato]</p>
+</li><li>
+<p>Ruby 1.9 support dropped (#491) [Justin Li]</p>
+</li><li>
+<p><a href="Liquid/Template.html#attribute-c-file_system"><code>Liquid::Template.file_system</code></a>&#39;s read_template_file method is no longer passed the context. (#441) [James Reid-Smith]</p>
+</li><li>
+<p>Remove <code>liquid_methods</code> (See <a href="https://github.com/Shopify/liquid/pull/568">github.com/Shopify/liquid/pull/568</a> for replacement)</p>
+</li><li>
+<p><a href="Liquid/Template.html#method-c-register_filter"><code>Liquid::Template.register_filter</code></a> raises when the module overrides registered public methods as private or protected (#705) [Gaurav Chande]</p>
+</li></ul>
+
+<h3 id="label-Fixed">Fixed<span><a href="#label-Fixed">&para;</a> <a href="#top">&uarr;</a></span></h3>
+<ul><li>
+<p>Fix variable names being detected as an operator when starting with contains (#788) [Michael Angell]</p>
+</li><li>
+<p>Fix include tag used with strict_variables (#828) [QuickPay]</p>
+</li><li>
+<p>Fix map filter when value is a Proc (#672) [Guillaume Malette]</p>
+</li><li>
+<p>Fix truncate filter when value is not a string (#672) [Guillaume Malette]</p>
+</li><li>
+<p>Fix behaviour of escape filter when input is nil (#665) [Tanel Jakobsoo]</p>
+</li><li>
+<p>Fix sort filter behaviour with empty array input (#652) [Marcel Cary]</p>
+</li><li>
+<p>Fix test failure under certain timezones (#631) [Dylan Thacker-Smith]</p>
+</li><li>
+<p>Fix bug in uniq filter (#595) [Florian Weingarten]</p>
+</li><li>
+<p>Fix bug when “blank” and “empty” are used as variable names (#592) [Florian Weingarten]</p>
+</li><li>
+<p>Fix condition parse order in strict mode (#569) [Justin Li]</p>
+</li><li>
+<p>Fix naming of the “context variable” when dynamically including a template (#559) [Justin Li]</p>
+</li><li>
+<p>Gracefully accept empty strings in the date filter (#555) [Loren Hale]</p>
+</li><li>
+<p>Fix capturing into variables with a hyphen in the name (#505) [Florian Weingarten]</p>
+</li><li>
+<p>Fix case sensitivity regression in date standard filter (#499) [Kelley Reynolds]</p>
+</li><li>
+<p>Disallow filters with no variable in strict mode (#475) [Justin Li]</p>
+</li><li>
+<p>Disallow variable names in the strict parser that are not valid in the lax parser (#463) [Justin Li]</p>
+</li><li>
+<p>Fix BlockBody#warnings taking exponential time to compute (#486) [Justin Li]</p>
+</li></ul>
+
+<h2 id="label-3.0.5+-2F+2015-07-23+-2F+branch+-223-0-stable-22">3.0.5 / 2015-07-23 / branch “3-0-stable”<span><a href="#label-3.0.5+-2F+2015-07-23+-2F+branch+-223-0-stable-22">&para;</a> <a href="#top">&uarr;</a></span></h2>
+<ul><li>
+<p>Fix test failure under certain timezones [Dylan Thacker-Smith]</p>
+</li></ul>
+
+<h2 id="label-3.0.4+-2F+2015-07-17">3.0.4 / 2015-07-17<span><a href="#label-3.0.4+-2F+2015-07-17">&para;</a> <a href="#top">&uarr;</a></span></h2>
+<ul><li>
+<p>Fix chained access to multi-dimensional hashes [Florian Weingarten]</p>
+</li></ul>
+
+<h2 id="label-3.0.3+-2F+2015-05-28">3.0.3 / 2015-05-28<span><a href="#label-3.0.3+-2F+2015-05-28">&para;</a> <a href="#top">&uarr;</a></span></h2>
+<ul><li>
+<p>Fix condition parse order in strict mode (#569) [Justin Li]</p>
+</li></ul>
+
+<h2 id="label-3.0.2+-2F+2015-04-24">3.0.2 / 2015-04-24<span><a href="#label-3.0.2+-2F+2015-04-24">&para;</a> <a href="#top">&uarr;</a></span></h2>
+<ul><li>
+<p>Expose VariableLookup private members (#551) [Justin Li]</p>
+</li><li>
+<p>Documentation fixes</p>
+</li></ul>
+
+<h2 id="label-3.0.1+-2F+2015-01-23">3.0.1 / 2015-01-23<span><a href="#label-3.0.1+-2F+2015-01-23">&para;</a> <a href="#top">&uarr;</a></span></h2>
+<ul><li>
+<p>Remove duplicate <code>index0</code> key in TableRow tag (#502) [Alfred Xing]</p>
+</li></ul>
+
+<h2 id="label-3.0.0+-2F+2014-11-12">3.0.0 / 2014-11-12<span><a href="#label-3.0.0+-2F+2014-11-12">&para;</a> <a href="#top">&uarr;</a></span></h2>
+<ul><li>
+<p>Removed Block#end_tag. Instead, override parse with <code>super</code> followed by your code. See #446 [Dylan Thacker-Smith]</p>
+</li><li>
+<p>Fixed condition with wrong data types (#423) [Bogdan Gusiev]</p>
+</li><li>
+<p>Add url_encode to standard filters (#421) [Derrick Reimer]</p>
+</li><li>
+<p>Add uniq to standard filters [Florian Weingarten]</p>
+</li><li>
+<p>Add exception_handler feature (#397) and #254 [Bogdan Gusiev, Florian Weingarten]</p>
+</li><li>
+<p>Optimize variable parsing to avoid repeated regex evaluation during template rendering #383 [Jason Hiltz-Laforge]</p>
+</li><li>
+<p>Optimize checking for block interrupts to reduce object allocation #380 [Jason Hiltz-Laforge]</p>
+</li><li>
+<p>Properly set context rethrow_errors on render! #349 [Thierry Joyal]</p>
+</li><li>
+<p>Fix broken rendering of variables which are equal to false (#345) [Florian Weingarten]</p>
+</li><li>
+<p>Remove ActionView template handler [Dylan Thacker-Smith]</p>
+</li><li>
+<p>Freeze lots of string literals for new Ruby 2.1 optimization (#297) [Florian Weingarten]</p>
+</li><li>
+<p>Allow newlines in tags and variables (#324) [Dylan Thacker-Smith]</p>
+</li><li>
+<p>Tag#parse is called after initialize, which now takes options instead of tokens as the 3rd argument. See #321 [Dylan Thacker-Smith]</p>
+</li><li>
+<p>Raise <code>Liquid::ArgumentError</code> instead of <code>::ArgumentError</code> when filter has wrong number of arguments #309 [Bogdan Gusiev]</p>
+</li><li>
+<p>Add a to_s default for liquid drops (#306) [Adam Doeler]</p>
+</li><li>
+<p>Add strip, lstrip, and rstrip to standard filters [Florian Weingarten]</p>
+</li><li>
+<p>Make if, for &amp; case tags return complete and consistent nodelists (#250) [Nick Jones]</p>
+</li><li>
+<p>Prevent arbitrary method invocation on condition objects (#274) [Dylan Thacker-Smith]</p>
+</li><li>
+<p>Don&#39;t call to_sym when creating conditions for security reasons (#273) [Bouke van der Bijl]</p>
+</li><li>
+<p>Fix resource counting bug with respond_to?(:length) (#263) [Florian Weingarten]</p>
+</li><li>
+<p>Allow specifying custom patterns for template filenames (#284) [Andrei Gladkyi]</p>
+</li><li>
+<p>Allow drops to optimize loading a slice of elements (#282) [Tom Burns]</p>
+</li><li>
+<p>Support for passing variables to snippets in subdirs (#271) [Joost Hietbrink]</p>
+</li><li>
+<p>Add a class cache to avoid runtime extend calls (#249) [James Tucker]</p>
+</li><li>
+<p>Remove some legacy Ruby 1.8 compatibility code (#276) [Florian Weingarten]</p>
+</li><li>
+<p>Add default filter to standard filters (#267) [Derrick Reimer]</p>
+</li><li>
+<p>Add optional strict parsing and warn parsing (#235) [Tristan Hume]</p>
+</li><li>
+<p>Add I18n syntax error translation (#241) [Simon Hørup Eskildsen, Sirupsen]</p>
+</li><li>
+<p>Make sort filter work on enumerable drops (#239) [Florian Weingarten]</p>
+</li><li>
+<p>Fix clashing method names in enumerable drops (#238) [Florian Weingarten]</p>
+</li><li>
+<p>Make map filter work on enumerable drops (#233) [Florian Weingarten]</p>
+</li><li>
+<p>Improved whitespace stripping for blank blocks, related to #216 [Florian Weingarten]</p>
+</li></ul>
+
+<h2 id="label-2.6.3+-2F+2015-07-23+-2F+branch+-222-6-stable-22">2.6.3 / 2015-07-23 / branch “2-6-stable”<span><a href="#label-2.6.3+-2F+2015-07-23+-2F+branch+-222-6-stable-22">&para;</a> <a href="#top">&uarr;</a></span></h2>
+<ul><li>
+<p>Fix test failure under certain timezones [Dylan Thacker-Smith]</p>
+</li></ul>
+
+<h2 id="label-2.6.2+-2F+2015-01-23">2.6.2 / 2015-01-23<span><a href="#label-2.6.2+-2F+2015-01-23">&para;</a> <a href="#top">&uarr;</a></span></h2>
+<ul><li>
+<p>Remove duplicate hash key [Parker Moore]</p>
+</li></ul>
+
+<h2 id="label-2.6.1+-2F+2014-01-10">2.6.1 / 2014-01-10<span><a href="#label-2.6.1+-2F+2014-01-10">&para;</a> <a href="#top">&uarr;</a></span></h2>
+
+<p>Security fix, cherry-picked from master (4e14a65): * Don&#39;t call to_sym when creating conditions for security reasons (#273) [Bouke van der Bijl] * Prevent arbitrary method invocation on condition objects (#274) [Dylan Thacker-Smith]</p>
+
+<h2 id="label-2.6.0+-2F+2013-11-25">2.6.0 / 2013-11-25<span><a href="#label-2.6.0+-2F+2013-11-25">&para;</a> <a href="#top">&uarr;</a></span></h2>
+
+<p>IMPORTANT: <a href="Liquid.html"><code>Liquid</code></a> 2.6 is going to be the last version of <a href="Liquid.html"><code>Liquid</code></a> which maintains explicit Ruby 1.8 compatability. The following releases will only be tested against Ruby 1.9 and Ruby 2.0 and are likely to break on Ruby 1.8.</p>
+<ul><li>
+<p>Bugfix for #106: fix example servlet [gnowoel]</p>
+</li><li>
+<p>Bugfix for #97: strip_html filter supports multi-line tags [Jo Liss]</p>
+</li><li>
+<p>Bugfix for #114: strip_html filter supports style tags [James Allardice]</p>
+</li><li>
+<p>Bugfix for #117: &#39;now&#39; support for date filter in Ruby 1.9 [Notre Dame Webgroup]</p>
+</li><li>
+<p>Bugfix for #166: truncate filter on UTF-8 strings with Ruby 1.8 [Florian Weingarten]</p>
+</li><li>
+<p>Bugfix for #204: &#39;raw&#39; parsing bug [Florian Weingarten]</p>
+</li><li>
+<p>Bugfix for #150: &#39;for&#39; parsing bug [Peter Schröder]</p>
+</li><li>
+<p>Bugfix for #126: Strip CRLF in strip_newline [Peter Schröder]</p>
+</li><li>
+<p>Bugfix for #174, “can&#39;t convert Fixnum into String” for “replace” [jsw0528]</p>
+</li><li>
+<p>Allow a <a href="Liquid/Drop.html"><code>Liquid::Drop</code></a> to be passed into Template#render [Daniel Huckstep]</p>
+</li><li>
+<p>Resource limits [Florian Weingarten]</p>
+</li><li>
+<p>Add reverse filter [Jay Strybis]</p>
+</li><li>
+<p>Add utf-8 support</p>
+</li><li>
+<p>Use array instead of <a href="Hash.html"><code>Hash</code></a> to keep the registered filters [Tasos Stathopoulos]</p>
+</li><li>
+<p>Cache tokenized partial templates [Tom Burns]</p>
+</li><li>
+<p>Avoid warnings in Ruby 1.9.3 [Marcus Stollsteimer]</p>
+</li><li>
+<p>Better documentation for &#39;include&#39; tag (closes #163) [Peter Schröder]</p>
+</li><li>
+<p>Use of BigDecimal on filters to have better precision (closes #155) [Arthur Nogueira Neves]</p>
+</li></ul>
+
+<h2 id="label-2.5.5+-2F+2014-01-10+-2F+branch+-222-5-stable-22">2.5.5 / 2014-01-10 / branch “2-5-stable”<span><a href="#label-2.5.5+-2F+2014-01-10+-2F+branch+-222-5-stable-22">&para;</a> <a href="#top">&uarr;</a></span></h2>
+
+<p>Security fix, cherry-picked from master (4e14a65): * Don&#39;t call to_sym when creating conditions for security reasons (#273) [Bouke van der Bijl] * Prevent arbitrary method invocation on condition objects (#274) [Dylan Thacker-Smith]</p>
+
+<h2 id="label-2.5.4+-2F+2013-11-11">2.5.4 / 2013-11-11<span><a href="#label-2.5.4+-2F+2013-11-11">&para;</a> <a href="#top">&uarr;</a></span></h2>
+<ul><li>
+<p>Fix “can&#39;t convert Fixnum into String” for “replace” (#173), [jsw0528]</p>
+</li></ul>
+
+<h2 id="label-2.5.3+-2F+2013-10-09">2.5.3 / 2013-10-09<span><a href="#label-2.5.3+-2F+2013-10-09">&para;</a> <a href="#top">&uarr;</a></span></h2>
+<ul><li>
+<h1 id="label-232-2C+-23234-2C+-23237-3A+Fix+map+filter+bugs+-5BFlorian+Weingarten-5D">232, #234, #237: Fix map filter bugs [Florian Weingarten]<span><a href="#label-232-2C+-23234-2C+-23237-3A+Fix+map+filter+bugs+-5BFlorian+Weingarten-5D">&para;</a> <a href="#top">&uarr;</a></span></h1>
+</li></ul>
+
+<h2 id="label-2.5.2+-2F+2013-09-03+-2F+deleted">2.5.2 / 2013-09-03 / deleted<span><a href="#label-2.5.2+-2F+2013-09-03+-2F+deleted">&para;</a> <a href="#top">&uarr;</a></span></h2>
+
+<p>Yanked from rubygems, as it contained too many changes that broke compatibility. Those changes will be on following major releases.</p>
+
+<h2 id="label-2.5.1+-2F+2013-07-24">2.5.1 / 2013-07-24<span><a href="#label-2.5.1+-2F+2013-07-24">&para;</a> <a href="#top">&uarr;</a></span></h2>
+<ul><li>
+<h1 id="label-230-3A+Fix+security+issue+with+map+filter-2C+Use+invoke_drop+in+map+filter+-5BFlorian+Weingarten-5D">230: Fix security issue with map filter, Use invoke_drop in map filter [Florian Weingarten]<span><a href="#label-230-3A+Fix+security+issue+with+map+filter-2C+Use+invoke_drop+in+map+filter+-5BFlorian+Weingarten-5D">&para;</a> <a href="#top">&uarr;</a></span></h1>
+</li></ul>
+
+<h2 id="label-2.5.0+-2F+2013-03-06">2.5.0 / 2013-03-06<span><a href="#label-2.5.0+-2F+2013-03-06">&para;</a> <a href="#top">&uarr;</a></span></h2>
+<ul><li>
+<p>Prevent Object methods from being called on drops</p>
+</li><li>
+<p>Avoid symbol injection from liquid</p>
+</li><li>
+<p>Added break and continue statements</p>
+</li><li>
+<p>Fix filter parser for args without space separators</p>
+</li><li>
+<p>Add support for filter keyword arguments</p>
+</li></ul>
+
+<h2 id="label-2.4.0+-2F+2012-08-03">2.4.0 / 2012-08-03<span><a href="#label-2.4.0+-2F+2012-08-03">&para;</a> <a href="#top">&uarr;</a></span></h2>
+<ul><li>
+<p>Performance improvements</p>
+</li><li>
+<p>Allow filters in <code>assign</code></p>
+</li><li>
+<p>Add <code>modulo</code> filter</p>
+</li><li>
+<p>Ruby 1.8, 1.9, and Rubinius compatibility fixes</p>
+</li><li>
+<p>Add support for <code>quoted['references']</code> in <code>tablerow</code></p>
+</li><li>
+<p>Add support for Enumerable to <code>tablerow</code></p>
+</li><li>
+<p><code>strip_html</code> filter removes html comments</p>
+</li></ul>
+
+<h2 id="label-2.3.0+-2F+2011-10-16">2.3.0 / 2011-10-16<span><a href="#label-2.3.0+-2F+2011-10-16">&para;</a> <a href="#top">&uarr;</a></span></h2>
+<ul><li>
+<p>Several speed/memory improvements</p>
+</li><li>
+<p>Numerous bug fixes</p>
+</li><li>
+<p>Added support for MRI 1.9, Rubinius, and JRuby</p>
+</li><li>
+<p>Added support for integer drop parameters</p>
+</li><li>
+<p>Added epoch support to <code>date</code> filter</p>
+</li><li>
+<p>New <code>raw</code> tag that suppresses parsing</p>
+</li><li>
+<p>Added <code>else</code> option to <code>for</code> tag</p>
+</li><li>
+<p>New <code>increment</code> tag</p>
+</li><li>
+<p>New <code>split</code> filter</p>
+</li></ul>
+
+<h2 id="label-2.2.1+-2F+2010-08-23">2.2.1 / 2010-08-23<span><a href="#label-2.2.1+-2F+2010-08-23">&para;</a> <a href="#top">&uarr;</a></span></h2>
+<ul><li>
+<p>Added support for literal tags</p>
+</li></ul>
+
+<h2 id="label-2.2.0+-2F+2010-08-22">2.2.0 / 2010-08-22<span><a href="#label-2.2.0+-2F+2010-08-22">&para;</a> <a href="#top">&uarr;</a></span></h2>
+<ul><li>
+<p>Compatible with Ruby 1.8.7, 1.9.1 and 1.9.2-p0</p>
+</li><li>
+<p>Merged some changed made by the community</p>
+</li></ul>
+
+<h2 id="label-1.9.0+-2F+2008-03-04">1.9.0 / 2008-03-04<span><a href="#label-1.9.0+-2F+2008-03-04">&para;</a> <a href="#top">&uarr;</a></span></h2>
+<ul><li>
+<p>Fixed gem install rake task</p>
+</li><li>
+<p>Improve Error encapsulation in liquid by maintaining a own set of exceptions instead of relying on ruby build ins</p>
+</li></ul>
+
+<h2 id="label-Before+1.9.0">Before 1.9.0<span><a href="#label-Before+1.9.0">&para;</a> <a href="#top">&uarr;</a></span></h2>
+<ul><li>
+<p>Added If with or / and expressions</p>
+</li><li>
+<p>Implemented .to_liquid for all objects which can be passed to liquid like Strings Arrays Hashes Numerics and Booleans. To export new objects to liquid just implement .to_liquid on them and return objects which themselves have .to_liquid methods.</p>
+</li><li>
+<p>Added more tags to standard library</p>
+</li><li>
+<p>Added include tag ( like partials in rails )</p>
+</li><li>
+<p>[…] Gazillion of detail improvements</p>
+</li><li>
+<p>Added strainers as filter hosts for better security [Tobias Luetke]</p>
+</li><li>
+<p>Fixed that rails integration would call filter with the wrong “self” [Michael Geary]</p>
+</li><li>
+<p>Fixed bad error reporting when a filter called a method which doesn&#39;t exist. <a href="Liquid.html"><code>Liquid</code></a> told you that it couldn&#39;t find the filter which was obviously misleading [Tobias Luetke]</p>
+</li><li>
+<p>Removed count helper from standard lib. use size [Tobias Luetke]</p>
+</li><li>
+<p>Fixed bug with string filter parameters failing to tolerate commas in strings. [Paul Hammond]</p>
+</li><li>
+<p>Improved filter parameters. Filter parameters are now context sensitive; Types are resolved according to the rules of the context. Multiple parameters are now separated by the Liquid::ArgumentSeparator: , by default [Paul Hammond] {{ &#39;Typo&#39; | link_to: &#39;<a href="http://typo.leetsoft.com">typo.leetsoft.com</a>&#39;, &#39;Typo - a modern weblog engine&#39; }}</p>
+</li><li>
+<p>Added <a href="Liquid/Drop.html"><code>Liquid::Drop</code></a>. A base class which you can use for exporting proxy objects to liquid which can acquire more data when used in liquid. [Tobias Luetke]</p>
+</li></ul>
+
+<p>class ProductDrop &lt; <a href="Liquid/Drop.html"><code>Liquid::Drop</code></a>  def top_sales  Shop.current.products.find(:all, :order =&gt; &#39;sales&#39;, :limit =&gt; 10 )  end  end  t = <a href="Liquid/Template.html#method-c-parse"><code>Liquid::Template.parse</code></a>( &#39; {% for product in product.top_sales %} {{ product.name }} {% endfor %} &#39; )  t.render(&#39;product&#39; =&gt; ProductDrop.new ) * Added filter parameters support. Example: {{ date | format_date: “%Y” }} [Paul Hammond]</p>
+
+</main>
+
+
+
+<footer id="validator-badges" role="contentinfo">
+  <p><a href="https://validator.w3.org/check/referer">Validate</a>
+  <p>Generated by <a href="https://ruby.github.io/rdoc/">RDoc</a> 6.2.1.
+  <p>Based on <a href="http://deveiate.org/projects/Darkfish-RDoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
+</footer>
+

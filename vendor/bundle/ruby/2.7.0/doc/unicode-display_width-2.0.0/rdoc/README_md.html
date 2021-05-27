@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="UTF-8">
+
+<title>README - unicode-display_width-2.0.0 Documentation</title>
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "./";
+  var index_rel_prefix = "./";
+</script>
+
+<script src="./js/navigation.js" defer></script>
+<script src="./js/search.js" defer></script>
+<script src="./js/search_index.js" defer></script>
+<script src="./js/searcher.js" defer></script>
+<script src="./js/darkfish.js" defer></script>
+
+<link href="./css/fonts.css" rel="stylesheet">
+<link href="./css/rdoc.css" rel="stylesheet">
+
+
+
+
+<body id="top" role="document" class="file">
+<nav role="navigation">
+  <div id="project-navigation">
+    <div id="home-section" role="region" title="Quick navigation" class="nav-section">
+  <h2>
+    <a href="./index.html" rel="home">Home</a>
+  </h2>
+
+  <div id="table-of-contents-navigation">
+    <a href="./table_of_contents.html#pages">Pages</a>
+    <a href="./table_of_contents.html#classes">Classes</a>
+    <a href="./table_of_contents.html#methods">Methods</a>
+  </div>
+</div>
+
+    <div id="search-section" role="search" class="project-section initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <div id="search-field-wrapper">
+      <input id="search-field" role="combobox" aria-label="Search"
+             aria-autocomplete="list" aria-controls="search-results"
+             type="text" name="search" placeholder="Search" spellcheck="false"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </div>
+
+    <ul id="search-results" aria-label="Search Results"
+        aria-busy="false" aria-expanded="false"
+        aria-atomic="false" class="initially-hidden"></ul>
+  </form>
+</div>
+
+  </div>
+
+  
+<div class="nav-section">
+  <h3>Table of Contents</h3>
+
+  <ul class="link-list" role="directory">
+    <li><a href="#label-Unicode-3A-3ADisplayWidth+rdoc-image-3Aversion-5D+-3Cimg+src-3D-22https-3A-2F-2Fgithub.com-2Fjanlelis-2Funicode-display_width-2Fworkflows-2FTest-2Fbadge.svg-22+-2F-3E">Unicode::DisplayWidth <a href="https://badge.fury.io/rb/unicode-display_width"><img src="version]}[https://badge.fury.io/rb/unicode-display_width.svg"></a> <a href="https://github.com/janlelis/unicode-display_width/actions?query=workflow%3ATest"><img src="https://github.com/janlelis/unicode-display_width/workflows/Test/badge.svg" /></a></a>
+    <li><a href="#label-Version+2.0+-E2-80-94+Breaking+Changes">Version 2.0 — Breaking Changes</a>
+    <li><a href="#label-Introduction+to+Character+Widths">Introduction to Character Widths</a>
+    <li><a href="#label-How+this+Library+Handles+Widths">How this Library Handles Widths</a>
+    <li><a href="#label-Install">Install</a>
+    <li><a href="#label-Usage">Usage</a>
+    <li><a href="#label-Classic+API">Classic API</a>
+    <li><a href="#label-Ambiguous+Characters">Ambiguous Characters</a>
+    <li><a href="#label-Custom+Overwrites">Custom Overwrites</a>
+    <li><a href="#label-Emoji+Support">Emoji Support</a>
+    <li><a href="#label-Usage+with+String+Extension">Usage with String Extension</a>
+    <li><a href="#label-Modern+API-3A+Keyword-arguments+Based+Config+Object">Modern API: Keyword-arguments Based Config Object</a>
+    <li><a href="#label-Usage+From+the+CLI">Usage From the CLI</a>
+    <li><a href="#label-Other+Implementations+-26+Discussion">Other Implementations &amp; Discussion</a>
+    <li><a href="#label-Copyright+-26+Info">Copyright &amp; Info</a>
+  </ul>
+</div>
+
+
+  <div id="project-metadata">
+    <div id="fileindex-section" class="nav-section">
+  <h3>Pages</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="./CHANGELOG_md.html">CHANGELOG</a>
+  
+    <li><a href="./MIT-LICENSE_txt.html">MIT-LICENSE</a>
+  
+    <li><a href="./README_md.html">README</a>
+  
+  </ul>
+</div>
+
+  </div>
+</nav>
+
+<main role="main" aria-label="Page README.md">
+
+<h2 id="label-Unicode-3A-3ADisplayWidth+rdoc-image-3Aversion-5D+-3Cimg+src-3D-22https-3A-2F-2Fgithub.com-2Fjanlelis-2Funicode-display_width-2Fworkflows-2FTest-2Fbadge.svg-22+-2F-3E"><a href="Unicode/DisplayWidth.html"><code>Unicode::DisplayWidth</code></a> <a href="https://badge.fury.io/rb/unicode-display_width"><img src="version]}[https://badge.fury.io/rb/unicode-display_width.svg"></a> <a href="https://github.com/janlelis/unicode-display_width/actions?query=workflow%3ATest"><img src="https://github.com/janlelis/unicode-display_width/workflows/Test/badge.svg" /></a><span><a href="#label-Unicode-3A-3ADisplayWidth+rdoc-image-3Aversion-5D+-3Cimg+src-3D-22https-3A-2F-2Fgithub.com-2Fjanlelis-2Funicode-display_width-2Fworkflows-2FTest-2Fbadge.svg-22+-2F-3E">&para;</a> <a href="#top">&uarr;</a></span></h2>
+
+<p>Determines the monospace display width of a string in Ruby. Implementation based on <a href="https://www.unicode.org/Public/UNIDATA/EastAsianWidth.txt">EastAsianWidth.txt</a> and other data, 100% in Ruby. It does not rely on the OS vendor (like <a href="https://github.com/janlelis/wcswidth-ruby">wcwidth()</a>) to provide an up-to-date method for measuring string width.</p>
+
+<p><a href="Unicode.html"><code>Unicode</code></a> version: <strong>13.0.0</strong> (March 2020)</p>
+
+<p>Supported Rubies: <strong>3.0</strong>, <strong>2.7</strong>, <strong>2.6</strong>, <strong>2.5</strong></p>
+
+<p>Old Rubies which might still work: <strong>2.4</strong>, <strong>2.3</strong>, <strong>2.2</strong>, <strong>2.1</strong>, <strong>2.0</strong>, <strong>1.9</strong></p>
+
+<h2 id="label-Version+2.0+-E2-80-94+Breaking+Changes">Version 2.0 — Breaking Changes<span><a href="#label-Version+2.0+-E2-80-94+Breaking+Changes">&para;</a> <a href="#top">&uarr;</a></span></h2>
+
+<p>Some features of this library were marked deprecated for a long time and have been removed with Version 2.0:</p>
+<ul><li>
+<p>Aliases of display_width (…_size, …_length) have been removed</p>
+</li><li>
+<p>Auto-loading of string core extension has been removed:</p>
+</li></ul>
+
+<p>If you are relying on the <code>String#display_width</code> string extension to be automatically loaded (old behavior), please load it explicitly now:</p>
+
+<pre class="ruby"><span class="ruby-identifier">require</span> <span class="ruby-string">&quot;unicode/display_width/string_ext&quot;</span>
+</pre>
+
+<p>You could also change your <code>Gemfile</code> line to achieve this:</p>
+
+<pre class="ruby"><span class="ruby-identifier">gem</span> <span class="ruby-string">&quot;unicode-display_width&quot;</span>, <span class="ruby-value">require:</span> <span class="ruby-string">&quot;unicode/display_width/string_ext&quot;</span>
+</pre>
+
+<h2 id="label-Introduction+to+Character+Widths">Introduction to Character Widths<span><a href="#label-Introduction+to+Character+Widths">&para;</a> <a href="#top">&uarr;</a></span></h2>
+
+<p>Guessing the correct space a character will consume on terminals is not easy. There is no single standard. Most implementations combine data from <a href="https://www.unicode.org/reports/tr11/">East Asian Width</a>, some <a href="https://en.wikipedia.org/wiki/Unicode_character_property#General_Category">General Categories</a>, and hand-picked adjustments.</p>
+
+<h3 id="label-How+this+Library+Handles+Widths">How this Library Handles Widths<span><a href="#label-How+this+Library+Handles+Widths">&para;</a> <a href="#top">&uarr;</a></span></h3>
+
+<p>Further at the top means higher precedence. Please expect changes to this algorithm with every MINOR version update (the X in 1.X.0)!</p>
+
+<p>Width | Characters | Comment ——-|——————————|————————————————– X | (user defined) | Overwrites any other values -1 | <code>&quot;\b&quot;</code> | Backspace (total width never below 0) 0 | <code>&quot;\0&quot;</code>, <code>&quot;\x05&quot;</code>, <code>&quot;\a&quot;</code>, <code>&quot;\n&quot;</code>, <code>&quot;\v&quot;</code>, <code>&quot;\f&quot;</code>, <code>&quot;\r&quot;</code>, <code>&quot;\x0E&quot;</code>, <code>&quot;\x0F&quot;</code> | <a href="https://en.wikipedia.org/wiki/C0_and_C1_control_codes#C0_.28ASCII_and_derivatives.29">C0 control codes</a> that do not change horizontal width 1 | <code>&quot;\u{00AD}&quot;</code> | SOFT HYPHEN 2 | <code>&quot;\u{2E3A}&quot;</code> | TWO-EM DASH 3 | <code>&quot;\u{2E3B}&quot;</code> | THREE-EM DASH 0 | General Categories: Mn, Me, Cf (non-arabic) | Excludes ARABIC format characters 0 | <code>&quot;\u{1160}&quot;..&quot;\u{11FF}&quot;</code> | HANGUL JUNGSEONG 0 | <code>&quot;\u{2060}&quot;..&quot;\u{206F}&quot;</code>, <code>&quot;\u{FFF0}&quot;..&quot;\u{FFF8}&quot;</code>, <code>&quot;\u{E0000}&quot;..&quot;\u{E0FFF}&quot;</code> | Ignorable ranges 2 | East Asian Width: F, W | Full-width characters 2 | <code>&quot;\u{3400}&quot;..&quot;\u{4DBF}&quot;</code>, <code>&quot;\u{4E00}&quot;..&quot;\u{9FFF}&quot;</code>, <code>&quot;\u{F900}&quot;..&quot;\u{FAFF}&quot;</code>, <code>&quot;\u{20000}&quot;..&quot;\u{2FFFD}&quot;</code>, <code>&quot;\u{30000}&quot;..&quot;\u{3FFFD}&quot;</code> | Full-width ranges 1 or 2 | East Asian Width: A | Ambiguous characters, user defined, default: 1 1 | All other codepoints | -</p>
+
+<h2 id="label-Install">Install<span><a href="#label-Install">&para;</a> <a href="#top">&uarr;</a></span></h2>
+
+<p>Install the gem with:</p>
+
+<pre>$ gem install unicode-display_width</pre>
+
+<p>Or add to your Gemfile:</p>
+
+<pre class="ruby"><span class="ruby-identifier">gem</span> <span class="ruby-string">&#39;unicode-display_width&#39;</span>
+</pre>
+
+<h2 id="label-Usage">Usage<span><a href="#label-Usage">&para;</a> <a href="#top">&uarr;</a></span></h2>
+
+<h3 id="label-Classic+API">Classic API<span><a href="#label-Classic+API">&para;</a> <a href="#top">&uarr;</a></span></h3>
+
+<pre class="ruby"><span class="ruby-identifier">require</span> <span class="ruby-string">&#39;unicode/display_width&#39;</span>
+
+<span class="ruby-constant">Unicode</span><span class="ruby-operator">::</span><span class="ruby-constant">DisplayWidth</span>.<span class="ruby-identifier">of</span>(<span class="ruby-string">&quot;⚀&quot;</span>) <span class="ruby-comment"># =&gt; 1</span>
+<span class="ruby-constant">Unicode</span><span class="ruby-operator">::</span><span class="ruby-constant">DisplayWidth</span>.<span class="ruby-identifier">of</span>(<span class="ruby-string">&quot;一&quot;</span>) <span class="ruby-comment"># =&gt; 2</span>
+</pre>
+
+<h4 id="label-Ambiguous+Characters">Ambiguous Characters<span><a href="#label-Ambiguous+Characters">&para;</a> <a href="#top">&uarr;</a></span></h4>
+
+<p>The second parameter defines the value returned by characters defined as ambiguous:</p>
+
+<pre class="ruby"><span class="ruby-constant">Unicode</span><span class="ruby-operator">::</span><span class="ruby-constant">DisplayWidth</span>.<span class="ruby-identifier">of</span>(<span class="ruby-string">&quot;·&quot;</span>, <span class="ruby-value">1</span>) <span class="ruby-comment"># =&gt; 1</span>
+<span class="ruby-constant">Unicode</span><span class="ruby-operator">::</span><span class="ruby-constant">DisplayWidth</span>.<span class="ruby-identifier">of</span>(<span class="ruby-string">&quot;·&quot;</span>, <span class="ruby-value">2</span>) <span class="ruby-comment"># =&gt; 2</span>
+</pre>
+
+<h4 id="label-Custom+Overwrites">Custom Overwrites<span><a href="#label-Custom+Overwrites">&para;</a> <a href="#top">&uarr;</a></span></h4>
+
+<p>You can overwrite how to handle specific code points by passing a hash (or even a proc) as third parameter:</p>
+
+<pre class="ruby"><span class="ruby-constant">Unicode</span><span class="ruby-operator">::</span><span class="ruby-constant">DisplayWidth</span>.<span class="ruby-identifier">of</span>(<span class="ruby-string">&quot;a\tb&quot;</span>, <span class="ruby-value">1</span>, <span class="ruby-string">&quot;\t&quot;</span>.<span class="ruby-identifier">ord</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">10</span>))
+</pre>
+
+<h4 id="label-Emoji+Support">Emoji Support<span><a href="#label-Emoji+Support">&para;</a> <a href="#top">&uarr;</a></span></h4>
+
+<p>Emoji width support is included, but in must be activated manually. It will adjust the string&#39;s size for modifier and zero-width joiner sequences. You also need to add the <a href="https://github.com/janlelis/unicode-emoji">unicode-emoji</a> gem to your Gemfile:</p>
+
+<pre class="ruby"><span class="ruby-identifier">gem</span> <span class="ruby-string">&#39;unicode-display_width&#39;</span>
+<span class="ruby-identifier">gem</span> <span class="ruby-string">&#39;unicode-emoji&#39;</span>
+</pre>
+
+<p>Enable the emoji string width adjustments by passing <code>emoji: true</code> as fourth parameter:</p>
+
+<pre class="ruby"><span class="ruby-constant">Unicode</span><span class="ruby-operator">::</span><span class="ruby-constant">DisplayWidth</span>.<span class="ruby-identifier">of</span> <span class="ruby-string">&quot;🤾🏽‍♀️&quot;</span> <span class="ruby-comment"># =&gt; 5</span>
+<span class="ruby-constant">Unicode</span><span class="ruby-operator">::</span><span class="ruby-constant">DisplayWidth</span>.<span class="ruby-identifier">of</span> <span class="ruby-string">&quot;🤾🏽‍♀️&quot;</span>, <span class="ruby-value">1</span>, {}, <span class="ruby-value">emoji:</span> <span class="ruby-keyword">true</span> <span class="ruby-comment"># =&gt; 2</span>
+</pre>
+
+<h4 id="label-Usage+with+String+Extension">Usage with <a href="String.html"><code>String</code></a> Extension<span><a href="#label-Usage+with+String+Extension">&para;</a> <a href="#top">&uarr;</a></span></h4>
+
+<pre class="ruby"><span class="ruby-identifier">require</span> <span class="ruby-string">&#39;unicode/display_width/string_ext&#39;</span>
+
+<span class="ruby-string">&quot;⚀&quot;</span>.<span class="ruby-identifier">display_width</span> <span class="ruby-comment"># =&gt; 1</span>
+<span class="ruby-string">&#39;一&#39;</span>.<span class="ruby-identifier">display_width</span> <span class="ruby-comment"># =&gt; 2</span>
+</pre>
+
+<h3 id="label-Modern+API-3A+Keyword-arguments+Based+Config+Object">Modern API: Keyword-arguments Based Config Object<span><a href="#label-Modern+API-3A+Keyword-arguments+Based+Config+Object">&para;</a> <a href="#top">&uarr;</a></span></h3>
+
+<p>Version 2.0 introduces a keyword-argument based API, which allows you to save your configuration for later-reuse. This requires an extra line of code, but has the advantage that you&#39;ll need to define your string-width options only once:</p>
+
+<pre class="ruby"><span class="ruby-identifier">require</span> <span class="ruby-string">&#39;unicode/display_width&#39;</span>
+
+<span class="ruby-identifier">display_width</span> = <span class="ruby-constant">Unicode</span><span class="ruby-operator">::</span><span class="ruby-constant">DisplayWidth</span>.<span class="ruby-identifier">new</span>(
+  <span class="ruby-comment"># ambiguous: 1,</span>
+  <span class="ruby-value">overwrite:</span> { <span class="ruby-string">&quot;A&quot;</span>.<span class="ruby-identifier">ord</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">100</span> },
+  <span class="ruby-value">emoji:</span> <span class="ruby-keyword">true</span>,
+)
+
+<span class="ruby-identifier">display_width</span>.<span class="ruby-identifier">of</span> <span class="ruby-string">&quot;⚀&quot;</span> <span class="ruby-comment"># =&gt; 1</span>
+<span class="ruby-identifier">display_width</span>.<span class="ruby-identifier">of</span> <span class="ruby-string">&quot;🤾🏽‍♀️&quot;</span> <span class="ruby-comment"># =&gt; 2</span>
+<span class="ruby-identifier">display_width</span>.<span class="ruby-identifier">of</span> <span class="ruby-string">&quot;A&quot;</span> <span class="ruby-comment"># =&gt; 100</span>
+</pre>
+
+<h3 id="label-Usage+From+the+CLI">Usage From the CLI<span><a href="#label-Usage+From+the+CLI">&para;</a> <a href="#top">&uarr;</a></span></h3>
+
+<p>Use this one-liner to print out display widths for strings from the command-line:</p>
+
+<pre>$ gem install unicode-display_width
+$ ruby -r unicode/display_width -e &#39;puts Unicode::DisplayWidth.of $*[0]&#39; -- &quot;一&quot;</pre>
+
+<p>Replace “一” with the actual string to measure</p>
+
+<h2 id="label-Other+Implementations+-26+Discussion">Other Implementations &amp; Discussion<span><a href="#label-Other+Implementations+-26+Discussion">&para;</a> <a href="#top">&uarr;</a></span></h2>
+<ul><li>
+<p>Python: <a href="https://github.com/jquast/wcwidth">github.com/jquast/wcwidth</a></p>
+</li><li>
+<p>JavaScript: <a href="https://github.com/mycoboco/wcwidth.js">github.com/mycoboco/wcwidth.js</a></p>
+</li><li>
+<p>C: <a href="https://www.cl.cam.ac.uk/~mgk25/ucs/wcwidth.c">www.cl.cam.ac.uk/~mgk25/ucs/wcwidth.c</a></p>
+</li><li>
+<p>C for Julia: <a href="https://github.com/JuliaLang/utf8proc/issues/2">github.com/JuliaLang/utf8proc/issues/2</a></p>
+</li></ul>
+
+<p>See <a href="https://github.com/janlelis/unicode-x">unicode-x</a> for more <a href="Unicode.html"><code>Unicode</code></a> related micro libraries.</p>
+
+<h2 id="label-Copyright+-26+Info">Copyright &amp; Info<span><a href="#label-Copyright+-26+Info">&para;</a> <a href="#top">&uarr;</a></span></h2>
+<ul><li>
+<p>Copyright © 2011, 2015-2020 Jan Lelis, <a href="https://janlelis.com">janlelis.com</a>, released under the MIT license</p>
+</li><li>
+<p>Early versions based on runpaint&#39;s unicode-data interface: Copyright © 2009 Run Paint Run Run</p>
+</li><li>
+<p><a href="Unicode.html"><code>Unicode</code></a> data: <a href="https://www.unicode.org/copyright.html#Exhibit1">www.unicode.org/copyright.html#Exhibit1</a></p>
+</li></ul>
+
+</main>
+
+
+
+<footer id="validator-badges" role="contentinfo">
+  <p><a href="https://validator.w3.org/check/referer">Validate</a>
+  <p>Generated by <a href="https://ruby.github.io/rdoc/">RDoc</a> 6.2.1.
+  <p>Based on <a href="http://deveiate.org/projects/Darkfish-RDoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
+</footer>
+

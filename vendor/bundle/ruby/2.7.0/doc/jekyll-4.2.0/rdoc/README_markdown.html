@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="UTF-8">
+
+<title>README.markdown - jekyll-4.2.0 Documentation</title>
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "./";
+  var index_rel_prefix = "./";
+</script>
+
+<script src="./js/navigation.js" defer></script>
+<script src="./js/search.js" defer></script>
+<script src="./js/search_index.js" defer></script>
+<script src="./js/searcher.js" defer></script>
+<script src="./js/darkfish.js" defer></script>
+
+<link href="./css/fonts.css" rel="stylesheet">
+<link href="./css/rdoc.css" rel="stylesheet">
+
+
+
+
+<body id="top" role="document" class="file">
+<nav role="navigation">
+  <div id="project-navigation">
+    <div id="home-section" role="region" title="Quick navigation" class="nav-section">
+  <h2>
+    <a href="./index.html" rel="home">Home</a>
+  </h2>
+
+  <div id="table-of-contents-navigation">
+    <a href="./table_of_contents.html#pages">Pages</a>
+    <a href="./table_of_contents.html#classes">Classes</a>
+    <a href="./table_of_contents.html#methods">Methods</a>
+  </div>
+</div>
+
+    <div id="search-section" role="search" class="project-section initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <div id="search-field-wrapper">
+      <input id="search-field" role="combobox" aria-label="Search"
+             aria-autocomplete="list" aria-controls="search-results"
+             type="text" name="search" placeholder="Search" spellcheck="false"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </div>
+
+    <ul id="search-results" aria-label="Search Results"
+        aria-busy="false" aria-expanded="false"
+        aria-atomic="false" class="initially-hidden"></ul>
+  </form>
+</div>
+
+  </div>
+
+  
+<div class="nav-section">
+  <h3>Table of Contents</h3>
+
+  <ul class="link-list" role="directory">
+    <li><a href="#label-Jekyll"><a href="https://jekyllrb.com/">Jekyll</a></a>
+    <li><a href="#label-Philosophy">Philosophy</a>
+    <li><a href="#label-Getting+Started">Getting Started</a>
+    <li><a href="#label-Diving+In">Diving In</a>
+    <li><a href="#label-Need+help-3F">Need help?</a>
+    <li><a href="#label-Code+of+Conduct">Code of Conduct</a>
+    <li><a href="#label-Credits">Credits</a>
+    <li><a href="#label-Sponsors">Sponsors</a>
+    <li><a href="#label-Contributors">Contributors</a>
+    <li><a href="#label-Backers">Backers</a>
+    <li><a href="#label-License">License</a>
+  </ul>
+</div>
+
+
+  <div id="project-metadata">
+    <div id="fileindex-section" class="nav-section">
+  <h3>Pages</h3>
+
+  <ul class="link-list">
+  
+    <li><a href="./LICENSE.html">LICENSE</a>
+  
+    <li><a href="./README_markdown.html">README.markdown</a>
+  
+    <li><a href="./lib/blank_template/_layouts/default_html.html">default.html</a>
+  
+    <li><a href="./lib/blank_template/_sass/main_scss.html">main.scss</a>
+  
+    <li><a href="./lib/blank_template/assets/css/main_scss.html">main.scss</a>
+  
+    <li><a href="./lib/blank_template/index_md.html">index</a>
+  
+    <li><a href="./lib/jekyll/commands/serve/livereload_assets/livereload_js.html">livereload.js</a>
+  
+    <li><a href="./lib/jekyll/mime_types.html">mime.types</a>
+  
+    <li><a href="./lib/site_template/404_html.html">404.html</a>
+  
+    <li><a href="./lib/site_template/about_markdown.html">about.markdown</a>
+  
+    <li><a href="./lib/site_template/index_markdown.html">index.markdown</a>
+  
+    <li><a href="./lib/theme_template/Gemfile.html">Gemfile</a>
+  
+    <li><a href="./lib/theme_template/_layouts/default_html.html">default.html</a>
+  
+    <li><a href="./lib/theme_template/_layouts/page_html.html">page.html</a>
+  
+    <li><a href="./lib/theme_template/_layouts/post_html.html">post.html</a>
+  
+    <li><a href="./lib/theme_template/example/_post_md.html">_post</a>
+  
+    <li><a href="./lib/theme_template/example/index_html.html">index.html</a>
+  
+    <li><a href="./lib/theme_template/example/style_scss.html">style.scss</a>
+  
+  </ul>
+</div>
+
+  </div>
+</nav>
+
+<main role="main" aria-label="Page README.markdown">
+
+<h1 id="label-Jekyll"><a href="https://jekyllrb.com/">Jekyll</a><span><a href="#label-Jekyll">&para;</a> <a href="#top">&uarr;</a></span></h1>
+
+<p><a href="https://rubygems.org/gems/jekyll"><img src="https://img.shields.io/gem/v/jekyll.svg"></a> <a href="https://github.com/jekyll/jekyll/actions?query=workflow%3A%22Continuous+Integration%22+branch%3Amaster"><img src="https://github.com/jekyll/jekyll/workflows/Continuous%20Integration/badge.svg"></a> <a href="https://ci.appveyor.com/project/jekyll/jekyll/branch/master"><img src="https://img.shields.io/appveyor/ci/jekyll/jekyll/master.svg?label=Windows%20build"></a> <a href="https://hakiri.io/github/jekyll/jekyll/master"><img src="https://hakiri.io/github/jekyll/jekyll/master.svg"></a> <a href="#backers"><img src="https://opencollective.com/jekyll/backers/badge.svg"></a> <a href="#sponsors"><img src="https://opencollective.com/jekyll/sponsors/badge.svg"></a></p>
+
+<p><a href="Jekyll.html"><code>Jekyll</code></a> is a simple, blog-aware, static site generator perfect for personal, project, or organization sites. Think of it like a file-based CMS, without all the complexity. <a href="Jekyll.html"><code>Jekyll</code></a> takes your content, renders Markdown and Liquid templates, and spits out a complete, static website ready to be served by Apache, Nginx or another web server. <a href="Jekyll.html"><code>Jekyll</code></a> is the engine behind <a href="https://pages.github.com">GitHub Pages</a>, which you can use to host sites right from your GitHub repositories.</p>
+
+<h2 id="label-Philosophy">Philosophy<span><a href="#label-Philosophy">&para;</a> <a href="#top">&uarr;</a></span></h2>
+
+<p><a href="Jekyll.html"><code>Jekyll</code></a> does what you tell it to do — no more, no less. It doesn&#39;t try to outsmart users by making bold assumptions, nor does it burden them with needless complexity and configuration. Put simply, <a href="Jekyll.html"><code>Jekyll</code></a> gets out of your way and allows you to concentrate on what truly matters: your content.</p>
+
+<p>See: <a href="https://jekyllrb.com/philosophy">jekyllrb.com/philosophy</a></p>
+
+<h2 id="label-Getting+Started">Getting Started<span><a href="#label-Getting+Started">&para;</a> <a href="#top">&uarr;</a></span></h2>
+<ul><li>
+<p><a href="https://jekyllrb.com/docs/installation/">Install</a> the gem</p>
+</li><li>
+<p>Read up about its <a href="https://jekyllrb.com/docs/usage/">Usage</a> and <a href="https://jekyllrb.com/docs/configuration/">Configuration</a></p>
+</li><li>
+<p>Take a gander at some existing <a href="https://github.com/jekyll/jekyll/wiki/sites">Sites</a></p>
+</li><li>
+<p><a href="https://github.com/jekyll/jekyll/fork">Fork</a> and <a href="https://jekyllrb.com/docs/contributing/">Contribute</a> your own modifications</p>
+</li><li>
+<p>Have questions? Check out our official forum community <a href="https://talk.jekyllrb.com/">Jekyll Talk</a> or <a href="https://botbot.me/freenode/jekyll/">#jekyll on irc.freenode.net</a></p>
+</li></ul>
+
+<h2 id="label-Diving+In">Diving In<span><a href="#label-Diving+In">&para;</a> <a href="#top">&uarr;</a></span></h2>
+<ul><li>
+<p><a href="http://import.jekyllrb.com/docs/home/">Migrate</a> from your previous system</p>
+</li><li>
+<p>Learn how <a href="https://jekyllrb.com/docs/front-matter/">Front Matter</a> works</p>
+</li><li>
+<p>Put information on your site with <a href="https://jekyllrb.com/docs/variables/">Variables</a></p>
+</li><li>
+<p>Customize the <a href="https://jekyllrb.com/docs/permalinks/">Permalinks</a> your posts are generated with</p>
+</li><li>
+<p>Use the built-in <a href="https://jekyllrb.com/docs/templates/">Liquid Extensions</a> to make your life easier</p>
+</li><li>
+<p>Use custom <a href="https://jekyllrb.com/docs/plugins/">Plugins</a> to generate content specific to your site</p>
+</li><li>
+<p>Watch <a href="https://jekyllrb.com/tutorials/video-walkthroughs/">video tutorials from Giraffe Academy</a></p>
+</li></ul>
+
+<h2 id="label-Need+help-3F">Need help?<span><a href="#label-Need+help-3F">&para;</a> <a href="#top">&uarr;</a></span></h2>
+
+<p>If you don&#39;t find the answer to your problem in our <a href="https://jekyllrb.com/docs/">docs</a>, or in the <a href="https://jekyllrb.com/docs/troubleshooting/">troubleshooting section</a>, ask the <a href="https://jekyllrb.com/docs/community/">community</a> for help.</p>
+
+<h2 id="label-Code+of+Conduct">Code of Conduct<span><a href="#label-Code+of+Conduct">&para;</a> <a href="#top">&uarr;</a></span></h2>
+
+<p>In order to have a more open and welcoming community, <a href="Jekyll.html"><code>Jekyll</code></a> adheres to a <a href="CODE_OF_CONDUCT.markdown">code of conduct</a> adapted from the Ruby on Rails code of conduct.</p>
+
+<p>Please adhere to this code of conduct in any interactions you have in the <a href="Jekyll.html"><code>Jekyll</code></a> community. It is strictly enforced on all official <a href="Jekyll.html"><code>Jekyll</code></a> repositories, websites, and resources. If you encounter someone violating these terms, please let one of our <a href="https://jekyllrb.com/team/#core-team">core team members</a> know and we will address it as soon as possible.</p>
+
+<h2 id="label-Credits">Credits<span><a href="#label-Credits">&para;</a> <a href="#top">&uarr;</a></span></h2>
+
+<h3 id="label-Sponsors">Sponsors<span><a href="#label-Sponsors">&para;</a> <a href="#top">&uarr;</a></span></h3>
+
+<p>Support this project by becoming a sponsor. Your logo will show up in this README with a link to your website. <a href="https://opencollective.com/jekyll#sponsor">Become a sponsor!</a></p>
+<a href="https://opencollective.com/jekyll/sponsor/0/website" target="_blank"><img src="https://opencollective.com/jekyll/sponsor/0/avatar.svg" /></a><a href="https://opencollective.com/jekyll/sponsor/1/website" target="_blank"><img src="https://opencollective.com/jekyll/sponsor/1/avatar.svg" /></a><a href="https://opencollective.com/jekyll/sponsor/2/website" target="_blank"><img src="https://opencollective.com/jekyll/sponsor/2/avatar.svg" /></a><a href="https://opencollective.com/jekyll/sponsor/3/website" target="_blank"><img src="https://opencollective.com/jekyll/sponsor/3/avatar.svg" /></a><a href="https://opencollective.com/jekyll/sponsor/4/website" target="_blank"><img src="https://opencollective.com/jekyll/sponsor/4/avatar.svg" /></a><a href="https://opencollective.com/jekyll/sponsor/5/website" target="_blank"><img src="https://opencollective.com/jekyll/sponsor/5/avatar.svg" /></a><a href="https://opencollective.com/jekyll/sponsor/6/website" target="_blank"><img src="https://opencollective.com/jekyll/sponsor/6/avatar.svg" /></a><a href="https://opencollective.com/jekyll/sponsor/7/website" target="_blank"><img src="https://opencollective.com/jekyll/sponsor/7/avatar.svg" /></a><a href="https://opencollective.com/jekyll/sponsor/8/website" target="_blank"><img src="https://opencollective.com/jekyll/sponsor/8/avatar.svg" /></a><a href="https://opencollective.com/jekyll/sponsor/9/website" target="_blank"><img src="https://opencollective.com/jekyll/sponsor/9/avatar.svg" /></a>
+<h3 id="label-Contributors">Contributors<span><a href="#label-Contributors">&para;</a> <a href="#top">&uarr;</a></span></h3>
+
+<p>This project exists thanks to all the people who contribute. &lt;a href=“../../graphs/contributors”&gt;&lt;img src=“<a href="https://opencollective.com/jekyll/contributors.svg?width=890&button=false">opencollective.com/jekyll/contributors.svg?width=890&button=false</a>” /&gt;&lt;/a&gt;</p>
+
+<h3 id="label-Backers">Backers<span><a href="#label-Backers">&para;</a> <a href="#top">&uarr;</a></span></h3>
+
+<p>Thank you to all our backers! 🙏 <a href="https://opencollective.com/jekyll#backer">Become a backer</a></p>
+<a href="https://opencollective.com/jekyll#backers" target="_blank"><img src="https://opencollective.com/jekyll/backers.svg?width=890" /></a>
+<h2 id="label-License">License<span><a href="#label-License">&para;</a> <a href="#top">&uarr;</a></span></h2>
+
+<p>See the <a href="https://github.com/jekyll/jekyll/blob/master/LICENSE">LICENSE</a> file.</p>
+
+</main>
+
+
+
+<footer id="validator-badges" role="contentinfo">
+  <p><a href="https://validator.w3.org/check/referer">Validate</a>
+  <p>Generated by <a href="https://ruby.github.io/rdoc/">RDoc</a> 6.2.1.
+  <p>Based on <a href="http://deveiate.org/projects/Darkfish-RDoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
+</footer>
+

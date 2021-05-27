@@ -1,0 +1,1381 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="UTF-8">
+
+<title>class Terminal::Table - terminal-table-2.0.0 Documentation</title>
+
+<script type="text/javascript">
+  var rdoc_rel_prefix = "../";
+  var index_rel_prefix = "../";
+</script>
+
+<script src="../js/navigation.js" defer></script>
+<script src="../js/search.js" defer></script>
+<script src="../js/search_index.js" defer></script>
+<script src="../js/searcher.js" defer></script>
+<script src="../js/darkfish.js" defer></script>
+
+<link href="../css/fonts.css" rel="stylesheet">
+<link href="../css/rdoc.css" rel="stylesheet">
+
+
+
+
+<body id="top" role="document" class="class">
+<nav role="navigation">
+  <div id="project-navigation">
+    <div id="home-section" role="region" title="Quick navigation" class="nav-section">
+  <h2>
+    <a href="../index.html" rel="home">Home</a>
+  </h2>
+
+  <div id="table-of-contents-navigation">
+    <a href="../table_of_contents.html#pages">Pages</a>
+    <a href="../table_of_contents.html#classes">Classes</a>
+    <a href="../table_of_contents.html#methods">Methods</a>
+  </div>
+</div>
+
+    <div id="search-section" role="search" class="project-section initially-hidden">
+  <form action="#" method="get" accept-charset="utf-8">
+    <div id="search-field-wrapper">
+      <input id="search-field" role="combobox" aria-label="Search"
+             aria-autocomplete="list" aria-controls="search-results"
+             type="text" name="search" placeholder="Search" spellcheck="false"
+             title="Type to search, Up and Down to navigate, Enter to load">
+    </div>
+
+    <ul id="search-results" aria-label="Search Results"
+        aria-busy="false" aria-expanded="false"
+        aria-atomic="false" class="initially-hidden"></ul>
+  </form>
+</div>
+
+  </div>
+
+  
+
+  <div id="class-metadata">
+    
+    <div id="parent-class-section" class="nav-section">
+  <h3>Parent</h3>
+
+  
+  <p class="link"><a href="../Object.html">Object</a>
+  
+</div>
+
+    
+    
+    <!-- Method Quickref -->
+<div id="method-list-section" class="nav-section">
+  <h3>Methods</h3>
+
+  <ul class="link-list" role="directory">
+    
+    <li ><a href="#method-c-new">::new</a>
+    
+    <li ><a href="#method-i-3C-3C">#&lt;&lt;</a>
+    
+    <li ><a href="#method-i-3D-3D">#==</a>
+    
+    <li ><a href="#method-i-add_row">#add_row</a>
+    
+    <li ><a href="#method-i-add_separator">#add_separator</a>
+    
+    <li ><a href="#method-i-align_column">#align_column</a>
+    
+    <li ><a href="#method-i-cell_padding">#cell_padding</a>
+    
+    <li ><a href="#method-i-cell_spacing">#cell_spacing</a>
+    
+    <li ><a href="#method-i-column">#column</a>
+    
+    <li ><a href="#method-i-column_width">#column_width</a>
+    
+    <li ><a href="#method-i-column_widths">#column_widths</a>
+    
+    <li ><a href="#method-i-column_with_headings">#column_with_headings</a>
+    
+    <li ><a href="#method-i-columns">#columns</a>
+    
+    <li ><a href="#method-i-columns_width">#columns_width</a>
+    
+    <li ><a href="#method-i-headings-3D">#headings=</a>
+    
+    <li ><a href="#method-i-headings_with_rows">#headings_with_rows</a>
+    
+    <li ><a href="#method-i-length_of_column">#length_of_column</a>
+    
+    <li ><a href="#method-i-number_of_columns">#number_of_columns</a>
+    
+    <li ><a href="#method-i-recalc_column_widths">#recalc_column_widths</a>
+    
+    <li ><a href="#method-i-render">#render</a>
+    
+    <li ><a href="#method-i-require_column_widths_recalc">#require_column_widths_recalc</a>
+    
+    <li ><a href="#method-i-rows">#rows</a>
+    
+    <li ><a href="#method-i-rows-3D">#rows=</a>
+    
+    <li ><a href="#method-i-style">#style</a>
+    
+    <li ><a href="#method-i-style-3D">#style=</a>
+    
+    <li ><a href="#method-i-title-3D">#title=</a>
+    
+    <li ><a href="#method-i-title_cell_options">#title_cell_options</a>
+    
+    <li ><a href="#method-i-to_s">#to_s</a>
+    
+    <li ><a href="#method-i-yield_or_eval">#yield_or_eval</a>
+    
+  </ul>
+</div>
+
+  </div>
+</nav>
+
+<main role="main" aria-labelledby="class-Terminal::Table">
+  <h1 id="class-Terminal::Table" class="class">
+    class Terminal::Table
+  </h1>
+
+  <section class="description">
+    
+  </section>
+
+  
+  <section id="5Buntitled-5D" class="documentation-section">
+    
+
+    
+
+    
+    <section class="constants-list">
+      <header>
+        <h3>Constants</h3>
+      </header>
+      <dl>
+      
+        <dt id="VERSION">VERSION
+        
+        <dd>
+        
+      
+      </dl>
+    </section>
+    
+
+    
+    <section class="attribute-method-details" class="method-section">
+      <header>
+        <h3>Attributes</h3>
+      </header>
+
+      
+      <div id="attribute-i-headings" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">headings</span><span
+            class="attribute-access-type">[R]</span>
+        </div>
+
+        <div class="method-description">
+        
+        
+        
+        </div>
+      </div>
+      
+      <div id="attribute-i-title" class="method-detail">
+        <div class="method-heading attribute-method-heading">
+          <span class="method-name">title</span><span
+            class="attribute-access-type">[R]</span>
+        </div>
+
+        <div class="method-description">
+        
+        
+        
+        </div>
+      </div>
+      
+    </section>
+    
+
+    
+     <section id="public-class-5Buntitled-5D-method-details" class="method-section">
+       <header>
+         <h3>Public Class Methods</h3>
+       </header>
+
+    
+      <div id="method-c-new" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">new</span><span
+            class="method-args">(options = {})</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Generates a ASCII table with the given <em>options</em>.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="new-source">
+            <pre><span class="ruby-comment"># File lib/terminal-table/table.rb, line 12</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">initialize</span> <span class="ruby-identifier">options</span> = {}, <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>
+  <span class="ruby-ivar">@headings</span> = []
+  <span class="ruby-ivar">@rows</span> = []
+  <span class="ruby-ivar">@column_widths</span> = []
+  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">style</span> = <span class="ruby-identifier">options</span>.<span class="ruby-identifier">fetch</span> <span class="ruby-value">:style</span>, {}
+  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">headings</span> = <span class="ruby-identifier">options</span>.<span class="ruby-identifier">fetch</span> <span class="ruby-value">:headings</span>, []
+  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">rows</span> = <span class="ruby-identifier">options</span>.<span class="ruby-identifier">fetch</span> <span class="ruby-value">:rows</span>, []
+  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">title</span> = <span class="ruby-identifier">options</span>.<span class="ruby-identifier">fetch</span> <span class="ruby-value">:title</span>, <span class="ruby-keyword">nil</span>
+  <span class="ruby-identifier">yield_or_eval</span>(<span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>) <span class="ruby-keyword">if</span> <span class="ruby-identifier">block</span>
+
+  <span class="ruby-identifier">style</span>.<span class="ruby-identifier">on_change</span>(<span class="ruby-value">:width</span>) { <span class="ruby-identifier">require_column_widths_recalc</span> }
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+    </section>
+  
+     <section id="public-instance-5Buntitled-5D-method-details" class="method-section">
+       <header>
+         <h3>Public Instance Methods</h3>
+       </header>
+
+    
+      <div id="method-i-3C-3C" class="method-detail method-alias">
+        
+        <div class="method-heading">
+          <span class="method-name">&lt;&lt;</span><span
+            class="method-args">(array)</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+        </div>
+
+        
+
+        
+        <div class="aliases">
+          Alias for: <a href="Table.html#method-i-add_row">add_row</a>
+        </div>
+        
+      </div>
+
+    
+      <div id="method-i-3D-3D" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">==</span><span
+            class="method-args">(other)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Check if <em>other</em> is equal to self. <em>other</em> is considered equal if it contains the same headings and rows.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="3D-3D-source">
+            <pre><span class="ruby-comment"># File lib/terminal-table/table.rb, line 176</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">==</span> <span class="ruby-identifier">other</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">respond_to?</span> <span class="ruby-value">:render</span> <span class="ruby-keyword">and</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">respond_to?</span> <span class="ruby-value">:rows</span>
+    <span class="ruby-keyword">self</span>.<span class="ruby-identifier">headings</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">headings</span> <span class="ruby-keyword">and</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">rows</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">rows</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-add_row" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">add_row</span><span
+            class="method-args">(array)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Add a row.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="add_row-source">
+            <pre><span class="ruby-comment"># File lib/terminal-table/table.rb, line 40</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">add_row</span> <span class="ruby-identifier">array</span>
+  <span class="ruby-identifier">row</span> = <span class="ruby-identifier">array</span> <span class="ruby-operator">==</span> <span class="ruby-value">:separator</span> <span class="ruby-operator">?</span> <span class="ruby-constant">Separator</span>.<span class="ruby-identifier">new</span>(<span class="ruby-keyword">self</span>) <span class="ruby-operator">:</span> <span class="ruby-constant">Row</span>.<span class="ruby-identifier">new</span>(<span class="ruby-keyword">self</span>, <span class="ruby-identifier">array</span>)
+  <span class="ruby-ivar">@rows</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">row</span>
+  <span class="ruby-identifier">require_column_widths_recalc</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">row</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Separator</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+        <div class="aliases">
+          Also aliased as: <a href="Table.html#method-i-3C-3C">&lt;&lt;</a>
+        </div>
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-add_separator" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">add_separator</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Add a separator.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="add_separator-source">
+            <pre><span class="ruby-comment"># File lib/terminal-table/table.rb, line 50</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">add_separator</span>
+  <span class="ruby-keyword">self</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-value">:separator</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-align_column" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">align_column</span><span
+            class="method-args">(n, alignment)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Align column <em>n</em> to the given <em>alignment</em> of :center, :left, or :right.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="align_column-source">
+            <pre><span class="ruby-comment"># File lib/terminal-table/table.rb, line 28</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">align_column</span> <span class="ruby-identifier">n</span>, <span class="ruby-identifier">alignment</span>
+  <span class="ruby-identifier">r</span> = <span class="ruby-identifier">rows</span>
+  <span class="ruby-identifier">column</span>(<span class="ruby-identifier">n</span>).<span class="ruby-identifier">each_with_index</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">col</span>, <span class="ruby-identifier">i</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">cell</span> = <span class="ruby-identifier">r</span>[<span class="ruby-identifier">i</span>][<span class="ruby-identifier">n</span>]
+    <span class="ruby-keyword">next</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">cell</span>
+    <span class="ruby-identifier">cell</span>.<span class="ruby-identifier">alignment</span> = <span class="ruby-identifier">alignment</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">cell</span>.<span class="ruby-identifier">alignment?</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-cell_padding" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">cell_padding</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="cell_padding-source">
+            <pre><span class="ruby-comment"># File lib/terminal-table/table.rb, line 58</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">cell_padding</span>
+  <span class="ruby-identifier">style</span>.<span class="ruby-identifier">padding_left</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">style</span>.<span class="ruby-identifier">padding_right</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-cell_spacing" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">cell_spacing</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="cell_spacing-source">
+            <pre><span class="ruby-comment"># File lib/terminal-table/table.rb, line 54</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">cell_spacing</span>
+  <span class="ruby-identifier">cell_padding</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">style</span>.<span class="ruby-identifier">border_y</span>.<span class="ruby-identifier">length</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-column" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">column</span><span
+            class="method-args">(n, method = :value, array = rows)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Return column <em>n</em>.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="column-source">
+            <pre><span class="ruby-comment"># File lib/terminal-table/table.rb, line 65</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">column</span> <span class="ruby-identifier">n</span>, <span class="ruby-identifier">method</span> = <span class="ruby-value">:value</span>, <span class="ruby-identifier">array</span> = <span class="ruby-identifier">rows</span>
+  <span class="ruby-identifier">array</span>.<span class="ruby-identifier">map</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">row</span><span class="ruby-operator">|</span>
+    <span class="ruby-comment"># for each cells in a row, find the column with index</span>
+    <span class="ruby-comment"># just greater than the required one, and go back one.</span>
+    <span class="ruby-identifier">index</span> = <span class="ruby-identifier">col</span> = <span class="ruby-value">0</span>
+    <span class="ruby-identifier">row</span>.<span class="ruby-identifier">cells</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">cell</span><span class="ruby-operator">|</span>
+      <span class="ruby-keyword">break</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">index</span> <span class="ruby-operator">&gt;</span> <span class="ruby-identifier">n</span>
+      <span class="ruby-identifier">index</span> <span class="ruby-operator">+=</span> <span class="ruby-identifier">cell</span>.<span class="ruby-identifier">colspan</span>
+      <span class="ruby-identifier">col</span> <span class="ruby-operator">+=</span> <span class="ruby-value">1</span>
+    <span class="ruby-keyword">end</span>
+    <span class="ruby-identifier">cell</span> = <span class="ruby-identifier">row</span>[<span class="ruby-identifier">col</span> <span class="ruby-operator">-</span> <span class="ruby-value">1</span>]
+    <span class="ruby-identifier">cell</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">method</span> <span class="ruby-operator">?</span> <span class="ruby-identifier">cell</span>.<span class="ruby-identifier">__send__</span>(<span class="ruby-identifier">method</span>) <span class="ruby-operator">:</span> <span class="ruby-identifier">cell</span>
+  }.<span class="ruby-identifier">compact</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-column_width" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">column_width</span><span
+            class="method-args">(n)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Return length of column <em>n</em>.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="column_width-source">
+            <pre><span class="ruby-comment"># File lib/terminal-table/table.rb, line 97</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">column_width</span> <span class="ruby-identifier">n</span>
+  <span class="ruby-identifier">column_widths</span>[<span class="ruby-identifier">n</span>] <span class="ruby-operator">||</span> <span class="ruby-value">0</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+        <div class="aliases">
+          Also aliased as: <a href="Table.html#method-i-length_of_column">length_of_column</a>
+        </div>
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-column_with_headings" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">column_with_headings</span><span
+            class="method-args">(n, method = :value)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Return <em>n</em> column including headings.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="column_with_headings-source">
+            <pre><span class="ruby-comment"># File lib/terminal-table/table.rb, line 83</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">column_with_headings</span> <span class="ruby-identifier">n</span>, <span class="ruby-identifier">method</span> = <span class="ruby-value">:value</span>
+  <span class="ruby-identifier">column</span> <span class="ruby-identifier">n</span>, <span class="ruby-identifier">method</span>, <span class="ruby-identifier">headings_with_rows</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-columns" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">columns</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Return columns.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="columns-source">
+            <pre><span class="ruby-comment"># File lib/terminal-table/table.rb, line 90</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">columns</span>
+  (<span class="ruby-value">0</span><span class="ruby-operator">...</span><span class="ruby-identifier">number_of_columns</span>).<span class="ruby-identifier">map</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">n</span><span class="ruby-operator">|</span> <span class="ruby-identifier">column</span> <span class="ruby-identifier">n</span> }
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-headings-3D" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">headings=</span><span
+            class="method-args">(arrays)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Set the headings</p>
+          
+          
+
+          
+          <div class="method-source-code" id="headings-3D-source">
+            <pre><span class="ruby-comment"># File lib/terminal-table/table.rb, line 112</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">headings=</span> <span class="ruby-identifier">arrays</span>
+  <span class="ruby-identifier">arrays</span> = [<span class="ruby-identifier">arrays</span>] <span class="ruby-keyword">unless</span> <span class="ruby-identifier">arrays</span>.<span class="ruby-identifier">first</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Array</span>)
+  <span class="ruby-ivar">@headings</span> = <span class="ruby-identifier">arrays</span>.<span class="ruby-identifier">map</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">array</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">row</span> = <span class="ruby-constant">Row</span>.<span class="ruby-identifier">new</span>(<span class="ruby-keyword">self</span>, <span class="ruby-identifier">array</span>)
+    <span class="ruby-identifier">require_column_widths_recalc</span>
+    <span class="ruby-identifier">row</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-length_of_column" class="method-detail method-alias">
+        
+        <div class="method-heading">
+          <span class="method-name">length_of_column</span><span
+            class="method-args">(n)</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+        </div>
+
+        
+
+        
+        <div class="aliases">
+          Alias for: <a href="Table.html#method-i-column_width">column_width</a>
+        </div>
+        
+      </div>
+
+    
+      <div id="method-i-number_of_columns" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">number_of_columns</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Return total number of columns available.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="number_of_columns-source">
+            <pre><span class="ruby-comment"># File lib/terminal-table/table.rb, line 105</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">number_of_columns</span>
+  <span class="ruby-identifier">headings_with_rows</span>.<span class="ruby-identifier">map</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">r</span><span class="ruby-operator">|</span> <span class="ruby-identifier">r</span>.<span class="ruby-identifier">number_of_columns</span> }.<span class="ruby-identifier">max</span> <span class="ruby-operator">||</span> <span class="ruby-value">0</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-render" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">render</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Render the table.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="render-source">
+            <pre><span class="ruby-comment"># File lib/terminal-table/table.rb, line 124</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">render</span>
+  <span class="ruby-identifier">separator</span> = <span class="ruby-constant">Separator</span>.<span class="ruby-identifier">new</span>(<span class="ruby-keyword">self</span>)
+  <span class="ruby-identifier">buffer</span> = <span class="ruby-identifier">style</span>.<span class="ruby-identifier">border_top</span> <span class="ruby-operator">?</span> [<span class="ruby-identifier">separator</span>] <span class="ruby-operator">:</span> []
+  <span class="ruby-keyword">unless</span> <span class="ruby-ivar">@title</span>.<span class="ruby-identifier">nil?</span>
+    <span class="ruby-identifier">buffer</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-constant">Row</span>.<span class="ruby-identifier">new</span>(<span class="ruby-keyword">self</span>, [<span class="ruby-identifier">title_cell_options</span>])
+    <span class="ruby-identifier">buffer</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">separator</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-ivar">@headings</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">row</span><span class="ruby-operator">|</span>
+    <span class="ruby-keyword">unless</span> <span class="ruby-identifier">row</span>.<span class="ruby-identifier">cells</span>.<span class="ruby-identifier">empty?</span>
+      <span class="ruby-identifier">buffer</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">row</span>
+      <span class="ruby-identifier">buffer</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">separator</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">style</span>.<span class="ruby-identifier">all_separators</span>
+    <span class="ruby-identifier">buffer</span> <span class="ruby-operator">+=</span> <span class="ruby-ivar">@rows</span>.<span class="ruby-identifier">product</span>([<span class="ruby-identifier">separator</span>]).<span class="ruby-identifier">flatten</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">buffer</span> <span class="ruby-operator">+=</span> <span class="ruby-ivar">@rows</span>
+    <span class="ruby-identifier">buffer</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">separator</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">style</span>.<span class="ruby-identifier">border_bottom</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">buffer</span>.<span class="ruby-identifier">map</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">r</span><span class="ruby-operator">|</span> <span class="ruby-identifier">style</span>.<span class="ruby-identifier">margin_left</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">r</span>.<span class="ruby-identifier">render</span>.<span class="ruby-identifier">rstrip</span> }.<span class="ruby-identifier">join</span>(<span class="ruby-string">&quot;\n&quot;</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+        <div class="aliases">
+          Also aliased as: <a href="Table.html#method-i-to_s">to_s</a>
+        </div>
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-rows" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">rows</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Return rows without separator rows.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="rows-source">
+            <pre><span class="ruby-comment"># File lib/terminal-table/table.rb, line 150</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">rows</span>
+  <span class="ruby-ivar">@rows</span>.<span class="ruby-identifier">reject</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">row</span><span class="ruby-operator">|</span> <span class="ruby-identifier">row</span>.<span class="ruby-identifier">is_a?</span> <span class="ruby-constant">Separator</span> }
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-rows-3D" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">rows=</span><span
+            class="method-args">(array)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="rows-3D-source">
+            <pre><span class="ruby-comment"># File lib/terminal-table/table.rb, line 154</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">rows=</span> <span class="ruby-identifier">array</span>
+  <span class="ruby-ivar">@rows</span> = []
+  <span class="ruby-identifier">array</span>.<span class="ruby-identifier">each</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">arr</span><span class="ruby-operator">|</span> <span class="ruby-keyword">self</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">arr</span> }
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-style" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">style</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="style-source">
+            <pre><span class="ruby-comment"># File lib/terminal-table/table.rb, line 163</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">style</span>
+  <span class="ruby-ivar">@style</span> <span class="ruby-operator">||=</span> <span class="ruby-constant">Style</span>.<span class="ruby-identifier">new</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-style-3D" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">style=</span><span
+            class="method-args">(options)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="style-3D-source">
+            <pre><span class="ruby-comment"># File lib/terminal-table/table.rb, line 159</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">style=</span>(<span class="ruby-identifier">options</span>)
+  <span class="ruby-identifier">style</span>.<span class="ruby-identifier">apply</span> <span class="ruby-identifier">options</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-title-3D" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">title=</span><span
+            class="method-args">(title)</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="title-3D-source">
+            <pre><span class="ruby-comment"># File lib/terminal-table/table.rb, line 167</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">title=</span>(<span class="ruby-identifier">title</span>)
+  <span class="ruby-ivar">@title</span> = <span class="ruby-identifier">title</span>
+  <span class="ruby-identifier">require_column_widths_recalc</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-to_s" class="method-detail method-alias">
+        
+        <div class="method-heading">
+          <span class="method-name">to_s</span><span
+            class="method-args">()</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+        </div>
+
+        
+
+        
+        <div class="aliases">
+          Alias for: <a href="Table.html#method-i-render">render</a>
+        </div>
+        
+      </div>
+
+    
+    </section>
+  
+     <section id="private-instance-5Buntitled-5D-method-details" class="method-section">
+       <header>
+         <h3>Private Instance Methods</h3>
+       </header>
+
+    
+      <div id="method-i-column_widths" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">column_widths</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="column_widths-source">
+            <pre><span class="ruby-comment"># File lib/terminal-table/table.rb, line 339</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">column_widths</span>
+  <span class="ruby-identifier">recalc_column_widths</span> <span class="ruby-keyword">if</span> <span class="ruby-ivar">@require_column_widths_recalc</span>
+  <span class="ruby-ivar">@column_widths</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-columns_width" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">columns_width</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="columns_width-source">
+            <pre><span class="ruby-comment"># File lib/terminal-table/table.rb, line 184</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">columns_width</span>
+  <span class="ruby-identifier">column_widths</span>.<span class="ruby-identifier">inject</span>(<span class="ruby-value">0</span>) { <span class="ruby-operator">|</span><span class="ruby-identifier">s</span>, <span class="ruby-identifier">i</span><span class="ruby-operator">|</span> <span class="ruby-identifier">s</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">i</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">cell_spacing</span> } <span class="ruby-operator">+</span> <span class="ruby-identifier">style</span>.<span class="ruby-identifier">border_y</span>.<span class="ruby-identifier">length</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-headings_with_rows" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">headings_with_rows</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          <p>Return headings combined with rows.</p>
+          
+          
+
+          
+          <div class="method-source-code" id="headings_with_rows-source">
+            <pre><span class="ruby-comment"># File lib/terminal-table/table.rb, line 318</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">headings_with_rows</span>
+  <span class="ruby-ivar">@headings</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">rows</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-recalc_column_widths" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">recalc_column_widths</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="recalc_column_widths-source">
+            <pre><span class="ruby-comment"># File lib/terminal-table/table.rb, line 188</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">recalc_column_widths</span>
+  <span class="ruby-ivar">@require_column_widths_recalc</span> = <span class="ruby-keyword">false</span>
+  <span class="ruby-identifier">n_cols</span> = <span class="ruby-identifier">number_of_columns</span>
+  <span class="ruby-identifier">space_width</span> = <span class="ruby-identifier">cell_spacing</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">n_cols</span> <span class="ruby-operator">==</span> <span class="ruby-value">0</span>
+
+  <span class="ruby-comment"># prepare rows</span>
+  <span class="ruby-identifier">all_rows</span> = <span class="ruby-identifier">headings_with_rows</span>
+  <span class="ruby-identifier">all_rows</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-constant">Row</span>.<span class="ruby-identifier">new</span>(<span class="ruby-keyword">self</span>, [<span class="ruby-identifier">title_cell_options</span>]) <span class="ruby-keyword">unless</span> <span class="ruby-ivar">@title</span>.<span class="ruby-identifier">nil?</span>
+
+  <span class="ruby-comment"># DP states, dp[colspan][index][split_offset] =&gt; column_width.</span>
+  <span class="ruby-identifier">dp</span> = []
+
+  <span class="ruby-comment"># prepare initial value for DP.</span>
+  <span class="ruby-identifier">all_rows</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">row</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">index</span> = <span class="ruby-value">0</span>
+    <span class="ruby-identifier">row</span>.<span class="ruby-identifier">cells</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">cell</span><span class="ruby-operator">|</span>
+      <span class="ruby-identifier">cell_value</span> = <span class="ruby-identifier">cell</span>.<span class="ruby-identifier">value_for_column_width_recalc</span>
+      <span class="ruby-identifier">cell_width</span> = <span class="ruby-constant">Unicode</span><span class="ruby-operator">::</span><span class="ruby-constant">DisplayWidth</span>.<span class="ruby-identifier">of</span>(<span class="ruby-identifier">cell_value</span>.<span class="ruby-identifier">to_s</span>)
+      <span class="ruby-identifier">colspan</span> = <span class="ruby-identifier">cell</span>.<span class="ruby-identifier">colspan</span>
+
+      <span class="ruby-comment"># find column width from each single cell.</span>
+      <span class="ruby-identifier">dp</span>[<span class="ruby-identifier">colspan</span>] <span class="ruby-operator">||=</span> []
+      <span class="ruby-identifier">dp</span>[<span class="ruby-identifier">colspan</span>][<span class="ruby-identifier">index</span>] <span class="ruby-operator">||=</span> [<span class="ruby-value">0</span>]        <span class="ruby-comment"># add a fake cell with length 0.</span>
+      <span class="ruby-identifier">dp</span>[<span class="ruby-identifier">colspan</span>][<span class="ruby-identifier">index</span>][<span class="ruby-identifier">colspan</span>] <span class="ruby-operator">||=</span> <span class="ruby-value">0</span> <span class="ruby-comment"># initialize column length to 0.</span>
+
+      <span class="ruby-comment"># the last index `colspan` means width of the single column (split</span>
+      <span class="ruby-comment"># at end of each column), not a width made up of multiple columns.</span>
+      <span class="ruby-identifier">single_column_length</span> = [<span class="ruby-identifier">cell_width</span>, <span class="ruby-identifier">dp</span>[<span class="ruby-identifier">colspan</span>][<span class="ruby-identifier">index</span>][<span class="ruby-identifier">colspan</span>]].<span class="ruby-identifier">max</span>
+      <span class="ruby-identifier">dp</span>[<span class="ruby-identifier">colspan</span>][<span class="ruby-identifier">index</span>][<span class="ruby-identifier">colspan</span>] = <span class="ruby-identifier">single_column_length</span>
+
+      <span class="ruby-identifier">index</span> <span class="ruby-operator">+=</span> <span class="ruby-identifier">colspan</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-comment"># run DP.</span>
+  (<span class="ruby-value">1</span><span class="ruby-operator">..</span><span class="ruby-identifier">n_cols</span>).<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">colspan</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">dp</span>[<span class="ruby-identifier">colspan</span>] <span class="ruby-operator">||=</span> []
+    (<span class="ruby-value">0</span><span class="ruby-operator">..</span><span class="ruby-identifier">n_cols</span><span class="ruby-operator">-</span><span class="ruby-identifier">colspan</span>).<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">index</span><span class="ruby-operator">|</span>
+      <span class="ruby-identifier">dp</span>[<span class="ruby-identifier">colspan</span>][<span class="ruby-identifier">index</span>] <span class="ruby-operator">||=</span> [<span class="ruby-value">1</span>]
+      (<span class="ruby-value">1</span><span class="ruby-operator">...</span><span class="ruby-identifier">colspan</span>).<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">offset</span><span class="ruby-operator">|</span>
+        <span class="ruby-comment"># processed level became reverse map from width =&gt; [offset, ...].</span>
+        <span class="ruby-identifier">left_colspan</span> = <span class="ruby-identifier">offset</span>
+        <span class="ruby-identifier">left_index</span> = <span class="ruby-identifier">index</span>
+        <span class="ruby-identifier">left_width</span> = <span class="ruby-identifier">dp</span>[<span class="ruby-identifier">left_colspan</span>][<span class="ruby-identifier">left_index</span>].<span class="ruby-identifier">keys</span>.<span class="ruby-identifier">first</span>
+
+        <span class="ruby-identifier">right_colspan</span> = <span class="ruby-identifier">colspan</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">left_colspan</span>
+        <span class="ruby-identifier">right_index</span> = <span class="ruby-identifier">index</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">offset</span>
+        <span class="ruby-identifier">right_width</span> = <span class="ruby-identifier">dp</span>[<span class="ruby-identifier">right_colspan</span>][<span class="ruby-identifier">right_index</span>].<span class="ruby-identifier">keys</span>.<span class="ruby-identifier">first</span>
+
+        <span class="ruby-identifier">dp</span>[<span class="ruby-identifier">colspan</span>][<span class="ruby-identifier">index</span>][<span class="ruby-identifier">offset</span>] = <span class="ruby-identifier">left_width</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">right_width</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">space_width</span>
+      <span class="ruby-keyword">end</span>
+
+      <span class="ruby-comment"># reverse map it for resolution (max width and short offset first).</span>
+      <span class="ruby-identifier">rmap</span> = {}
+      <span class="ruby-identifier">dp</span>[<span class="ruby-identifier">colspan</span>][<span class="ruby-identifier">index</span>].<span class="ruby-identifier">each_with_index</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">width</span>, <span class="ruby-identifier">offset</span><span class="ruby-operator">|</span>
+        <span class="ruby-identifier">rmap</span>[<span class="ruby-identifier">width</span>] <span class="ruby-operator">||=</span> []
+        <span class="ruby-identifier">rmap</span>[<span class="ruby-identifier">width</span>] <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">offset</span>
+      <span class="ruby-keyword">end</span>
+
+      <span class="ruby-comment"># sort reversely and store it back.</span>
+      <span class="ruby-identifier">dp</span>[<span class="ruby-identifier">colspan</span>][<span class="ruby-identifier">index</span>] = <span class="ruby-constant">Hash</span>[<span class="ruby-identifier">rmap</span>.<span class="ruby-identifier">sort</span>.<span class="ruby-identifier">reverse</span>]
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-identifier">resolve</span> = <span class="ruby-identifier">lambda</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">colspan</span>, <span class="ruby-identifier">full_width</span>, <span class="ruby-identifier">index</span> = <span class="ruby-value">0</span><span class="ruby-operator">|</span>
+    <span class="ruby-comment"># stop if reaches the bottom level.</span>
+    <span class="ruby-keyword">return</span> <span class="ruby-ivar">@column_widths</span>[<span class="ruby-identifier">index</span>] = <span class="ruby-identifier">full_width</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">colspan</span> <span class="ruby-operator">==</span> <span class="ruby-value">1</span>
+
+    <span class="ruby-comment"># choose best split offset for partition, or second best result</span>
+    <span class="ruby-comment"># if first one is not dividable.</span>
+    <span class="ruby-identifier">candidate_offsets</span> = <span class="ruby-identifier">dp</span>[<span class="ruby-identifier">colspan</span>][<span class="ruby-identifier">index</span>].<span class="ruby-identifier">collect</span>(<span class="ruby-operator">&amp;</span><span class="ruby-value">:last</span>).<span class="ruby-identifier">flatten</span>
+    <span class="ruby-identifier">offset</span> = <span class="ruby-identifier">candidate_offsets</span>[<span class="ruby-value">0</span>]
+    <span class="ruby-identifier">offset</span> = <span class="ruby-identifier">candidate_offsets</span>[<span class="ruby-value">1</span>] <span class="ruby-keyword">if</span> <span class="ruby-identifier">offset</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">colspan</span>
+
+    <span class="ruby-comment"># prepare for next round.</span>
+    <span class="ruby-identifier">left_colspan</span> = <span class="ruby-identifier">offset</span>
+    <span class="ruby-identifier">left_index</span> = <span class="ruby-identifier">index</span>
+    <span class="ruby-identifier">left_width</span> = <span class="ruby-identifier">dp</span>[<span class="ruby-identifier">left_colspan</span>][<span class="ruby-identifier">left_index</span>].<span class="ruby-identifier">keys</span>.<span class="ruby-identifier">first</span>
+
+    <span class="ruby-identifier">right_colspan</span> = <span class="ruby-identifier">colspan</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">left_colspan</span>
+    <span class="ruby-identifier">right_index</span> = <span class="ruby-identifier">index</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">offset</span>
+    <span class="ruby-identifier">right_width</span> = <span class="ruby-identifier">dp</span>[<span class="ruby-identifier">right_colspan</span>][<span class="ruby-identifier">right_index</span>].<span class="ruby-identifier">keys</span>.<span class="ruby-identifier">first</span>
+
+    <span class="ruby-comment"># calculate reference column width, give remaining spaces to left.</span>
+    <span class="ruby-identifier">total_non_space_width</span> = <span class="ruby-identifier">full_width</span> <span class="ruby-operator">-</span> (<span class="ruby-identifier">colspan</span> <span class="ruby-operator">-</span> <span class="ruby-value">1</span>) <span class="ruby-operator">*</span> <span class="ruby-identifier">space_width</span>
+    <span class="ruby-identifier">ref_column_width</span> = <span class="ruby-identifier">total_non_space_width</span> <span class="ruby-operator">/</span> <span class="ruby-identifier">colspan</span>
+    <span class="ruby-identifier">remainder</span> = <span class="ruby-identifier">total_non_space_width</span> <span class="ruby-operator">%</span> <span class="ruby-identifier">colspan</span>
+    <span class="ruby-identifier">rem_left_width</span> = [<span class="ruby-identifier">remainder</span>, <span class="ruby-identifier">left_colspan</span>].<span class="ruby-identifier">min</span>
+    <span class="ruby-identifier">rem_right_width</span> = <span class="ruby-identifier">remainder</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">rem_left_width</span>
+    <span class="ruby-identifier">ref_left_width</span> = <span class="ruby-identifier">ref_column_width</span> <span class="ruby-operator">*</span> <span class="ruby-identifier">left_colspan</span> <span class="ruby-operator">+</span>
+                     (<span class="ruby-identifier">left_colspan</span> <span class="ruby-operator">-</span> <span class="ruby-value">1</span>) <span class="ruby-operator">*</span> <span class="ruby-identifier">space_width</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">rem_left_width</span>
+    <span class="ruby-identifier">ref_right_width</span> = <span class="ruby-identifier">ref_column_width</span> <span class="ruby-operator">*</span> <span class="ruby-identifier">right_colspan</span> <span class="ruby-operator">+</span>
+                      (<span class="ruby-identifier">right_colspan</span> <span class="ruby-operator">-</span> <span class="ruby-value">1</span>) <span class="ruby-operator">*</span> <span class="ruby-identifier">space_width</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">rem_right_width</span>
+
+    <span class="ruby-comment"># at most one width can be greater than the reference width.</span>
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">left_width</span> <span class="ruby-operator">&lt;=</span> <span class="ruby-identifier">ref_left_width</span> <span class="ruby-keyword">and</span> <span class="ruby-identifier">right_width</span> <span class="ruby-operator">&lt;=</span> <span class="ruby-identifier">ref_right_width</span>
+      <span class="ruby-comment"># use refernce width (evenly partition).</span>
+      <span class="ruby-identifier">left_width</span> = <span class="ruby-identifier">ref_left_width</span>
+      <span class="ruby-identifier">right_width</span> = <span class="ruby-identifier">ref_right_width</span>
+    <span class="ruby-keyword">else</span>
+      <span class="ruby-comment"># the wider one takes its value, shorter one takes the rest.</span>
+      <span class="ruby-keyword">if</span> <span class="ruby-identifier">left_width</span> <span class="ruby-operator">&gt;</span> <span class="ruby-identifier">ref_left_width</span>
+        <span class="ruby-identifier">right_width</span> = <span class="ruby-identifier">full_width</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">left_width</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">space_width</span>
+      <span class="ruby-keyword">else</span>
+        <span class="ruby-identifier">left_width</span> = <span class="ruby-identifier">full_width</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">right_width</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">space_width</span>
+      <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">end</span>
+
+    <span class="ruby-comment"># run next round.</span>
+    <span class="ruby-identifier">resolve</span>.<span class="ruby-identifier">call</span>(<span class="ruby-identifier">left_colspan</span>, <span class="ruby-identifier">left_width</span>, <span class="ruby-identifier">left_index</span>)
+    <span class="ruby-identifier">resolve</span>.<span class="ruby-identifier">call</span>(<span class="ruby-identifier">right_colspan</span>, <span class="ruby-identifier">right_width</span>, <span class="ruby-identifier">right_index</span>)
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-identifier">full_width</span> = <span class="ruby-identifier">dp</span>[<span class="ruby-identifier">n_cols</span>][<span class="ruby-value">0</span>].<span class="ruby-identifier">keys</span>.<span class="ruby-identifier">first</span>
+  <span class="ruby-keyword">unless</span> <span class="ruby-identifier">style</span>.<span class="ruby-identifier">width</span>.<span class="ruby-identifier">nil?</span>
+    <span class="ruby-identifier">new_width</span> = <span class="ruby-identifier">style</span>.<span class="ruby-identifier">width</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">space_width</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">style</span>.<span class="ruby-identifier">border_y</span>.<span class="ruby-identifier">length</span>
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">new_width</span> <span class="ruby-operator">&lt;</span> <span class="ruby-identifier">full_width</span>
+      <span class="ruby-identifier">raise</span> <span class="ruby-string">&quot;Table width exceeds wanted width &quot;</span> <span class="ruby-operator">+</span>
+            <span class="ruby-node">&quot;of #{style.width} characters.&quot;</span>
+    <span class="ruby-keyword">end</span>
+    <span class="ruby-identifier">full_width</span> = <span class="ruby-identifier">new_width</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-identifier">resolve</span>.<span class="ruby-identifier">call</span>(<span class="ruby-identifier">n_cols</span>, <span class="ruby-identifier">full_width</span>)
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-require_column_widths_recalc" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">require_column_widths_recalc</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="require_column_widths_recalc-source">
+            <pre><span class="ruby-comment"># File lib/terminal-table/table.rb, line 335</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">require_column_widths_recalc</span>
+  <span class="ruby-ivar">@require_column_widths_recalc</span> = <span class="ruby-keyword">true</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-title_cell_options" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">title_cell_options</span><span
+            class="method-args">()</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="title_cell_options-source">
+            <pre><span class="ruby-comment"># File lib/terminal-table/table.rb, line 331</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">title_cell_options</span>
+  {<span class="ruby-value">:value</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-ivar">@title</span>, <span class="ruby-value">:alignment</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-value">:center</span>, <span class="ruby-value">:colspan</span> <span class="ruby-operator">=&gt;</span> <span class="ruby-identifier">number_of_columns</span>}
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+      <div id="method-i-yield_or_eval" class="method-detail ">
+        
+        <div class="method-heading">
+          <span class="method-name">yield_or_eval</span><span
+            class="method-args">() { |self| ... }</span>
+          
+          <span class="method-click-advice">click to toggle source</span>
+          
+        </div>
+        
+
+        <div class="method-description">
+          
+          
+          
+          
+
+          
+          <div class="method-source-code" id="yield_or_eval-source">
+            <pre><span class="ruby-comment"># File lib/terminal-table/table.rb, line 322</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier ruby-title">yield_or_eval</span> <span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">block</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">block</span>.<span class="ruby-identifier">arity</span> <span class="ruby-operator">&gt;</span> <span class="ruby-value">0</span>
+    <span class="ruby-keyword">yield</span> <span class="ruby-keyword">self</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-keyword">self</span>.<span class="ruby-identifier">instance_eval</span>(<span class="ruby-operator">&amp;</span><span class="ruby-identifier">block</span>)
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+          </div>
+          
+        </div>
+
+        
+
+        
+      </div>
+
+    
+    </section>
+  
+  </section>
+
+</main>
+
+
+<footer id="validator-badges" role="contentinfo">
+  <p><a href="https://validator.w3.org/check/referer">Validate</a>
+  <p>Generated by <a href="https://ruby.github.io/rdoc/">RDoc</a> 6.2.1.
+  <p>Based on <a href="http://deveiate.org/projects/Darkfish-RDoc/">Darkfish</a> by <a href="http://deveiate.org">Michael Granger</a>.
+</footer>
+
