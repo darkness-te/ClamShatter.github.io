@@ -11,7 +11,7 @@ The objective of this room is to learn how to scan and exploit the machine using
 
 Once that was finished, then we need find out all the ports open under 1000. The scan will relay, that there are three ports open under 1000.
 
-![]({{site.baseurl}}/assets/blue2.png)
+![](https://clamshatter.github.io/assets/blue2.png)
 
 The next task is a bit trickier. We need to figure out what the machine is vulnerable to. Using __-sV__ will scan for vulnerabilities, but that alone will leave us without an answer. __-sV__ has an option to use scripts, which is the solution to our problem. By using the script __ vuln__, we can now see what this machine is vulnerable to.
 
