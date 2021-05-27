@@ -15,11 +15,11 @@ Once that was finished, then we need find out all the ports open under 1000. The
 
 The next task is a bit trickier. We need to figure out what the machine is vulnerable to. Using __-sV__ will scan for vulnerabilities, but that alone will leave us without an answer. __-sV__ has an option to use scripts, which is the solution to our problem. By using the script __ vuln__, we can now see what this machine is vulnerable to.
 
-![]({{site.baseurl}}/assets/blue4.png)
+![]https://clamshatter.github.io/assets/blue4.png)
 
 The vulnerability is for Windows OS, and is called __ms17-010 eternal blue__
 
-![]({{site.baseurl}}/assets/blue5.png)
+![]https://clamshatter.github.io/assets/blue5.png)
 
 <h1> Metasploit</h1>
 
