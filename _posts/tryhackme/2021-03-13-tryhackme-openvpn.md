@@ -8,7 +8,7 @@ __Get Connected__
 
 OpenVPN is a free full-featured VPN client. We will be using it to have access to an ip address that Tryhackme gives to us when we sign up. to get your OpenVPN configuration file, you need to go to the access page and download it, then open it with OpenVPN. Time to get connected!
 
-[![](https://clamshatter.github.io/assets/getconnected.gif)](https://www.educationconnection.com)
+[![](https://clamshatter.github.io/assets/getconnected.gif)](https://www.youtube.com/watch?v=WYS5NtRXlZQ)
 
 Tryhackme will offer a few differnt quick tutorials about how to get up and running with OpenVPN on windows, MacOS, Linux and without a VPN.
 
