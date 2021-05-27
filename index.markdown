@@ -6,12 +6,12 @@ layout: home
 
 ---
 
-[Over the Wire - Wargames: Bandit Write ups](/2021-03-07-Wargame-Writeups.html)
+[Over the Wire - Wargames: Bandit Write ups](https://clamshater.github.io/2021-03-07-Wargame-Writeups.html)
 
 [![Foo](/assets/overthewirelogo.jpg )](2021-03-07-Wargame-Writeups.html)
 
 ---------------------------------------------------------------------------------------
 
-[Tryhackme - Rooms Write ups](/2021-03-08-tryhackme-writeups.html)
+[Tryhackme - Rooms Write ups](https://clamshater.github.io/2021-03-08-tryhackme-writeups.html)
 
 [![Foo](/assets/hackmelogo.jpg )](2021-03-08-tryhackme-writeups.html)
