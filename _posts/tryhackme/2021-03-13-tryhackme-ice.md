@@ -10,7 +10,7 @@ Once you have gotten the machine up and running, the next step is to scan the ma
 
 Upon first inspection of nmaps results, it isn't blatantly obvious what port its running on.
 
-![]({{site.baseurl}}/assets/ice2.png)
+![](Https://clamshatter.github.io/assets/ice2.png)
 
 googling ports and Microsoft Remote Desktop, will bare the results we are after. A common port for MSRDP is 3389.
 
