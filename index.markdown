@@ -12,6 +12,6 @@ layout: home
 
 ---------------------------------------------------------------------------------------
 
-[Tryhackme - Rooms Write ups](https://clamshtater.github.io/2021-03-08-tryhackme-writeups.html)
+[Tryhackme - Rooms Write ups](https://clamshatter.github.io/2021-03-08-tryhackme-writeups.html)
 
 [![Foo](/assets/hackmelogo.jpg )](2021-03-08-tryhackme-writeups.html)
