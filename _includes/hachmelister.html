@@ -1,7 +1,7 @@
 <ul>
   {% for hackers in site.categories.hackme reversed %}
     <li>
-      <a href="{{ hackers.url }}">{{hackers.title}}</a>
+      <a href="{{ relative_url }}">{{hackers.title}}</a>
       </li>
   {% endfor %}
 </ul>
