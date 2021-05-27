@@ -7,7 +7,7 @@ categories: hackme
 
 The objective of this room is to learn how to scan and exploit the machine using its vulnerabilities. First things first, we need to scan the machine. This can be achieved by using nmap on the ip address. My first attempt was a verbose SYN scan with all options enabled and ping turned off, as we were given the information that this machine will not respond to pings.
 
-![]({{site.baseurl}}/assets/blue1.png)
+<img src="assets/blue1.png">
 
 Once that was finished, then we need find out all the ports open under 1000. The scan will relay, that there are three ports open under 1000.
 
