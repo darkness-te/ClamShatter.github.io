@@ -1,7 +1,7 @@
 <ul>
   {% for bandit in site.categories.bandit reversed %}
     <li>
-      <a href="{{ bandit.url | relative_url }}">{{bandit.title}}</a>
+      <a href="{{ bandit.url }}">{{bandit.title}}</a>
       </li>
   {% endfor %}
 </ul>
