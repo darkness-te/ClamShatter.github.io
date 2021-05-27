@@ -7,4 +7,4 @@ categories: hackme
 
 This room gives a rudimentary overview of Wifi security and hacking. It starts with a basic rundown of key terms and useful information.
 
-![](https://clamshatter.github.io/assets/wifi1.png)
+![](https://clamshatter.github.io/assets/wifi2.png)
