@@ -5,7 +5,7 @@ date: 2021-03-13T00:00:00-08:00
 categories: hackme
 ---
 
-It's a nice change of pace in this room, which focuses on the more carnal aspect of security. There is 2 lectures, which are very informative and entertaining, that do a step by step walk through of basic lock picking and other security bypassing techniques. After taking as many notes as possible from both videos, its time to jump into the meat of things.
+It's a nice change of pace in this room, which focuses on the more carnal aspect of security. There is 2 lectures that are very informative and entertaining. They provide a step by step walk through of basic lock picking and other security bypassing techniques. After taking as many notes as possible from both videos, its time to jump into the meat of things.
 
 ![](https://clamshatter.github.io/assets/physical1.gif)
 
