@@ -14,7 +14,7 @@ Upon first inspection of nmaps results, it isn't blatantly obvious what port its
 
 googling ports and Microsoft Remote Desktop, will bare the results we are after. A common port for MSRDP is 3389.
 
-<img src="https//clamshatter.github.io/assets/ice3.png">
+<img src="Https//clamshatter.github.io/assets/ice3.png">
 
 Then we must inspect port 8000 to find out what is running on it, which is icecast.
 
