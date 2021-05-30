@@ -7,7 +7,6 @@ categories: hackme
 This room tasks us  in accessing a Samba share, manipulating a vulnerable version of proftpd to gain initial access and escalate your privileges to root via an SUID binary.
 
 <h1>Samba</h1>
-![](https://clamshatter.github.io/assets/kenobi1.png)
 
 __Samba__ is the standard Windows interoperability suite of programs for Linux and Unix. It Lets Windows machines communicate with other OS's network file systems.
 
