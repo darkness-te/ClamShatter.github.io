@@ -24,4 +24,4 @@ Now we inspect one of the shares.
 
 once that is done, our next goal is to scan the ftp port enumerate the networks file system.
 
-![](https://clamshatter.github.io/assets/kenobi5.png)
+![](https://clamshatter.github.io/assets/kenobi6.png)
