@@ -43,6 +43,16 @@ With this finished, we can proceed to mounting and copying the key. Followed by 
 
 ![](https://clamshatter.github.io/assets/kenobi10.png)
 
+After logging in, we are asked to find the user.txt
+
 ![](https://clamshatter.github.io/assets/kenobi11.png)
 
 ![](https://clamshatter.github.io/assets/kenobi12.png)
+
+<h1>Privilege Escalation with Path Variable Manipulation</h1>
+![](https://clamshatter.github.io/assets/kenobi14.png)
+It is time to become root!
+
+We need to find a SUID file to exploit. Using the find command with the following parameters will net us our bounty. __find / -perm -u=s -type f 2>/dev/null__. Then find the correct file to use. By executing the binary with the correct path and privileges we can become root! After that we need to find the root directory with root.txt, so we can root, in root, while rooted...
+
+![](https://clamshatter.github.io/assets/kenobi13.png)
