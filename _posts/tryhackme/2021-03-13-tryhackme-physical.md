@@ -19,6 +19,16 @@ This task asks us to display our new found knowledge of locking, by asking us a 
 
 <h1>Lock Anatomy</h1>
 
+![](https://clamshatter.github.io/assets/physical5.png)
+
+Here, we are asked about the basic structure of locks and their use. From basic parts, like, keys and deadbolts to more obscure pieces, such as, the actuator. 
+
+<h1>Padlock Bypassing</h1>
+
 ![](https://clamshatter.github.io/assets/physical4.png)
 
-Here, we are asked about the basic structure of locks.
+Padlocks are some of them most common types of locks to keep things secure. Basically, any type of housing or container can be padlocked for security reasons, but padlock vulnerabilities are well known amongst seasoned lock pickers and novices alike. Padlocks aren't just susceptible to bump keys and basic lock picks, but they also have other ways of entry. Any type of combination padlock is vulnerable to decoding and/or brute forcing. One of the bigger flaws of many padlocks, is the ability to bypass it with a shim.
+
+<h1>Hardware Bypassing</h1>\
+
+![](https://clamshatter.gihub.io/assets/phisical6.gif)
