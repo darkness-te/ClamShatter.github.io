@@ -33,4 +33,16 @@ On to the good stuff... Geting access to the machine. To do this we will use __n
 
 ![](https://clamshatter.github.io/assets/kenobi7.png)
 
-Next up, copying kenobis private key using __SITE CPFR__ and __SITE CPTO__
+Next up, copying kenobis private key using __SITE CPFR__ and __SITE CPTO__. This is one of the __ProFtdp__ exploits from __mod copy_module__.
+
+![](https://clamshatter.github.io/assets/kenobi8.png)
+
+With this finished, we can proceed to mounting and copying the key. Followed by loging in as kenobi.
+
+![](https://clamshatter.github.io/assets/kenobi9.png)
+
+![](https://clamshatter.github.io/assets/kenobi10.png)
+
+![](https://clamshatter.github.io/assets/kenobi11.png)
+
+![](https://clamshatter.github.io/assets/kenobi12.png)
