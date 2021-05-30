@@ -12,3 +12,11 @@ It's a nice change of pace in this room, which focuses on the more carnal aspect
  We are prompted on the 3 different methods of physical pentesting. Overt, covert and surreptitious. Each one being more stealthy than the previous. Then we hit lock picking.
 
 <h1>Lock Picking</h1>
+
+i[](http://clamshatter.github.io/assets/physical2.png)
+
+This task asks us to display our new found knowledge of locking, by asking us a little bit about lock picking techniques and locks. There are numerous locks and each type has a different approach for how to pick it. The most common techniques are SSP or Single Pin Picking, which is fairly self explanatory and bump keys. Bump keys are specially made keys used in conjuction with a hammer (or similar) and a rubber band to force the pins into place. 
+
+<h1>Lock Anatomy</h1>
+
+i[](https://clamshatter.github.io/assets/physical4.png)
