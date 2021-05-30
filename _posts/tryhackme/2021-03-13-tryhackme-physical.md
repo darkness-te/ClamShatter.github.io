@@ -32,3 +32,5 @@ Padlocks are some of them most common types of locks to keep things secure. Basi
 <h1>Hardware Bypassing</h1>\
 
 ![](https://clamshatter.gihub.io/assets/phisical6.gif)
+
+Hardware bypassing is a quaint term for breaking and entering. The ingenious ideas that are involved with bacon and eggs, are very interesting and outside of the box. Take for example, the double door tool, which slips between the doors and lets you manipulate the lock and handle. This is similar to the under the door tool, which allows you to do the same, but from under the door and the J tool, which is also technically a double door tool, but is specifically designed for doors with thumb turn deadbolts. Many other clever tricks have been developed to bypass door security, one of the more interesting ones, is using a can of compressed air to manipulate REX sensors or using styrofoam to sneak past IR sensors. 
