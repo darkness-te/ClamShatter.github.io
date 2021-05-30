@@ -13,10 +13,12 @@ It's a nice change of pace in this room, which focuses on the more carnal aspect
 
 <h1>Lock Picking</h1>
 
-i[](http://clamshatter.github.io/assets/physical2.png)
+![](http://clamshatter.github.io/assets/physical2.png)
 
 This task asks us to display our new found knowledge of locking, by asking us a little bit about lock picking techniques and locks. There are numerous locks and each type has a different approach for how to pick it. The most common techniques are SSP or Single Pin Picking, which is fairly self explanatory and bump keys. Bump keys are specially made keys used in conjuction with a hammer (or similar) and a rubber band to force the pins into place. 
 
 <h1>Lock Anatomy</h1>
 
-i[](https://clamshatter.github.io/assets/physical4.png)
+![](https://clamshatter.github.io/assets/physical4.png)
+
+Here, we are asked about the basic structure of locks.
