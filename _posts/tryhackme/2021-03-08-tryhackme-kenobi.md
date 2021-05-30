@@ -10,7 +10,7 @@ This room tasks us  in accessing a Samba share, manipulating a vulnerable versio
 
 ![](https://clamshatter.github.io/assets/kenobi1.png)
 
-First we need to scan the machine to enumerate he Samba shares.
+First we need to scan the machine to enumerate the Samba shares.
 
 ![](https://clamshatter.github.io/assets/kenobi2.png)
 
