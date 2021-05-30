@@ -27,7 +27,7 @@ Here, we are asked about the basic structure of locks and their use. From basic 
 
 ![](https://clamshatter.github.io/assets/physical4.png)
 
-__Padlocks__ are some of the most common types of locks to keep things secure. Basically, any type of housing or container can be __padlocked__ for security reasons, but __padlock__ vulnerabilities are well known amongst seasoned lock pickers and novices alike. ___Padlocks__ aren't just susceptible to __bump keys__ and basic lock picks, but they also have other ways of entry. Any type of combination __padlock__ is vulnerable to decoding and/or brute forcing. One of the bigger flaws of many __padlock__s, is the ability to bypass it with a __shim__.
+__Padlocks__ are some of the most common types of locks to keep things secure. Basically, any type of housing or container can be __padlocked__ for security reasons, but __padlock__ vulnerabilities are well known amongst seasoned lock pickers and novices alike. __Padlocks__ aren't just susceptible to __bump keys__ and basic lock picks, but they also have other ways of entry. Any type of combination __padlock__ is vulnerable to decoding and/or brute forcing. One of the bigger flaws of many __padlock__s, is the ability to bypass it with a __shim__.
 
 <h1>Hardware Bypassing</h1>
 
