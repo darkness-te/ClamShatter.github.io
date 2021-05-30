@@ -13,6 +13,6 @@ Then we are introduced to a tool to hack Wifi, known as aircrack. We are given a
 
 ![](https://clamshatter.github.io/assets/wifi3.png)
 
-Once that is finished, we are asked to crack a .cap file  for a password to finish up the room.
+Once that is finished, we are asked to crack a .cap file for a password to finish up the room.
 
 ![](https://clamshatter.github.io/assets/wifi4.gif)
