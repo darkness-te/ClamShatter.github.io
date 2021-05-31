@@ -30,7 +30,7 @@ Once we have found the correct account to use. find its corresponding hash and c
 
 <h1>Back to basics</h1>
 
-Here we are using __smbclient__ to enumerate __smb shares__.
+Here, we are using __smbclient__ to enumerate __smb shares__.
 
 ![](https://clamshatter.github.io/assets/attdir11.png)
 
