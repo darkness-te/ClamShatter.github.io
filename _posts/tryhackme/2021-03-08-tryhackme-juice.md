@@ -69,20 +69,20 @@ Since we found out about the __/administration__ directory, lets go take a look 
 
 <h1>Where did that come from?</h1>
 
-This task is about __XSS__ attacks, also known as __cross-site scripting__
+This task is about __XSS__ attacks, also known as __cross-site scripting__. This exercise will be using a __DOM XSS__ attack, which is uses HTML to execute malicious javascript. By entering __"<iframe src="javascript:aler{'xss')">"__ into the search bar, we will be greeted with a popup alert, with "xss" in it.
+
+![](https://clamshatter.github.io/assets/juicy10.png)
+
+Next, we will execute a __persistent xss attack__. Setting up __Burp Suite__ to intercept the process. check the __last login IP__ and then logout. going to __Burp Suite__ we need to __add True_CLient-IP__ right after __cookies__ in the intercept __/rest/saveLoginIP__ as the __GET__ and give it the same iframe parameters as the last time. This will make the __last login IP__ display xss instead.
 
 ![](https://clamshatter.github.io/assets/juicy11.png)
-
 ![](https://clamshatter.github.io/assets/juicy12.png)
+
+Our next objective is to perform a __refleced xss__ attack. Go back and login into the admins account and navigate to the order history. In the track results page of an item in deliver, we will replace he ID of the tracking results in the websites address with another iframe to make another xss popup. 
+
 
 ![](https://clamshatter.github.io/assets/juicy13.png)
 
+We are done... or are we??? go to the score board page and see all the extra little things that can be accomplished.
+
 ![](https://clamshatter.github.io/assets/juicy14.png)
-
-![](https://clamshatter.github.io/assets/juicy16.png)
-
-![](https://clamshatter.github.io/assets/juicy17.png)
-
-![](https://clamshatter.github.io/assets/juicy18.png)
-
-![](https://clamshatter.github.io/assets/juicy20.png)
