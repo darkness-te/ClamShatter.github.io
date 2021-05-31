@@ -22,12 +22,12 @@ When in the session, checking my privileges with __whoami__, tells me I am root,
 
 ![](https://clamshatter.github.io/assets/capstone6.png)
 
-I thought maybe opening up a meterpreter session would work, but I could never get it to actually start. After a little research into __vtcsec__ and metasploit, I stumbled upon a nice little python script that makes the shell __root@vtcsec__. Now i can do anything!
+I thought maybe opening up a __meterpreter__ session would work, but I could never get it to actually start. After a little research into __vtcsec__ and __metasploit__, I stumbled upon a nice little python script that makes the shell __root@vtcsec__. Now i can do anything!
 
 ![](https://clamshatter.github.io/assets/capstone9.png)
 ![](https://clamshatter.github.io/assets/capstone8.png)
 
-I was looking for passwords and such, but nobody really has any login credential. the only thing that looked interesting, was the __marlinspike__ directory. Now, a marlin spike is a tool used in marine ropework... strange. Anyways, by traversing to the directory, it holds all the sources for the __Proftpd backdoor__. I guess thats about it. I was hoping I could do something with the __/secret/__ directory and other IP address, but they wern't working. I'm not sure if that was an error on my behalf, the server, or if it was supposed to be like that? Either way, root was had!
+I was looking for passwords and such, but nobody really has any login credentials. the only thing that looked interesting, was the __marlinspike__ directory. Now, a marlin spike is a tool used in marine ropework... strange. Anyways, by traversing to the directory, it holds all the sources for the __Proftpd backdoor__. I guess thats about it. I was hoping I could do something with the __/secret/__ directory and other IP address, but they wern't working. I'm not sure if that was an error on my behalf, the server, or if it was supposed to be like that? Either way, root was had!
 
 ![](https://clamshatter.github.io/assets/capstone13.png)
 
