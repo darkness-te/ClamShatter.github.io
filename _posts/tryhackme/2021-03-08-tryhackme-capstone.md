@@ -14,6 +14,8 @@ We find 3 ports open, and ftp port, and ssh port and an http port. upon closer e
 
 ![](https://clamshatter.github.io/assets/capstone3.png)
 
-![](https://clamshatter.github.io/assets/capston41.png)
+I didn't find many useful things, as of now. Just an IP address that doesn't work and a directory, __/vtcsec/__, but it doesn't open in either IP addresse. I moved onto __metasploit__, to exploit the __Proftdp backdoor__ that was found during the __vuln__ scan. which works as long as you manually set the payload. Now, to escalate privileges. 
 
-![](https://clamshatter.github.io/assets/capstone5.png)
+![](https://clamshatter.github.io/assets/capstone4.png)
+
+![](https://clamshatter.github.io/assets/capstone6.png)
