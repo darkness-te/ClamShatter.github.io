@@ -15,6 +15,8 @@ The focus here, is __SQL injection__. We'll be using a program called __Burp Sui
 
 With __Burp Suite__ running, we are going to __SQL inject__ our way into the admins account. you can log on with any combination of username and password, we just need the raw code for injection purposes. in __Burp Suite__ we will change the email and password fields to __{"email ":"' or 1=1--","password":"a"}__. This is will basically manipulate the server into thinking anything we type in is valid. 
 
+![](https://clamshatter.github.io/assets/juicy15.png)
+
 Using a slightly different method, instead of __{"email ":"' or 1=1--","password":"a"}__ we will use the actual email address of the user we want to login as. while still keeping the -- at the end. 
 
 ![](https://clamshatter.github.io/assets/juicy1.png)
@@ -49,7 +51,7 @@ Instead of using __SQL injection__ we now get to try to __brute force__ the admi
 
 ![](https://clamshatter.github.io/assets/juicy14.png)
 
-![](https://clamshatter.github.io/assets/juicy15.png)
+
 
 ![](https://clamshatter.github.io/assets/juicy16.png)
 
