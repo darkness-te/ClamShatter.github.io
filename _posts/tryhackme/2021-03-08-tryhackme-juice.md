@@ -69,7 +69,7 @@ Since we found out about the __/administration__ directory, lets go take a look 
 
 <h1>Where did that come from?</h1>
 
-This task is about __XSS__ attacks, also known as __cross-site scripting__. This exercise will be using a __DOM XSS__ attack, which is uses HTML to execute malicious javascript. By entering __"<iframe src="javascript:aler{'xss')">"__ into the search bar, we will be greeted with a popup alert, with "xss" in it.
+This task is about __XSS__ attacks, also known as __cross-site scripting__. This exercise will be using a __DOM XSS__ attack, which uses HTML to execute malicious javascript. By entering __"<iframe src="javascript:aler{'xss')">"__ into the search bar, we will be greeted with a popup alert, with "xss" in it.
 
 ![](https://clamshatter.github.io/assets/juicy10.png)
 
