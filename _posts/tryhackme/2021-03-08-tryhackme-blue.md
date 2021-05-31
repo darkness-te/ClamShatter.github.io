@@ -128,5 +128,5 @@ Now, that we know that the flags are in the form of .txt files. we can search fo
 
 With the search complete, we can just go to the directories and open the files for the flags.
 
-<img src="https://clamshatter.github.io/assets/blue32.png">
+<img src="https://clamshatter.github.io/assets/blue31.png">
 
