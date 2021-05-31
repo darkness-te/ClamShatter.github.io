@@ -19,7 +19,7 @@ Then we will use a program called __Kerbrute__ to abuse __Kerberos__. We use __K
 
 With the users on our list our task is to find a user that has the privilege __"Does not require Pre-Authentication"__. To do this, the tool __impacket__ will be deployed with a script that executes the __ASRERoasting__. 
 
-![](https://clamshatter.github.io/assets.attdir8.png)
+![](https://clamshatter.github.io/assets/attdir8.png)
 
 Once we have found the correct account to use. find its corresponding hash and crack it! It's best to save the list as a .txt file, so you can you is it hashcat in a few moments. 
 
