@@ -13,7 +13,7 @@ The focus here, is __SQL injection__. We'll be using a program called __Burp Sui
 
 ![](https://clamshatter.github.io/assets/juicy21.png)
 
-With __Burp Suite__ running, we are going to __SQL inject__ our way into the admins account. you can log on with any combination of username and password, we just need the raw code for injection purposes. in __Burp Suite__ we will change the email and password fields to __{"email ":"' or 1=1--","password":"a"}__. This is will basically manipulate the server into thinking anything we type in is valid. 
+With __Burp Suite__ running, we are going to __SQL inject__ our way into the admins account. you can log on with any combination of username and password, we just need the raw code for injection purposes. in __Burp Suite__ we will change the email and password fields to __{"email ":"' or 1=1--","password":"a"}__. This will basically manipulate the server into thinking anything we type in is valid. 
 
 ![](https://clamshatter.github.io/assets/juicy15.png)
 
