@@ -73,7 +73,7 @@ This task is about __XSS__ attacks, also known as __cross-site scripting__. This
 
 ![](https://clamshatter.github.io/assets/juicy10.png)
 
-Next, we will execute a __persistent xss attack__. Setting up __Burp Suite__ to intercept the process. check the __last login IP__ and then logout. going to __Burp Suite__ we need to __add True_CLient-IP__ right after __cookies__ in the intercept __/rest/saveLoginIP__ as the __GET__ and give it the same iframe parameters as the last time. This will make the __last login IP__ display xss instead.
+Next, we will execute a __persistent xss attack__. Setting up __Burp Suite__ to intercept the process. check the __last login IP__ and then logout. going to __Burp Suite__ we need to __add True_CLient-IP__ right after __cookies__ in the intercept with __/rest/saveLoginIP__ as its __GET__ and give it the same iframe parameters as the last time. This will make the __last login IP__ display xss instead.
 
 ![](https://clamshatter.github.io/assets/juicy11.png)
 ![](https://clamshatter.github.io/assets/juicy12.png)
