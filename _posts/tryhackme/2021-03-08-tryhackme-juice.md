@@ -49,7 +49,7 @@ The information is given to us to sign into __mc.safesearch@juice-sh.op__ with t
 
 ![](https://clamshatter.github.io/assets/juicy5.png)
 
-Now, go back to the __/ftp__ directory, there may have been a file that you were not allowed to download (it let me download it anyways...). The method for downloading it is to use a __Poison Null Byte__ in the url, so it looks like this __"<IP>/ftp/package.json.back%2500.md"__. which will allow you to download the file.
+Now, go back to the __/ftp__ directory, there may have been a file that you were not allowed to download (it let me download it anyways...). The method for downloading it is to use a __Poison Null Byte__ in the url, so it looks like this __<IP>/ftp/package.json.back%2500.md__. which will allow you to download the file.
 
 ![](https://clamshatter.github.io/assets/juicy6.png)
 
