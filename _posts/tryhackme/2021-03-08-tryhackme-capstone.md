@@ -14,8 +14,15 @@ We find 3 ports open, and ftp port, and ssh port and an http port. upon closer e
 
 ![](https://clamshatter.github.io/assets/capstone3.png)
 
-I didn't find many useful things, as of now. Just an IP address that doesn't work and a directory, __/vtcsec/__, but it doesn't open in either IP addresse. I moved onto __metasploit__, to exploit the __Proftdp backdoor__ that was found during the __vuln__ scan. which works as long as you manually set the payload. Now, to escalate privileges. 
+I didn't find many useful things, as of now. Just an IP address that doesn't work and a directory, __/vtcsec/__ which stands for virtual cyber security, which is a cyber security club website. I moved onto __metasploit__, to exploit the __Proftdp backdoor__ that was found during the __vuln__ scan. which works as long as you manually set the payload. 
 
 ![](https://clamshatter.github.io/assets/capstone4.png)
 
+When in the session, checking my privileges with __whoami__, tells me I am root, but I can't even change directories.
+
 ![](https://clamshatter.github.io/assets/capstone6.png)
+
+I thought maybe opening up a meterpreter session would work, but I could never get it to actually start. After a little research into __vtcsec__ and metasploit, I stumbled upon a nice little python script that makes the shell __root@vtcsec__. Now i can do anything!
+
+![](https://clamshatter.github.io/assets/capstone9.png)
+![](https://clamshatter.github.io/assets/capstone8.png)
