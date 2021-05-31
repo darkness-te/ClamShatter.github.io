@@ -28,7 +28,7 @@ categories: bandit
 
 <h1>level 11</h1>: Simple, just decode with base64
 
-<h1>level 12,/h1: This one stumped me pretty good. I was just going to try and decipher it by hand like ralphie did in a christmas story, but decided to look up any kind of help and it was more straightforward than I thought. I don't think I would have figured it out for a while on my own though... I'll be sure to drink my ovaltine.
+<h1>level 12</h1>: This one stumped me pretty good. I was just going to try and decipher it by hand like ralphie did in a christmas story, but decided to look up any kind of help and it was more straightforward than I thought. I don't think I would have figured it out for a while on my own though... I'll be sure to drink my ovaltine.
 
 <h1>level 13</h1>: This one was a chore and a half. It took me long enough to figure out how to use tar correctly to extract the data.bins. tar xvf... After that it was just a tedious procedure of uncompresseing and renaming the file until it was a text file again.
 
