@@ -21,10 +21,9 @@ With the users on our list our task is to find a user that has the privilege __"
 
 ![](https://clamshatter.github.io/assets.attdir8.png)
 
-Once we have found the correct account to use. find its corresponding hash and crack it!
+Once we have found the correct account to use. find its corresponding hash and crack it! It's best to save the list as a .txt file, so you can you is it hashcat in a few moments. 
 
 ![](https://clamshatter.github.io/assets/attdir9.png)
-
 ![](https://clamshatter.github.io/assets/attdir10.png)
 
 ![](https://clamshatter.github.io/assets/attdir11.png)
