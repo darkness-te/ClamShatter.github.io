@@ -9,10 +9,10 @@ This room gives a rudimentary overview of Wifi security and hacking. It starts w
 
 ![](https://clamshatter.github.io/assets/wifi2.png)
 
-Then we are introduced to a tool to hack Wifi, known as aircrack. We are given a quick rundown of how it works and asked questions about its functions.
+Then we are introduced to a tool to hack Wifi, known as __aircrack__. We are given a quick rundown of how it works and asked questions about its functions.
 
 ![](https://clamshatter.github.io/assets/wifi3.png)
 
-Once that is finished, we are asked to crack a .cap file for a password to finish up the room.
+Once that is finished, we are asked to crack a __.cap__ file for a password to finish up the room.
 
 ![](https://clamshatter.github.io/assets/wifi4.gif)
