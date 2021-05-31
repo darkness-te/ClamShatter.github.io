@@ -27,7 +27,7 @@ I thought maybe opening up a __meterpreter__ session would work, but I could nev
 ![](https://clamshatter.github.io/assets/capstone9.png)
 ![](https://clamshatter.github.io/assets/capstone8.png)
 
-I was looking for passwords and such, but nobody really has any login credentials. the only thing that looked interesting, was the __marlinspike__ directory. Now, a marlin spike is a tool used in marine ropework... strange. Anyways, by traversing to the directory, it holds all the sources for the __Proftpd backdoor__. I guess thats about it. I was hoping I could do something with the __/secret/__ directory and other IP address, but they wern't working. I'm not sure if that was an error on my behalf, the server, or if it was supposed to be like that? Either way, root was had!
+I was looking for passwords and such, but nobody really has any login credentials. the only thing that looked interesting, was the __marlinspike__ directory. Now, a marlin spike is a tool used in marine ropework... strange, but wait! Moxie Marlinspike is a famous cryptographer, very nice! Anyways, by traversing to the directory, it holds all the sources for the __Proftpd backdoor__. I guess thats about it. I was hoping I could do something with the __/secret/__ directory and other IP address, but they wern't working. I'm not sure if that was an error on my behalf, the server, or if it was supposed to be like that? Either way, root was had!
 
 ![](https://clamshatter.github.io/assets/capstone13.png)
 
