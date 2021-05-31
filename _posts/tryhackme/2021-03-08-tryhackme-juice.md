@@ -23,7 +23,7 @@ Using a slightly different method, instead of __{"email ":"' or 1=1--","password
 
 <h1>Who broke my lock?!</h1>
 
-Instead of using __SQL injection__ we now get to try to __brute force__ the administrators password. Get __Burp Suite__ setup to intercept the login attempt again. this time we will send it to the intruder and use the __best1050.txt__ as our payload.
+Instead of using __SQL injection__ we now get to try to __brute force__ the administrators password. Get __Burp Suite__ setup to intercept the login attempt again. this time we will send it to the __intruder__ and use the __best1050.txt__ as our __payload__.
 
 ![](https://clamshatter.github.io/assets/juicy18.png)
 
@@ -31,7 +31,7 @@ now we wait... this can take some time if you are using the community edition of
 
 ![](https://clamshatter.github.io/assets/juicy19.png)
 
-The key to finding the right password to sift through is looking at the __status__ of the payload. Once you have it we can get to business. Log on to admin with the password.
+The key to finding the right password  is looking at the __status__ of the __payload__. Once you have it we can get to business. Log on to admin account with the password.
 
 ![](https://clamshatter.github.io/assets/juicy20.png)
 
@@ -49,7 +49,7 @@ The information is given to us to sign into __mc.safesearch@juice-sh.op__ with t
 
 ![](https://clamshatter.github.io/assets/juicy5.png)
 
-Now, go back to the __/ftp__ directory, there may have been a file that you were not supposed to download (it let me download it anyways...). The method for downloading it is to use a __Poison Null Byte__ in the url, so it looks like this __"<IP>/ftp/package.json.back%2500.md"__. which will allow you to download the file.
+Now, go back to the __/ftp__ directory, there may have been a file that you were not allowed to download (it let me download it anyways...). The method for downloading it is to use a __Poison Null Byte__ in the url, so it looks like this __"<IP>/ftp/package.json.back%2500.md"__. which will allow you to download the file.
 
 ![](https://clamshatter.github.io/assets/juicy6.png)
 
