@@ -9,7 +9,17 @@ In this room, we are focusing on attacking a maachine. First things, first... We
 
 ![](https://clamshatter.github.io/assets/attdir2.png)
 
-Then we will use a program called __Kerbrute__ to abuse __Kerberos__. We use __Kerbrute__ 
+That wasn't enough. In order to get a better result we will use __enum4linux__. we have to set the host we are going to enumerate into our host directory first.
+
+![](https://clamshatter.github.io/asstes/attdir5.png)
+
+Then we will use a program called __Kerbrute__ to abuse __Kerberos__. We use __Kerbrute__  to get __kerberos tickets__. First we need to use the provided __usernames.txt__ to enumerate users using __kerbrute__.
+
+![](https://clamshatter.github.io/assets/attdir7.png)
+
+With the users on our list our task is to find a user that has the privilege __"Does not require Pre-Authentication"__. To do this, the tool __impacket__ will be deployed with a script that executes the __ASRERoasting__. 
+
+![](https://clamshatter.github.io/assets.attdir8.png)
 
 
 ![](https://clamshatter.github.io/assets/attdir1.png)
