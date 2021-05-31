@@ -40,7 +40,7 @@ We need to find a share that contains a text file. so get lookin! Once found you
 
 <h1>Elevating Privileges within the Domain</h1>
 
-The backup account we found, is a backup for Domain Contorller, in which, if we get access of, we have complete control of the domain. We are told to use __secretsdump.py__  which is an __impacket__ script/tool. 
+The backup account we found, is a backup for Domain Controller, in which, if we get access of, we have complete control of the domain. We are told to use __secretsdump.py__  which is an __impacket__ script/tool. 
 
 ![](https://clamshatter.github.io/assets/attdir13.png)
 
