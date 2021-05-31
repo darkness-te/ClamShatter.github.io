@@ -21,5 +21,14 @@ With the users on our list our task is to find a user that has the privilege __"
 
 ![](https://clamshatter.github.io/assets.attdir8.png)
 
+Once we have found the correct account to use. find its corresponding hash and crack it!
+
+![](https://clamshatter.github.io/assets/attdir9.png)
+
+![](https://clamshatter.github.io/assets/attdir10.png)
+
+![](https://clamshatter.github.io/assets/attdir11.png)
+
+![](https://clamshatter.github.io/assets/attdir12.png)
 
 ![](https://clamshatter.github.io/assets/attdir1.png)
