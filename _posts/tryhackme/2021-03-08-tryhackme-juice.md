@@ -78,7 +78,7 @@ Next, we will execute a __persistent xss attack__. Setting up __Burp Suite__ to 
 ![](https://clamshatter.github.io/assets/juicy11.png)
 ![](https://clamshatter.github.io/assets/juicy12.png)
 
-Our next objective is to perform a __refleced xss__ attack. Go back and login into the admins account and navigate to the order history. In the track results page of an item in deliver, we will replace he ID of the tracking results in the websites address with another iframe to make another xss popup. 
+Our next objective is to perform a __reflected xss__ attack. Go back and log into the admins account and navigate to the order history. In the track results page of an item in deliver, we will replace he ID of the tracking results in the websites address with another iframe to make another xss popup. 
 
 
 ![](https://clamshatter.github.io/assets/juicy13.png)
